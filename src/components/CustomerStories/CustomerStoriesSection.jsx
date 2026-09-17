@@ -202,13 +202,11 @@ export const CustomerStoriesSection = () => {
               muted={!isOpen || isMuted}
               playsInline
               preload="auto"
-              poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
               onTimeUpdate={handleTimeUpdate}
               onEnded={() => setIsPlaying(false)}
               className="w-full h-full object-cover"
             >
-              <source src="/302062_medium.mp4" type="video/mp4" />
-              <source src="/luxury-villa-tour.mp4" type="video/mp4" />
+              <source src="/video-compressed.mp4" type="video/mp4" />
               Your browser does not support video playback.
             </video>
 
