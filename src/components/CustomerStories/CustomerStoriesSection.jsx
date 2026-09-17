@@ -201,7 +201,8 @@ export const CustomerStoriesSection = () => {
               loop
               muted={!isOpen || isMuted}
               playsInline
-              poster="/luxury-villa-video-poster.jpg"
+              preload="auto"
+              poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
               onTimeUpdate={handleTimeUpdate}
               onEnded={() => setIsPlaying(false)}
               className="w-full h-full object-cover"

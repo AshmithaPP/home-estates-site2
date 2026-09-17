@@ -69,7 +69,8 @@ export const ScrollGallery = () => {
           loop
           muted
           playsInline
-          poster="/luxury-villa-video-poster.jpg"
+          preload="auto"
+          poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none opacity-85"
         >
           <source src="/302062_medium.mp4" type="video/mp4" />
