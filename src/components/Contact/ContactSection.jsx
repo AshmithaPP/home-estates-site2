@@ -8,7 +8,7 @@ const allArticles = [
     date: 'September 10, 2026',
     category: 'Construction',
     title: "A Beginner's Guide To Apartment Floor Plan Optimization",
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop',
+    image: '/images/residence-images/besantnagar-residence-view/img26.jpg',
     href: '#',
   },
   {
@@ -16,7 +16,7 @@ const allArticles = [
     date: 'September 15, 2026',
     category: 'Design Trends',
     title: 'Top Trends In Modern Luxury Apartment Design And Construction',
-    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800&auto=format&fit=crop',
+    image: '/images/residence-images/suresh-residence-view/img17.jpg',
     href: '#',
   },
   {
@@ -24,7 +24,7 @@ const allArticles = [
     date: 'September 20, 2026',
     category: 'Safety & Compliance',
     title: 'The Importance Of CMDA Approval In Residential Building Projects',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=800&auto=format&fit=crop',
+    image: '/images/residence-images/raman-residence-view/img39.jpg',
     href: '#',
   },
   {

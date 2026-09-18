@@ -206,7 +206,7 @@ export const CustomerStoriesSection = () => {
               onEnded={() => setIsPlaying(false)}
               className="w-full h-full object-cover"
             >
-              <source src="/video-compressed.mp4" type="video/mp4" />
+              <source src="/videos/vid-001.mp4" type="video/mp4" />
               Your browser does not support video playback.
             </video>
 

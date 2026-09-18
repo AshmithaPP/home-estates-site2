@@ -7,7 +7,7 @@ export const floorplansData = [
     available: true,
     specs: { beds: 2, baths: 2, sqft: '1,120' },
     desc: 'Fully developed 2 BHK luxury residential flats in prime Velachery with teakwood doors, granite flooring, and modular fittings.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop',
+    image: '/images/residence-images/r3-brc-views/img29.jpg',
     tilt: -2.5,
   },
   {
@@ -18,7 +18,7 @@ export const floorplansData = [
     available: true,
     specs: { beds: 3, baths: 3, sqft: '1,850' },
     desc: 'Exclusive eco-friendly gated villa project located on OMR IT Corridor with landscaped private gardens and clubhouse.',
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop',
+    image: '/images/residence-images/besantnagar-residence-view/img26.jpg',
     tilt: 2.8,
   },
   {
@@ -29,7 +29,7 @@ export const floorplansData = [
     available: true,
     specs: { beds: 3, baths: 2, sqft: '1,420' },
     desc: 'Contemporary multi-story apartments in Porur featuring modular kitchens, 24/7 security, power backup and gym.',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop',
+    image: '/images/residence-images/besantnagar-residence-view/img124.jpg',
     tilt: -1.8,
   },
   {
@@ -40,7 +40,7 @@ export const floorplansData = [
     available: true,
     specs: { beds: 2, baths: 2, sqft: '1,050' },
     desc: 'Comfortable family apartments near Tambaram railway station with covered car parking, play area and clear legal titles.',
-    image: 'https://images.unsplash.com/photo-1600585152915-d208bec867a1?q=80&w=800&auto=format&fit=crop',
+    image: '/images/residence-images/besantnagar-residence-view/img103.jpg',
     tilt: 2.2,
   },
 ];

@@ -221,7 +221,7 @@ export const EverydayLivingSection = () => {
             className="relative rounded-3xl overflow-hidden shadow-2xl border border-black/10 aspect-[4/3] lg:aspect-[16/13] group"
           >
             <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
+              src="/images/residence-images/ankan-resideance-view/img13.jpg"
               alt="Ajay Homes & Estates Architecture Team"
               className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700"
             />

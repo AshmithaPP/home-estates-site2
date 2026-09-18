@@ -8,7 +8,7 @@ const FindYourPlaceSection = ({ onOpenTourModal }) => {
       {/* Background Image Container - 100% Full Width Edge-to-Edge */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
+          src="/images/residence-images/suresh-residence-view/img24.jpg"
           alt="Ajay Homes & Estates Luxury Interior"
           className="w-full h-full object-cover object-center"
         />

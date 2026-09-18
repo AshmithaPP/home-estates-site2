@@ -100,7 +100,7 @@ export const ScrollGallery = () => {
             className="z-20 w-44 sm:w-60 md:w-72 aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#00d26a] bg-[#2c2c2c] shadow-black/40"
           >
             <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop"
+              src="/images/residence-images/suresh-residence-view/img66.jpg"
               alt="Living Room Focal"
               className="w-full h-full object-cover"
             />
@@ -112,7 +112,7 @@ export const ScrollGallery = () => {
             className={`absolute top-[10%] left-[10%] sm:left-[14%] z-10 ${outerCardStyle}`}
           >
             <img
-              src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=800&auto=format&fit=crop"
+              src="/images/residence-images/suresh-residence-view/img78.jpg"
               alt="Suite Bedroom"
               className="w-full h-full object-cover"
             />
@@ -124,7 +124,7 @@ export const ScrollGallery = () => {
             className={`absolute top-[10%] right-[10%] sm:right-[14%] z-10 ${outerCardStyle}`}
           >
             <img
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop"
+              src="/images/residence-images/suresh-residence-view/img72.jpg"
               alt="Estate Exterior"
               className="w-full h-full object-cover"
             />
@@ -136,7 +136,7 @@ export const ScrollGallery = () => {
             className={`absolute top-[38%] left-[4%] sm:left-[7%] z-10 ${outerCardStyle}`}
           >
             <img
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
+              src="/images/residence-images/suresh-residence-view/img60.jpg"
               alt="Luxury Lounge"
               className="w-full h-full object-cover"
             />
@@ -148,7 +148,7 @@ export const ScrollGallery = () => {
             className={`absolute top-[38%] right-[4%] sm:right-[7%] z-10 ${outerCardStyle}`}
           >
             <img
-              src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800&auto=format&fit=crop"
+              src="/images/residence-images/suresh-residence-view/img30.jpg"
               alt="Resort Pool Aerial"
               className="w-full h-full object-cover"
             />
@@ -160,7 +160,7 @@ export const ScrollGallery = () => {
             className={`absolute bottom-[10%] left-[10%] sm:left-[14%] z-10 ${outerCardStyle}`}
           >
             <img
-              src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=800&auto=format&fit=crop"
+              src="/images/residence-images/suresh-residence-view/img57.jpg"
               alt="Infinity Pool Sunset"
               className="w-full h-full object-cover"
             />
@@ -172,7 +172,7 @@ export const ScrollGallery = () => {
             className={`absolute bottom-[10%] right-[10%] sm:right-[14%] z-10 ${outerCardStyle}`}
           >
             <img
-              src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=800&auto=format&fit=crop"
+              src="/images/residence-images/suresh-residence-view/img54.jpg"
               alt="Master Bedroom Balcony"
               className="w-full h-full object-cover"
             />
