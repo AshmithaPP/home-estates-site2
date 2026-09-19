@@ -31,39 +31,39 @@ export const ScrollGallery = () => {
     offset: ['start start', 'end end'],
   });
 
-  // Scroll Transforms for Convergence towards center and Zoom In (Calibrated for right column stage)
+  // Scroll Transforms for Convergence towards center and Zoom In
   // Top Left Card
-  const tlX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-28, -6] : [-80, -15]);
-  const tlY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-20, -4] : [-75, -15]);
+  const tlX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-8, -2] : [-80, -15]);
+  const tlY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-10, -2] : [-75, -15]);
   const tlScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Top Right Card
-  const trX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [28, 6] : [80, 15]);
-  const trY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-20, -4] : [-75, -15]);
+  const trX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [8, 2] : [80, 15]);
+  const trY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-10, -2] : [-75, -15]);
   const trScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Mid Left Card
-  const mlX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-35, -8] : [-100, -25]);
+  const mlX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-5, -1] : [-100, -25]);
   const mlY = useTransform(scrollYProgress, [0, 0.85], [0, 0]);
   const mlScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Mid Right Card
-  const mrX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [35, 8] : [100, 25]);
+  const mrX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [5, 1] : [100, 25]);
   const mrY = useTransform(scrollYProgress, [0, 0.85], [0, 0]);
   const mrScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Bot Left Card
-  const blX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-28, -6] : [-80, -15]);
-  const blY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [20, 4] : [75, 15]);
+  const blX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-8, -2] : [-80, -15]);
+  const blY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [10, 2] : [75, 15]);
   const blScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Bot Right Card
-  const brX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [28, 6] : [80, 15]);
-  const brY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [20, 4] : [75, 15]);
+  const brX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [8, 2] : [80, 15]);
+  const brY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [10, 2] : [75, 15]);
   const brScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Center Focal Card
-  const centerScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [1, 1.12] : [1, 1.25]);
+  const centerScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [1, 1.15] : [1, 1.25]);
 
   // Headline translation on scroll (Opacity stays 100% crisp throughout)
   const textY = useTransform(scrollYProgress, [0, 0.4], [0, -15]);
@@ -74,26 +74,14 @@ export const ScrollGallery = () => {
   return (
     <div id="about" ref={containerRef} className="relative h-[220vh] text-[#f0ede8]" style={{ background: '#2c2b2a' }}>
       {/* Sticky Full-Viewport Stage */}
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center px-4 sm:px-8 lg:px-12 xl:px-16 overflow-hidden">
+      <div className="sticky top-0 h-screen w-full flex flex-col justify-center items-center px-4 sm:px-8 lg:px-12 xl:px-16 py-4 sm:py-8 overflow-hidden">
 
-        {/* Video code kept in comment for future reference if needed */}
-        {/* <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none opacity-85"
-        >
-          <source src="/video-compressed.mp4" type="video/mp4" />
-        </video> */}
-
-        <div className="max-w-[1800px] w-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center py-4 lg:py-8">
+        <div className="max-w-[1800px] w-full grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-10 items-center py-2 sm:py-4 lg:py-8">
 
           {/* Left Side: Headline & Expanded Content Block (Kept 100% crisp and readable) */}
           <motion.div
             style={{ y: textY }}
-            className="lg:col-span-5 xl:col-span-5 z-30 text-left space-y-4 sm:space-y-5 select-text relative opacity-100"
+            className="lg:col-span-5 xl:col-span-5 z-30 text-left space-y-3 sm:space-y-5 select-text relative opacity-100"
           >
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#ff8c00] bg-[#ff8c00]/10 px-3.5 py-1.5 rounded-full border border-[#ff8c00]/25 inline-flex items-center gap-1.5">
               <Compass className="w-3.5 h-3.5 text-[#ff8c00]" />
@@ -130,8 +118,8 @@ export const ScrollGallery = () => {
               </div>
             </div>
 
-            {/* Feature Checklist */}
-            <ul className="space-y-2 text-xs sm:text-sm text-[#f0ede8]/85 pt-1 font-medium max-w-md">
+            {/* Feature Checklist — Hidden on small mobile screens to prevent vertical squishing */}
+            <ul className="space-y-2 text-xs sm:text-sm text-[#f0ede8]/85 pt-1 font-medium max-w-md hidden sm:block">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#00d26a] shrink-0" />
                 <span>CMDA & RERA Approved Clear Titles</span>
@@ -147,7 +135,7 @@ export const ScrollGallery = () => {
             </ul>
 
             {/* CTA Button */}
-            <div className="pt-2">
+            <div className="pt-1 sm:pt-2">
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold text-black bg-[#ff8c00] hover:bg-[#ff9d26] transition-all shadow-lg hover:shadow-[#ff8c00]/25 cursor-pointer"
@@ -160,12 +148,12 @@ export const ScrollGallery = () => {
           </motion.div>
 
           {/* Right Side: 7-Card Animated Gallery Stage (Fully visible cards with comfortable padding and overflow containment) */}
-          <div className="lg:col-span-7 relative w-full h-[360px] sm:h-[480px] lg:h-[530px] flex items-center justify-center my-auto z-20 rounded-3xl bg-white/[0.02] border border-white/10 p-4 sm:p-6 shadow-2xl overflow-hidden">
+          <div className="lg:col-span-7 relative w-full h-[320px] sm:h-[480px] lg:h-[530px] flex items-center justify-center my-auto z-20 rounded-3xl bg-white/[0.02] border border-white/10 p-4 sm:p-6 shadow-2xl overflow-hidden">
 
             {/* 1. Center Focal Card */}
             <motion.div
               style={{ scale: centerScale }}
-              className="z-20 w-32 sm:w-48 lg:w-56 aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-3 sm:border-4 border-[#00d26a] bg-[#2c2c2c] shadow-black/40"
+              className="z-20 w-28 sm:w-48 lg:w-56 aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-3 sm:border-4 border-[#00d26a] bg-[#2c2c2c] shadow-black/40"
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img66.jpg"
@@ -177,7 +165,7 @@ export const ScrollGallery = () => {
             {/* 2. Top Left Card */}
             <motion.div
               style={{ x: tlX, y: tlY, scale: tlScale }}
-              className={`absolute top-[6%] sm:top-[8%] left-[6%] sm:left-[14%] z-10 ${outerCardStyle}`}
+              className={`absolute top-[6%] left-[6%] sm:top-[8%] sm:left-[14%] z-10 ${outerCardStyle}`}
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img78.jpg"
@@ -189,7 +177,7 @@ export const ScrollGallery = () => {
             {/* 3. Top Right Card */}
             <motion.div
               style={{ x: trX, y: trY, scale: trScale }}
-              className={`absolute top-[6%] sm:top-[8%] right-[6%] sm:right-[14%] z-10 ${outerCardStyle}`}
+              className={`absolute top-[6%] right-[6%] sm:top-[8%] sm:right-[14%] z-10 ${outerCardStyle}`}
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img72.jpg"
@@ -225,7 +213,7 @@ export const ScrollGallery = () => {
             {/* 6. Bot Left Card */}
             <motion.div
               style={{ x: blX, y: blY, scale: blScale }}
-              className={`absolute bottom-[6%] sm:bottom-[8%] left-[6%] sm:left-[14%] z-10 ${outerCardStyle}`}
+              className={`absolute bottom-[6%] left-[6%] sm:bottom-[8%] sm:left-[14%] z-10 ${outerCardStyle}`}
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img57.jpg"
@@ -237,7 +225,7 @@ export const ScrollGallery = () => {
             {/* 7. Bot Right Card */}
             <motion.div
               style={{ x: brX, y: brY, scale: brScale }}
-              className={`absolute bottom-[6%] sm:bottom-[8%] right-[6%] sm:right-[14%] z-10 ${outerCardStyle}`}
+              className={`absolute bottom-[6%] right-[6%] sm:bottom-[8%] sm:right-[14%] z-10 ${outerCardStyle}`}
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img54.jpg"
