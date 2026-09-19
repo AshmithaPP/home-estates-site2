@@ -80,16 +80,17 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setIsMenuOpen(false)}
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm cursor-pointer"
+              className="fixed inset-0 z-40 bg-black/80 cursor-pointer"
             />
 
-            {/* Compact Top Dropdown Menu */}
+            {/* Compact Top Dropdown Menu — GPU Accelerated */}
             <motion.div
               initial={{ opacity: 0, y: '-100%' }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: '-100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 260 }}
-              className="fixed top-0 left-0 right-0 z-50 border-b border-[#ff8c00]/25 backdrop-blur-2xl text-white shadow-2xl rounded-b-2xl p-4 sm:p-6 pt-14 sm:pt-16" style={{ background: 'linear-gradient(160deg, #1e1e1e 0%, #2c2c2c 100%)' }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed top-0 left-0 right-0 z-50 border-b border-[#ff8c00]/30 text-white shadow-2xl rounded-b-2xl p-4 sm:p-6 pt-14 sm:pt-16 bg-[#1a1c22]"
+              style={{ willChange: 'transform' }}
             >
               <div className="max-w-md mx-auto w-full space-y-3">
                 

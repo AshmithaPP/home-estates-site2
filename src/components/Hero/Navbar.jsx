@@ -99,8 +99,9 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
             initial={{ opacity: 0, y: '-100%' }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 backdrop-blur-2xl flex flex-col justify-between p-8 sm:p-16 pt-28 text-white overflow-y-auto" style={{ background: 'linear-gradient(160deg, #1e1e1e 0%, #2c2c2c 100%)' }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-40 bg-[#1a1c22] flex flex-col justify-between p-8 sm:p-16 pt-28 text-white overflow-y-auto"
+            style={{ willChange: 'transform' }}
           >
             <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               {/* Left Column: Navigation Links */}
