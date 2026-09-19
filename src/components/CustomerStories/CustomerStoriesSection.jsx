@@ -301,7 +301,7 @@ export const CustomerStoriesSection = () => {
             {/* Card 1: Mail Us */}
             <div className="p-3.5 rounded-2xl bg-white border border-black/10 shadow-md flex flex-col justify-between space-y-1">
               <span className="text-xs font-black text-[#1a1a1a] uppercase tracking-wider block" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                :MAIL US
+                MAIL US
               </span>
               <div className="space-y-0.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 <p className="text-[11px] text-[#333333] font-semibold leading-tight truncate">info@ajayhomes.in</p>
@@ -312,7 +312,7 @@ export const CustomerStoriesSection = () => {
             {/* Card 2: Contact No */}
             <div className="p-3.5 rounded-2xl bg-white border border-black/10 shadow-md flex flex-col justify-between space-y-1">
               <span className="text-xs font-black text-[#1a1a1a] uppercase tracking-wider block" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                :CONTACT NO
+                CONTACT NO
               </span>
               <div className="space-y-0.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 <p className="text-[11px] text-[#333333] font-semibold leading-tight">+91 98400 12345</p>
@@ -323,7 +323,7 @@ export const CustomerStoriesSection = () => {
             {/* Card 3: Head Office */}
             <div className="p-3.5 rounded-2xl bg-white border border-black/10 shadow-md flex flex-col justify-between space-y-1">
               <span className="text-xs font-black text-[#1a1a1a] uppercase tracking-wider block" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                :HEAD OFFICE
+                HEAD OFFICE
               </span>
               <div className="space-y-0.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 <p className="text-[11px] text-[#333333] font-semibold leading-tight">Velachery Main Road,</p>

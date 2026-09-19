@@ -8,9 +8,9 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-5 transition-all duration-300">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex items-center justify-between relative">
 
-          {/* Brand Logo (Screenshot 1: 21OAKS) */}
+          {/* Brand Logo */}
           <motion.a
             href="#"
             initial={{ opacity: 0, x: -20 }}
@@ -28,12 +28,12 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
             </div>
           </motion.a>
 
-          {/* Center Inline Navigation Bar */}
+          {/* Center Inline Navigation Bar (Dead Center) */}
           <motion.nav
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="hidden md:flex items-center gap-1 sm:gap-1.5 bg-[#080a0c]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#ff8c00]/25 shadow-lg"
+            className="hidden md:flex items-center gap-1 sm:gap-1.5 bg-[#080a0c]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#ff8c00]/25 shadow-lg md:absolute md:left-1/2 md:-translate-x-1/2"
           >
             {[
               { label: 'About us', href: '#about' },

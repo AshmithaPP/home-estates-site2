@@ -90,14 +90,11 @@ export const BalancedLivingSection = ({ onOpenApply }) => {
                     </div>
                 </div>
 
-                {/* Title & Price Header */}
+                {/* Title Header */}
                 <div className="flex items-center justify-between pt-0.5">
                   <h3 className="font-serif-luxury font-bold text-base sm:text-lg text-[#f0ede8]">
                     {plan.title}
                   </h3>
-                  <div className="px-2.5 py-0.5 rounded-full bg-[#ff8c00] text-black font-bold text-xs shadow-sm">
-                    <span className="text-black/70 font-normal">$</span> {plan.price}
-                  </div>
                 </div>
 
                 {/* Description Copy */}

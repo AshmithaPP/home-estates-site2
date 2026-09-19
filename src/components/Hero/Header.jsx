@@ -16,7 +16,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
   return (
     <>
       <header className="absolute top-0 left-0 right-0 z-40 px-3 sm:px-12 py-3 sm:py-6 transition-all duration-300">
-        <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-2">
+        <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-2 relative">
 
           {/* Logo on Left (Clean normal letters: Ajay Homes & Estates) */}
           <motion.a
@@ -31,12 +31,12 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
             </span>
           </motion.a>
 
-          {/* Center Inline Navigation Bar */}
+          {/* Center Inline Navigation Bar (Dead Center) */}
           <motion.nav
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="hidden md:flex items-center gap-1 sm:gap-1.5 bg-[#080a0c]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#ff8c00]/25 shadow-lg"
+            className="hidden md:flex items-center gap-1 sm:gap-1.5 bg-[#080a0c]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#ff8c00]/25 shadow-lg md:absolute md:left-1/2 md:-translate-x-1/2"
           >
             {menuItems.map((item) => (
               <a
@@ -49,25 +49,13 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
             ))}
           </motion.nav>
 
-          {/* Right CTAs (Schedule a Tour & Joint Venture) */}
+          {/* Right Controls (Mobile Menu Toggle) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-1.5 sm:gap-3 shrink-0"
           >
-
-            {/* Joint Venture CTA (orange gradient) */}
-            <button
-              onClick={onOpenApply}
-              className="btn-gold-gradient px-2.5 sm:px-5 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-sm font-bold flex items-center gap-1 sm:gap-2 cursor-pointer group whitespace-nowrap"
-            >
-              <span>Joint Venture</span>
-              <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-black/10 flex items-center justify-center group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform">
-                <ArrowDownRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-black" />
-              </div>
-            </button>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
