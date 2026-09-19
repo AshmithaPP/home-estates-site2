@@ -63,8 +63,8 @@ export const ScrollGallery = () => {
       {/* Sticky Full-Viewport Stage */}
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-between overflow-hidden px-4 py-8">
 
-        {/* Full Width & Height Autoplay Background Video */}
-        <video
+        {/* Full Width & Height Autoplay Background Video (Commented out for future use) */}
+        {/* <video
           autoPlay
           loop
           muted
@@ -73,7 +73,14 @@ export const ScrollGallery = () => {
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none opacity-85"
         >
           <source src="/video-compressed.mp4" type="video/mp4" />
-        </video>
+        </video> */}
+
+        {/* Full Width & Height Background Image */}
+        <img
+          src="/images/residence-images/ankan-resideance-view/img32.jpg"
+          alt="Section Background"
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none opacity-85"
+        />
 
         {/* Ambient Dark Overlay for video visibility & card contrast */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/75 z-0 pointer-events-none" />

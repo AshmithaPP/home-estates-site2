@@ -12,9 +12,16 @@ const Footer = ({ onOpenTourModal, onOpenApply }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/15">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="font-sans font-black text-2xl sm:text-3xl tracking-tight text-white">
-              Ajay<span className="text-[#ff8c00]">Homes</span> & Estates
-            </h3>
+            <div className="flex items-center gap-3">
+              <img
+                src="/images/logo/logo.png"
+                alt="Ajay Homes & Estates Logo"
+                className="h-9 sm:h-11 w-auto object-contain"
+              />
+              <h3 className="font-sans font-black text-2xl sm:text-3xl tracking-tight text-white">
+                Ajay<span className="text-[#ff8c00]">Homes</span> & Estates
+              </h3>
+            </div>
             <p className="text-sm text-white/80 max-w-sm leading-relaxed font-normal">
               One of the fastest growing construction firms in Chennai, delivering quality residential flats, villas, and joint venture promotions with custom solutions for thousands of families.
             </p>
