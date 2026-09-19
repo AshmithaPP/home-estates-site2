@@ -9,14 +9,15 @@ const Footer = ({ onOpenTourModal, onOpenApply }) => {
   return (
     <footer className="text-white border-t border-white/10 pt-16 pb-12 px-6 sm:px-12 lg:px-20 relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #1a1a1a 0%, #262626 50%, #1e1e1e 100%)' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/15">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/15 items-start">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#" className="inline-block">
+            <a href="#" className="inline-block mb-6">
               <img
                 src="/images/logo/AJAY (1).png"
                 alt="Ajay Builders & Property Developers"
-                className="h-28 sm:h-32 md:h-36 lg:h-40 w-auto object-contain hover:opacity-95 transition-opacity"
+                className="h-16 w-auto object-contain hover:opacity-95 transition-opacity"
+                style={{ transform: 'scale(2.4)', transformOrigin: 'left center' }}
               />
             </a>
             <p className="text-sm text-white/80 max-w-sm leading-relaxed font-normal">
