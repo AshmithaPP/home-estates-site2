@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShieldCheck, Award, Compass, ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -8,9 +8,22 @@ import { ShieldCheck, Award, Compass, ArrowRight, CheckCircle2 } from 'lucide-re
  * 1. Reduced heading font size ("Everything homes & estates living should be").
  * 2. All 6 outer surrounding cards have 100% IDENTICAL fixed dimensions & aspect ratios (aspect-[4/3]).
  * 3. Parallax scroll-driven convergence towards center & 3D zoom effect.
+ * 4. Fully responsive on mobile with constrained transforms and overflow-hidden.
  */
 export const ScrollGallery = () => {
   const containerRef = useRef(null);
+
+  // Responsive state for mobile layout calibration
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Track scroll progress within this section (0 to 1)
   const { scrollYProgress } = useScroll({
@@ -20,43 +33,43 @@ export const ScrollGallery = () => {
 
   // Scroll Transforms for Convergence towards center and Zoom In (Calibrated for right column stage)
   // Top Left Card
-  const tlX = useTransform(scrollYProgress, [0, 0.85], [-80, -15]);
-  const tlY = useTransform(scrollYProgress, [0, 0.85], [-75, -15]);
-  const tlScale = useTransform(scrollYProgress, [0, 0.85], [0.9, 1.18]);
+  const tlX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-28, -6] : [-80, -15]);
+  const tlY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-20, -4] : [-75, -15]);
+  const tlScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Top Right Card
-  const trX = useTransform(scrollYProgress, [0, 0.85], [80, 15]);
-  const trY = useTransform(scrollYProgress, [0, 0.85], [-75, -15]);
-  const trScale = useTransform(scrollYProgress, [0, 0.85], [0.9, 1.18]);
+  const trX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [28, 6] : [80, 15]);
+  const trY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-20, -4] : [-75, -15]);
+  const trScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Mid Left Card
-  const mlX = useTransform(scrollYProgress, [0, 0.85], [-100, -25]);
+  const mlX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-35, -8] : [-100, -25]);
   const mlY = useTransform(scrollYProgress, [0, 0.85], [0, 0]);
-  const mlScale = useTransform(scrollYProgress, [0, 0.85], [0.9, 1.18]);
+  const mlScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Mid Right Card
-  const mrX = useTransform(scrollYProgress, [0, 0.85], [100, 25]);
+  const mrX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [35, 8] : [100, 25]);
   const mrY = useTransform(scrollYProgress, [0, 0.85], [0, 0]);
-  const mrScale = useTransform(scrollYProgress, [0, 0.85], [0.9, 1.18]);
+  const mrScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Bot Left Card
-  const blX = useTransform(scrollYProgress, [0, 0.85], [-80, -15]);
-  const blY = useTransform(scrollYProgress, [0, 0.85], [75, 15]);
-  const blScale = useTransform(scrollYProgress, [0, 0.85], [0.9, 1.18]);
+  const blX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [-28, -6] : [-80, -15]);
+  const blY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [20, 4] : [75, 15]);
+  const blScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Bot Right Card
-  const brX = useTransform(scrollYProgress, [0, 0.85], [80, 15]);
-  const brY = useTransform(scrollYProgress, [0, 0.85], [75, 15]);
-  const brScale = useTransform(scrollYProgress, [0, 0.85], [0.9, 1.18]);
+  const brX = useTransform(scrollYProgress, [0, 0.85], isMobile ? [28, 6] : [80, 15]);
+  const brY = useTransform(scrollYProgress, [0, 0.85], isMobile ? [20, 4] : [75, 15]);
+  const brScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [0.9, 1.1] : [0.9, 1.18]);
 
   // Center Focal Card
-  const centerScale = useTransform(scrollYProgress, [0, 0.85], [1, 1.25]);
+  const centerScale = useTransform(scrollYProgress, [0, 0.85], isMobile ? [1, 1.12] : [1, 1.25]);
 
   // Headline translation on scroll (Opacity stays 100% crisp throughout)
   const textY = useTransform(scrollYProgress, [0, 0.4], [0, -15]);
 
   // Uniform dimensions for ALL 6 surrounding outer cards
-  const outerCardStyle = "w-24 sm:w-32 lg:w-36 aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border-2 border-[#ff8c00]/60 bg-[#2c2c2c] shadow-black/30";
+  const outerCardStyle = "w-20 sm:w-32 lg:w-36 aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border-2 border-[#ff8c00]/60 bg-[#2c2c2c] shadow-black/30";
 
   return (
     <div id="about" ref={containerRef} className="relative h-[220vh] text-[#f0ede8]" style={{ background: '#2c2b2a' }}>
@@ -80,16 +93,16 @@ export const ScrollGallery = () => {
           {/* Left Side: Headline & Expanded Content Block (Kept 100% crisp and readable) */}
           <motion.div
             style={{ y: textY }}
-            className="lg:col-span-5 xl:col-span-5 z-30 text-left space-y-4 sm:space-y-5 select-none relative opacity-100"
+            className="lg:col-span-5 xl:col-span-5 z-30 text-left space-y-4 sm:space-y-5 select-text relative opacity-100"
           >
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#ff8c00] bg-[#ff8c00]/10 px-3.5 py-1.5 rounded-full border border-[#ff8c00]/25 inline-flex items-center gap-1.5">
               <Compass className="w-3.5 h-3.5 text-[#ff8c00]" />
               Architectural Excellence
             </span>
 
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif-luxury font-normal text-[#f0ede8] tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif-luxury font-bold text-[#f0ede8] tracking-tight leading-tight">
               Everything homes & estates living{' '}
-              <span className="font-serif-luxury text-[#ff8c00] block mt-1 sm:mt-2">
+              <span className="font-serif-luxury text-[#ff8c00] font-bold block mt-1 sm:mt-2">
                 should be
               </span>
             </h2>
@@ -146,13 +159,13 @@ export const ScrollGallery = () => {
 
           </motion.div>
 
-          {/* Right Side: 7-Card Animated Gallery Stage (Fully visible cards with comfortable padding) */}
-          <div className="lg:col-span-7 relative w-full h-[400px] sm:h-[480px] lg:h-[530px] flex items-center justify-center my-auto z-20 rounded-3xl bg-white/[0.02] border border-white/10 p-6 shadow-2xl">
+          {/* Right Side: 7-Card Animated Gallery Stage (Fully visible cards with comfortable padding and overflow containment) */}
+          <div className="lg:col-span-7 relative w-full h-[360px] sm:h-[480px] lg:h-[530px] flex items-center justify-center my-auto z-20 rounded-3xl bg-white/[0.02] border border-white/10 p-4 sm:p-6 shadow-2xl overflow-hidden">
 
             {/* 1. Center Focal Card */}
             <motion.div
               style={{ scale: centerScale }}
-              className="z-20 w-36 sm:w-48 lg:w-56 aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#00d26a] bg-[#2c2c2c] shadow-black/40"
+              className="z-20 w-32 sm:w-48 lg:w-56 aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-3 sm:border-4 border-[#00d26a] bg-[#2c2c2c] shadow-black/40"
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img66.jpg"
@@ -164,7 +177,7 @@ export const ScrollGallery = () => {
             {/* 2. Top Left Card */}
             <motion.div
               style={{ x: tlX, y: tlY, scale: tlScale }}
-              className={`absolute top-[8%] left-[14%] sm:left-[16%] z-10 ${outerCardStyle}`}
+              className={`absolute top-[6%] sm:top-[8%] left-[6%] sm:left-[14%] z-10 ${outerCardStyle}`}
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img78.jpg"
@@ -176,7 +189,7 @@ export const ScrollGallery = () => {
             {/* 3. Top Right Card */}
             <motion.div
               style={{ x: trX, y: trY, scale: trScale }}
-              className={`absolute top-[8%] right-[14%] sm:right-[16%] z-10 ${outerCardStyle}`}
+              className={`absolute top-[6%] sm:top-[8%] right-[6%] sm:right-[14%] z-10 ${outerCardStyle}`}
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img72.jpg"
@@ -188,7 +201,7 @@ export const ScrollGallery = () => {
             {/* 4. Mid Left Card */}
             <motion.div
               style={{ x: mlX, y: mlY, scale: mlScale }}
-              className={`absolute top-[38%] left-[8%] sm:left-[10%] z-10 ${outerCardStyle}`}
+              className={`absolute top-[38%] left-[2%] sm:left-[8%] z-10 ${outerCardStyle}`}
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img60.jpg"
@@ -200,7 +213,7 @@ export const ScrollGallery = () => {
             {/* 5. Mid Right Card */}
             <motion.div
               style={{ x: mrX, y: mrY, scale: mrScale }}
-              className={`absolute top-[38%] right-[8%] sm:right-[10%] z-10 ${outerCardStyle}`}
+              className={`absolute top-[38%] right-[2%] sm:right-[8%] z-10 ${outerCardStyle}`}
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img30.jpg"
@@ -212,7 +225,7 @@ export const ScrollGallery = () => {
             {/* 6. Bot Left Card */}
             <motion.div
               style={{ x: blX, y: blY, scale: blScale }}
-              className={`absolute bottom-[8%] left-[14%] sm:left-[16%] z-10 ${outerCardStyle}`}
+              className={`absolute bottom-[6%] sm:bottom-[8%] left-[6%] sm:left-[14%] z-10 ${outerCardStyle}`}
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img57.jpg"
@@ -224,7 +237,7 @@ export const ScrollGallery = () => {
             {/* 7. Bot Right Card */}
             <motion.div
               style={{ x: brX, y: brY, scale: brScale }}
-              className={`absolute bottom-[8%] right-[14%] sm:right-[16%] z-10 ${outerCardStyle}`}
+              className={`absolute bottom-[6%] sm:bottom-[8%] right-[6%] sm:right-[14%] z-10 ${outerCardStyle}`}
             >
               <img
                 src="/images/residence-images/suresh-residence-view/img54.jpg"
