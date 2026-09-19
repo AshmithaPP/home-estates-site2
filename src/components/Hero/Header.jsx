@@ -15,21 +15,21 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
 
   return (
     <>
-      <header className="absolute top-0 left-0 right-0 z-40 px-3 sm:px-12 py-3 sm:py-6 transition-all duration-300">
+      <header className="absolute -top-4 left-0 right-0 z-40 px-3 sm:px-12 py-0 transition-all duration-300">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-2 relative">
 
-          {/* Logo on Left (Logo Image Only) */}
+          {/* Logo on Left (AJAY BUILDERS & PROPERTY DEVELOPERS logo image) */}
           <motion.a
             href="#"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center group shrink-0"
+            className="flex items-center gap-1.5 group shrink-0 ml-2 sm:ml-4 md:ml-6"
           >
             <img
-              src="/images/logo/logo.png"
-              alt="Ajay Homes & Estates Logo"
-              className="h-14 sm:h-16 md:h-20 w-auto object-contain ml-2 sm:ml-4 hover:scale-105 transition-transform duration-300"
+              src="/images/logo/AJAY (1).png"
+              alt="Ajay Builders & Property Developers"
+              className="h-28 sm:h-32 md:h-36 lg:h-40 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </motion.a>
 
@@ -99,9 +99,9 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                 {/* Header row inside menu */}
                 <div className="flex items-center justify-between pb-2 border-b border-white/10">
                   <img
-                    src="/images/logo/logo.png"
+                    src="/images/logo/AJAY (1).png"
                     alt="Ajay Homes Logo"
-                    className="h-8 w-auto object-contain"
+                    className="h-12 sm:h-14 w-auto object-contain"
                   />
                   <button
                     onClick={() => setIsMenuOpen(false)}

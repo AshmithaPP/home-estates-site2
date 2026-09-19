@@ -21,7 +21,7 @@ export const heroSlidesData = [
   },
   {
     id: 3,
-    eyebrow: "Trusted Joint Venture Partner in Chennai",
+    eyebrow: "Trusted Land Partnership Promoter in Chennai",
     headingLine1: "Promote Your Land,",
     accentWord: "Best Market Share",
     headingLine2: "With Best Market Share",

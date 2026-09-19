@@ -7,7 +7,7 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-5 transition-all duration-300">
+      <header className="fixed -top-4 left-0 right-0 z-50 px-4 sm:px-8 py-0 transition-all duration-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between relative">
 
           {/* Brand Logo */}
@@ -16,16 +16,13 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="group flex items-center gap-2"
+            className="group flex items-center gap-2 ml-2 sm:ml-4 md:ml-6"
           >
-            <div className="flex flex-col">
-              <span className="font-montserrat font-black text-2xl tracking-tighter text-white group-hover:text-[#ff8c00] transition-colors">
-                21OAKS
-              </span>
-              <span className="text-[10px] tracking-[0.25em] uppercase text-[#00d26a]/80 font-medium">
-                Homes & Estates
-              </span>
-            </div>
+            <img
+              src="/images/logo/AJAY (1).png"
+              alt="Ajay Builders & Property Developers"
+              className="h-28 sm:h-32 md:h-36 lg:h-40 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+            />
           </motion.a>
 
           {/* Center Inline Navigation Bar (Dead Center) */}

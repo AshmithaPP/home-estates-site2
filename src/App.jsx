@@ -32,7 +32,7 @@ function App() {
       {/* 5. Customer Stories Video Section */}
       <CustomerStoriesSection />
 
-      {/* 6. Pre-Footer Banner: Joint Venture Property Promotion */}
+      {/* 6. Pre-Footer Banner: Land Partnership Property Promotion */}
       <FindYourPlaceSection />
 
       {/* 7. Contact Form Section (Blog & Insights) */}

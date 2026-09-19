@@ -12,18 +12,15 @@ const Footer = ({ onOpenTourModal, onOpenApply }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/15">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
+            <a href="#" className="inline-block">
               <img
-                src="/images/logo/logo.png"
-                alt="Ajay Homes & Estates Logo"
-                className="h-9 sm:h-11 w-auto object-contain"
+                src="/images/logo/AJAY (1).png"
+                alt="Ajay Builders & Property Developers"
+                className="h-28 sm:h-32 md:h-36 lg:h-40 w-auto object-contain hover:opacity-95 transition-opacity"
               />
-              <h3 className="font-sans font-black text-2xl sm:text-3xl tracking-tight text-white">
-                Ajay<span className="text-[#ff8c00]">Homes</span> & Estates
-              </h3>
-            </div>
+            </a>
             <p className="text-sm text-white/80 max-w-sm leading-relaxed font-normal">
-              One of the fastest growing construction firms in Chennai, delivering quality residential flats, villas, and joint venture promotions with custom solutions for thousands of families.
+              One of the fastest growing construction firms in Chennai, delivering quality residential flats, villas, and land partnership promotions with custom solutions for thousands of families.
             </p>
             <div className="p-3.5 rounded-xl bg-white/5 border border-[#00d26a]/30 max-w-sm shadow-sm backdrop-blur-md">
               <span className="text-[11px] font-extrabold text-[#00d26a] uppercase tracking-wider block">Our Philosophy</span>
@@ -67,7 +64,7 @@ const Footer = ({ onOpenTourModal, onOpenApply }) => {
               Services
             </h4>
             <ul className="space-y-2.5 text-sm text-white/75 font-medium">
-              <li><button onClick={onOpenApply} className="hover:text-[#2d6a4f] transition-colors text-left cursor-pointer">Joint Venture</button></li>
+              <li><button onClick={onOpenApply} className="hover:text-[#2d6a4f] transition-colors text-left cursor-pointer">Land Partnership</button></li>
               <li><button onClick={onOpenTourModal} className="hover:text-[#2d6a4f] transition-colors text-left cursor-pointer">Schedule a Tour</button></li>
               <li><button onClick={onOpenApply} className="hover:text-[#2d6a4f] transition-colors text-left cursor-pointer">Digital Application</button></li>
               <li><a href="#" className="hover:text-[#2d6a4f] transition-colors">Architectural Customization</a></li>
