@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowDownRight, Calendar, Phone, MapPin, Sparkles, Home, Shield, Compass } from 'lucide-react';
+import Button from '../UI/Button';
 
 export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,63 +19,53 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
             transition={{ duration: 0.6 }}
             className="group flex items-center gap-2 ml-2 sm:ml-4 md:ml-6"
           >
-            <img
-              src="/images/logo/AJAY (1).png"
-              alt="Ajay Builders & Property Developers"
-              className="h-28 sm:h-32 md:h-36 lg:h-40 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-            />
+            <div className="relative overflow-hidden flex items-center justify-center p-1 sm:p-1.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md group-hover:border-[#ff8c00]/40 transition-all duration-300">
+              <img
+                src="/images/logo/new-logo-updated.png"
+                alt="Ajay Homes & Estates Logo"
+                className="h-16 sm:h-20 lg:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
           </motion.a>
 
-          {/* Center Inline Navigation Bar (Dead Center) */}
+          {/* Desktop Nav Links */}
           <motion.nav
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="hidden md:flex items-center gap-1 sm:gap-1.5 bg-[#080a0c]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#ff8c00]/25 shadow-lg md:absolute md:left-1/2 md:-translate-x-1/2"
+            className="hidden md:flex items-center gap-6 glass-pill px-6 py-2.5 rounded-full border border-white/15"
           >
-            {[
-              { label: 'About us', href: '#about' },
-              { label: 'Photo gallery', href: '#gallery' },
-              { label: 'Interior', href: '#interior' },
-              { label: 'Contact us', href: '#contact' },
-            ].map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold text-[#f0ede8]/80 hover:text-[#ff8c00] hover:bg-[#ff8c00]/10 transition-all cursor-pointer"
-              >
-                {item.label}
-              </a>
-            ))}
+            <a href="#about" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">About</a>
+            <a href="#interior" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Everyday Living</a>
+            <a href="#balanced" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Floor Plans</a>
+            <a href="#stories" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Stories</a>
+            <a href="#contact" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Contact</a>
           </motion.nav>
 
-          {/* Right Controls (Screenshot 1: Schedule a Tour & Apply Now) */}
+          {/* Right Controls (Schedule a Tour & Apply Now) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-3"
           >
-            {/* Schedule a Tour Button with Green Status Dot */}
+            {/* Schedule a Tour Button with Green/Orange Status Dot */}
             <button
               onClick={onOpenTourModal}
               className="hidden sm:flex glass-pill hover:bg-white/20 px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-white transition-all items-center gap-2 cursor-pointer shadow-md hover:scale-105 active:scale-95"
             >
-              <span className="w-2 h-2 rounded-full bg-[#00d26a] animate-pulse inline-block shadow-[0_0_8px_#00d26a]" />
-              <Calendar className="w-3.5 h-3.5 text-[#ff8c00]" />
+              <span className="w-2 h-2 rounded-full bg-[var(--primary)] animate-pulse inline-block shadow-[0_0_8px_var(--primary)]" />
+              <Calendar className="w-3.5 h-3.5 text-[var(--primary)]" />
               <span>Schedule a Tour</span>
             </button>
 
-            {/* Apply Now Button with Arrow (Gradient requested in prompt) */}
-            <button
+            {/* Apply Now Button */}
+            <Button
               onClick={onOpenApplyModal}
-              className="btn-gold-gradient px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-2 cursor-pointer group"
+              size="sm"
             >
-              <span>Apply Now</span>
-              <div className="w-5 h-5 rounded-full bg-black/10 flex items-center justify-center group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform">
-                <ArrowDownRight className="w-3.5 h-3.5 text-black" />
-              </div>
-            </button>
+              Apply Now
+            </Button>
 
             {/* Mobile Hamburger Toggle */}
             <button
@@ -106,7 +97,7 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
                 <p className="text-xs uppercase tracking-[0.3em] text-[#ff8c00] font-semibold">
                   Navigation Menu
                 </p>
-                <nav className="flex flex-col gap-4 text-3xl sm:text-5xl font-serif-luxury">
+                <nav className="flex flex-col gap-4 text-2xl sm:text-4xl font-bold uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   {[
                     { label: 'Residences & Floorplans', href: '#residences' },
                     { label: 'Amenities & Services', href: '#amenities' },
@@ -136,7 +127,7 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
                   <Sparkles className="w-5 h-5" />
                   <span className="text-sm font-semibold tracking-wider uppercase">21OAKS Estates</span>
                 </div>
-                <h3 className="text-2xl font-serif-luxury">Experience Premium Student & Estate Luxury</h3>
+                <h3 className="text-xl sm:text-2xl font-bold uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>Experience Premium Student & Estate Luxury</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
                   Located right at the doorstep of top university campuses and estate districts. Featuring private infinity pools, study suites, and 24/7 concierge service.
                 </p>

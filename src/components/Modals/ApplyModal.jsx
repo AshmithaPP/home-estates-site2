@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowDownRight, FileText, Sparkles, CheckCircle2, Download, ShieldCheck } from 'lucide-react';
+import Button from '../UI/Button';
 
 export const ApplyModal = ({ isOpen, onClose }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -68,14 +69,10 @@ export const ApplyModal = ({ isOpen, onClose }) => {
                   />
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <button
-                    type="submit"
-                    className="btn-gold-gradient py-4 px-8 rounded-2xl font-black text-sm tracking-wide uppercase flex items-center justify-center gap-2 shadow-xl hover:scale-102 active:scale-98 cursor-pointer"
-                  >
-                    <span>Get the report</span>
-                    <ArrowDownRight className="w-4 h-4" />
-                  </button>
+                <div className="flex flex-col sm:flex-row gap-3 pt-2 items-center">
+                  <Button type="submit" size="md">
+                    Get the report
+                  </Button>
 
                   <div className="flex items-center gap-2 text-xs font-semibold text-[#160d02]/70 px-2 py-2">
                     <ShieldCheck className="w-4 h-4 text-[#fe9601]" />
@@ -93,12 +90,9 @@ export const ApplyModal = ({ isOpen, onClose }) => {
               <p className="text-sm text-[#160d02]/80 max-w-md mx-auto">
                 We have emailed the 2026 Trends Report and pre-lease application link to <span className="font-bold underline">{email}</span>.
               </p>
-              <button
-                onClick={onClose}
-                className="btn-gold-gradient px-8 py-3.5 rounded-2xl font-bold uppercase text-xs tracking-wider mt-4"
-              >
+              <Button onClick={onClose} size="md" className="mt-4">
                 Close & Return to Site
-              </button>
+              </Button>
             </div>
           )}
         </motion.div>

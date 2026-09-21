@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDownRight, Bed, Bath, Move, Sparkles } from 'lucide-react';
+import { Bed, Bath, Move } from 'lucide-react';
 import { floorplansData } from '../../data/floorplansData';
+import Button from '../UI/Button';
 
 /**
  * BalancedLivingSection Component
@@ -10,24 +11,19 @@ import { floorplansData } from '../../data/floorplansData';
  */
 export const BalancedLivingSection = ({ onOpenApply }) => {
   return (
-    <section id="gallery" className="relative w-full py-20 px-4 sm:px-6 md:px-8 text-[#f0ede8] overflow-hidden" style={{ background: 'linear-gradient(160deg, #242424 0%, #303030 50%, #282828 100%)' }}>
+    <section id="gallery" className="relative w-full min-h-screen flex flex-col justify-center py-10 lg:py-14 px-4 sm:px-6 md:px-8 text-[#f0ede8] overflow-hidden" style={{ background: 'linear-gradient(160deg, #242424 0%, #303030 50%, #282828 100%)' }}>
 
       {/* Background Ambient Glows */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-[#ff8c00]/8 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#00d26a]/8 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[var(--primary)]/8 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-[1800px] mx-auto space-y-10 relative z-10">
+      <div className="max-w-[1800px] w-full mx-auto space-y-8 my-auto relative z-10">
 
         {/* Centered Headline */}
-        <div className="text-center max-w-2xl mx-auto space-y-1 select-none">
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif-luxury font-normal text-[#f0ede8] tracking-tight leading-snug">
-            Where luxury living
-          </h2>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif-luxury font-normal text-[#f0ede8] tracking-tight leading-snug">
-            feels{' '}
-            <span className="font-serif-luxury text-[#ff8c00] inline-block">
-              balanced
-            </span>
+        <div className="text-center max-w-3xl mx-auto space-y-1 select-none">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#f0ede8] tracking-tight leading-tight uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            Where Luxury Living <br />
+            Feels <span className="text-[#ff8c00]">Balanced</span>
           </h2>
         </div>
 
@@ -65,9 +61,9 @@ export const BalancedLivingSection = ({ onOpenApply }) => {
                     className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500"
                   />
 
-                  {/* Available Tag in Helper Green #2d6a4f */}
+                  {/* Available Tag in Primary Orange */}
                   {plan.available && (
-                    <div className="absolute top-2 left-2 px-2.5 py-1 rounded-md bg-[#00d26a] text-black text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-md">
+                    <div className="absolute top-2 left-2 px-2.5 py-1 rounded-md bg-[var(--primary)] text-black text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-md">
                       <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
                       <span>Available</span>
                     </div>
@@ -92,7 +88,7 @@ export const BalancedLivingSection = ({ onOpenApply }) => {
 
                 {/* Title Header */}
                 <div className="flex items-center justify-between pt-0.5">
-                  <h3 className="font-serif-luxury font-bold text-base sm:text-lg text-[#f0ede8]">
+                  <h3 className="font-bold text-base sm:text-lg text-[#f0ede8]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     {plan.title}
                   </h3>
                 </div>
@@ -106,15 +102,13 @@ export const BalancedLivingSection = ({ onOpenApply }) => {
 
               {/* Explore Details CTA Button in Primary Orange */}
               <div className="pt-3 border-t border-white/10 flex items-center gap-2">
-                <button
+                <Button
                   onClick={onOpenApply}
-                  className="flex-1 btn-gold-gradient py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-between group-hover:shadow-md transition-all"
+                  size="md"
+                  className="w-full justify-center"
                 >
-                  <span>Explore Details</span>
-                  <div className="w-4 h-4 rounded-full bg-black/10 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
-                    <ArrowDownRight className="w-3 h-3 text-black" />
-                  </div>
-                </button>
+                  Explore Details
+                </Button>
               </div>
 
             </motion.div>

@@ -83,9 +83,9 @@ export const CustomerStoriesSection = () => {
   };
 
   return (
-    <section id="township-showcase" className="relative w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-16 text-[#1a1a1a] border-t border-black/10 overflow-hidden" style={{ background: '#ffffff' }}>
+    <section id="township-showcase" className="relative w-full min-h-screen flex flex-col justify-center py-10 lg:py-14 px-6 sm:px-12 lg:px-16 text-[#1a1a1a] border-t border-black/10 overflow-hidden" style={{ background: '#ffffff' }}>
 
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center relative z-10">
+      <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto relative z-10">
 
         {/* ── LEFT COLUMN: Text, 8-Item Icon Grid & Client Avatars ───────────── */}
         <motion.div
@@ -93,7 +93,7 @@ export const CustomerStoriesSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-6 flex flex-col space-y-7 text-left"
+          className="lg:col-span-6 flex flex-col space-y-4 lg:space-y-5 text-left"
         >
           {/* Top Eyebrow Pill */}
           <div className="flex justify-start">
@@ -107,7 +107,7 @@ export const CustomerStoriesSection = () => {
 
           {/* Bold Main Heading — Left-aligned, crisp Montserrat */}
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1a1a1a] tracking-tight leading-[1.08] uppercase text-left"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a1a1a] tracking-tight leading-[1.12] uppercase text-left"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Building Innovative<br />
@@ -116,23 +116,23 @@ export const CustomerStoriesSection = () => {
 
           {/* Subline — Left-aligned, high readability */}
           <p
-            className="text-sm sm:text-base text-[#333333] font-medium leading-relaxed max-w-xl text-left"
+            className="text-xs sm:text-sm lg:text-base text-[#333333] font-medium leading-relaxed max-w-xl text-left"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             One of Chennai's premier construction firms — creating master-planned townships, luxury residences, and architectural landmarks engineered for generations.
           </p>
 
-          {/* 8-Service Line Art Icon Grid — Larger text & icons */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-6 gap-y-4 pt-2 border-t border-b border-black/10 py-6">
+          {/* 8-Service Line Art Icon Grid — Compact vertical padding */}
+          <div className="grid grid-cols-2 gap-x-3 sm:gap-x-6 gap-y-2.5 sm:gap-y-3 border-t border-b border-black/10 py-3.5 sm:py-4">
             {serviceHighlights.map((item, idx) => {
               const IconComp = item.icon;
               return (
-                <div key={idx} className="flex items-center gap-3 group">
-                  <div className="w-9 h-9 rounded-xl bg-black/5 flex items-center justify-center text-[#ff8c00] group-hover:bg-[#ff8c00] group-hover:text-black transition-colors flex-shrink-0">
-                    <IconComp className="w-4.5 h-4.5" />
+                <div key={idx} className="flex items-center gap-2 sm:gap-3 group">
+                  <div className="w-7 h-7 sm:w-8.5 sm:h-8.5 rounded-lg sm:rounded-xl bg-black/5 flex items-center justify-center text-[#ff8c00] group-hover:bg-[#ff8c00] group-hover:text-black transition-colors flex-shrink-0">
+                    <IconComp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <span
-                    className="text-xs sm:text-sm font-extrabold text-[#1a1a1a] tracking-wider uppercase leading-tight"
+                    className="text-[10px] sm:text-xs lg:text-sm font-bold sm:font-extrabold text-[#1a1a1a] tracking-wide sm:tracking-wider uppercase leading-tight"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {item.name}

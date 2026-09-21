@@ -51,7 +51,7 @@ export const TourModal = ({ isOpen, onClose }) => {
                 <Sparkles className="w-4 h-4" />
                 <span>Private Viewing</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-serif-luxury mb-2">Schedule Your Private Tour</h2>
+              <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-tight mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Schedule Your Private Tour</h2>
               <p className="text-sm text-white/70 mb-6">
                 Explore 21OAKS luxury suites and estate grounds with a dedicated leasing specialist.
               </p>
@@ -167,7 +167,7 @@ export const TourModal = ({ isOpen, onClose }) => {
               >
                 <CheckCircle2 className="w-10 h-10" />
               </motion.div>
-              <h3 className="text-2xl font-serif-luxury">Tour Confirmed!</h3>
+              <h3 className="text-2xl font-black uppercase text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>Tour Confirmed!</h3>
               <p className="text-sm text-white/70 max-w-md mx-auto">
                 Thank you, <span className="text-white font-semibold">{formData.name}</span>. We have scheduled your <span className="text-[#ffc973]">{formData.tourType}</span> for <span className="text-[#ffc973]">{formData.date || 'tomorrow'} at {formData.time}</span>.
               </p>

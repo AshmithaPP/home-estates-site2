@@ -5,14 +5,14 @@
     /* ── PALETTE ───────────────────────────────────────────────────
        Background: Linear grey from 3rd G in image  #282828 → #404040
        Primary   : Warm amber-orange lamp glow       #ff8c00
-       Secondary : Neon/electric green LED strip     #00d26a
+       Secondary : Warm amber-orange primary glow    #ff8c00
     ─────────────────────────────────────────────────────────────── */
     --primary:          #ff8c00;
     --primary-light:    #ffab40;
     --primary-dark:     #cc6f00;
-    --secondary:        #00d26a;
-    --secondary-light:  #00ff88;
-    --secondary-dark:   #00a352;
+    --secondary:        var(--primary);
+    --secondary-light:  var(--primary-light);
+    --secondary-dark:   var(--primary-dark);
 
     /* Grey system — exact gradient grey from 3rd G stone letter */
     --grey-deepest:     #1e1e1e;
@@ -43,8 +43,8 @@
 
   h1, h2, h3, h4, h5, h6,
   p, span, a, button, input, textarea, select,
-  .font-serif-luxury, .font-montserrat, .font-roboto, .font-sans {
-    font-family: 'Montserrat', sans-serif !important;
+  .font-serif-luxury, .font-serif, .font-montserrat, .font-roboto, .font-sans {
+    font-family: 'Montserrat';
   }
 }
 
@@ -62,21 +62,21 @@
   box-shadow: 0 0 24px rgba(255, 140, 0, 0.55);
 }
 .glow-secondary {
-  box-shadow: 0 0 24px rgba(0, 210, 106, 0.55);
+  box-shadow: 0 0 24px rgba(255, 140, 0, 0.55);
 }
 .glow-primary-lg {
   box-shadow: 0 0 60px rgba(255, 140, 0, 0.35), 0 0 120px rgba(255, 140, 0, 0.15);
 }
 .glow-secondary-lg {
-  box-shadow: 0 0 60px rgba(0, 210, 106, 0.35), 0 0 120px rgba(0, 210, 106, 0.15);
+  box-shadow: 0 0 60px rgba(255, 140, 0, 0.35), 0 0 120px rgba(255, 140, 0, 0.15);
 }
 
 /* ── LED STRIP AMBIENT GLOW ────────────────────────────────────── */
 .led-green-glow {
   box-shadow:
-    0 0 8px  rgba(0, 255, 136, 0.9),
-    0 0 20px rgba(0, 210, 106, 0.6),
-    0 0 50px rgba(0, 210, 106, 0.3);
+    0 0 8px  rgba(255, 140, 0, 0.9),
+    0 0 20px rgba(255, 140, 0, 0.6),
+    0 0 50px rgba(255, 140, 0, 0.3);
 }
 .amber-lamp-glow {
   box-shadow:
@@ -147,17 +147,17 @@
   transform: translateY(0) scale(0.98);
 }
 
-/* ── SECONDARY CTA BUTTON (green gradient) ─────────────────────── */
+/* ── SECONDARY CTA BUTTON (orange gradient) ─────────────────────── */
 .btn-green-gradient {
-  background: linear-gradient(135deg, #00d26a 0%, #00ff88 100%);
-  color: #020e06;
+  background: linear-gradient(135deg, #ff8c00 0%, #ffab40 100%);
+  color: #0a0500;
   font-weight: 800;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 0 24px rgba(0, 210, 106, 0.50);
+  box-shadow: 0 0 24px rgba(255, 140, 0, 0.50);
 }
 .btn-green-gradient:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 0 36px rgba(0, 210, 106, 0.75);
+  box-shadow: 0 0 36px rgba(255, 140, 0, 0.75);
 }
 
 /* ── UNDERLINE BRUSH (disabled) ────────────────────────────────── */
@@ -168,7 +168,7 @@
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #1e1e1e; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #ff8c00, #00d26a);
+  background: linear-gradient(to bottom, #ff8c00, #ffab40);
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
 }

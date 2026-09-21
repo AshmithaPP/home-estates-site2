@@ -41,11 +41,11 @@ export const PropertyHighlights = ({ onOpenTour, onOpenApply }) => {
               <Sparkles className="w-4 h-4" />
               <span>Unmatched Living Standards</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-serif-luxury font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-white tracking-tight leading-[1.12]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               Designed for Focused Mornings & Balanced Living
             </h2>
           </div>
-          <p className="text-white/70 max-w-md text-sm leading-relaxed">
+          <p className="text-white/70 max-w-md text-sm leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif' }}>
             21OAKS combines estate-level craftsmanship with modern technology to deliver Columbia’s most coveted residential experience.
           </p>
         </div>
@@ -66,7 +66,7 @@ export const PropertyHighlights = ({ onOpenTour, onOpenApply }) => {
                 <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/15 flex items-center justify-center text-[#fe9601] group-hover:bg-[#fe9601] group-hover:text-black transition-all mb-6">
                   <IconComponent className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-serif-luxury font-semibold text-white mb-2 group-hover:text-[#ffc973] transition-colors">
+                <h3 className="text-xl font-bold uppercase text-white mb-2 group-hover:text-[#ff8c00] transition-colors" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
@@ -80,10 +80,10 @@ export const PropertyHighlights = ({ onOpenTour, onOpenApply }) => {
         {/* Banner CTA Card (Using Client's Requested Golden Gradient & Color Scheme) */}
         <div className="relative rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-[#181a22] via-[#20222e] to-[#181a22] border border-[#ffc973]/30 overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
           <div className="space-y-4 max-w-xl text-center lg:text-left">
-            <span className="px-3.5 py-1 rounded-full bg-[#2d6a4f] text-white text-xs font-bold uppercase tracking-wider shadow-sm">
+            <span className="px-3.5 py-1 rounded-full bg-[var(--primary)] text-black text-xs font-bold uppercase tracking-wider shadow-sm">
               Limited Availability for Fall 2026
             </span>
-            <h3 className="text-2xl sm:text-4xl font-serif-luxury font-bold text-white">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase text-white tracking-tight leading-[1.12]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               Secure Your Estate Residence Today
             </h3>
             <p className="text-sm text-white/70">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import Button from '../UI/Button';
 
 const tabs = ['INTEGRITY', 'QUALITY', 'VALUES', 'HERITAGE'];
 
@@ -53,13 +53,13 @@ export const EverydayLivingSection = () => {
   return (
     <section
       id="interior"
-      className="relative w-full overflow-hidden text-[#1a1a1a] py-12 lg:py-16"
+      className="relative w-full min-h-screen flex flex-col justify-center overflow-hidden text-[#1a1a1a] py-10 lg:py-14"
       style={{ background: '#ffffff' }}
     >
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
+      <div className="max-w-[1400px] w-full mx-auto px-6 sm:px-10 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto relative z-10">
 
         {/* ── LEFT COLUMN ─────────────────────────────────── */}
-        <div className="lg:col-span-6 flex flex-col justify-center space-y-6">
+        <div className="lg:col-span-6 flex flex-col justify-center space-y-4 lg:space-y-5">
 
           {/* Pill Badge matching reference image */}
           <motion.div
@@ -82,7 +82,7 @@ export const EverydayLivingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1a1a1a] leading-[1.08] tracking-tight uppercase"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a1a1a] leading-[1.12] tracking-tight uppercase"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             From Vision<br />
@@ -191,6 +191,22 @@ export const EverydayLivingSection = () => {
             ))}
           </div>
 
+          {/* Key Feature Highlights Checklist */}
+          <div className="grid grid-cols-3 gap-2 pt-2 border-t border-black/10 text-[10px] sm:text-[11px] font-bold text-[#333333]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff8c00] shrink-0" />
+              <span>CMDA &amp; RERA Approved</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff8c00] shrink-0" />
+              <span>On-Time Handover</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff8c00] shrink-0" />
+              <span>Custom Floorplans</span>
+            </div>
+          </div>
+
           {/* CTA Button — matching yellow/orange pill button in Image 2 */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -198,15 +214,9 @@ export const EverydayLivingSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.35 }}
           >
-            <button
-              className="group inline-flex items-center gap-3 bg-[#ff8c00] hover:bg-[#e67e00] text-black px-7 py-3.5 rounded-full text-xs sm:text-sm font-extrabold tracking-wider uppercase shadow-lg hover:shadow-xl transition-all cursor-pointer"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
-            >
-              <span>Explore Story</span>
-              <div className="w-5 h-5 rounded-full bg-black/15 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
-                <ArrowUpRight className="w-3.5 h-3.5 text-black" />
-              </div>
-            </button>
+            <Button size="md">
+              Explore Story
+            </Button>
           </motion.div>
 
         </div>
@@ -218,7 +228,7 @@ export const EverydayLivingSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-3xl overflow-hidden shadow-2xl border border-black/10 aspect-[4/3] lg:aspect-[16/13] group"
+            className="relative rounded-3xl overflow-hidden shadow-2xl border border-black/10 aspect-[4/3] lg:aspect-[4/3.4] min-h-[420px] sm:min-h-[480px] lg:min-h-[560px] w-full group"
           >
             <img
               src="/images/residence-images/ankan-resideance-view/img13.jpg"
@@ -243,7 +253,7 @@ export const EverydayLivingSection = () => {
                 </div>
                 <div className="w-px h-6 bg-black/10" />
                 <div className="text-center">
-                  <span className="block text-lg font-black text-[#00d26a]" style={{ fontFamily: 'Montserrat, sans-serif' }}>1000+</span>
+                  <span className="block text-lg font-black text-[var(--primary)]" style={{ fontFamily: 'Montserrat, sans-serif' }}>1000+</span>
                   <span className="block text-[8px] font-bold uppercase tracking-wider text-[#555555]" style={{ fontFamily: 'Montserrat, sans-serif' }}>Families</span>
                 </div>
                 <div className="w-px h-6 bg-black/10" />

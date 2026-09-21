@@ -27,7 +27,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
             className="flex items-center gap-1.5 group shrink-0 ml-2 sm:ml-4 md:ml-6"
           >
             <img
-              src="/images/logo/AJAY (1).png"
+              src="/images/logo/new-logo-updated.png"
               alt="Ajay Builders & Property Developers"
               className="h-28 sm:h-32 md:h-36 lg:h-40 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
             />
@@ -99,7 +99,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                 {/* Header row inside menu */}
                 <div className="flex items-center justify-between pb-2 border-b border-white/10">
                   <img
-                    src="/images/logo/AJAY (1).png"
+                    src="/images/logo/new-logo-updated.png"
                     alt="Ajay Homes Logo"
                     className="h-12 sm:h-14 w-auto object-contain"
                   />
@@ -127,7 +127,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                       <span className="text-sm font-bold text-white group-hover:text-[#ff8c00] transition-colors">
                         {item.label}
                       </span>
-                      <ArrowDownRight className="w-4 h-4 text-[#00d26a] group-hover:text-[#ff8c00] group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-all" />
+                      <ArrowDownRight className="w-4 h-4 text-[var(--primary)] group-hover:text-[var(--primary)] group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-all" />
                     </motion.a>
                   ))}
                 </nav>

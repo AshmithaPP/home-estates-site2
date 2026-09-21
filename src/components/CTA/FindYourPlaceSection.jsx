@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import Button from '../UI/Button';
 
 const FindYourPlaceSection = ({ onOpenTourModal }) => {
   return (
@@ -25,8 +25,8 @@ const FindYourPlaceSection = ({ onOpenTourModal }) => {
         >
           {/* Card Headline */}
           <div className="space-y-3">
-            <h2 className="text-3xl sm:text-5xl font-bold font-serif-luxury leading-[1.1] tracking-tight text-[#1a1a1a]">
-              Interested in promoting your property?
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-[1.12] tracking-tight text-[#1a1a1a] uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              Interested in promoting <span className="text-[#ff8c00]">your property?</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#444444] font-sans leading-relaxed pt-1 font-medium">
               Get the best offer in the market with Chennai's most trusted partner. Let's build value together — for your land and our legacy.
@@ -35,21 +35,10 @@ const FindYourPlaceSection = ({ onOpenTourModal }) => {
 
           {/* Bottom Controls inside card */}
           <div className="mt-8 pt-4 flex items-center justify-between border-t border-black/10">
-            {/* Button Group */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={onOpenTourModal}
-                className="btn-gold-gradient px-6 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wide transition-all cursor-pointer shadow-md"
-              >
-                Get Best Offer
-              </button>
-              <button
-                onClick={onOpenTourModal}
-                className="w-10 h-10 rounded-xl bg-[#00d26a] hover:bg-[#00a352] text-black flex items-center justify-center transition-all cursor-pointer shadow-md"
-              >
-                <ArrowUpRight className="w-4 h-4 text-black" />
-              </button>
-            </div>
+            {/* Reusable Button inside Card */}
+            <Button onClick={onOpenTourModal} size="md">
+              Get Best Offer
+            </Button>
 
             {/* Line Art Door Icon */}
             <div className="text-[#333333] opacity-80 hover:opacity-100 transition-opacity">

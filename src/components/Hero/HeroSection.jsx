@@ -121,10 +121,10 @@ export const HeroSection = () => {
             </motion.div>
 
             {/* Headline with Staggered Letter Animation (Exact JSON specification) */}
-            <div className="min-h-[120px] sm:min-h-[160px] md:min-h-[190px]">
+            <div className="min-h-[90px] sm:min-h-[120px] md:min-h-[140px]">
               <AnimatePresence mode="wait">
                 <motion.div key={`title-container-${activeSlide.id}`}>
-                  <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif-luxury font-bold text-white tracking-tight leading-[1.05]">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase text-white tracking-tight leading-[1.1]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     <AnimatedText
                       text={activeSlide.title}
                       accentWord={activeSlide.accentWord}

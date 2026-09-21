@@ -67,14 +67,14 @@ export const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative w-full py-16 sm:py-20 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col justify-center py-10 lg:py-14 px-6 sm:px-12 lg:px-20 overflow-hidden"
       style={{ background: 'linear-gradient(160deg, #282828 0%, #3a3a3a 50%, #2c2c2c 100%)' }}
     >
       {/* Ambient glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#ff8c00]/6 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00d26a]/6 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[var(--primary)]/6 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl w-full mx-auto my-auto relative z-10">
 
         {/* Eyebrow */}
         <motion.div
@@ -97,7 +97,7 @@ export const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="text-center text-2xl sm:text-3xl lg:text-4xl font-black uppercase text-[#f0ede8] leading-[1.1] tracking-tight max-w-3xl mx-auto mb-12"
+          className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-[#f0ede8] leading-[1.12] tracking-tight max-w-3xl mx-auto mb-12"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
           We Integrate Innovation At{' '}

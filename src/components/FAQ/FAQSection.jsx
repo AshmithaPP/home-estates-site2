@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { Plus, X } from 'lucide-react';
+import Button from '../UI/Button';
 
 const faqItems = [
   {
@@ -41,115 +42,149 @@ const faqItems = [
   }
 ];
 
-const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
-  const [openId, setOpenId] = useState(null);
+export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
+  const [openId, setOpenId] = useState('1');
 
   const toggleAccordion = (id) => {
     setOpenId(openId === id ? null : id);
   };
 
   return (
-    <section className="relative py-16 sm:py-20 px-6 sm:px-12 lg:px-20 text-[#1a1a1a] border-t border-black/10 overflow-hidden" style={{ background: '#ffffff' }}>
-      <div className="max-w-7xl mx-auto">
-        {/* Main Headline - Centered, 2-line structure */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-8 sm:mb-12"
-        >
-          <h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-[#1a1a1a] leading-snug uppercase"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
-          >
-            Frequently Asked <br />
-            <span className="text-[#ff8c00]">Questions</span>
-          </h2>
-        </motion.div>
+    <section className="relative py-12 sm:py-16 lg:py-20 px-6 sm:px-12 lg:px-20 text-[#1a1a1a] border-t border-black/5 overflow-hidden" style={{ background: '#f8f8f6' }}>
+      
+      {/* Background Soft Orange Glow */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#ff8c00]/6 rounded-full blur-[140px] pointer-events-none" />
 
-        {/* 2-Column Main Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
-          {/* Left Column (4 cols) */}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          
+          {/* ── LEFT COLUMN: Header & Consultation Card ────────────────────────── */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-4"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 flex flex-col justify-between space-y-6 sm:space-y-8"
           >
-            {/* Top Subtitle */}
-            <p
-              className="text-sm sm:text-base text-[#444444] font-medium leading-relaxed max-w-xs"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
-            >
-              Everything you might want to know about our projects, process, legalities, and timelines.
-            </p>
+            {/* Header Block */}
+            <div className="space-y-2 text-left">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-extrabold uppercase tracking-widest text-[#555555]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  FAQs
+                </span>
+              </div>
+
+              <h2
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a1a1a] tracking-tight leading-tight uppercase text-left"
+                style={{ fontFamily: 'Montserrat, sans-serif' }}
+              >
+                Frequently Asked<br />
+                <span className="text-[#ff8c00]">Questions</span>
+              </h2>
+            </div>
+
+            {/* Consultation Card (Matching reference UI left card) */}
+            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-black/5 border border-black/5 space-y-5 max-w-md">
+              <div className="relative inline-block">
+                <div className="absolute inset-0 bg-[#ff8c00]/20 rounded-full blur-md" />
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80"
+                  alt="Property Advisor"
+                  className="relative w-14 h-14 rounded-full object-cover border-2 border-[#ff8c00] shadow-md"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <h3
+                  className="text-xl sm:text-2xl font-bold text-[#1a1a1a] tracking-tight"
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                >
+                  Book a 15 min call
+                </h3>
+                <p
+                  className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed"
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                >
+                  If you have any questions about our luxury residences, CMDA approvals, or custom floorplans, schedule a private consultation.
+                </p>
+              </div>
+
+              <div className="pt-2">
+                <Button
+                  onClick={onOpenTourModal}
+                  size="md"
+                  className="w-full justify-center"
+                >
+                  Book a Free Call
+                </Button>
+              </div>
+            </div>
+
           </motion.div>
 
-          {/* Right Column - Accordions (8 cols) */}
-          <div className="lg:col-span-8">
-            <div className="border-t border-black/10">
-              {faqItems.map((item, idx) => {
-                const isOpen = openId === item.id;
+          {/* ── RIGHT COLUMN: FAQ Accordion Cards List ────────────────────────── */}
+          <div className="lg:col-span-7 space-y-3">
+            {faqItems.map((item, idx) => {
+              const isOpen = openId === item.id;
 
-                return (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-30px' }}
-                    transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                    className={`border-b border-black/10 transition-all duration-300 rounded-xl ${
-                      isOpen ? 'bg-black/[0.03] px-3 sm:px-4' : 'px-1'
-                    }`}
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{ duration: 0.5, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                  className={`bg-white rounded-2xl p-5 sm:p-6 border transition-all duration-300 ${
+                    isOpen
+                      ? 'border-[#ff8c00]/40 shadow-lg shadow-[#ff8c00]/5'
+                      : 'border-black/5 shadow-sm hover:shadow-md hover:border-black/10'
+                  }`}
+                >
+                  <button
+                    onClick={() => toggleAccordion(item.id)}
+                    className="w-full text-left flex items-center justify-between gap-4 cursor-pointer group"
                   >
-                    <button
-                      onClick={() => toggleAccordion(item.id)}
-                      className="w-full text-left py-4 sm:py-5 flex items-center justify-between gap-4 cursor-pointer group"
+                    <span
+                      className={`text-sm sm:text-base font-bold transition-colors duration-300 leading-snug ${
+                        isOpen ? 'text-[#1a1a1a]' : 'text-[#2a2a2a] group-hover:text-[#ff8c00]'
+                      }`}
+                      style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
-                      <span
-                        className={`text-sm sm:text-base font-bold transition-colors duration-300 leading-snug ${
-                          isOpen ? 'text-[#ff8c00]' : 'text-[#1a1a1a] group-hover:text-[#ff8c00]'
-                        }`}
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
-                      >
-                        {item.question}
-                      </span>
-                      <motion.span
-                        animate={{ rotate: isOpen ? 45 : 0 }}
-                        transition={{ duration: 0.3, ease: 'easeOut' }}
-                        className={`text-xl sm:text-2xl font-bold transition-colors duration-300 flex-shrink-0 ${
-                          isOpen ? 'text-[#ff8c00]' : 'text-[#666666] group-hover:text-[#ff8c00]'
-                        }`}
-                      >
-                        +
-                      </motion.span>
-                    </button>
-
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                          className="overflow-hidden"
-                        >
-                          <div
-                            className="pb-4 text-[#444444] text-xs sm:text-sm font-medium leading-relaxed max-w-2xl pt-1"
-                            style={{ fontFamily: 'Montserrat, sans-serif' }}
-                          >
-                            {item.answer}
-                          </div>
-                        </motion.div>
+                      {item.question}
+                    </span>
+                    
+                    <span className="p-1 rounded-full text-[#333333] group-hover:text-[#ff8c00] transition-colors shrink-0">
+                      {isOpen ? (
+                        <X className="w-4 h-4 text-[#ff8c00]" />
+                      ) : (
+                        <Plus className="w-4 h-4 text-[#444444]" />
                       )}
-                    </AnimatePresence>
-                  </motion.div>
-                );
-              })}
-            </div>
+                    </span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div
+                          className="pt-3 mt-3 border-t border-black/5 text-[#555555] text-xs sm:text-sm font-medium leading-relaxed"
+                          style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        >
+                          {item.answer}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
           </div>
+
         </div>
       </div>
     </section>

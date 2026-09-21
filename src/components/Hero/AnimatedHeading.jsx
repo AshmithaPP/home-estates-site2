@@ -61,7 +61,7 @@ export const AnimatedHeading = ({ headingLine1, headingLine2, accentWord, slideI
                     animate="animate"
                     exit="exit"
                     className={`inline-block ${isAccent
-                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#FE9601] via-[#FFC973] to-[#FE9601] font-serif-luxury italic font-normal px-0.5'
+                        ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#ff8c00] via-[#ffab40] to-[#ff8c00] font-bold uppercase px-0.5'
                         : 'text-white'
                       }`}
                     style={{ willChange: 'transform, opacity, filter' }}
@@ -78,7 +78,7 @@ export const AnimatedHeading = ({ headingLine1, headingLine2, accentWord, slideI
   };
 
   return (
-    <div className="min-h-0 sm:min-h-[120px] md:min-h-[140px] text-left select-none">
+    <div className="min-h-0 sm:min-h-[100px] md:min-h-[120px] text-left select-none">
       <AnimatePresence mode="wait">
         <motion.div
           key={`heading-block-${slideId}`}
@@ -99,12 +99,12 @@ export const AnimatedHeading = ({ headingLine1, headingLine2, accentWord, slideI
           className="space-y-0.5"
         >
           {/* Line 1: Live better, */}
-          <div className="text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif-luxury font-bold text-white tracking-tight leading-[1.08]">
+          <div className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase text-white tracking-tight leading-[1.1]">
             {renderLine(headingLine1)}
           </div>
 
           {/* Line 2: closer to USC */}
-          <div className="text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif-luxury font-bold text-white tracking-tight leading-[1.08]">
+          <div className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase text-white tracking-tight leading-[1.1]">
             {renderLine(headingLine2)}
           </div>
         </motion.div>
