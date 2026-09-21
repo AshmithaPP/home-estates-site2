@@ -21,9 +21,9 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
           >
             <div className="relative overflow-hidden flex items-center justify-center p-1 sm:p-1.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md group-hover:border-[#ff8c00]/40 transition-all duration-300">
               <img
-                src="/images/logo/new-logo-updated.png"
+                src="/images/logo/logo-ajay-homes.png"
                 alt="Ajay Homes & Estates Logo"
-                className="h-16 sm:h-20 lg:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-8 sm:h-9 lg:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </div>
           </motion.a>

@@ -75,8 +75,8 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
               </div>
 
               <h2
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a1a1a] tracking-tight leading-tight uppercase text-left"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
+                className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1a1a1a] tracking-tight leading-tight uppercase text-left"
+                style={{ fontFamily: 'Montserrat' }}
               >
                 Frequently Asked<br />
                 <span className="text-[#ff8c00]">Questions</span>

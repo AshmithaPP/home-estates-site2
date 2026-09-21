@@ -107,8 +107,8 @@ export const CustomerStoriesSection = () => {
 
           {/* Bold Main Heading — Left-aligned, crisp Montserrat */}
           <h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a1a1a] tracking-tight leading-[1.12] uppercase text-left"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1a1a1a] tracking-tight leading-[1.12] uppercase text-left"
+            style={{ fontFamily: 'Montserrat' }}
           >
             Building Innovative<br />
             <span className="text-[#ff8c00]">Trusted</span> Solutions

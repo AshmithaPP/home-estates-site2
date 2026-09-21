@@ -25,10 +25,10 @@ const FindYourPlaceSection = ({ onOpenTourModal }) => {
         >
           {/* Card Headline */}
           <div className="space-y-3">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-[1.12] tracking-tight text-[#1a1a1a] uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-[1.12] tracking-tight text-[#1a1a1a] uppercase" style={{ fontFamily: 'Montserrat' }}>
               Interested in promoting <span className="text-[#ff8c00]">your property?</span>
             </h2>
-            <p className="text-xs sm:text-sm text-[#444444] font-sans leading-relaxed pt-1 font-medium">
+            <p className="text-xs sm:text-sm text-[#444444] leading-relaxed pt-1 font-medium">
               Get the best offer in the market with Chennai's most trusted partner. Let's build value together — for your land and our legacy.
             </p>
           </div>

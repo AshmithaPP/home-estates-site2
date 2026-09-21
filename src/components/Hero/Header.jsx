@@ -15,7 +15,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
 
   return (
     <>
-      <header className="absolute -top-4 left-0 right-0 z-40 px-3 sm:px-12 py-0 transition-all duration-300">
+      <header className="absolute top-4 sm:top-6 left-0 right-0 z-40 px-3 sm:px-12 py-0 transition-all duration-300">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-2 relative">
 
           {/* Logo on Left (AJAY BUILDERS & PROPERTY DEVELOPERS logo image) */}
@@ -27,9 +27,9 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
             className="flex items-center gap-1.5 group shrink-0 ml-2 sm:ml-4 md:ml-6"
           >
             <img
-              src="/images/logo/new-logo-updated.png"
+              src="/images/logo/logo-ajay-homes.png"
               alt="Ajay Builders & Property Developers"
-              className="h-28 sm:h-32 md:h-36 lg:h-40 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              className="h-8 sm:h-9 md:h-10 lg:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </motion.a>
 

@@ -63,7 +63,7 @@ export const Button = ({
       <a
         href={href}
         className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
-        style={{ fontFamily: 'Montserrat, sans-serif' }}
+        style={{ fontFamily: 'Montserrat' }}
         {...props}
       >
         {content}

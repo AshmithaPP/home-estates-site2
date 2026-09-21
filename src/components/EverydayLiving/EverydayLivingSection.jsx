@@ -82,8 +82,8 @@ export const EverydayLivingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1a1a1a] leading-[1.12] tracking-tight uppercase"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1a1a1a] leading-[1.12] tracking-tight uppercase"
+            style={{ fontFamily: 'Montserrat' }}
           >
             From Vision<br />
             To Reality,{' '}

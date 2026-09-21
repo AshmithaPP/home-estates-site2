@@ -12,12 +12,11 @@ const Footer = ({ onOpenTourModal, onOpenApply }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/15 items-start">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#" className="inline-block mb-6">
+            <a href="#" className="inline-block mb-3">
               <img
-                src="/images/logo/new-logo-updated.png"
+                src="/images/logo/logo-ajay-homes.png"
                 alt="Ajay Builders & Property Developers"
-                className="h-16 w-auto object-contain hover:opacity-95 transition-opacity"
-                style={{ transform: 'scale(2.4)', transformOrigin: 'left center' }}
+                className="h-12 sm:h-14 w-auto object-contain hover:opacity-95 transition-opacity"
               />
             </a>
             <p className="text-sm text-white/80 max-w-sm leading-relaxed font-normal">

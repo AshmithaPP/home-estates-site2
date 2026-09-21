@@ -97,8 +97,8 @@ export const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-[#f0ede8] leading-[1.12] tracking-tight max-w-3xl mx-auto mb-12"
-          style={{ fontFamily: 'Montserrat, sans-serif' }}
+          className="text-center text-xl sm:text-2xl lg:text-3xl font-bold uppercase text-[#f0ede8] leading-[1.12] tracking-tight max-w-3xl mx-auto mb-12"
+          style={{ fontFamily: 'Montserrat' }}
         >
           We Integrate Innovation At{' '}
           <span className="text-[#ff8c00]">Every Stage</span>{' '}

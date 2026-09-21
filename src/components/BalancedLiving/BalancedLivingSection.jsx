@@ -21,7 +21,7 @@ export const BalancedLivingSection = ({ onOpenApply }) => {
 
         {/* Centered Headline */}
         <div className="text-center max-w-3xl mx-auto space-y-1 select-none">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#f0ede8] tracking-tight leading-tight uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#f0ede8] tracking-tight leading-tight uppercase" style={{ fontFamily: 'Montserrat' }}>
             Where Luxury Living <br />
             Feels <span className="text-[#ff8c00]">Balanced</span>
           </h2>
@@ -94,7 +94,7 @@ export const BalancedLivingSection = ({ onOpenApply }) => {
                 </div>
 
                 {/* Description Copy */}
-                <p className="text-[11px] sm:text-xs text-[#f0ede8]/60 font-sans leading-relaxed min-h-[40px]">
+                <p className="text-[11px] sm:text-xs text-[#f0ede8]/60 leading-relaxed min-h-[40px]">
                   {plan.desc}
                 </p>
 
