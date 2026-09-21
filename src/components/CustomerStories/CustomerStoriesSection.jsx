@@ -132,7 +132,7 @@ export const CustomerStoriesSection = () => {
                     <IconComp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <span
-                    className="text-[10px] sm:text-xs lg:text-sm font-bold sm:font-extrabold text-[#1a1a1a] tracking-wide sm:tracking-wider uppercase leading-tight"
+                    className="text-[10px] sm:text-xs lg:text-sm font-normal text-[#1a1a1a] tracking-wide sm:tracking-wider uppercase leading-tight"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {item.name}
