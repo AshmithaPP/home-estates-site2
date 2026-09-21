@@ -69,7 +69,7 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
             {/* Header Block */}
             <div className="space-y-2 text-left">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-extrabold uppercase tracking-widest text-[#555555]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <span className="text-xs font-extrabold uppercase tracking-widest text-[#555555]">
                   FAQs
                 </span>
               </div>
@@ -97,13 +97,11 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
               <div className="space-y-2">
                 <h3
                   className="text-xl sm:text-2xl font-bold text-[#1a1a1a] tracking-tight"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
                 >
                   Book a 15 min call
                 </h3>
                 <p
                   className="text-xs sm:text-sm text-[#555555] font-medium leading-relaxed"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
                 >
                   If you have any questions about our luxury residences, CMDA approvals, or custom floorplans, schedule a private consultation.
                 </p>
@@ -148,7 +146,6 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
                       className={`text-sm sm:text-base font-bold transition-colors duration-300 leading-snug ${
                         isOpen ? 'text-[#1a1a1a]' : 'text-[#2a2a2a] group-hover:text-[#ff8c00]'
                       }`}
-                      style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
                       {item.question}
                     </span>
@@ -173,7 +170,6 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
                       >
                         <div
                           className="pt-3 mt-3 border-t border-black/5 text-[#555555] text-xs sm:text-sm font-medium leading-relaxed"
-                          style={{ fontFamily: 'Montserrat, sans-serif' }}
                         >
                           {item.answer}
                         </div>

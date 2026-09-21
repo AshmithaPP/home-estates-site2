@@ -99,7 +99,6 @@ export const CustomerStoriesSection = () => {
           <div className="flex justify-start">
             <span
               className="px-4 py-1.5 rounded-full border border-black/15 bg-white text-[10px] font-extrabold tracking-[0.25em] uppercase text-[#ff8c00] shadow-xs"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
             >
               REALITY INTO IDEAS
             </span>
@@ -117,7 +116,6 @@ export const CustomerStoriesSection = () => {
           {/* Subline — Left-aligned, high readability */}
           <p
             className="text-xs sm:text-sm lg:text-base text-[#333333] font-medium leading-relaxed max-w-xl text-left"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             One of Chennai's premier construction firms — creating master-planned townships, luxury residences, and architectural landmarks engineered for generations.
           </p>
@@ -133,7 +131,6 @@ export const CustomerStoriesSection = () => {
                   </div>
                   <span
                     className="text-[10px] sm:text-xs lg:text-sm font-normal text-[#1a1a1a] tracking-wide sm:tracking-wider uppercase leading-tight"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {item.name}
                   </span>
@@ -147,7 +144,7 @@ export const CustomerStoriesSection = () => {
 
             {/* Overlapping Client Avatars */}
             <div className="flex items-center gap-3">
-              <span className="text-2xl font-black text-[#1a1a1a]" style={{ fontFamily: 'Montserrat, sans-serif' }}>+1000</span>
+              <span className="text-2xl font-black text-[#1a1a1a]">+1000</span>
               <div className="flex -space-x-2">
                 <img
                   src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
@@ -165,7 +162,7 @@ export const CustomerStoriesSection = () => {
                   className="w-9 h-9 rounded-full border-2 border-white object-cover shadow-md"
                 />
               </div>
-              <span className="text-xs font-bold text-[#555555] uppercase tracking-wider block leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <span className="text-xs font-bold text-[#555555] uppercase tracking-wider block leading-tight">
                 Happy<br />Clients
               </span>
             </div>
@@ -174,7 +171,6 @@ export const CustomerStoriesSection = () => {
             <button
               onClick={handleOpenAndPlay}
               className="group inline-flex items-center gap-3 bg-[#ff8c00] hover:bg-[#e67e00] text-black px-7 py-3.5 rounded-full text-xs sm:text-sm font-black tracking-widest uppercase shadow-lg hover:shadow-xl transition-all cursor-pointer"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
             >
               <ArrowUpRight className="w-4 h-4 text-black group-hover:translate-x-0.5 group-hover:-translate-y-px transition-transform" />
               <span>EXPLORE</span>
@@ -234,7 +230,6 @@ export const CustomerStoriesSection = () => {
                 </motion.button>
                 <span
                   className="text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-black/60 px-4 py-1.5 rounded-full border border-white/20 backdrop-blur-md"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
                 >
                   {!isOpen ? 'Click to Watch Aerial Tour' : 'Paused — Click to Resume'}
                 </span>
@@ -266,7 +261,6 @@ export const CustomerStoriesSection = () => {
                       <button
                         onClick={togglePlayPause}
                         className="bg-[#ff8c00] py-1 px-3 rounded-lg text-black font-black flex items-center gap-1 text-[10px] shadow-md hover:scale-105 transition-all cursor-pointer"
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
                       >
                         {isPlaying ? <Pause className="w-3 h-3 text-black fill-black" /> : <Play className="w-3 h-3 text-black fill-black" />}
                         <span>{isPlaying ? 'Pause' : 'Play'}</span>
@@ -283,7 +277,6 @@ export const CustomerStoriesSection = () => {
                     <button
                       onClick={handleClosePlayer}
                       className="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-lg text-[10px] text-white flex items-center gap-1 cursor-pointer transition-all"
-                      style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
                       <RotateCcw className="w-3 h-3 text-[#ff8c00]" />
                       <span>Close</span>
@@ -300,10 +293,10 @@ export const CustomerStoriesSection = () => {
 
             {/* Card 1: Mail Us */}
             <div className="p-3.5 rounded-2xl bg-white border border-black/10 shadow-md flex flex-col justify-between space-y-1">
-              <span className="text-xs font-black text-[#1a1a1a] uppercase tracking-wider block" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <span className="text-xs font-black text-[#1a1a1a] uppercase tracking-wider block">
                 MAIL US
               </span>
-              <div className="space-y-0.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <div className="space-y-0.5">
                 <p className="text-[11px] text-[#333333] font-semibold leading-tight truncate">info@ajayhomes.in</p>
                 <p className="text-[11px] text-[#333333] font-semibold leading-tight truncate">sales@ajayhomes.in</p>
               </div>
@@ -311,10 +304,10 @@ export const CustomerStoriesSection = () => {
 
             {/* Card 2: Contact No */}
             <div className="p-3.5 rounded-2xl bg-white border border-black/10 shadow-md flex flex-col justify-between space-y-1">
-              <span className="text-xs font-black text-[#1a1a1a] uppercase tracking-wider block" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <span className="text-xs font-black text-[#1a1a1a] uppercase tracking-wider block">
                 CONTACT NO
               </span>
-              <div className="space-y-0.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <div className="space-y-0.5">
                 <p className="text-[11px] text-[#333333] font-semibold leading-tight">+91 98400 12345</p>
                 <p className="text-[11px] text-[#333333] font-semibold leading-tight">+91 44 2255 8899</p>
               </div>
@@ -322,10 +315,10 @@ export const CustomerStoriesSection = () => {
 
             {/* Card 3: Head Office */}
             <div className="p-3.5 rounded-2xl bg-white border border-black/10 shadow-md flex flex-col justify-between space-y-1">
-              <span className="text-xs font-black text-[#1a1a1a] uppercase tracking-wider block" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <span className="text-xs font-black text-[#1a1a1a] uppercase tracking-wider block">
                 HEAD OFFICE
               </span>
-              <div className="space-y-0.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <div className="space-y-0.5">
                 <p className="text-[11px] text-[#333333] font-semibold leading-tight">Velachery Main Road,</p>
                 <p className="text-[11px] text-[#333333] font-semibold leading-tight">Chennai, TN 600042</p>
               </div>

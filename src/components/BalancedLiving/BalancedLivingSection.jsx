@@ -88,7 +88,7 @@ export const BalancedLivingSection = ({ onOpenApply }) => {
 
                 {/* Title Header */}
                 <div className="flex items-center justify-between pt-0.5">
-                  <h3 className="font-bold text-base sm:text-lg text-[#f0ede8]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  <h3 className="font-bold text-base sm:text-lg text-[#f0ede8]">
                     {plan.title}
                   </h3>
                 </div>

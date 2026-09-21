@@ -97,7 +97,7 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
                 <p className="text-xs uppercase tracking-[0.3em] text-[#ff8c00] font-semibold">
                   Navigation Menu
                 </p>
-                <nav className="flex flex-col gap-4 text-2xl sm:text-4xl font-bold uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <nav className="flex flex-col gap-4 text-2xl sm:text-4xl font-bold uppercase">
                   {[
                     { label: 'Residences & Floorplans', href: '#residences' },
                     { label: 'Amenities & Services', href: '#amenities' },
@@ -127,7 +127,7 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
                   <Sparkles className="w-5 h-5" />
                   <span className="text-sm font-semibold tracking-wider uppercase">21OAKS Estates</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>Experience Premium Student & Estate Luxury</h3>
+                <h3 className="text-xl sm:text-2xl font-bold uppercase">Experience Premium Student & Estate Luxury</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
                   Located right at the doorstep of top university campuses and estate districts. Featuring private infinity pools, study suites, and 24/7 concierge service.
                 </p>

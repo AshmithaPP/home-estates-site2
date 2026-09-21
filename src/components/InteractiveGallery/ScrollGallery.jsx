@@ -266,7 +266,7 @@ export const ScrollGallery = () => {
               Architectural Excellence
             </span>
 
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#f0ede8] tracking-tight leading-snug uppercase" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#f0ede8] tracking-tight leading-snug uppercase">
               Everything homes &amp; estates living{' '}
               <span className="text-[#ff8c00] block mt-1 sm:mt-2">
                 should be

@@ -76,7 +76,6 @@ export const Button = ({
       type={type}
       onClick={onClick}
       className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
-      style={{ fontFamily: 'Montserrat, sans-serif' }}
       {...props}
     >
       {content}

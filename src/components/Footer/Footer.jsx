@@ -24,7 +24,7 @@ const Footer = ({ onOpenTourModal, onOpenApply }) => {
             </p>
             <div className="p-3.5 rounded-xl bg-white/5 border border-[var(--primary)]/30 max-w-sm shadow-sm backdrop-blur-md">
               <span className="text-[11px] font-extrabold text-[var(--primary)] uppercase tracking-wider block">Our Philosophy</span>
-              <p className="text-xs italic text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>"Our customers are our ambassadors."</p>
+              <p className="text-xs italic text-white">"Our customers are our ambassadors."</p>
             </div>
             <div className="flex items-center gap-3 pt-1">
               <a

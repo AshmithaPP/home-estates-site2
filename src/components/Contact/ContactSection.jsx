@@ -85,7 +85,6 @@ export const ContactSection = () => {
         >
           <span
             className="text-[10px] font-bold tracking-[0.35em] uppercase text-[#f0ede8]/50 border border-white/15 rounded-full px-4 py-1.5"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Blog &amp; Insights
           </span>
@@ -135,7 +134,6 @@ export const ContactSection = () => {
                   {/* Category badge */}
                   <span
                     className="absolute top-3 left-3 text-[9px] font-bold uppercase tracking-[0.2em] bg-[#ff8c00] text-black px-2.5 py-1 rounded-full"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {article.category}
                   </span>
@@ -146,7 +144,6 @@ export const ContactSection = () => {
                   {/* Date */}
                   <p
                     className="text-[10px] font-semibold text-[#f0ede8]/45 tracking-wider uppercase"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {article.date}
                   </p>
@@ -154,7 +151,6 @@ export const ContactSection = () => {
                   {/* Title */}
                   <h3
                     className="text-sm sm:text-base font-black text-[#f0ede8] leading-snug group-hover:text-[#ff8c00] transition-colors duration-300"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {article.title}
                   </h3>

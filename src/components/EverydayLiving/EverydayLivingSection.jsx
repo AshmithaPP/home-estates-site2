@@ -70,7 +70,6 @@ export const EverydayLivingSection = () => {
           >
             <span
               className="inline-block px-4 py-1.5 rounded-full border border-black/15 bg-white text-[10px] font-extrabold tracking-[0.25em] uppercase text-black/70 shadow-xs"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
             >
               Ajay Homes &amp; Estates
             </span>
@@ -98,7 +97,6 @@ export const EverydayLivingSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
             className="text-xs sm:text-sm text-[#555555] leading-relaxed max-w-lg font-medium"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             One of Chennai's fastest growing construction firms — building quality residences with customized solutions for thousands of happy families across prime city hubs.
           </motion.p>
@@ -120,7 +118,6 @@ export const EverydayLivingSection = () => {
                     ? 'text-[#ff8c00]'
                     : 'text-[#777777] hover:text-[#1a1a1a]'
                 }`}
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
               >
                 {tab}
                 {activeTab === i && (
@@ -152,13 +149,12 @@ export const EverydayLivingSection = () => {
                   <p
                     key={idx}
                     className="text-xs sm:text-sm text-[#444444] leading-relaxed font-normal"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {idx === 0 ? (
                       <>
                         <span
                           className="float-left mr-2 font-black text-[#ff8c00] leading-none"
-                          style={{ fontSize: '3.2rem', lineHeight: '0.8', fontFamily: 'Montserrat, sans-serif' }}
+                          style={{ fontSize: '3.2rem', lineHeight: '0.8' }}
                         >
                           {currentContent.dropLetter}
                         </span>
@@ -192,7 +188,7 @@ export const EverydayLivingSection = () => {
           </div>
 
           {/* Key Feature Highlights Checklist */}
-          <div className="grid grid-cols-3 gap-2 pt-2 border-t border-black/10 text-[10px] sm:text-[11px] font-bold text-[#333333]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <div className="grid grid-cols-3 gap-2 pt-2 border-t border-black/10 text-[10px] sm:text-[11px] font-bold text-[#333333]">
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#ff8c00] shrink-0" />
               <span>CMDA &amp; RERA Approved</span>
@@ -248,21 +244,21 @@ export const EverydayLivingSection = () => {
             >
               <div className="flex items-center gap-4">
                 <div className="text-center">
-                  <span className="block text-lg font-black text-[#ff8c00]" style={{ fontFamily: 'Montserrat, sans-serif' }}>20+</span>
-                  <span className="block text-[8px] font-bold uppercase tracking-wider text-[#555555]" style={{ fontFamily: 'Montserrat, sans-serif' }}>Years</span>
+                  <span className="block text-lg font-black text-[#ff8c00]">20+</span>
+                  <span className="block text-[8px] font-bold uppercase tracking-wider text-[#555555]">Years</span>
                 </div>
                 <div className="w-px h-6 bg-black/10" />
                 <div className="text-center">
-                  <span className="block text-lg font-black text-[var(--primary)]" style={{ fontFamily: 'Montserrat, sans-serif' }}>1000+</span>
-                  <span className="block text-[8px] font-bold uppercase tracking-wider text-[#555555]" style={{ fontFamily: 'Montserrat, sans-serif' }}>Families</span>
+                  <span className="block text-lg font-black text-[var(--primary)]">1000+</span>
+                  <span className="block text-[8px] font-bold uppercase tracking-wider text-[#555555]">Families</span>
                 </div>
                 <div className="w-px h-6 bg-black/10" />
                 <div className="text-center">
-                  <span className="block text-lg font-black text-[#ff8c00]" style={{ fontFamily: 'Montserrat, sans-serif' }}>120+</span>
-                  <span className="block text-[8px] font-bold uppercase tracking-wider text-[#555555]" style={{ fontFamily: 'Montserrat, sans-serif' }}>Projects</span>
+                  <span className="block text-lg font-black text-[#ff8c00]">120+</span>
+                  <span className="block text-[8px] font-bold uppercase tracking-wider text-[#555555]">Projects</span>
                 </div>
               </div>
-              <p className="text-[8px] text-[#777777] font-bold uppercase tracking-wider border-t border-black/10 pt-1.5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <p className="text-[8px] text-[#777777] font-bold uppercase tracking-wider border-t border-black/10 pt-1.5">
                 Chennai's Most Trusted Luxury Builder
               </p>
             </motion.div>
