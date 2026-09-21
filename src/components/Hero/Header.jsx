@@ -96,13 +96,8 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
             >
               <div className="max-w-md mx-auto w-full space-y-3">
                 
-                {/* Header row inside menu */}
-                <div className="flex items-center justify-between pb-2 border-b border-white/10">
-                  <img
-                    src="/images/logo/new-logo-updated.png"
-                    alt="Ajay Homes Logo"
-                    className="h-12 sm:h-14 w-auto object-contain"
-                  />
+                {/* Close button row inside menu */}
+                <div className="flex items-center justify-end pb-2 border-b border-white/10">
                   <button
                     onClick={() => setIsMenuOpen(false)}
                     className="p-1 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
