@@ -34,10 +34,7 @@ export const ContactFormSection = () => {
   return (
     <section
       id="contact-form"
-      className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 border-t border-white/10"
-      style={{
-        background: 'linear-gradient(160deg, #181818 0%, #242424 45%, #2c2c2c 80%, #1e1e1e 100%)',
-      }}
+      className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#1e1e1e]"
     >
       <div className="relative z-10 max-w-4xl mx-auto">
 
@@ -47,12 +44,11 @@ export const ContactFormSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14 sm:mb-16"
+          className="text-center mb-10 sm:mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-[38px] font-bold text-white tracking-tight leading-tight">
             Tell Us About Your Requirement
           </h2>
-          <div className="w-16 h-1 bg-[var(--primary)] mx-auto mt-4 rounded-full" />
         </motion.div>
 
         {/* ── Form Container ────────────────────────────────────────── */}
