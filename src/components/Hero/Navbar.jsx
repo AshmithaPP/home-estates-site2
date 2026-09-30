@@ -1,32 +1,47 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowDownRight, Calendar, Phone, MapPin, Sparkles, Home, Shield, Compass } from 'lucide-react';
+import { Menu, X, ArrowDownRight, Calendar, Phone, MapPin, Sparkles, ChevronDown } from 'lucide-react';
 import Button from '../UI/Button';
 
 export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+
+  // Exact Services requested
+  const services = [
+    { label: 'Construction', href: '/#services-construction' },
+    { label: 'Layout promote', href: '/#services-layout' },
+    { label: 'Project management', href: '/#services-project-management' },
+    { label: 'Property developer', href: '/#services-property-developer' },
+    { label: 'Interior designing', href: '/#services-interior' },
+    { label: 'Real estate selling and buy', href: '/#services-real-estate' },
+  ];
 
   return (
     <>
-      <header className="fixed -top-4 left-0 right-0 z-50 px-4 sm:px-8 py-0 transition-all duration-300">
+      <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-8 py-0 transition-all duration-300">
         <div className="max-w-7xl mx-auto flex items-center justify-between relative">
 
           {/* Brand Logo */}
-          <motion.a
-            href="#"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+          <Link
+            href="/"
             className="group flex items-center gap-2 ml-2 sm:ml-4 md:ml-6"
           >
-            <div className="relative overflow-hidden flex items-center justify-center p-1 sm:p-1.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md group-hover:border-[#ff8c00]/40 transition-all duration-300">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="relative overflow-hidden flex items-center justify-center p-1 sm:p-1.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md group-hover:border-[#ff8c00]/40 transition-all duration-300"
+            >
               <img
                 src="/images/logo/logo-ajay-homes.png"
                 alt="Ajay Homes & Estates Logo"
                 className="h-8 sm:h-9 lg:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
-            </div>
-          </motion.a>
+            </motion.div>
+          </Link>
 
           {/* Desktop Nav Links */}
           <motion.nav
@@ -35,11 +50,50 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="hidden md:flex items-center gap-6 glass-pill px-6 py-2.5 rounded-full border border-white/15"
           >
-            <a href="#about" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">About</a>
-            <a href="#interior" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Everyday Living</a>
-            <a href="#balanced" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Floor Plans</a>
-            <a href="#stories" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Stories</a>
-            <a href="#contact" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Contact</a>
+            <Link href="/" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Home</Link>
+            <Link href="/#about" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">About</Link>
+
+            {/* Services with Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <button
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className="flex items-center gap-1 text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors cursor-pointer"
+              >
+                <span>Services</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isServicesOpen ? 'rotate-180 text-[#ff8c00]' : ''}`} />
+              </button>
+
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 mt-3 w-64 glass-card py-2 rounded-2xl border border-white/15 shadow-2xl z-50 backdrop-blur-xl"
+                  >
+                    {services.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        onClick={() => setIsServicesOpen(false)}
+                        className="block px-4 py-2 text-xs sm:text-sm text-white/80 hover:text-[#ff8c00] hover:bg-white/5 transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <Link href="/#gallery" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Gallery</Link>
+            <Link href="/#resources" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Resources</Link>
+            <Link href="/contact" className="text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors">Contact</Link>
           </motion.nav>
 
           {/* Right Controls (Schedule a Tour & Apply Now) */}
@@ -97,27 +151,84 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
                 <p className="text-xs uppercase tracking-[0.3em] text-[#ff8c00] font-semibold">
                   Navigation Menu
                 </p>
-                <nav className="flex flex-col gap-4 text-2xl sm:text-4xl font-bold uppercase">
-                  {[
-                    { label: 'Residences & Floorplans', href: '#residences' },
-                    { label: 'Amenities & Services', href: '#amenities' },
-                    { label: 'Neighborhood & USC', href: '#neighborhood' },
-                    { label: 'Virtual Gallery', href: '#gallery' },
-                    { label: 'Contact & Leasing', href: '#contact' }
-                  ].map((link, idx) => (
-                    <motion.a
-                      key={link.label}
-                      href={link.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      initial={{ opacity: 0, x: -30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 + idx * 0.08 }}
-                      className="group flex items-center justify-between border-b border-white/10 pb-3 hover:text-[#ff8c00] transition-colors"
+                <nav className="flex flex-col gap-4 text-xl sm:text-3xl font-bold uppercase">
+                  <Link
+                    href="/"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="group flex items-center justify-between border-b border-white/10 pb-3 hover:text-[#ff8c00] transition-colors"
+                  >
+                    <span>Home</span>
+                    <ArrowDownRight className="w-6 h-6 opacity-0 group-hover:opacity-100 -rotate-90 group-hover:rotate-0 transition-all text-[#ff8c00]" />
+                  </Link>
+
+                  <Link
+                    href="/#about"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="group flex items-center justify-between border-b border-white/10 pb-3 hover:text-[#ff8c00] transition-colors"
+                  >
+                    <span>About</span>
+                    <ArrowDownRight className="w-6 h-6 opacity-0 group-hover:opacity-100 -rotate-90 group-hover:rotate-0 transition-all text-[#ff8c00]" />
+                  </Link>
+
+                  {/* Services Accordion on Mobile */}
+                  <div className="border-b border-white/10 pb-3">
+                    <button
+                      onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                      className="w-full flex items-center justify-between hover:text-[#ff8c00] transition-colors cursor-pointer text-left"
                     >
-                      <span>{link.label}</span>
-                      <ArrowDownRight className="w-6 h-6 opacity-0 group-hover:opacity-100 -rotate-90 group-hover:rotate-0 transition-all text-[#ff8c00]" />
-                    </motion.a>
-                  ))}
+                      <span>Services</span>
+                      <ChevronDown className={`w-6 h-6 text-[#ff8c00] transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    <AnimatePresence>
+                      {isMobileServicesOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="pl-4 pt-3 space-y-2 text-sm font-medium normal-case"
+                        >
+                          {services.map((item) => (
+                            <Link
+                              key={item.label}
+                              href={item.href}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="block py-1 text-white/70 hover:text-[#ff8c00] transition-colors"
+                            >
+                              - {item.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  <Link
+                    href="/#gallery"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="group flex items-center justify-between border-b border-white/10 pb-3 hover:text-[#ff8c00] transition-colors"
+                  >
+                    <span>Gallery</span>
+                    <ArrowDownRight className="w-6 h-6 opacity-0 group-hover:opacity-100 -rotate-90 group-hover:rotate-0 transition-all text-[#ff8c00]" />
+                  </Link>
+
+                  <Link
+                    href="/#resources"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="group flex items-center justify-between border-b border-white/10 pb-3 hover:text-[#ff8c00] transition-colors"
+                  >
+                    <span>Resources</span>
+                    <ArrowDownRight className="w-6 h-6 opacity-0 group-hover:opacity-100 -rotate-90 group-hover:rotate-0 transition-all text-[#ff8c00]" />
+                  </Link>
+
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="group flex items-center justify-between border-b border-white/10 pb-3 hover:text-[#ff8c00] transition-colors"
+                  >
+                    <span>Contact</span>
+                    <ArrowDownRight className="w-6 h-6 opacity-0 group-hover:opacity-100 -rotate-90 group-hover:rotate-0 transition-all text-[#ff8c00]" />
+                  </Link>
                 </nav>
               </div>
 
@@ -125,33 +236,33 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
               <div className="glass-card p-8 rounded-3xl space-y-6 border border-white/10">
                 <div className="flex items-center gap-3 text-[#ff8c00]">
                   <Sparkles className="w-5 h-5" />
-                  <span className="text-sm font-semibold tracking-wider uppercase">21OAKS Estates</span>
+                  <span className="text-sm font-semibold tracking-wider uppercase">Ajay Homes & Estates</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold uppercase">Experience Premium Student & Estate Luxury</h3>
+                <h3 className="text-xl sm:text-2xl font-bold uppercase">Crafting Quality Homes in Chennai</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  Located right at the doorstep of top university campuses and estate districts. Featuring private infinity pools, study suites, and 24/7 concierge service.
+                  The most desired, fully developed residential flats in and around Chennai. We specialize in constructing quality buildings with customized solutions for our clients.
                 </p>
                 <div className="pt-4 border-t border-white/10 space-y-3 text-sm text-white/80">
                   <div className="flex items-center gap-3">
                     <MapPin className="w-4 h-4 text-[#ff8c00]" />
-                    <span>821 Williams St, Columbia, SC 29201</span>
+                    <span>Velachery, OMR, Porur & Tambaram, Chennai</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-4 h-4 text-[#ff8c00]" />
-                    <span>+1 (803) 555-OAKS (6257)</span>
+                    <span>+91 98400 12345 / 044-2244 5566</span>
                   </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <button
-                    onClick={() => { setIsMenuOpen(false); onOpenTourModal(); }}
-                    className="flex-1 glass-pill py-3 rounded-xl text-center font-medium text-sm hover:bg-white/20 transition-all"
+                    onClick={() => { setIsMenuOpen(false); onOpenTourModal?.(); }}
+                    className="flex-1 glass-pill py-3 rounded-xl text-center font-medium text-sm hover:bg-white/20 transition-all cursor-pointer"
                   >
                     Book In-Person Tour
                   </button>
                   <button
-                    onClick={() => { setIsMenuOpen(false); onOpenApplyModal(); }}
-                    className="flex-1 btn-gold-gradient py-3 rounded-xl text-center font-bold text-sm"
+                    onClick={() => { setIsMenuOpen(false); onOpenApplyModal?.(); }}
+                    className="flex-1 btn-gold-gradient py-3 rounded-xl text-center font-bold text-sm cursor-pointer"
                   >
                     Apply Online
                   </button>
@@ -161,11 +272,11 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
 
             {/* Bottom bar inside drawer */}
             <div className="max-w-6xl mx-auto w-full pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs text-white/50 gap-4">
-              <span>© 2026 21OAKS Homes & Estates. All Rights Reserved.</span>
+              <span>© 2026 Ajay Homes & Estates. All Rights Reserved.</span>
               <div className="flex gap-6">
-                <a href="#" className="hover:text-[#ff8c00] transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-[#ff8c00] transition-colors">Terms of Service</a>
-                <a href="#" className="hover:text-[#ff8c00] transition-colors">Accessibility</a>
+                <Link href="#" className="hover:text-[#ff8c00] transition-colors">Privacy Policy</Link>
+                <Link href="#" className="hover:text-[#ff8c00] transition-colors">Terms of Service</Link>
+                <Link href="#" className="hover:text-[#ff8c00] transition-colors">Accessibility</Link>
               </div>
             </div>
           </motion.div>

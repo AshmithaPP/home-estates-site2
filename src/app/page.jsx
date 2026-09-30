@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import Hero from './components/Hero/Hero';
-import ScrollGallery from './components/InteractiveGallery/ScrollGallery';
-import EverydayLivingSection from './components/EverydayLiving/EverydayLivingSection';
-import BalancedLivingSection from './components/BalancedLiving/BalancedLivingSection';
-import CustomerStoriesSection from './components/CustomerStories/CustomerStoriesSection';
-import FAQSection from './components/FAQ/FAQSection';
-import FindYourPlaceSection from './components/CTA/FindYourPlaceSection';
-import ContactSection from './components/Contact/ContactSection';
-import Footer from './components/Footer/Footer';
-import ApplyModal from './components/Modals/ApplyModal';
+"use client";
 
-function App() {
+import React, { useState } from 'react';
+import Hero from '@/components/Hero/Hero';
+import ScrollGallery from '@/components/InteractiveGallery/ScrollGallery';
+import EverydayLivingSection from '@/components/EverydayLiving/EverydayLivingSection';
+import BalancedLivingSection from '@/components/BalancedLiving/BalancedLivingSection';
+import CustomerStoriesSection from '@/components/CustomerStories/CustomerStoriesSection';
+import FAQSection from '@/components/FAQ/FAQSection';
+import FindYourPlaceSection from '@/components/CTA/FindYourPlaceSection';
+import ContactSection from '@/components/Contact/ContactSection';
+import Footer from '@/components/Footer/Footer';
+import ApplyModal from '@/components/Modals/ApplyModal';
+
+export default function HomePage() {
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
 
   return (
@@ -56,5 +58,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

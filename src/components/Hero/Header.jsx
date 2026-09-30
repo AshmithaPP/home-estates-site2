@@ -1,16 +1,23 @@
+"use client";
+
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDownRight, Menu, X, Calendar, Sparkles } from 'lucide-react';
+import { ArrowDownRight, Menu, X, ChevronDown } from 'lucide-react';
 
 export const Header = ({ onOpenTour, onOpenApply }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
-  // Exact menu items requested by user
-  const menuItems = [
-    { label: 'About us', href: '#about' },
-    { label: 'Photo gallery', href: '#gallery' },
-    { label: 'Interior', href: '#interior' },
-    { label: 'Contact us', href: '#contact' },
+  // Exact Services requested
+  const services = [
+    { label: 'Construction', href: '/#services-construction' },
+    { label: 'Layout promote', href: '/#services-layout' },
+    { label: 'Project management', href: '/#services-project-management' },
+    { label: 'Property developer', href: '/#services-property-developer' },
+    { label: 'Interior designing', href: '/#services-interior' },
+    { label: 'Real estate selling and buy', href: '/#services-real-estate' },
   ];
 
   return (
@@ -18,20 +25,23 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
       <header className="absolute top-4 sm:top-6 left-0 right-0 z-40 px-3 sm:px-12 py-0 transition-all duration-300">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-2 relative">
 
-          {/* Logo on Left (AJAY BUILDERS & PROPERTY DEVELOPERS logo image) */}
-          <motion.a
-            href="#"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+          {/* Logo on Left */}
+          <Link
+            href="/"
             className="flex items-center gap-1.5 group shrink-0 ml-2 sm:ml-4 md:ml-6"
           >
-            <img
-              src="/images/logo/logo-ajay-homes.png"
-              alt="Ajay Builders & Property Developers"
-              className="h-8 sm:h-9 md:h-10 lg:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-            />
-          </motion.a>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src="/images/logo/logo-ajay-homes.png"
+                alt="Ajay Builders & Property Developers"
+                className="h-8 sm:h-9 md:h-10 lg:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              />
+            </motion.div>
+          </Link>
 
           {/* Center Inline Navigation Bar (Dead Center) */}
           <motion.nav
@@ -40,15 +50,91 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="hidden md:flex items-center gap-1 sm:gap-1.5 bg-[#080a0c]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#ff8c00]/25 shadow-lg md:absolute md:left-1/2 md:-translate-x-1/2"
           >
-            {menuItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold text-[#f0ede8]/80 hover:text-[#ff8c00] hover:bg-[#ff8c00]/10 transition-all cursor-pointer"
+            {/* 1. Home */}
+            <Link
+              href="/"
+              className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold text-[#f0ede8]/80 hover:text-[#ff8c00] hover:bg-[#ff8c00]/10 transition-all cursor-pointer"
+            >
+              Home
+            </Link>
+
+            {/* 2. About */}
+            <Link
+              href="/#about"
+              className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold text-[#f0ede8]/80 hover:text-[#ff8c00] hover:bg-[#ff8c00]/10 transition-all cursor-pointer"
+            >
+              About
+            </Link>
+
+            {/* 3. Services with Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <button
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold flex items-center gap-1 transition-all cursor-pointer ${
+                  isServicesOpen
+                    ? 'text-[#ff8c00] bg-[#ff8c00]/10'
+                    : 'text-[#f0ede8]/80 hover:text-[#ff8c00] hover:bg-[#ff8c00]/10'
+                }`}
               >
-                {item.label}
-              </a>
-            ))}
+                <span>Services</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    isServicesOpen ? 'rotate-180 text-[#ff8c00]' : 'text-[#f0ede8]/60'
+                  }`}
+                />
+              </button>
+
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-[#080a0c]/95 backdrop-blur-md py-2 px-1.5 rounded-2xl border border-[#ff8c00]/30 shadow-2xl z-50"
+                  >
+                    {services.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        onClick={() => setIsServicesOpen(false)}
+                        className="block px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-[#f0ede8]/85 hover:text-[#ff8c00] hover:bg-[#ff8c00]/10 transition-all"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* 4. Gallery */}
+            <Link
+              href="/#gallery"
+              className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold text-[#f0ede8]/80 hover:text-[#ff8c00] hover:bg-[#ff8c00]/10 transition-all cursor-pointer"
+            >
+              Gallery
+            </Link>
+
+            {/* 5. Resources */}
+            <Link
+              href="/#resources"
+              className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold text-[#f0ede8]/80 hover:text-[#ff8c00] hover:bg-[#ff8c00]/10 transition-all cursor-pointer"
+            >
+              Resources
+            </Link>
+
+            {/* 6. Contact */}
+            <Link
+              href="/contact"
+              className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold text-[#f0ede8]/80 hover:text-[#ff8c00] hover:bg-[#ff8c00]/10 transition-all cursor-pointer"
+            >
+              Contact
+            </Link>
           </motion.nav>
 
           {/* Right Controls (Mobile Menu Toggle) */}
@@ -85,7 +171,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
               className="fixed inset-0 z-40 bg-black/80 cursor-pointer"
             />
 
-            {/* Compact Top Dropdown Menu — GPU Accelerated */}
+            {/* Compact Top Dropdown Menu */}
             <motion.div
               initial={{ opacity: 0, y: '-100%' }}
               animate={{ opacity: 1, y: 0 }}
@@ -95,7 +181,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
               style={{ willChange: 'transform' }}
             >
               <div className="max-w-md mx-auto w-full space-y-3">
-                
+
                 {/* Close button row inside menu */}
                 <div className="flex items-center justify-end pb-2 border-b border-white/10">
                   <button
@@ -107,24 +193,104 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                   </button>
                 </div>
 
-                {/* 4 Clean Menu Items */}
-                <nav className="flex flex-col gap-1 pt-1">
-                  {menuItems.map((item, idx) => (
-                    <motion.a
-                      key={item.label}
-                      href={item.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      initial={{ opacity: 0, x: -15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.03 + idx * 0.04 }}
-                      className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[#ff8c00]/10 border border-white/5 hover:border-[#ff8c00]/30 transition-all cursor-pointer group"
+                {/* Menu Items */}
+                <nav className="flex flex-col gap-1.5 pt-1">
+                  {/* Home */}
+                  <Link
+                    href="/"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[#ff8c00]/10 border border-white/5 hover:border-[#ff8c00]/30 transition-all cursor-pointer group"
+                  >
+                    <span className="text-sm font-bold text-white group-hover:text-[#ff8c00] transition-colors">
+                      Home
+                    </span>
+                    <ArrowDownRight className="w-4 h-4 text-[#ff8c00] transition-all" />
+                  </Link>
+
+                  {/* About */}
+                  <Link
+                    href="/#about"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[#ff8c00]/10 border border-white/5 hover:border-[#ff8c00]/30 transition-all cursor-pointer group"
+                  >
+                    <span className="text-sm font-bold text-white group-hover:text-[#ff8c00] transition-colors">
+                      About
+                    </span>
+                    <ArrowDownRight className="w-4 h-4 text-[#ff8c00] transition-all" />
+                  </Link>
+
+                  {/* Services Accordion in Mobile Drawer */}
+                  <div className="rounded-xl bg-white/5 border border-white/5 overflow-hidden">
+                    <button
+                      onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                      className="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-white hover:text-[#ff8c00] hover:bg-[#ff8c00]/10 transition-colors cursor-pointer text-left"
                     >
-                      <span className="text-sm font-bold text-white group-hover:text-[#ff8c00] transition-colors">
-                        {item.label}
-                      </span>
-                      <ArrowDownRight className="w-4 h-4 text-[var(--primary)] group-hover:text-[var(--primary)] group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-all" />
-                    </motion.a>
-                  ))}
+                      <span>Services</span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-[#ff8c00] transition-transform duration-200 ${
+                          isMobileServicesOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    <AnimatePresence>
+                      {isMobileServicesOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="px-4 pb-2.5 space-y-1 bg-black/20"
+                        >
+                          {services.map((item) => (
+                            <Link
+                              key={item.label}
+                              href={item.href}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="block py-1.5 text-xs font-semibold text-white/80 hover:text-[#ff8c00] transition-colors"
+                            >
+                              - {item.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Gallery */}
+                  <Link
+                    href="/#gallery"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[#ff8c00]/10 border border-white/5 hover:border-[#ff8c00]/30 transition-all cursor-pointer group"
+                  >
+                    <span className="text-sm font-bold text-white group-hover:text-[#ff8c00] transition-colors">
+                      Gallery
+                    </span>
+                    <ArrowDownRight className="w-4 h-4 text-[#ff8c00] transition-all" />
+                  </Link>
+
+                  {/* Resources */}
+                  <Link
+                    href="/#resources"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[#ff8c00]/10 border border-white/5 hover:border-[#ff8c00]/30 transition-all cursor-pointer group"
+                  >
+                    <span className="text-sm font-bold text-white group-hover:text-[#ff8c00] transition-colors">
+                      Resources
+                    </span>
+                    <ArrowDownRight className="w-4 h-4 text-[#ff8c00] transition-all" />
+                  </Link>
+
+                  {/* Contact */}
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[#ff8c00]/10 border border-white/5 hover:border-[#ff8c00]/30 transition-all cursor-pointer group"
+                  >
+                    <span className="text-sm font-bold text-white group-hover:text-[#ff8c00] transition-colors">
+                      Contact
+                    </span>
+                    <ArrowDownRight className="w-4 h-4 text-[#ff8c00] transition-all" />
+                  </Link>
                 </nav>
 
               </div>
