@@ -172,57 +172,57 @@ export const WhyStartSection = () => {
   return (
     <section 
       id="why-start"
-      className="relative w-full bg-white text-[#1f2937] overflow-hidden py-24 sm:py-32 lg:py-36"
+      className="relative w-full bg-white text-[#1f2937] overflow-hidden py-14 sm:py-18 lg:py-20"
       style={{ fontFamily: 'Montserrat, sans-serif' }}
     >
       {/* Symmetrical Container: Balanced, luxury spacing */}
-      <div className="max-w-[1360px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16">
+      <div className="max-w-[1300px] mx-auto px-6 sm:px-10 lg:px-12">
         
         {/* ═════════════════════════════════════════════════════════════
             SECTION 1: "Why Start With Ajay Homes?"
            ═════════════════════════════════════════════════════════════ */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* ── LEFT: Title & Promises List (5 cols) ─────────────────── */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 space-y-7 sm:space-y-8"
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5 space-y-5 sm:space-y-6"
           >
             {/* Main Section Heading */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#1f2937] tracking-tight leading-snug text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#1f2937] tracking-tight leading-snug text-left">
               Why Start With Ajay Homes?
             </h2>
 
             {/* List with Standalone Outline Icons */}
-            <div className="space-y-6 sm:space-y-7 pt-1">
+            <div className="space-y-4 sm:space-y-4.5 pt-0.5">
               {promises.map((item) => {
                 const IconComp = item.icon;
 
                 return (
                   <div
                     key={item.title}
-                    className="flex items-start gap-4 sm:gap-5 group"
+                    className="flex items-start gap-3.5 sm:gap-4 group"
                   >
                     {/* Standalone Line Icon */}
                     <div className="pt-0.5 text-[#374151] group-hover:text-[#ff8c00] transition-colors shrink-0">
-                      <IconComp className="w-6 h-6 stroke-[1.5]" />
+                      <IconComp className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.5]" />
                     </div>
 
                     {/* Text Details */}
-                    <div className="space-y-1">
+                    <div className="space-y-0.5">
                       <div className="flex items-baseline gap-2 flex-wrap">
-                        <span className="text-base sm:text-[17px] font-bold text-[#111827]">
+                        <span className="text-sm sm:text-base font-bold text-[#111827]">
                           {item.title}
                         </span>
-                        <span className="text-sm font-semibold text-[#4b5563]">
+                        <span className="text-xs sm:text-sm font-semibold text-[#4b5563]">
                           — {item.subtitle}
                         </span>
                       </div>
                       
-                      <p className="text-xs sm:text-[13px] text-[#666666] font-normal leading-relaxed max-w-md">
+                      <p className="text-xs sm:text-[12.5px] text-[#666666] font-normal leading-relaxed max-w-md">
                         {item.desc}
                       </p>
                     </div>
@@ -232,30 +232,30 @@ export const WhyStartSection = () => {
             </div>
           </motion.div>
 
-          {/* ── RIGHT: Home Related Isometric Villa (Increased to 7 cols & Large Size) ── */}
+          {/* ── RIGHT: Home Related Isometric Villa ───────────────────── */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
             className="lg:col-span-7 relative flex items-center justify-center lg:justify-end"
           >
-            {/* Organic Fluid Curved Shape in Brand Warm Amber Glow (Zero Blue/Pink) */}
+            {/* Organic Fluid Curved Shape in Brand Warm Amber Glow */}
             <div 
-              className="absolute -inset-8 sm:-inset-12 lg:-inset-16 pointer-events-none"
+              className="absolute -inset-6 sm:-inset-8 pointer-events-none"
               style={{
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(255, 140, 0, 0.12) 0%, rgba(255, 171, 64, 0.05) 55%, transparent 75%)',
+                background: 'radial-gradient(ellipse at 50% 50%, rgba(255, 140, 0, 0.10) 0%, rgba(255, 171, 64, 0.04) 55%, transparent 75%)',
                 borderRadius: '58% 42% 65% 35% / 45% 55% 45% 55%',
-                transform: 'scale(1.22)',
+                transform: 'scale(1.15)',
               }}
             />
 
-            {/* 3D Isometric Home Illustration (Much Larger Scale) */}
+            {/* 3D Isometric Home Illustration */}
             <div className="relative z-10 w-full flex items-center justify-center lg:justify-end">
               <img
                 src="/images/why-start-isometric.png"
                 alt="Ajay Homes Luxury Residential Villa"
-                className="w-full max-w-[620px] sm:max-w-[700px] lg:max-w-[760px] xl:max-w-[820px] h-auto object-contain drop-shadow-[0_25px_45px_rgba(255,140,0,0.14)] transform hover:scale-[1.02] transition-transform duration-500"
+                className="w-full max-w-[460px] sm:max-w-[520px] lg:max-w-[560px] h-auto object-contain drop-shadow-[0_15px_35px_rgba(255,140,0,0.12)] transform hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
           </motion.div>
@@ -265,80 +265,80 @@ export const WhyStartSection = () => {
 
         {/* ═════════════════════════════════════════════════════════════
             SECTION 2: "From Bhoomi Pooja to House Warming"
-            Significantly increased vertical space (mt-44 to lg:mt-56)
+            Tightened vertical margin and refined padding
            ═════════════════════════════════════════════════════════════ */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-center mt-36 sm:mt-48 lg:mt-56 pt-16 sm:pt-20 border-t border-gray-100/80">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mt-12 sm:mt-16 lg:mt-20 pt-10 sm:pt-14 border-t border-gray-100/90">
           
-          {/* ── LEFT: Entrance Illustration (7 cols & Large Size) ─────── */}
+          {/* ── LEFT: Entrance Illustration ──────────────────────────── */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
             className="lg:col-span-7 relative flex items-center justify-center lg:justify-start order-2 lg:order-1"
           >
-            {/* Organic Fluid Curved Shape in Brand Warm Amber Glow (Zero Pink) */}
+            {/* Organic Fluid Curved Shape in Brand Warm Amber Glow */}
             <div 
-              className="absolute -inset-8 sm:-inset-12 lg:-inset-16 pointer-events-none"
+              className="absolute -inset-6 sm:-inset-8 pointer-events-none"
               style={{
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(255, 140, 0, 0.12) 0%, rgba(255, 171, 64, 0.05) 55%, transparent 75%)',
+                background: 'radial-gradient(ellipse at 50% 50%, rgba(255, 140, 0, 0.10) 0%, rgba(255, 171, 64, 0.04) 55%, transparent 75%)',
                 borderRadius: '42% 58% 36% 64% / 55% 40% 60% 45%',
-                transform: 'scale(1.22)',
+                transform: 'scale(1.15)',
               }}
             />
 
-            {/* Entrance 3D Isometric Illustration (Much Larger Scale) */}
+            {/* Entrance 3D Isometric Illustration */}
             <div className="relative z-10 w-full flex items-center justify-center lg:justify-start">
               <img
                 src="/images/bhoomi-to-housewarming-isometric.png"
                 alt="From Bhoomi Pooja to House Warming Entrance"
-                className="w-full max-w-[560px] sm:max-w-[620px] lg:max-w-[700px] xl:max-w-[760px] h-auto object-contain drop-shadow-[0_25px_45px_rgba(255,140,0,0.14)] transform hover:scale-[1.02] transition-transform duration-500"
+                className="w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[520px] h-auto object-contain drop-shadow-[0_15px_35px_rgba(255,140,0,0.12)] transform hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
           </motion.div>
 
           {/* ── RIGHT: Heading & Exact Replica Card (5 cols) ─────────── */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 order-1 lg:order-2 space-y-6"
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5 order-1 lg:order-2 space-y-4 sm:space-y-5"
           >
             {/* Section Heading */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#1f2937] tracking-tight leading-snug text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#1f2937] tracking-tight leading-snug text-left">
               From Bhoomi Pooja to House Warming
             </h2>
 
             {/* Description Paragraph */}
-            <p className="text-sm sm:text-base text-[#4b5563] font-medium leading-relaxed max-w-lg text-left">
+            <p className="text-xs sm:text-sm md:text-[15px] text-[#4b5563] font-medium leading-relaxed max-w-lg text-left">
               From the first conversation to the final handover, Ajay Homes can support your property journey with experience across construction, development, project management, interiors, and real estate.
             </p>
 
-            {/* EXACT Replica Elevated Card (Matching Reference 3) */}
-            <div className="bg-white rounded-2xl p-7 sm:p-9 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-[#e5e7eb]/80 space-y-6 sm:space-y-7">
+            {/* EXACT Replica Elevated Card */}
+            <div className="bg-white rounded-2xl p-5 sm:p-6 lg:p-7 shadow-[0_10px_30px_rgba(0,0,0,0.04)] border border-[#e5e7eb]/80 space-y-4">
               {features.map((feat) => {
                 const IconComp = feat.icon;
 
                 return (
                   <div 
                     key={feat.text}
-                    className="flex items-center gap-4 sm:gap-5 group"
+                    className="flex items-center gap-3.5 sm:gap-4 group"
                   >
                     {/* Standalone Line Icon */}
                     <div className="text-[#374151] group-hover:text-[#ff8c00] transition-colors shrink-0">
-                      <IconComp className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.5]" />
+                      <IconComp className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[1.5]" />
                     </div>
 
                     {/* Text & Badge */}
                     <div className="flex-1 flex items-center justify-between gap-3">
-                      <span className="text-xs sm:text-sm font-medium text-[#2d3748] group-hover:text-[#111827] transition-colors leading-snug">
+                      <span className="text-xs sm:text-[13px] font-medium text-[#2d3748] group-hover:text-[#111827] transition-colors leading-snug">
                         {feat.text}
                       </span>
 
                       {/* Pill Badge */}
                       {feat.badge && (
-                        <span className="px-3 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-[#111827] text-white shrink-0 shadow-sm">
+                        <span className="px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-extrabold tracking-wider uppercase bg-[#111827] text-white shrink-0 shadow-xs">
                           {feat.badge}
                         </span>
                       )}
@@ -349,7 +349,7 @@ export const WhyStartSection = () => {
             </div>
 
             {/* Tagline */}
-            <div className="pt-2 flex items-center gap-2.5">
+            <div className="pt-1 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#ff8c00]" />
               <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#111827]">
                 One team. Every stage.
