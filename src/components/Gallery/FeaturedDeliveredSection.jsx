@@ -1,0 +1,174 @@
+"use client";
+
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Star, ChevronRight, ChevronLeft, Camera } from 'lucide-react';
+
+export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, onOpenInquiry }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Show 3 cards at a time on desktop
+  const itemsPerPage = 3;
+  const maxIndex = Math.max(0, featuredProjects.length - itemsPerPage);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  };
+
+  const visibleProjects = featuredProjects.slice(currentIndex, currentIndex + itemsPerPage);
+  // If at edge, wrap around seamlessly
+  const displayCards = visibleProjects.length < itemsPerPage
+    ? [...visibleProjects, ...featuredProjects.slice(0, itemsPerPage - visibleProjects.length)]
+    : visibleProjects;
+
+  return (
+    <section className="w-full mb-14 sm:mb-20">
+      {/* ── Featured Banner Container (Livspace Reference Replica) ──── */}
+      <div
+        className="relative rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden shadow-2xl border transition-all duration-300"
+        style={{
+          background: 'linear-gradient(145deg, rgba(255, 140, 0, 0.12) 0%, rgba(36, 36, 36, 0.94) 50%, rgba(24, 24, 24, 0.98) 100%)',
+          borderColor: 'rgba(255, 140, 0, 0.35)',
+          boxShadow: '0 12px 40px -10px rgba(0, 0, 0, 0.7), 0 0 35px -5px rgba(255, 140, 0, 0.15)'
+        }}
+      >
+        {/* Soft Ambient Radial Behind */}
+        <div
+          className="absolute -top-24 -left-24 w-80 h-80 rounded-full blur-[100px] pointer-events-none opacity-20"
+          style={{ background: 'var(--primary)' }}
+        />
+
+        {/* ── Header Row: Icon + Title + Subtitle ──────────────────────── */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7 relative z-10">
+          <div className="flex items-start sm:items-center gap-3.5 sm:gap-4">
+            {/* Star Icon Badge (Matching Livspace Pink/Orange 3D Star Badge) */}
+            <div
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg border border-[var(--primary)]/50 relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%)'
+              }}
+            >
+              <Star className="w-6 h-6 sm:w-7 sm:h-7 text-black fill-black/90 drop-shadow" />
+            </div>
+
+            <div>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[var(--text-primary)] tracking-tight leading-tight">
+                Featured Delivered Homes
+              </h2>
+              <p className="text-xs sm:text-sm text-[var(--text-muted)] font-medium mt-1 leading-relaxed">
+                Browse our top home construction & luxury interior projects, handpicked by our experts.
+              </p>
+            </div>
+          </div>
+
+          {/* Controls: Left / Right navigation arrows */}
+          <div className="hidden sm:flex items-center gap-2 self-end sm:self-center">
+            <button
+              onClick={handlePrev}
+              aria-label="Previous Featured Projects"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-[var(--primary)] hover:text-black text-white border border-white/15 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-md"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={handleNext}
+              aria-label="Next Featured Projects"
+              className="w-10 h-10 rounded-full bg-white text-black hover:bg-[var(--primary)] hover:text-black flex items-center justify-center transition-all duration-200 cursor-pointer shadow-lg hover:scale-105"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* ── Carousel Cards Row (Screenshot 1 Exact Layout) ──────────── */}
+        <div className="relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {displayCards.map((project, idx) => (
+              <motion.div
+                key={`${project.id}-${idx}`}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="bg-[var(--grey-deep)] rounded-2xl overflow-hidden border border-white/10 hover:border-[var(--primary)]/60 transition-all duration-300 shadow-xl flex flex-col group"
+              >
+                {/* Image Section with Photo Badge */}
+                <div
+                  className="relative aspect-[16/10] overflow-hidden cursor-pointer bg-black/40"
+                  onClick={() => onSelectProject(project)}
+                >
+                  <img
+                    src={project.mainImage}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+
+                  {/* Photo Count Badge (Matching Livspace 📷 badge) */}
+                  <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/75 backdrop-blur-md text-white text-xs font-semibold flex items-center gap-1.5 border border-white/10 shadow-md">
+                    <Camera className="w-3.5 h-3.5 text-[var(--primary)]" />
+                    <span>{project.photosCount}</span>
+                  </div>
+
+                  {/* Top Category Tag */}
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[var(--primary)]/90 backdrop-blur-md text-black text-[11px] font-extrabold uppercase tracking-wider shadow-md">
+                    {project.category}
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between gap-4">
+                  <div>
+                    <h3
+                      onClick={() => onSelectProject(project)}
+                      className="text-sm sm:text-base font-bold text-[var(--text-primary)] hover:text-[var(--primary)] line-clamp-2 leading-snug cursor-pointer transition-colors"
+                      title={project.featuredTitle || project.title}
+                    >
+                      {project.featuredTitle || project.title}
+                    </h3>
+                    <p className="text-xs text-[var(--text-muted)] mt-1.5">
+                      {project.community} &bull; <span className="text-[var(--text-primary)] font-semibold">{project.bhk}</span>
+                    </p>
+                  </div>
+
+                  {/* Outlined Pill CTA Button (Livspace Exact replica) */}
+                  <button
+                    onClick={() => onOpenInquiry(project)}
+                    className="w-full py-2.5 px-4 rounded-full border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-black font-bold text-xs sm:text-sm text-center transition-all duration-200 cursor-pointer shadow-sm hover:shadow-[0_0_18px_rgba(255,140,0,0.35)]"
+                  >
+                    {project.featuredButtonText || 'Get Similar Interiors'}
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Floating Right Arrow on Mobile / Overflow indicator */}
+          <div className="sm:hidden flex items-center justify-center gap-3 mt-5">
+            <button
+              onClick={handlePrev}
+              className="w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center border border-white/15"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <span className="text-xs text-[var(--text-muted)] font-semibold">
+              {currentIndex + 1} / {featuredProjects.length}
+            </span>
+            <button
+              onClick={handleNext}
+              className="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center shadow-lg"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default FeaturedDeliveredSection;

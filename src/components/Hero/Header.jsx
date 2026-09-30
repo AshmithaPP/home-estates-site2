@@ -114,7 +114,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
 
             {/* 4. Gallery */}
             <Link
-              href="/#gallery"
+              href="/gallery"
               className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold text-[#f0ede8]/80 hover:text-[#ff8c00] hover:bg-[#ff8c00]/10 transition-all cursor-pointer"
             >
               Gallery
@@ -258,7 +258,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
 
                   {/* Gallery */}
                   <Link
-                    href="/#gallery"
+                    href="/gallery"
                     onClick={() => setIsMenuOpen(false)}
                     className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[#ff8c00]/10 border border-white/5 hover:border-[#ff8c00]/30 transition-all cursor-pointer group"
                   >

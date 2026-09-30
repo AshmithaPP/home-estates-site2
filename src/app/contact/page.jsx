@@ -5,7 +5,6 @@ import Header from '@/components/Hero/Header';
 import ContactHero from '@/components/Contact/ContactHero';
 import ContactFormSection from '@/components/Contact/ContactFormSection';
 import WhyStartSection from '@/components/Contact/WhyStartSection';
-import VisitUsSection from '@/components/Contact/VisitUsSection';
 import ProjectInMindSection from '@/components/Contact/ProjectInMindSection';
 import Footer from '@/components/Footer/Footer';
 import ApplyModal from '@/components/Modals/ApplyModal';
@@ -26,19 +25,13 @@ export default function ContactPage() {
       {/* ── Contact Hero Section ─────────────────────────────────── */}
       <ContactHero />
 
-      {/* ── Tell Us About Your Requirement Form Section ─────────── */}
+      {/* ── 2nd Section: Form on Left & Contact Details on Right ─── */}
       <ContactFormSection />
 
-      {/* ── Why Start With Ajay Homes Section ────────────────────── */}
-      <WhyStartSection
-        onOpenTourModal={() => setIsTourModalOpen(true)}
-        onOpenApply={() => setIsApplyModalOpen(true)}
-      />
+      {/* ── 3rd Section: Why Start With Ajay Homes? ──────────────── */}
+      <WhyStartSection />
 
-      {/* ── Visit Us Section ─────────────────────────────────────── */}
-      <VisitUsSection />
-
-      {/* ── Have a Project in Mind Section ───────────────────────── */}
+      {/* ── 4th Section: Have a Project in Mind ──────────────────── */}
       <ProjectInMindSection
         onOpenTourModal={() => setIsTourModalOpen(true)}
         onOpenApply={() => setIsApplyModalOpen(true)}
