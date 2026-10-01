@@ -91,11 +91,11 @@ export const DifferentRequirementsSection = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 transition-all duration-300 border overflow-hidden hover:shadow-xl"
+            className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 transition-all duration-300 border overflow-hidden hover:shadow-xl bg-white border-slate-200 hover:border-slate-300"
             style={{
-              backgroundColor: 'color-mix(in srgb, var(--primary) 3.5%, #f8fafc)',
-              borderColor: 'color-mix(in srgb, var(--primary) 22%, #e2e8f0)',
-              boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 0 20px -4px color-mix(in srgb, var(--primary) 15%, transparent)',
+              backgroundColor: '#ffffff',
+              borderColor: '#e2e8f0',
+              boxShadow: '0 10px 30px -4px rgba(0, 0, 0, 0.05), 0 2px 8px -2px rgba(0, 0, 0, 0.02)',
             }}
           >
             {/* Top Card Info Header with right vertical badge */}
@@ -156,9 +156,9 @@ export const DifferentRequirementsSection = ({
                   return (
                     <div
                       key={idx}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium text-slate-700 bg-white border border-slate-200/90 hover:border-[var(--primary)] hover:text-black transition-all cursor-default shadow-xs"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium text-slate-700 bg-slate-50 border border-slate-200/90 hover:border-slate-300 hover:bg-slate-100 hover:text-black transition-all cursor-default shadow-xs"
                     >
-                      <Icon className="w-3 h-3 text-[var(--primary-dark)]" />
+                      <Icon className="w-3 h-3 text-[var(--primary)]" />
                       <span>{pill.label}</span>
                     </div>
                   );
@@ -178,11 +178,11 @@ export const DifferentRequirementsSection = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
-            className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 transition-all duration-300 border overflow-hidden hover:shadow-xl"
+            className="group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 transition-all duration-300 border overflow-hidden hover:shadow-xl bg-white border-slate-200 hover:border-slate-300"
             style={{
-              backgroundColor: 'color-mix(in srgb, var(--primary) 3.5%, #f8fafc)',
-              borderColor: 'color-mix(in srgb, var(--primary) 22%, #e2e8f0)',
-              boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 0 20px -4px color-mix(in srgb, var(--primary) 15%, transparent)',
+              backgroundColor: '#ffffff',
+              borderColor: '#e2e8f0',
+              boxShadow: '0 10px 30px -4px rgba(0, 0, 0, 0.05), 0 2px 8px -2px rgba(0, 0, 0, 0.02)',
             }}
           >
             {/* Top Card Info Header with right vertical badge */}
@@ -243,9 +243,9 @@ export const DifferentRequirementsSection = ({
                   return (
                     <div
                       key={idx}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium text-slate-700 bg-white border border-slate-200/90 hover:border-[var(--primary)] hover:text-black transition-all cursor-default shadow-xs"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium text-slate-700 bg-slate-50 border border-slate-200/90 hover:border-slate-300 hover:bg-slate-100 hover:text-black transition-all cursor-default shadow-xs"
                     >
-                      <Icon className="w-3 h-3 text-[var(--primary-dark)]" />
+                      <Icon className="w-3 h-3 text-[var(--primary)]" />
                       <span>{pill.label}</span>
                     </div>
                   );
