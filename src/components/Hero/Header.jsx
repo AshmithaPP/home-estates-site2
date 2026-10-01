@@ -14,7 +14,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
   // Exact Services requested
   const services = [
     { label: 'Construction', href: '/services/construction' },
-    { label: 'Layout promoter', href: '/services/layout-promote' },
+    { label: 'Layout promoters', href: '/services/layout-promote' },
     { label: 'Project management', href: '/services/project-management' },
     { label: 'Property developer', href: '/#services-property-developer' },
     { label: 'Interior designing', href: '/#services-interior' },
@@ -203,12 +203,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-1.5 sm:gap-3 shrink-0"
           >
-            {/* Get Free Consultation (reusable Button): sized per breakpoint so it never overlaps the centred nav */}
-            <span className="md:hidden">
-              <Button onClick={openConsultation} variant="primary" size="responsive">
-                Free Consultation
-              </Button>
-            </span>
+            {/* Desktop & Tablet Free Consultation Buttons */}
             <span className="hidden md:block lg:hidden" title="Get Free Consultation">
               <Button onClick={openConsultation} variant="primary" size="sm" aria-label="Get Free Consultation" />
             </span>
@@ -371,6 +366,21 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                     <ArrowDownRight className="w-4 h-4 text-[var(--primary)] transition-all" />
                   </Link>
                 </nav>
+
+                {/* Free Consultation Action Button inside Mobile Menu */}
+                <div className="pt-3 border-t border-white/10">
+                  <Button
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      openConsultation();
+                    }}
+                    variant="primary"
+                    size="md"
+                    className="w-full justify-center shadow-lg shadow-[var(--primary)]/20"
+                  >
+                    Free Consultation
+                  </Button>
+                </div>
 
               </div>
             </motion.div>

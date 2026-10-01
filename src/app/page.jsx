@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Hero from '@/components/Hero/Hero';
+import ConstructionScrollSection from '@/components/Home/ConstructionScrollSection';
 import EverythingOnePlace from '@/components/Home/EverythingOnePlace';
 import Spotlight from '@/components/Home/Spotlight';
 import SignatureLivingShowcase from '@/components/Home/SignatureLivingShowcase';
@@ -30,6 +31,9 @@ export default function HomePage() {
 
         {/* 5. Realtime Client Projects Showcase */}
         <RealtimeProjects />
+
+        {/* Scroll-driven construction animation (ported from ajay-homes-estates hero) */}
+        <ConstructionScrollSection />
 
         {/* 6. How we got here? Interactive Timeline Showcase */}
         <HowWeGotHere />

@@ -77,7 +77,7 @@ const LayersIcon = (props) => (
 export const WhyStartSection = () => {
   const promises = [
     {
-      title: '50+ Years',
+      title: '60+ Years',
       subtitle: 'Industry Experience',
       desc: 'Over five decades of uncompromised structural craftsmanship, ethical property development, and generational trust across South India.',
       icon: PiggyRupeeIcon,

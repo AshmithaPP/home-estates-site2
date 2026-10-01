@@ -16,7 +16,7 @@ export const LAYOUT_PROMOTION_FEATURES = [
   },
   {
     id: 'industry-experience',
-    title: '50+ Years of Industry Experience',
+    title: '60+ Years of Industry Experience',
     description: 'Decades of industry experience supporting property owners, investors, and development opportunities.',
   },
   {

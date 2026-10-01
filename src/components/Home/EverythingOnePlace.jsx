@@ -13,7 +13,7 @@ const services = [
   },
   {
     id: "services-layout",
-    title: "Layout Promoter",
+    title: "Layout Promoters",
     image: "/assets/img/img-010.jpeg",
     desc: "Multi-acre plots & township development",
   },

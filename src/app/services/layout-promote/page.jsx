@@ -9,9 +9,10 @@ import WhyChooseLayoutSection from '@/components/LayoutPromote/WhyChooseLayoutSe
 import LayoutProcessSection from '@/components/LayoutPromote/LayoutProcessSection';
 import WhoCanWorkWithUsSection from '@/components/LayoutPromote/WhoCanWorkWithUsSection';
 import LandPotentialSection from '@/components/LayoutPromote/LandPotentialSection';
-import LayoutFAQSection from '@/components/LayoutPromote/LayoutFAQSection';
 import LayoutCTASection from '@/components/LayoutPromote/LayoutCTASection';
 import LandPreparationSection from '@/components/LayoutPromote/LandPreparationSection';
+import ServiceFormFAQSection from '@/components/Common/ServiceFormFAQSection';
+import { LAYOUT_FAQ_ITEMS } from '@/components/LayoutPromote/LayoutFAQSection';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
 
@@ -59,12 +60,6 @@ export default function LayoutPromotePage() {
         onOpenApply={() => setIsApplyModalOpen(true)}
       />
 
-      {/* ── Frequently Asked Questions Section ─────────────────────── */}
-      <LayoutFAQSection
-        onOpenTourModal={() => setIsTourModalOpen(true)}
-        onOpenApply={() => setIsApplyModalOpen(true)}
-      />
-
       {/* ── Have Land in Chennai? CTA Section (Grey BG - Short Height) ── */}
       <LayoutCTASection
         onOpenApply={() => setIsApplyModalOpen(true)}
@@ -72,6 +67,24 @@ export default function LayoutPromotePage() {
 
       {/* ── From Land Preparation to Development Section (White BG) ── */}
       <LandPreparationSection />
+
+      {/* ── LAST SECTION: One Side Form & Another Side FAQ (Responsive) ── */}
+      <ServiceFormFAQSection
+        id="layout-faq-form"
+        serviceName="Layout Promotion"
+        tagline="FAQS"
+        faqs={LAYOUT_FAQ_ITEMS}
+        formTitle="Book a 15 min call"
+        formSubtitle="If you have land with development potential or questions about layout promotion, schedule a private consultation."
+        serviceOptions={[
+          "Joint Venture Layout Development",
+          "Outright Land Promotion & Marketing",
+          "CMDA / DTCP Approval Coordination",
+          "Plot Infrastructure Development",
+          "Agricultural to Residential Layout",
+          "NRI Land Asset Management"
+        ]}
+      />
 
       {/* ── Interactive Modals ────────────────────────────────────── */}
       <TourModal

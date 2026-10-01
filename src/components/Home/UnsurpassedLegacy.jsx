@@ -53,7 +53,7 @@ const milestones = [
   {
     icon: Building2,
     year: "2020s",
-    title: "50+ Years of Experience, Built for Tomorrow",
+    title: "60+ Years of Experience, Built for Tomorrow",
     description:
       "Delivering landmark turnkey residential projects with 100% IS-code certified structural resilience, visionary aesthetics, and enduring lifestyle value.",
     tagline: "Iconic Turnkey Landmarks",

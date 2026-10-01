@@ -9,9 +9,10 @@ import WhyChooseUsSection from '@/components/Construction/WhyChooseUsSection';
 import ConstructionProcessSection from '@/components/Construction/ConstructionProcessSection';
 import BuiltForRequirementsSection from '@/components/Construction/BuiltForRequirementsSection';
 import MoreThanConstructionSection from '@/components/Construction/MoreThanConstructionSection';
-import FAQSection from '@/components/FAQ/FAQSection';
-import PremiumProjectCTASection from '@/components/Common/PremiumProjectCTASection';
 import FoundationToCelebrationSection from '@/components/Common/FoundationToCelebrationSection';
+import PremiumProjectCTASection from '@/components/Common/PremiumProjectCTASection';
+import ServiceFormFAQSection from '@/components/Common/ServiceFormFAQSection';
+import { faqItems } from '@/components/FAQ/FAQSection';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
 
@@ -57,12 +58,6 @@ export default function ConstructionServicesPage() {
       {/* ── More Than Construction (Grey) ── */}
       <MoreThanConstructionSection />
 
-      {/* ── Exact Existing FAQ Section (As-is, Light Theme) ── */}
-      <FAQSection
-        onOpenApply={() => setIsApplyModalOpen(true)}
-        onOpenTourModal={() => setIsTourModalOpen(true)}
-      />
-
       {/* ── Planning a Premium Construction Project? (CTA, Grey) ── */}
       <PremiumProjectCTASection
         title="Planning a Premium Construction Project?"
@@ -70,7 +65,7 @@ export default function ConstructionServicesPage() {
         stats={[
           { value: '₹1 Cr+', label: 'Projects' },
           { value: '500+', label: 'Projects' },
-          { value: '50+ Years', label: 'of Industry Experience' },
+          { value: '60+ Years', label: 'of Industry Experience' },
         ]}
         ctaText="Discuss Your Project"
         onCtaClick={() => setIsApplyModalOpen(true)}
@@ -78,6 +73,24 @@ export default function ConstructionServicesPage() {
 
       {/* ── From Bhoomi Pooja to House Warming (Journey, White) ── */}
       <FoundationToCelebrationSection />
+
+      {/* ── LAST SECTION: One Side Form & Another Side FAQ (Responsive) ── */}
+      <ServiceFormFAQSection
+        id="construction-faq-form"
+        serviceName="Construction"
+        tagline="FAQS"
+        faqs={faqItems}
+        formTitle="Book a 15 min call"
+        formSubtitle="If you have questions about our luxury villas, CMDA approvals, or custom builds, schedule a private consultation."
+        serviceOptions={[
+          "Individual Luxury Villa",
+          "Turnkey Residential Construction",
+          "Gated Villa Community",
+          "Duplex / Triplex Residence",
+          "Demolition & Re-Construction",
+          "Commercial / Mixed-Use Development"
+        ]}
+      />
 
       <TourModal
         isOpen={isTourModalOpen}

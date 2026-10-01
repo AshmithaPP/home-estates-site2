@@ -10,9 +10,9 @@ import ProjectManagementProcessSection from '@/components/ProjectManagement/Proj
 import ProjectsWeManageSection from '@/components/ProjectManagement/ProjectsWeManageSection';
 import BuiltAroundPrioritiesSection from '@/components/ProjectManagement/BuiltAroundPrioritiesSection';
 import VisionDetailsBannerSection from '@/components/ProjectManagement/VisionDetailsBannerSection';
-import FAQSection from '@/components/FAQ/FAQSection';
 import PremiumProjectCTASection from '@/components/Common/PremiumProjectCTASection';
 import JourneyMarqueeSection from '@/components/Common/JourneyMarqueeSection';
+import ServiceFormFAQSection from '@/components/Common/ServiceFormFAQSection';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
 
@@ -137,20 +137,13 @@ export default function ProjectManagementPage() {
         onOpenApply={() => setIsApplyModalOpen(true)}
       />
 
-      {/* ── 9. Frequently Asked Questions (Reusable, Light) ─────────── */}
-      <FAQSection
-        items={projectManagementFaqs}
-        onOpenApply={() => setIsApplyModalOpen(true)}
-        onOpenTourModal={() => setIsTourModalOpen(true)}
-      />
-
       {/* ── 9. Planning a Complex Project? (Reusable CTA, Dark) ─────── */}
       <PremiumProjectCTASection
         id="project-management-cta"
         title="Planning a Complex Project?"
         description="Don't manage every detail alone. Let an experienced team coordinate your project from planning to completion."
         stats={[
-          { value: '50+ Years', label: 'of Industry Experience' },
+          { value: '60+ Years', label: 'of Industry Experience' },
           { value: '500+', label: 'Projects' },
           { value: '₹1 Cr+', label: 'Project Expertise' },
         ]}
@@ -165,6 +158,24 @@ export default function ProjectManagementPage() {
         lead="A project involves countless details. We stay involved throughout the journey—from the first Bhoomi Pooja to the final House Warming."
         description="Our team coordinates the people, materials, timelines, quality, and execution so you can experience the journey with greater confidence."
         tagline="You envision it. We manage every detail."
+      />
+
+      {/* ── LAST SECTION: One Side Form & Another Side FAQ (Responsive) ── */}
+      <ServiceFormFAQSection
+        id="pm-faq-form"
+        serviceName="Project Management"
+        tagline="FAQS"
+        faqs={projectManagementFaqs}
+        formTitle="Book a 15 min call"
+        formSubtitle="If you have questions about our ₹1 Cr+ project management, timelines, or contractor coordination, schedule a private consultation."
+        serviceOptions={[
+          "₹1 Cr+ Luxury Villa Management",
+          "Residential Building Coordination",
+          "NRI Remote Project Supervision",
+          "External Architect & Contractor Oversight",
+          "Commercial / Institutional PM",
+          "Turnkey Quality & Cost Auditing"
+        ]}
       />
 
       {/* ── Modals ───────────────────────────────────────────────── */}

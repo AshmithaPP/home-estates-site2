@@ -9,7 +9,7 @@ export const blogArticles = [
     readTime: '5 min read',
     image: '/images/residence-images/besantnagar-residence-view/img19.jpg',
     imageOverlayTitle: 'What makes Ajay Homes different from others?',
-    imageBadge: '50+ Yrs Legacy',
+    imageBadge: '60+ Yrs Legacy',
     excerpt: 'When it comes to building an independent house, many homeowners in Chennai face common challenges: lack of transparency, inconsistent quality, delays, and the constant need to [...]',
     intro: 'When constructing a bespoke independent home in Chennai, homeowners routinely encounter four persistent obstacles: ambiguous cost estimations, frequent sub-contractor handoffs, unmonitored structural concrete mixing, and multi-month handover delays. At Ajay Homes, we designed our turnkey framework to fundamentally eliminate these systemic issues.',
     sections: [

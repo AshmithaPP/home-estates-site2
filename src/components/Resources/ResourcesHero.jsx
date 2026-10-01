@@ -66,7 +66,7 @@ export const ResourcesHero = ({ onOpenTour, onOpenApply }) => {
 
             {/* 2. Description Paragraph — Exact Home Page Typography & Density */}
             <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal max-w-xs sm:max-w-lg md:max-w-xl leading-relaxed drop-shadow select-none text-left">
-              Comprehensive home building blueprints, CMDA / DTCP compliance checklists, turnkey construction benchmarks, and interior design advisories—curated from 50+ years of landmark residential mastery across Chennai.
+              Comprehensive home building blueprints, CMDA / DTCP compliance checklists, turnkey construction benchmarks, and interior design advisories—curated from 60+ years of landmark residential mastery across Chennai.
             </p>
 
             {/* 3. Action Button (Pill Button using dynamic theme variables) */}

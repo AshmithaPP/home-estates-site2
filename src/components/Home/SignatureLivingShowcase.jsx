@@ -176,6 +176,14 @@ export default function SignatureLivingShowcase() {
     centerH = Math.round(Math.max(200, Math.min(centerW * 1.42, vp.h - NAV_H - headerH - 136)));
     // On short laptop screens (e.g. 14" at 150% scaling) keep the card from turning wide and squat
     centerW = Math.min(centerW, Math.round(centerH / 1.2));
+    // Fit the fan between the two feature columns so nothing is cut off on narrower desktops (e.g. 1280px).
+    // Fan width ≈ 2.754 × centre width + 24 with these ratios.
+    const featureW = vp.w >= 1800 ? 280 : vp.w >= 1536 ? 260 : 240;
+    const rowGap = vp.w >= 1536 ? 32 : 20;
+    const sidePad = vp.w >= 1536 ? 64 : 40;
+    const fanRoom = vp.w - 2 * featureW - 2 * rowGap - 2 * sidePad - 24 - 24;
+    centerW = Math.max(200, Math.min(centerW, Math.floor(fanRoom / 2.754)));
+    centerH = Math.round(Math.min(centerH, centerW * 1.42));
     sideRatio = 0.65;
     gapRatio = 0.08;
   } else {

@@ -10,7 +10,7 @@ const AUTO_OPEN_DELAY_MS = 30000;
 const propertyTypes = ["Independent Villa", "Apartment", "Commercial", "Interiors Only"];
 const services = [
   "Construction",
-  "Layout Promoter",
+  "Layout Promoters",
   "Project Management",
   "Property Developer",
   "Interior Designing",

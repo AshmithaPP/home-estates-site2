@@ -74,7 +74,7 @@ export const AboutStorySection = () => {
               <span className="w-1.5 h-8 sm:h-9 lg:h-10 bg-[#ff8c00] rounded-full inline-block shrink-0 shadow-[0_0_12px_rgba(255,140,0,0.5)]" />
               
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                50+ Years. 500+ Projects.
+                60+ Years. 500+ Projects.
               </h2>
             </motion.div>
 

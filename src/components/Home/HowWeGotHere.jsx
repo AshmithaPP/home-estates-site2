@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 export default function HowWeGotHere() {
-  const [activeYear, setActiveYear] = useState("2023");
+  const [activeYear, setActiveYear] = useState("2026");
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -25,89 +25,90 @@ export default function HowWeGotHere() {
     return () => observer.disconnect();
   }, []);
 
+  // Five-year milestone breakdown (newest first)
   const timelineData = [
     {
       year: "2026",
-      title: "Pioneering Net-Zero Bioclimatic Architectural Living.",
-      subtitle: "Smart sustainable engineering integrated into bespoke coastal luxury estates.",
-      image: "/assets/img/besantnagar-residence-view/img19.jpg",
-    },
-    {
-      year: "2025",
-      title: "Expanded Ultra-Luxury Coastal Villa Portfolio.",
-      subtitle: "Commissioned bespoke waterfront estates across Besant Nagar and ECR.",
-      image: "/assets/img/besantnagar-residence-view/img103.jpg",
-    },
-    {
-      year: "2024",
-      title: "Delivers 100th Bespoke Masterpiece Landmark.",
-      subtitle: "Handing over 100+ precision-crafted architectural residences on schedule.",
-      image: "/assets/img/besantnagar-residence-view/img110.jpg",
-    },
-    {
-      year: "2023",
-      title: "Honored with Premier Architectural Excellence Award.",
-      subtitle: "Celebrated as South India's foremost creator of bespoke residential landmarks.",
-      image: "/assets/img/besantnagar-residence-view/img117.jpg",
-    },
-    {
-      year: "2022",
-      title: "Unveils Iconic Besant Nagar Coastal Residence.",
-      subtitle: "A multi-level architectural triumph overlooking the Bay of Bengal.",
+      title: "Leading Chennai's Premium Residential Landscape.",
+      subtitle: "500+ projects and 60+ years of trusted construction, development and real estate expertise.",
       image: "/assets/img/besantnagar-residence-view/img19.jpg",
     },
     {
       year: "2021",
-      title: "Full IoT Smart Automation in Every Residence.",
-      subtitle: "Biometric security, intelligent climate control, and architectural lighting.",
-      image: "/assets/img/besantnagar-residence-view/img181.jpg",
-    },
-    {
-      year: "2020",
-      title: "Pioneering Private Biophilic Sanctuary Courtyards.",
-      subtitle: "Designing residences with open natural ventilation and landscaped atriums.",
-      image: "/assets/img/besantnagar-residence-view/img195.jpg",
-    },
-    {
-      year: "2019",
-      title: "Curated Italian Marble & European Finish Studio.",
-      subtitle: "Direct sourcing of hand-picked materials for unparalleled finish quality.",
-      image: "/assets/img/besantnagar-residence-view/img202.jpg",
-    },
-    {
-      year: "2018",
-      title: "Surpassed 50 Landmark Residential Deliveries.",
-      subtitle: "Setting the gold benchmark for build quality and customer trust in Chennai.",
-      image: "/assets/img/besantnagar-residence-view/img216.jpg",
-    },
-    {
-      year: "2017",
-      title: "Acquired Prime Waterfront Parcels in Besant Nagar.",
-      subtitle: "Expanding luxury residential footprints into Chennai's most sought-after avenues.",
-      image: "/assets/img/besantnagar-residence-view/img223.jpg",
+      title: "₹1 Cr+ Premium Residences Become Our Signature.",
+      subtitle: "High-value custom villas delivered with detailed planning and site supervision.",
+      image: "/assets/img/besantnagar-residence-view/img103.jpg",
     },
     {
       year: "2016",
-      title: "Seismic-Resistant Structural Engineering Standards.",
-      subtitle: "Engineered post-tensioned concrete technology for generational longevity.",
+      title: "Expanded into Interiors & End-to-End Delivery.",
+      subtitle: "One team now managing architecture, construction and bespoke interiors.",
+      image: "/assets/img/besantnagar-residence-view/img110.jpg",
+    },
+    {
+      year: "2011",
+      title: "Growth Across Anna Nagar, Besant Nagar & ECR.",
+      subtitle: "Building landmark homes in Chennai's most sought-after neighbourhoods.",
+      image: "/assets/img/besantnagar-residence-view/img117.jpg",
+    },
+    {
+      year: "2006",
+      title: "Layout Promotion & Property Development.",
+      subtitle: "Turning land parcels into structured, market-ready developments.",
+      image: "/assets/img/besantnagar-residence-view/img181.jpg",
+    },
+    {
+      year: "2001",
+      title: "Entered the Real Estate Selling & Buying Space.",
+      subtitle: "Connecting families and investors with prime Chennai properties.",
+      image: "/assets/img/besantnagar-residence-view/img195.jpg",
+    },
+    {
+      year: "1996",
+      title: "Commercial Construction Portfolio Established.",
+      subtitle: "Offices and commercial spaces built for functionality and durability.",
+      image: "/assets/img/besantnagar-residence-view/img202.jpg",
+    },
+    {
+      year: "1991",
+      title: "Modern Engineering & Quality Standards Adopted.",
+      subtitle: "Stronger structures through updated methods and material testing.",
+      image: "/assets/img/besantnagar-residence-view/img216.jpg",
+    },
+    {
+      year: "1986",
+      title: "Crossed 100 Completed Homes.",
+      subtitle: "A growing record of on-time handovers built on referrals and trust.",
+      image: "/assets/img/besantnagar-residence-view/img223.jpg",
+    },
+    {
+      year: "1981",
+      title: "Our First Multi-Unit Residential Projects.",
+      subtitle: "Moving from individual homes to small residential communities.",
       image: "/assets/img/besantnagar-residence-view/img75.jpg",
     },
     {
-      year: "2015",
-      title: "Completed First Multi-Unit Luxury Residence.",
-      subtitle: "Modern bespoke apartments blending boutique privacy with urban luxury.",
+      year: "1976",
+      title: "Building a Reputation for Honest Construction.",
+      subtitle: "Transparent pricing and workmanship that families recommended.",
       image: "/assets/img/besantnagar-residence-view/img82.jpg",
     },
     {
-      year: "2013",
-      title: "Founded with Uncompromising Architectural Passion.",
-      subtitle: "Ajay Homes was established to create timeless lifestyle landmarks.",
+      year: "1971",
+      title: "Our First Independent Homes Delivered.",
+      subtitle: "Early projects that set the standard for quality and care.",
       image: "/assets/img/besantnagar-residence-view/img96.jpg",
+    },
+    {
+      year: "1966",
+      title: "Ajay Homes is Founded.",
+      subtitle: "A family construction business begins with a promise of quality and trust.",
+      image: "/assets/img/besantnagar-residence-view/img19.jpg",
     },
   ];
 
   const activeIndex = timelineData.findIndex((item) => item.year === activeYear);
-  const activeItem = activeIndex !== -1 ? timelineData[activeIndex] : timelineData[3];
+  const activeItem = activeIndex !== -1 ? timelineData[activeIndex] : timelineData[0];
 
   return (
     <section

@@ -4,7 +4,7 @@ import React from 'react';
 import PremiumProjectCTASection from '@/components/Common/PremiumProjectCTASection';
 
 export const LAYOUT_CTA_STATS = [
-  { value: '50+ Years', label: 'of Industry Experience' },
+  { value: '60+ Years', label: 'of Industry Experience' },
   { value: '500+', label: 'Projects' },
   { value: 'End-to-End', label: 'Property Expertise' },
 ];

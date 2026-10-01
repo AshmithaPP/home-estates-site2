@@ -86,7 +86,7 @@ export const ConstructionHero = ({ onOpenApply }) => {
                 From luxury residences to large-scale commercial developments, Ajay Homes delivers premium construction with a focus on quality, precision, transparency, and timely execution.
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-white/80 font-normal leading-relaxed drop-shadow">
-                With 50+ years of industry experience and 500+ completed projects, we manage projects valued at ₹1 Cr+, bringing design, engineering, construction, and project management together under one roof.
+                With 60+ years of industry experience and 500+ completed projects, we manage projects valued at ₹1 Cr+, bringing design, engineering, construction, and project management together under one roof.
               </p>
             </div>
 
