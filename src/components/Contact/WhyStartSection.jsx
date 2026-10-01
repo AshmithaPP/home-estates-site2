@@ -105,7 +105,7 @@ export const WhyStartSection = () => {
   return (
     <section 
       id="why-start"
-      className="relative w-full bg-white text-[#1f2937] overflow-hidden py-14 sm:py-18 lg:py-20"
+      className="relative w-full bg-white text-[#1f2937] overflow-hidden py-8 sm:py-10 lg:py-12"
       style={{ fontFamily: 'Montserrat, sans-serif' }}
     >
       <div className="max-w-[1300px] mx-auto px-6 sm:px-10 lg:px-12">
@@ -183,7 +183,7 @@ export const WhyStartSection = () => {
               <img
                 src="/images/why-start-isometric.png"
                 alt="Ajay Homes Luxury Residential Villa"
-                className="w-full max-w-[460px] sm:max-w-[520px] lg:max-w-[580px] h-auto object-contain drop-shadow-[0_15px_35px_rgba(255,140,0,0.12)] transform hover:scale-[1.02] transition-transform duration-500"
+                className="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[480px] h-auto object-contain drop-shadow-[0_15px_35px_rgba(255,140,0,0.12)] transform hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
           </motion.div>

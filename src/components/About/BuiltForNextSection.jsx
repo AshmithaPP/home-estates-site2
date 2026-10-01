@@ -8,7 +8,7 @@ export const BuiltForNextSection = ({ onOpenApply }) => {
   return (
     <section 
       id="built-for-next"
-      className="relative w-full bg-white text-[#1f2937] py-16 sm:py-20 lg:py-24 overflow-hidden border-t border-black/5 min-h-[360px] sm:min-h-[400px] lg:min-h-[440px] flex items-center justify-center"
+      className="relative w-full bg-white text-[#1f2937] pt-12 pb-32 sm:py-20 lg:py-24 overflow-hidden border-t border-black/5 min-h-[360px] sm:min-h-[400px] lg:min-h-[440px] flex items-center justify-center"
       style={{ fontFamily: 'Montserrat, sans-serif' }}
     >
       {/* ── Soft Floor Horizon Curve (Matching Reference Banner) ─────── */}
@@ -39,7 +39,7 @@ export const BuiltForNextSection = ({ onOpenApply }) => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="absolute left-0 bottom-0 z-10 w-[140px] sm:w-[190px] md:w-[240px] lg:w-[280px] xl:w-[320px] 2xl:w-[350px] pointer-events-none select-none flex items-end justify-start"
+        className="absolute left-0 bottom-0 z-10 w-[110px] sm:w-[190px] md:w-[240px] lg:w-[280px] xl:w-[320px] 2xl:w-[350px] pointer-events-none select-none flex items-end justify-start"
       >
         <svg 
           viewBox="0 0 460 400" 
@@ -148,7 +148,7 @@ export const BuiltForNextSection = ({ onOpenApply }) => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="absolute right-0 bottom-0 z-10 w-[140px] sm:w-[190px] md:w-[240px] lg:w-[280px] xl:w-[320px] 2xl:w-[350px] pointer-events-none select-none flex items-end justify-end"
+        className="absolute right-0 bottom-0 z-10 w-[110px] sm:w-[190px] md:w-[240px] lg:w-[280px] xl:w-[320px] 2xl:w-[350px] pointer-events-none select-none flex items-end justify-end"
       >
         <svg 
           viewBox="0 0 480 400" 
@@ -247,10 +247,10 @@ export const BuiltForNextSection = ({ onOpenApply }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.55 }}
-        className="relative z-20 max-w-xl md:max-w-2xl lg:max-w-2xl mx-auto text-center px-6 sm:px-10 lg:px-4 space-y-3.5 sm:space-y-4 my-auto"
+        className="relative z-20 max-w-xl md:max-w-2xl lg:max-w-2xl mx-auto text-center px-5 sm:px-10 lg:px-4 space-y-3 sm:space-y-4 my-auto"
       >
         {/* Main Heading */}
-        <h2 className="text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-bold text-[#111827] tracking-tight leading-snug">
+        <h2 className="text-[22px] sm:text-3xl md:text-[34px] lg:text-[38px] font-bold text-[#111827] tracking-tight leading-snug">
           Built for{' '}
           <span className="text-[#ff8c00]">
             What&apos;s Next.
@@ -265,11 +265,11 @@ export const BuiltForNextSection = ({ onOpenApply }) => {
         {/* Reusable Button (Compact, Refined Size) */}
         <div className="pt-2 sm:pt-3">
           {onOpenApply ? (
-            <Button onClick={onOpenApply} size="md">
+            <Button onClick={onOpenApply} size="responsive">
               Start a Conversation
             </Button>
           ) : (
-            <Button href="/contact" size="md">
+            <Button href="/contact" size="responsive">
               Start a Conversation
             </Button>
           )}

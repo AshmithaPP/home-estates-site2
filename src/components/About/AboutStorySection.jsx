@@ -47,11 +47,11 @@ export const AboutStorySection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
               
               {/* Badge Overlay */}
-              <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between pointer-events-none">
-                <div className="px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-xs font-semibold text-white">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 flex items-center justify-between gap-2 pointer-events-none">
+                <div className="px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] sm:text-xs font-semibold text-white truncate min-w-0">
                   Contemporary Villa &bull; Chennai
                 </div>
-                <div className="px-3 py-1 rounded-full bg-[#ff8c00]/90 text-black font-extrabold text-xs shadow-lg">
+                <div className="px-2.5 py-1 sm:px-3 rounded-full bg-[#ff8c00]/90 text-black font-extrabold text-[10px] sm:text-xs shadow-lg whitespace-nowrap shrink-0">
                   500+ Built
                 </div>
               </div>

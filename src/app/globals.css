@@ -181,9 +181,9 @@
   background: linear-gradient(160deg, #282828 0%, #3a3a3a 50%, #2c2c2c 100%);
 }
 
-/* ── PRIMARY CTA BUTTON (orange gradient) ──────────────────────── */
+/* ── PRIMARY CTA BUTTON (dynamic theme gradient) ──────────────────────── */
 .btn-gold-gradient {
-  background: linear-gradient(135deg, #ff8c00 0%, #ffab40 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: #0a0500;
   font-weight: 800;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -193,16 +193,16 @@
 .btn-gold-gradient:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 0 36px rgba(255, 140, 0, 0.75);
-  background: linear-gradient(135deg, #ff9c14 0%, #ffbe5c 100%);
+  filter: brightness(1.08);
 }
 
 .btn-gold-gradient:active {
   transform: translateY(0) scale(0.98);
 }
 
-/* ── SECONDARY CTA BUTTON (orange gradient) ─────────────────────── */
+/* ── SECONDARY CTA BUTTON (dynamic theme gradient) ─────────────────────── */
 .btn-green-gradient {
-  background: linear-gradient(135deg, #ff8c00 0%, #ffab40 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: #0a0500;
   font-weight: 800;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -212,6 +212,7 @@
 .btn-green-gradient:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 0 36px rgba(255, 140, 0, 0.75);
+  filter: brightness(1.08);
 }
 
 /* ── UNDERLINE BRUSH (disabled) ────────────────────────────────── */
@@ -229,11 +230,287 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e1e1e;
+  background: var(--grey-deepest);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #ff8c00, #ffab40);
+  background: linear-gradient(to bottom, var(--primary), var(--primary-light));
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
 }
+
+/* ══════════ Home page sections (ported from ajay-homes-estates) ══════════ */
+.gradient-text-orange {
+  background: linear-gradient(135deg, #ff8c00 0%, #ffa726 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+::selection {
+  background-color: #ff8c00;
+  color: #ffffff;
+}
+
+@keyframes jumpOnce {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  30% {
+    transform: translateY(-22px) scale(1.1);
+    box-shadow: 0 20px 25px -5px rgba(255, 140, 0, 0.4);
+  }
+  55% {
+    transform: translateY(0) scale(0.95);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  75% {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 15px -3px rgba(255, 140, 0, 0.25);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.animate-jump {
+  animation: jumpOnce 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Hide scrollbar across all browsers while retaining smooth scrollability */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+/* ---------- Refer & Earn banner animations ---------- */
+@keyframes referBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes referWave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-14deg); }
+  75% { transform: rotate(10deg); }
+}
+
+@keyframes referCash {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(3deg) translateY(-4px); }
+}
+
+@keyframes referWallet {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes referCoin {
+  0% { transform: translateY(20px) scale(0.6); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(-70px) scale(1); opacity: 0; }
+}
+
+@keyframes referSparkle {
+  0%, 100% { transform: scale(0.6); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes referMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes referShine {
+  from { transform: translateX(-120%) skewX(-20deg); }
+  to { transform: translateX(320%) skewX(-20deg); }
+}
+
+.refer-bob { animation: referBob 3s ease-in-out infinite; }
+.refer-wave { transform-box: view-box; animation: referWave 1.6s ease-in-out infinite; }
+.refer-cash { transform-box: view-box; animation: referCash 2.4s ease-in-out infinite; }
+.refer-wallet { transform-box: view-box; animation: referWallet 3s ease-in-out infinite; }
+.refer-coin { transform-box: fill-box; transform-origin: center; animation: referCoin 3.3s ease-out infinite; opacity: 0; }
+.refer-sparkle { transform-box: fill-box; transform-origin: center; animation: referSparkle 2s ease-in-out infinite; }
+
+.refer-marquee { animation: referMarquee 22s linear infinite; }
+.refer-marquee-mask:hover .refer-marquee { animation-play-state: paused; }
+.refer-marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 92%, transparent);
+}
+
+.refer-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: referShine 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .refer-bob, .refer-wave, .refer-cash, .refer-wallet, .refer-coin,
+  .refer-sparkle, .refer-marquee, .refer-cta::after { animation: none; }
+  .refer-coin { opacity: 0; }
+}
+
+/* ---------- Top bar running text (Bhoomi Pooja to House Warming) ---------- */
+@keyframes topbarMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.topbar-marquee {
+  animation: topbarMarquee 70s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.topbar-marquee:hover { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar-marquee { animation: none; }
+}
+
+/* ---------- Happy Clients: blinking diamond tiles ---------- */
+@keyframes diamondBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+.diamond-blink { animation: diamondBlink 3.2s ease-in-out infinite; }
+.group:hover .diamond-blink { animation-play-state: paused; opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .diamond-blink { animation: none; }
+}
+
+/* Blinking cursor for typing headings */
+@keyframes caretBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.typing-caret { animation: caretBlink 0.9s step-end infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .typing-caret { animation: none; }
+}
+
+/* ---------- Floating chat widget ---------- */
+@keyframes chatPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes chatFloatLift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+.chat-panel {
+  /* Column: header / scrollable body / input. Height follows content with responsive constraints */
+  display: flex;
+  flex-direction: column;
+  transform-origin: bottom right;
+  /* phones: equal 1rem gutters on both sides */
+  width: calc(100vw - 2rem);
+  max-width: 22rem;
+  max-height: min(72vh, 480px, calc(100dvh - env(safe-area-inset-bottom, 0px) - 5rem));
+  box-shadow:
+    0 24px 48px -12px color-mix(in srgb, var(--grey-base) 22%, transparent),
+    0 8px 16px -8px rgba(15, 23, 42, 0.12);
+}
+
+.chat-panel__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  /* thin visible scrollbar so it is obvious when more options sit below */
+  scrollbar-width: thin;
+  scrollbar-color: rgb(203 213 225) transparent;
+}
+.chat-panel__body::-webkit-scrollbar { width: 4px; }
+.chat-panel__body::-webkit-scrollbar-thumb { background: rgb(203 213 225); border-radius: 9999px; }
+
+/* large phones / small tablets */
+@media (min-width: 480px) {
+  .chat-panel {
+    width: 22rem;
+    max-width: 22rem;
+  }
+}
+
+/* tablets, laptops, desktops (launcher sits 1.5rem from the edges) */
+@media (min-width: 640px) {
+  .chat-panel {
+    width: 23rem;
+    max-width: 23rem;
+    max-height: min(34rem, 76vh, calc(100dvh - env(safe-area-inset-bottom, 0px) - 6.5rem));
+  }
+}
+
+/* large desktops */
+@media (min-width: 1536px) {
+  .chat-panel {
+    width: 24rem;
+    max-width: 24rem;
+    max-height: min(36rem, 78vh);
+  }
+}
+
+.chat-panel--closed {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chat-panel--open {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: chatPanelIn 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chat-float-btn {
+  box-shadow:
+    0 10px 24px -6px color-mix(in srgb, var(--primary) 40%, transparent),
+    0 4px 8px -4px rgba(15, 23, 42, 0.1);
+  animation: chatFloatLift 5s ease-in-out infinite;
+}
+
+.chat-float-btn--open {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-panel--open { animation: none; }
+  .chat-panel--closed { transition: opacity 0.15s ease; }
+  .chat-float-btn { animation: none; }
+}
+
+/* ---------- Alternating section backgrounds (grey / white) ---------- */
+.section-grey {
+  background: linear-gradient(160deg, var(--grey-deepest) 0%, var(--grey-deep) 50%, var(--grey-deepest) 100%);
+  color: var(--text-primary);
+}
+

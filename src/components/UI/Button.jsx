@@ -15,7 +15,7 @@ export const Button = ({
   icon: Icon = ArrowUpRight,
   showIcon = true,
   variant = 'primary', // 'primary' | 'secondary' | 'glass' | 'outline'
-  size = 'md', // 'sm' | 'md' | 'lg'
+  size = 'md', // 'sm' | 'md' | 'lg' | 'responsive' (sm on mobile, md from sm breakpoint)
   className = '',
   type = 'button',
   ...props
@@ -26,25 +26,28 @@ export const Button = ({
     sm: "px-3.5 py-1.5 text-[11px]",
     md: "px-4.5 py-2.5 text-xs",
     lg: "px-6 py-3 text-xs sm:text-sm",
+    responsive: "px-3.5 py-1.5 text-[10.5px] sm:px-4.5 sm:py-2.5 sm:text-xs",
   };
 
   const variantStyles = {
-    primary: "bg-[#ff8c00] hover:bg-[#e67e00] text-black hover:shadow-[#ff8c00]/30",
-    secondary: "bg-[#383838] hover:bg-[#484848] text-[#f0ede8] border border-white/10 hover:border-[#ff8c00]/40",
+    primary: "bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-black hover:shadow-[var(--primary)]/30",
+    secondary: "bg-[var(--grey-mid)] hover:bg-[var(--grey-elevated)] text-[var(--text-primary)] border border-white/10 hover:border-[var(--primary)]/40",
     glass: "glass-pill text-white hover:bg-white/20 border border-white/15",
-    outline: "bg-transparent border-2 border-[#ff8c00] text-[#ff8c00] hover:bg-[#ff8c00] hover:text-black",
+    outline: "bg-transparent border-2 border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-black",
   };
 
   const iconCircleSize = {
     sm: "w-3.5 h-3.5",
     md: "w-4.5 h-4.5",
     lg: "w-5 h-5",
+    responsive: "w-3.5 h-3.5 sm:w-4.5 sm:h-4.5",
   };
 
   const iconSize = {
     sm: "w-2.5 h-2.5",
     md: "w-3 h-3",
     lg: "w-3.5 h-3.5",
+    responsive: "w-2.5 h-2.5 sm:w-3 sm:h-3",
   };
 
   const content = (

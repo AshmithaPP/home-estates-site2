@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Header from '@/components/Hero/Header';
-import Footer from '@/components/Footer/Footer';
 import TourModal from '@/components/Modals/TourModal';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import GalleryHero from '@/components/Gallery/GalleryHero';
@@ -47,7 +46,7 @@ export default function GalleryPage() {
       {/* ── Main Gallery Content Container ─────────────────────────── */}
       <div
         id="gallery-content"
-        className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-16 sm:pb-24 relative z-10"
+        className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 relative z-10"
       >
         {/* ── SECTION 1: Featured Delivered Homes Banner (Screenshot 1 Exact Replica) ── */}
         <FeaturedDeliveredSection
@@ -55,21 +54,20 @@ export default function GalleryPage() {
           onSelectProject={(project) => setActiveLightboxProject(project)}
           onOpenInquiry={(project) => setActiveInquiryProject(project)}
         />
-
-        {/* ── SECTION 2: All Delivered Projects Grid (Screenshot 2 Exact Replica) ────── */}
-        <ProjectGridSection
-          projects={galleryProjects}
-          categories={galleryCategories}
-          onSelectProject={(project) => setActiveLightboxProject(project)}
-          onOpenInquiry={(project) => setActiveInquiryProject(project)}
-        />
       </div>
 
-      {/* ── Footer ─────────────────────────────────────────────────── */}
-      <Footer
-        onOpenApply={() => setIsApplyModalOpen(true)}
-        onOpenTourModal={() => setIsTourModalOpen(true)}
-      />
+      {/* ── SECTION 2: All Delivered Projects Grid (White Background) ────── */}
+      <div className="w-full bg-white relative z-10">
+        <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-16 sm:pb-24">
+          <ProjectGridSection
+            projects={galleryProjects}
+            categories={galleryCategories}
+            onSelectProject={(project) => setActiveLightboxProject(project)}
+            onOpenInquiry={(project) => setActiveInquiryProject(project)}
+          />
+        </div>
+      </div>
+
 
       {/* ── Modals ─────────────────────────────────────────────────── */}
 

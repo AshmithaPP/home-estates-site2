@@ -18,7 +18,7 @@ export const ProjectInMindSection = ({ onOpenTourModal, onOpenApply }) => {
   return (
     <section 
       id="project-in-mind"
-      className="relative w-full bg-white text-[#1f2937] py-10 sm:py-12 lg:py-14 overflow-hidden border-t border-black/5"
+      className="relative w-full bg-white text-[#1f2937] py-7 sm:py-8 lg:py-10 overflow-hidden border-t border-black/5"
       style={{ fontFamily: 'Montserrat, sans-serif' }}
     >
       {/* Ambient background soft glow */}

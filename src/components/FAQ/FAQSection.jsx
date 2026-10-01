@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, X } from 'lucide-react';
@@ -42,7 +44,7 @@ const faqItems = [
   }
 ];
 
-export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
+export const FAQSection = ({ onOpenTourModal, onOpenApply, items = faqItems }) => {
   const [openId, setOpenId] = useState('1');
 
   const toggleAccordion = (id) => {
@@ -50,10 +52,15 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
   };
 
   return (
-    <section className="relative py-12 sm:py-16 lg:py-20 px-6 sm:px-12 lg:px-20 text-[#1a1a1a] border-t border-black/5 overflow-hidden" style={{ background: '#f8f8f6' }}>
-      
-      {/* Background Soft Orange Glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#ff8c00]/6 rounded-full blur-[140px] pointer-events-none" />
+    <section
+      className="relative py-12 sm:py-16 lg:py-20 px-6 sm:px-12 lg:px-20 text-[#1a1a1a] border-t border-black/5 overflow-hidden"
+      style={{ background: '#f8f8f6', fontFamily: 'var(--font-family-base)' }}
+    >
+      {/* Background Soft Glow */}
+      <div
+        className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 rounded-full blur-[140px] pointer-events-none"
+        style={{ backgroundColor: 'var(--primary)', opacity: 0.08 }}
+      />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -76,21 +83,25 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
 
               <h2
                 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1a1a1a] tracking-tight leading-tight uppercase text-left"
-                style={{ fontFamily: 'Montserrat' }}
+                style={{ fontFamily: 'var(--font-family-base)' }}
               >
                 Frequently Asked<br />
-                <span className="text-[#ff8c00]">Questions</span>
+                <span style={{ color: 'var(--primary)' }}>Questions</span>
               </h2>
             </div>
 
             {/* Consultation Card (Matching reference UI left card) */}
             <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-black/5 border border-black/5 space-y-5 max-w-md">
               <div className="relative inline-block">
-                <div className="absolute inset-0 bg-[#ff8c00]/20 rounded-full blur-md" />
+                <div
+                  className="absolute inset-0 rounded-full blur-md"
+                  style={{ backgroundColor: 'var(--primary)', opacity: 0.2 }}
+                />
                 <img
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80"
                   alt="Property Advisor"
-                  className="relative w-14 h-14 rounded-full object-cover border-2 border-[#ff8c00] shadow-md"
+                  className="relative w-14 h-14 rounded-full object-cover border-2 shadow-md"
+                  style={{ borderColor: 'var(--primary)' }}
                 />
               </div>
 
@@ -122,7 +133,7 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
 
           {/* ── RIGHT COLUMN: FAQ Accordion Cards List ────────────────────────── */}
           <div className="lg:col-span-7 space-y-3">
-            {faqItems.map((item, idx) => {
+            {items.map((item, idx) => {
               const isOpen = openId === item.id;
 
               return (
@@ -134,9 +145,10 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
                   transition={{ duration: 0.5, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
                   className={`bg-white rounded-2xl p-5 sm:p-6 border transition-all duration-300 ${
                     isOpen
-                      ? 'border-[#ff8c00]/40 shadow-lg shadow-[#ff8c00]/5'
+                      ? 'shadow-lg'
                       : 'border-black/5 shadow-sm hover:shadow-md hover:border-black/10'
                   }`}
+                  style={isOpen ? { borderColor: 'var(--primary)', boxShadow: '0 10px 25px -5px rgba(255, 140, 0, 0.08)' } : {}}
                 >
                   <button
                     onClick={() => toggleAccordion(item.id)}
@@ -144,15 +156,16 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply }) => {
                   >
                     <span
                       className={`text-sm sm:text-base font-bold transition-colors duration-300 leading-snug ${
-                        isOpen ? 'text-[#1a1a1a]' : 'text-[#2a2a2a] group-hover:text-[#ff8c00]'
+                        isOpen ? 'text-[#1a1a1a]' : 'text-[#2a2a2a]'
                       }`}
+                      style={!isOpen ? { ':hover': { color: 'var(--primary)' } } : {}}
                     >
                       {item.question}
                     </span>
                     
-                    <span className="p-1 rounded-full text-[#333333] group-hover:text-[#ff8c00] transition-colors shrink-0">
+                    <span className="p-1 rounded-full text-[#333333] transition-colors shrink-0">
                       {isOpen ? (
-                        <X className="w-4 h-4 text-[#ff8c00]" />
+                        <X className="w-4 h-4" style={{ color: 'var(--primary)' }} />
                       ) : (
                         <Plus className="w-4 h-4 text-[#444444]" />
                       )}

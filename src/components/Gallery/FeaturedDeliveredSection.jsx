@@ -29,7 +29,7 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
     <section className="w-full mb-14 sm:mb-20">
       {/* ── Featured Banner Container (Livspace Reference Replica) ──── */}
       <div
-        className="relative rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden shadow-2xl border transition-all duration-300"
+        className="relative rounded-3xl p-5 sm:p-6 lg:p-7 overflow-hidden shadow-2xl border transition-all duration-300"
         style={{
           background: 'linear-gradient(145deg, rgba(255, 140, 0, 0.12) 0%, rgba(36, 36, 36, 0.94) 50%, rgba(24, 24, 24, 0.98) 100%)',
           borderColor: 'rgba(255, 140, 0, 0.35)',
@@ -43,23 +43,23 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
         />
 
         {/* ── Header Row: Icon + Title + Subtitle ──────────────────────── */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7 relative z-10">
-          <div className="flex items-start sm:items-center gap-3.5 sm:gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 relative z-10">
+          <div className="flex items-start sm:items-center gap-3">
             {/* Star Icon Badge (Matching Livspace Pink/Orange 3D Star Badge) */}
             <div
-              className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg border border-[var(--primary)]/50 relative overflow-hidden"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center shrink-0 shadow-lg border border-[var(--primary)]/50 relative overflow-hidden"
               style={{
                 background: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%)'
               }}
             >
-              <Star className="w-6 h-6 sm:w-7 sm:h-7 text-black fill-black/90 drop-shadow" />
+              <Star className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-black fill-black/90 drop-shadow" />
             </div>
 
             <div>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[var(--text-primary)] tracking-tight leading-tight">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[var(--text-primary)] tracking-tight leading-tight">
                 Featured Delivered Homes
               </h2>
-              <p className="text-xs sm:text-sm text-[var(--text-muted)] font-medium mt-1 leading-relaxed">
+              <p className="text-xs sm:text-[13px] text-[var(--text-muted)] font-medium mt-0.5 leading-relaxed">
                 Browse our top home construction & luxury interior projects, handpicked by our experts.
               </p>
             </div>
@@ -70,14 +70,14 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
             <button
               onClick={handlePrev}
               aria-label="Previous Featured Projects"
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-[var(--primary)] hover:text-black text-white border border-white/15 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-md"
+              className="w-9 h-9 rounded-full bg-white/10 hover:bg-[var(--primary)] hover:text-black text-white border border-white/15 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-md"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={handleNext}
               aria-label="Next Featured Projects"
-              className="w-10 h-10 rounded-full bg-white text-black hover:bg-[var(--primary)] hover:text-black flex items-center justify-center transition-all duration-200 cursor-pointer shadow-lg hover:scale-105"
+              className="w-9 h-9 rounded-full bg-white text-black hover:bg-[var(--primary)] hover:text-black flex items-center justify-center transition-all duration-200 cursor-pointer shadow-lg hover:scale-105"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -86,7 +86,7 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
 
         {/* ── Carousel Cards Row (Screenshot 1 Exact Layout) ──────────── */}
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {displayCards.map((project, idx) => (
               <motion.div
                 key={`${project.id}-${idx}`}
@@ -97,7 +97,7 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
               >
                 {/* Image Section with Photo Badge */}
                 <div
-                  className="relative aspect-[16/10] overflow-hidden cursor-pointer bg-black/40"
+                  className="relative aspect-[16/9] overflow-hidden cursor-pointer bg-black/40"
                   onClick={() => onSelectProject(project)}
                 >
                   <img
@@ -120,16 +120,16 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
                 </div>
 
                 {/* Card Content */}
-                <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between gap-4">
+                <div className="p-3.5 sm:p-4 flex flex-col flex-1 justify-between gap-3">
                   <div>
                     <h3
                       onClick={() => onSelectProject(project)}
-                      className="text-sm sm:text-base font-bold text-[var(--text-primary)] hover:text-[var(--primary)] line-clamp-2 leading-snug cursor-pointer transition-colors"
+                      className="text-[13px] sm:text-sm font-bold text-[var(--text-primary)] hover:text-[var(--primary)] line-clamp-2 leading-snug cursor-pointer transition-colors"
                       title={project.featuredTitle || project.title}
                     >
                       {project.featuredTitle || project.title}
                     </h3>
-                    <p className="text-xs text-[var(--text-muted)] mt-1.5">
+                    <p className="text-[11.5px] sm:text-xs text-[var(--text-muted)] mt-1">
                       {project.community} &bull; <span className="text-[var(--text-primary)] font-semibold">{project.bhk}</span>
                     </p>
                   </div>
@@ -137,7 +137,7 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
                   {/* Outlined Pill CTA Button (Livspace Exact replica) */}
                   <button
                     onClick={() => onOpenInquiry(project)}
-                    className="w-full py-2.5 px-4 rounded-full border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-black font-bold text-xs sm:text-sm text-center transition-all duration-200 cursor-pointer shadow-sm hover:shadow-[0_0_18px_rgba(255,140,0,0.35)]"
+                    className="w-full py-2 px-4 rounded-full border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-black font-bold text-xs sm:text-[13px] text-center transition-all duration-200 cursor-pointer shadow-sm hover:shadow-[0_0_18px_rgba(255,140,0,0.35)]"
                   >
                     {project.featuredButtonText || 'Get Similar Interiors'}
                   </button>

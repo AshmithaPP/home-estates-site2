@@ -6,7 +6,6 @@ import ContactHero from '@/components/Contact/ContactHero';
 import ContactFormSection from '@/components/Contact/ContactFormSection';
 import WhyStartSection from '@/components/Contact/WhyStartSection';
 import ProjectInMindSection from '@/components/Contact/ProjectInMindSection';
-import Footer from '@/components/Footer/Footer';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
 
@@ -37,11 +36,6 @@ export default function ContactPage() {
         onOpenApply={() => setIsApplyModalOpen(true)}
       />
 
-      {/* ── Footer ───────────────────────────────────────────────── */}
-      <Footer
-        onOpenApply={() => setIsApplyModalOpen(true)}
-        onOpenTourModal={() => setIsTourModalOpen(true)}
-      />
 
       {/* ── Modals ───────────────────────────────────────────────── */}
       <TourModal

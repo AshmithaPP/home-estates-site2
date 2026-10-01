@@ -1,5 +1,8 @@
 import './globals.css';
 import { Montserrat } from 'next/font/google';
+import Footer from '@/components/Home/Footer';
+import ConsultationPopup from '@/components/Home/ConsultationPopup';
+import FloatingChat from '@/components/Home/FloatingChat';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -40,6 +43,12 @@ export default function RootLayout({ children }) {
         }}
       >
         {children}
+        {/* Site-wide footer */}
+        <Footer />
+        {/* Free consultation popup: opens once the visitor scrolls to the footer */}
+        <ConsultationPopup />
+        {/* Floating chat widget (site-wide) */}
+        <FloatingChat />
       </body>
     </html>
   );

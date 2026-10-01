@@ -19,12 +19,12 @@ export const ProjectGridSection = ({
   return (
     <section className="w-full">
       {/* ── Category Filters Navigation Bar ─────────────────────────── */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 mb-6 border-b border-white/10">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 mb-6 border-b border-black/10">
         <div>
-          <h2 className="text-lg sm:text-xl font-extrabold text-[var(--text-primary)] tracking-tight">
+          <h2 className="text-lg sm:text-xl font-extrabold text-[#111827] tracking-tight">
             Explore All Completed Projects
           </h2>
-          <p className="text-xs sm:text-[13px] text-[var(--text-muted)] mt-0.5">
+          <p className="text-xs sm:text-[13px] text-[#6b7280] mt-0.5">
             Real architectural photographs from our landmark residences across Chennai.
           </p>
         </div>
@@ -40,7 +40,7 @@ export const ProjectGridSection = ({
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                   isActive
                     ? 'bg-[var(--primary)] text-black shadow-[0_0_14px_rgba(255,140,0,0.35)]'
-                    : 'bg-white/5 text-[var(--text-primary)]/80 hover:bg-white/10 hover:text-white border border-white/10'
+                    : 'bg-[#f3f4f6] text-[#374151] hover:bg-[#e5e7eb] hover:text-[#111827] border border-black/10'
                 }`}
               >
                 {cat}
@@ -64,7 +64,7 @@ export const ProjectGridSection = ({
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.35 }}
-              className="bg-[var(--grey-deep)] rounded-xl overflow-hidden border border-white/10 hover:border-[var(--primary)]/50 transition-all duration-300 shadow-xl flex flex-col group"
+              className="bg-white rounded-xl overflow-hidden border border-black/10 hover:border-[var(--primary)]/60 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_36px_rgba(0,0,0,0.1)] flex flex-col group"
             >
               {/* 1. Image Container with 📷 Count Pill (Proportional Height for Wider Card) */}
               <div 
@@ -102,28 +102,28 @@ export const ProjectGridSection = ({
                 <div>
                   <h3 
                     onClick={() => onSelectProject(project)}
-                    className="text-xs sm:text-[14px] font-bold text-[var(--text-primary)] hover:text-[var(--primary)] line-clamp-2 leading-snug cursor-pointer transition-colors min-h-[36px]"
+                    className="text-xs sm:text-[14px] font-bold text-[#111827] hover:text-[var(--primary)] line-clamp-2 leading-snug cursor-pointer transition-colors min-h-[36px]"
                     title={project.title}
                   >
                     {project.title}
                   </h3>
-                  <p className="text-[11.5px] sm:text-xs text-[var(--text-muted)] font-medium mt-1 truncate">
+                  <p className="text-[11.5px] sm:text-xs text-[#6b7280] font-medium mt-1 truncate">
                     {project.community}
                   </p>
                 </div>
 
                 {/* 3. Divider Line & 3-Column Specs Table */}
                 <div className="mt-auto">
-                  <div className="border-t border-white/10 pt-3 pb-3.5">
+                  <div className="border-t border-black/10 pt-3 pb-3.5">
                     <div className="grid grid-cols-3 gap-2">
                       
                       {/* Column 1: Scope */}
                       <div className="pr-1">
-                        <span className="text-[10px] sm:text-[10.5px] font-medium text-[var(--text-muted)] uppercase tracking-wider block">
+                        <span className="text-[10px] sm:text-[10.5px] font-medium text-[#6b7280] uppercase tracking-wider block">
                           Scope
                         </span>
                         <span 
-                          className="text-[11.5px] sm:text-xs font-semibold text-[var(--text-primary)] block truncate mt-0.5"
+                          className="text-[11.5px] sm:text-xs font-semibold text-[#111827] block truncate mt-0.5"
                           title={project.scope}
                         >
                           {project.scope}
@@ -131,21 +131,21 @@ export const ProjectGridSection = ({
                       </div>
 
                       {/* Column 2: BHK */}
-                      <div className="px-1 border-x border-white/10">
-                        <span className="text-[10px] sm:text-[10.5px] font-medium text-[var(--text-muted)] uppercase tracking-wider block">
+                      <div className="px-1 border-x border-black/10">
+                        <span className="text-[10px] sm:text-[10.5px] font-medium text-[#6b7280] uppercase tracking-wider block">
                           BHK
                         </span>
-                        <span className="text-[11.5px] sm:text-xs font-semibold text-[var(--text-primary)] block mt-0.5 truncate">
+                        <span className="text-[11.5px] sm:text-xs font-semibold text-[#111827] block mt-0.5 truncate">
                           {project.bhk}
                         </span>
                       </div>
 
                       {/* Column 3: Pricing */}
                       <div className="pl-1">
-                        <span className="text-[10px] sm:text-[10.5px] font-medium text-[var(--text-muted)] uppercase tracking-wider block">
+                        <span className="text-[10px] sm:text-[10.5px] font-medium text-[#6b7280] uppercase tracking-wider block">
                           Pricing
                         </span>
-                        <span className="text-[11.5px] sm:text-xs font-bold text-[var(--primary)] block mt-0.5 truncate">
+                        <span className="text-[11.5px] sm:text-xs font-bold text-[#e67e00] block mt-0.5 truncate">
                           {project.pricing}
                         </span>
                       </div>
@@ -156,7 +156,7 @@ export const ProjectGridSection = ({
                   {/* 4. Action Button: "Get This Design" */}
                   <button
                     onClick={() => onOpenInquiry(project)}
-                    className="w-full py-2.5 px-4 rounded-full border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-black font-semibold text-xs sm:text-[13px] text-center transition-all duration-200 cursor-pointer shadow-sm hover:shadow-[0_0_14px_rgba(255,140,0,0.3)]"
+                    className="w-full py-2.5 px-4 rounded-full border border-[var(--primary)] text-[#e67e00] hover:bg-[var(--primary)] hover:text-black font-semibold text-xs sm:text-[13px] text-center transition-all duration-200 cursor-pointer shadow-sm hover:shadow-[0_0_14px_rgba(255,140,0,0.3)]"
                   >
                     Get This Design
                   </button>

@@ -7,7 +7,6 @@ import AboutStorySection from '@/components/About/AboutStorySection';
 import OnePartnerSection from '@/components/About/OnePartnerSection';
 import BhoomiPoojaSection from '@/components/About/BhoomiPoojaSection';
 import BuiltForNextSection from '@/components/About/BuiltForNextSection';
-import Footer from '@/components/Footer/Footer';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
 
@@ -38,11 +37,6 @@ export default function AboutPage() {
       {/* ── Built for What's Next CTA Banner (White Background) ─── */}
       <BuiltForNextSection onOpenApply={() => setIsApplyModalOpen(true)} />
 
-      {/* ── Footer ───────────────────────────────────────────────── */}
-      <Footer
-        onOpenApply={() => setIsApplyModalOpen(true)}
-        onOpenTourModal={() => setIsTourModalOpen(true)}
-      />
 
       {/* ── Modals ───────────────────────────────────────────────── */}
       <TourModal

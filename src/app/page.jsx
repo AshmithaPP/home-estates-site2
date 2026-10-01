@@ -1,60 +1,49 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import Hero from '@/components/Hero/Hero';
-import ScrollGallery from '@/components/InteractiveGallery/ScrollGallery';
-import EverydayLivingSection from '@/components/EverydayLiving/EverydayLivingSection';
-import BalancedLivingSection from '@/components/BalancedLiving/BalancedLivingSection';
-import CustomerStoriesSection from '@/components/CustomerStories/CustomerStoriesSection';
-import FAQSection from '@/components/FAQ/FAQSection';
-import FindYourPlaceSection from '@/components/CTA/FindYourPlaceSection';
-import ContactSection from '@/components/Contact/ContactSection';
-import Footer from '@/components/Footer/Footer';
-import ApplyModal from '@/components/Modals/ApplyModal';
+import EverythingOnePlace from '@/components/Home/EverythingOnePlace';
+import Spotlight from '@/components/Home/Spotlight';
+import SignatureLivingShowcase from '@/components/Home/SignatureLivingShowcase';
+import RealtimeProjects from '@/components/Home/RealtimeProjects';
+import HowWeGotHere from '@/components/Home/HowWeGotHere';
+import UnsurpassedLegacy from '@/components/Home/UnsurpassedLegacy';
+import HappyClients from '@/components/Home/HappyClients';
+import ReferralRewardBanner from '@/components/Home/ReferralRewardBanner';
 
 export default function HomePage() {
-  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-transparent text-[#f0ede8] selection:bg-[#ff8c00] selection:text-black font-sans">
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section (with site Header / Navbar) */}
       <Hero />
 
-      {/* 2. Interactive Scroll Gallery with Converging Zoom Motion */}
-      <ScrollGallery />
+      {/* Sections below are ported from ajay-homes-estates (light theme) */}
+      <main className="relative bg-white text-slate-900">
+        {/* 2. Everything you Need at One Place */}
+        <EverythingOnePlace />
 
-      {/* 3. Made for Everyday Living Section */}
-      <EverydayLivingSection />
+        {/* 3. Iconic Architectural Spotlight Showcase */}
+        <Spotlight />
 
-      {/* 4. Where Luxury Living Feels Balanced (Floorplan Cards) */}
-      <BalancedLivingSection
-        onOpenApply={() => setIsApplyModalOpen(true)}
-      />
+        {/* 4. Signature Living Showcase with Scroll-Driven Emergent Projects */}
+        <SignatureLivingShowcase />
 
-      {/* 5. Customer Stories Video Section */}
-      <CustomerStoriesSection />
+        {/* 5. Realtime Client Projects Showcase */}
+        <RealtimeProjects />
 
-      {/* 6. Pre-Footer Banner: Land Partnership Property Promotion */}
-      <FindYourPlaceSection />
+        {/* 6. How we got here? Interactive Timeline Showcase */}
+        <HowWeGotHere />
 
-      {/* 7. Contact Form Section (Blog & Insights) */}
-      <ContactSection />
+        {/* 7. A Legacy Built Over 60 Years milestone timeline */}
+        <UnsurpassedLegacy />
 
-      {/* 8. Frequently Asked Questions Section (Moved right before Footer with White BG) */}
-      <FAQSection
-        onOpenApply={() => setIsApplyModalOpen(true)}
-      />
+        {/* 8. Happy Clients: customer testimonials mosaic */}
+        <HappyClients />
 
-      {/* 9. Footer */}
-      <Footer
-        onOpenApply={() => setIsApplyModalOpen(true)}
-      />
+        {/* 9. Build with Confidence: projects & services banner */}
+        <ReferralRewardBanner />
 
-      {/* Modals */}
-      <ApplyModal
-        isOpen={isApplyModalOpen}
-        onClose={() => setIsApplyModalOpen(false)}
-      />
+      </main>
     </div>
   );
 }

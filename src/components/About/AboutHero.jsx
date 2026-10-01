@@ -41,8 +41,8 @@ export const AboutHero = () => {
   return (
     <section 
       id="about-hero"
-      className="relative w-full h-screen min-h-[640px] sm:min-h-[720px] flex items-center overflow-hidden"
-      style={{ fontFamily: 'Montserrat, sans-serif' }}
+      className="relative w-full h-screen min-h-[580px] sm:min-h-[640px] lg:min-h-[720px] flex items-center overflow-hidden"
+      style={{ fontFamily: 'var(--font-family-base)' }}
     >
       {/* ── Background Image (img188.jpg) with gentle contrast layer matching home page ── */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -53,51 +53,51 @@ export const AboutHero = () => {
         />
 
         {/* Home page matching soft gradients: keeps image authentic & vivid while giving crisp text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent pointer-events-none" />
       </div>
 
       {/* ── Main Layout Container — Flush Left End matching Home Page ── */}
       <div className="relative z-10 max-w-[1800px] mx-auto w-full px-4 sm:px-12 pt-20 sm:pt-28 pb-6 flex-1 flex flex-col justify-center">
         
-        {/* Left End Content Grid matching home page */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center my-auto">
+        {/* Left End Content Grid matching Home Page */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-center my-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-8 xl:col-span-7 text-left space-y-4 sm:space-y-5"
+            className="lg:col-span-7 xl:col-span-6 text-left space-y-4 sm:space-y-5"
           >
             
-            {/* 1. Main Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-[40px] lg:text-[45px] xl:text-[48px] font-bold text-white tracking-tight leading-[1.18] drop-shadow-md">
-              Built on Experience.{' '}
+            {/* 1. Main Heading — Exact Home Page Font Size, Uppercase & Leading */}
+            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight leading-[1.12] drop-shadow-md text-left select-none">
+              <span className="block text-white">
+                Built on Experience,
+              </span>
               <span 
-                className="text-transparent bg-clip-text"
+                className="block text-transparent bg-clip-text"
                 style={{
-                  backgroundImage: 'linear-gradient(135deg, #ff8c00 0%, #ffab40 50%, #ffe0b2 100%)',
+                  backgroundImage: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 60%, var(--text-primary) 100%)',
                 }}
               >
                 Defined by Quality.
               </span>
             </h1>
 
-            {/* 2. Description Paragraph */}
-            <div className="text-xs sm:text-sm md:text-base text-white/90 font-normal leading-relaxed max-w-xl drop-shadow">
-              <p>
-                With <span className="text-white font-semibold">50+ years of industry experience</span> and{' '}
-                <span className="text-white font-semibold">500+ projects</span>, Ajay Homes brings together construction, property development, project management, interiors, and real estate under one roof.
-              </p>
-            </div>
+            {/* 2. Description Paragraph — Exact Home Page Typography & Density */}
+            <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal max-w-xs sm:max-w-lg md:max-w-xl leading-relaxed drop-shadow select-none text-left">
+              With <span className="text-white font-semibold">50+ years of industry experience</span> and{' '}
+              <span className="text-white font-semibold">500+ projects</span>, Ajay Homes brings together construction, property development, project management, interiors, and real estate under one roof.
+            </p>
 
-            {/* 4. Running Scores matching Home Page: No cards, clean horizontal numbers */}
+            {/* 3. Running Scores matching Home Page: No cards, clean horizontal numbers */}
             <div className="flex flex-wrap items-center gap-6 sm:gap-10 pt-4 pb-2 border-t border-white/20 max-w-xl">
               {/* Score 1 */}
               <div>
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow">
                   <RunningCounter target={50} suffix="+" />
                 </span>
-                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/75 font-semibold mt-0.5">
+                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 font-semibold mt-0.5">
                   Years Experience
                 </span>
               </div>
@@ -106,10 +106,10 @@ export const AboutHero = () => {
 
               {/* Score 2 */}
               <div>
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#ff8c00] tracking-tight drop-shadow">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--primary)] tracking-tight drop-shadow">
                   <RunningCounter target={500} suffix="+" />
                 </span>
-                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/75 font-semibold mt-0.5">
+                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 font-semibold mt-0.5">
                   Projects Built
                 </span>
               </div>
@@ -121,13 +121,13 @@ export const AboutHero = () => {
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow">
                   <RunningCounter target={1} prefix="₹" suffix=" Cr+" />
                 </span>
-                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/75 font-semibold mt-0.5">
+                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 font-semibold mt-0.5">
                   Developments
                 </span>
               </div>
             </div>
 
-            {/* 5. Reusable Button matching home page */}
+            {/* 4. Reusable Button matching home page */}
             <div className="pt-2">
               <Button
                 href="/contact"
@@ -140,7 +140,7 @@ export const AboutHero = () => {
 
           </motion.div>
 
-          <div className="hidden lg:block lg:col-span-4 xl:col-span-5" />
+          <div className="hidden lg:block lg:col-span-5 xl:col-span-6" />
         </div>
 
       </div>
