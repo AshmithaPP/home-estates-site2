@@ -57,23 +57,23 @@ const projectImages = [
 
 // Height of the fixed navbar (running top bar + main bar) on desktop; the pinned stage sits just below it
 const NAV_H = 108;
+// Our site header is not fixed, so pin the section flush with the top of the viewport (no navbar gap)
+const PIN_TOP = 0;
 
 function FeatureItem({ item, large }) {
   const IconComp = item.icon;
   return (
     <div className={`flex items-center group ${large ? "gap-4" : "gap-3"}`}>
       <div
-        className={`flex shrink-0 items-center justify-center rounded-xl bg-[var(--primary)] border-2 border-[var(--primary)] ring-4 ring-[var(--primary)]/15 text-black shadow-md shadow-[var(--primary)]/25 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-lg group-hover:shadow-[var(--grey-base)]/35 ${
-          large ? "h-11 w-11 2xl:h-14 2xl:w-14" : "h-11 w-11"
-        }`}
+        className={`flex shrink-0 items-center justify-center rounded-xl bg-[var(--primary)] border-2 border-[var(--primary)] ring-4 ring-[var(--primary)]/15 text-black shadow-md shadow-[var(--primary)]/25 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-lg group-hover:shadow-[var(--grey-base)]/35 ${large ? "h-11 w-11 2xl:h-14 2xl:w-14" : "h-11 w-11"
+          }`}
       >
         <IconComp className={large ? "h-5 w-5 2xl:h-6 2xl:w-6" : "h-5 w-5"} />
       </div>
       <div className="min-w-0">
         <h4
-          className={`font-bold text-white leading-snug group-hover:text-[var(--primary)] transition-colors font-sans ${
-            large ? "text-sm 2xl:text-base" : "text-[13px] sm:text-sm"
-          }`}
+          className={`font-bold text-white leading-snug group-hover:text-[var(--primary)] transition-colors font-sans ${large ? "text-sm 2xl:text-base" : "text-[13px] sm:text-sm"
+            }`}
         >
           {item.title}
         </h4>
@@ -87,6 +87,7 @@ function FeatureItem({ item, large }) {
 
 export default function SignatureLivingShowcase() {
   const containerRef = useRef(null);
+  const stickyRef = useRef(null);
   const fanRef = useRef(null);
   const headerRef = useRef(null);
   const [headerH, setHeaderH] = useState(190);
@@ -135,10 +136,12 @@ export default function SignatureLivingShowcase() {
         if (isDesktop) {
           if (!containerRef.current) return;
           const rect = containerRef.current.getBoundingClientRect();
-          const scrollableDist = containerRef.current.offsetHeight - window.innerHeight;
+          // Pinned block is one viewport tall (content centred), so spacing stays constant while pinned
+          const pinnedH = stickyRef.current ? stickyRef.current.offsetHeight : window.innerHeight;
+          const scrollableDist = containerRef.current.offsetHeight - pinnedH;
           if (scrollableDist <= 0) return;
           // 0 when the section top reaches the navbar, 1 when the pinned stretch ends
-          setScrollProgress(Math.min(1, Math.max(0, (NAV_H - rect.top) / scrollableDist)));
+          setScrollProgress(Math.min(1, Math.max(0, (PIN_TOP - rect.top) / scrollableDist)));
         } else {
           if (!fanRef.current) return;
           const rect = fanRef.current.getBoundingClientRect();
@@ -214,10 +217,10 @@ export default function SignatureLivingShowcase() {
     >
       {/* Pinned Viewport Container on Desktop; Natural Flow on Mobile/Tablet */}
       <div
-        className={`${
-          isDesktop && !isReducedMotion ? "sticky pt-12 2xl:pt-14 justify-start" : "relative py-16 sm:py-20 justify-center"
-        } w-full flex flex-col items-center overflow-hidden px-4 sm:px-6 lg:px-10 2xl:px-16`}
-        style={isDesktop && !isReducedMotion ? { top: `${NAV_H}px`, height: `calc(100vh - ${NAV_H}px)` } : undefined}
+        className={`${isDesktop && !isReducedMotion ? "sticky py-8 justify-center" : "relative py-16 sm:py-20 justify-center"
+          } w-full flex flex-col items-center overflow-hidden px-4 sm:px-6 lg:px-10 2xl:px-16`}
+        ref={stickyRef}
+        style={isDesktop && !isReducedMotion ? { top: `${PIN_TOP}px`, height: "100vh" } : undefined}
       >
         <div className="w-full max-w-[1680px] mx-auto">
           {/* Section Header */}
@@ -264,9 +267,8 @@ export default function SignatureLivingShowcase() {
                       style={calcCardTransform(i, targetX, targetY, rotate)}
                     >
                       <div
-                        className={`group relative overflow-hidden border-white ring-1 ring-slate-200/90 shadow-xl shadow-slate-900/10 bg-slate-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:ring-[var(--primary)] cursor-pointer ${
-                          compact ? "rounded-lg border" : "rounded-xl border-2"
-                        }`}
+                        className={`group relative overflow-hidden border-white ring-1 ring-slate-200/90 shadow-xl shadow-slate-900/10 bg-slate-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:ring-[var(--primary)] cursor-pointer ${compact ? "rounded-lg border" : "rounded-xl border-2"
+                          }`}
                         style={{ width: `${sideW}px`, height: `${sideH}px` }}
                       >
                         <Image
@@ -277,16 +279,14 @@ export default function SignatureLivingShowcase() {
                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div
-                          className={`absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent text-left pointer-events-none ${
-                            compact ? "px-1.5 pb-1 pt-3" : "px-2.5 pb-1.5 pt-5"
-                          }`}
+                          className={`absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent text-left pointer-events-none ${compact ? "px-1.5 pb-1 pt-3" : "px-2.5 pb-1.5 pt-5"
+                            }`}
                         >
                           <p
-                            className={`font-bold text-white font-sans leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] ${
-                              compact
+                            className={`font-bold text-white font-sans leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] ${compact
                                 ? "text-[8px] leading-tight"
                                 : "text-[11px] sm:text-[12px] 2xl:text-[13px] leading-tight"
-                            }`}
+                              }`}
                           >
                             {card.title}
                           </p>
@@ -299,15 +299,14 @@ export default function SignatureLivingShowcase() {
 
               {/* Central Real Project Card */}
               <div
-                className={`relative z-20 overflow-hidden bg-white shadow-xl shadow-slate-900/10 border-white ring-1 ring-slate-200/80 transition-transform duration-300 hover:scale-[1.01] ${
-                  compact ? "rounded-xl border" : "rounded-2xl border-2"
-                }`}
+                className={`relative z-20 overflow-hidden bg-white shadow-xl shadow-slate-900/10 border-white ring-1 ring-slate-200/80 transition-transform duration-300 hover:scale-[1.01] ${compact ? "rounded-xl border" : "rounded-2xl border-2"
+                  }`}
                 style={{ width: `${centerW}px` }}
               >
                 <div className="relative w-full overflow-hidden bg-slate-100" style={{ height: `${centerH}px` }}>
                   <Image
-                    src="/assets/img/img-001.jpeg"
-                    alt="Scarlet Diamond - Flagship Residence by Ajay Homes & Estates"
+                    src="/assets/img/img-009.jpeg"
+                    alt="Terrace Garden Residence - Flagship Residence by Ajay Homes & Estates"
                     fill
                     priority
                     sizes="(max-width: 1280px) 300px, 400px"
@@ -319,9 +318,8 @@ export default function SignatureLivingShowcase() {
                   {/* Top Badge */}
                   <div className={`absolute z-10 pointer-events-none ${compact ? "top-1.5 left-1.5" : "top-3 left-3"}`}>
                     <span
-                      className={`inline-flex items-center rounded-full bg-white/95 font-bold text-slate-900 shadow-xs backdrop-blur-xs ${
-                        compact ? "gap-1 px-1.5 py-0.5 text-[7px]" : "gap-1.5 px-2.5 py-1 text-[10px]"
-                      }`}
+                      className={`inline-flex items-center rounded-full bg-white/95 font-bold text-slate-900 shadow-xs backdrop-blur-xs ${compact ? "gap-1 px-1.5 py-0.5 text-[7px]" : "gap-1.5 px-2.5 py-1 text-[10px]"
+                        }`}
                     >
                       <Sparkles className={`text-[var(--primary)] ${compact ? "h-2 w-2" : "h-3 w-3"}`} />
                       Flagship Residence
@@ -330,22 +328,20 @@ export default function SignatureLivingShowcase() {
 
                   {/* Bottom Info Card */}
                   <div
-                    className={`absolute z-10 bg-white/95 backdrop-blur-md shadow-md border border-white/60 text-center ${
-                      compact ? "bottom-1.5 inset-x-1.5 rounded-lg p-1.5" : "bottom-3 inset-x-3 rounded-xl p-2.5 sm:p-3"
-                    }`}
+                    className={`absolute z-10 bg-white/95 backdrop-blur-md shadow-md border border-white/60 text-center ${compact ? "bottom-1.5 inset-x-1.5 rounded-lg p-1.5" : "bottom-3 inset-x-3 rounded-xl p-2.5 sm:p-3"
+                      }`}
                   >
                     <span
-                      className={`block font-extrabold uppercase text-[var(--primary)] ${
-                        compact ? "text-[6px] tracking-wider" : "text-[9px] tracking-widest"
-                      }`}
+                      className={`block font-extrabold uppercase text-[var(--primary)] ${compact ? "text-[6px] tracking-wider" : "text-[9px] tracking-widest"
+                        }`}
                     >
                       Central Featured Landmark
                     </span>
                     <h3 className={`font-extrabold text-slate-900 mt-0.5 font-sans ${compact ? "text-[10px]" : "text-xs sm:text-sm"}`}>
-                      Scarlet Diamond
+                      Terrace Garden Residence
                     </h3>
                     {!compact && (
-                      <p className="text-[10px] text-slate-600 mt-0.5 font-sans">Bespoke G+3 Villa &bull; South India</p>
+                      <p className="text-[10px] text-slate-600 mt-0.5 font-sans">Luxury G+3 Residence &bull; Chennai</p>
                     )}
                   </div>
                 </div>

@@ -120,7 +120,7 @@ export const ProjectLightboxModal = ({
               </h3>
               <p className="text-xs text-white/70 mt-0.5 flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-[var(--primary)]" />
-                <span>{project.community} &bull; {project.bhk} &bull; {project.pricing}</span>
+                <span>{project.community} &bull; {project.bhk}</span>
               </p>
             </div>
 

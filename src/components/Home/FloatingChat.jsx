@@ -36,7 +36,7 @@ export const SERVICES = [
   },
   {
     id: "layout-promote",
-    title: "Layout promote",
+    title: "Layout promoter",
     desc: "Land development & prime layout promotion",
     icon: Layers,
   },

@@ -7,7 +7,8 @@ import BeyondBuildSection from '@/components/Construction/BeyondBuildSection';
 import ConstructionServicesGrid from '@/components/Construction/ConstructionServicesGrid';
 import WhyChooseUsSection from '@/components/Construction/WhyChooseUsSection';
 import ConstructionProcessSection from '@/components/Construction/ConstructionProcessSection';
-import DifferentRequirementsSection from '@/components/Construction/DifferentRequirementsSection';
+import BuiltForRequirementsSection from '@/components/Construction/BuiltForRequirementsSection';
+import MoreThanConstructionSection from '@/components/Construction/MoreThanConstructionSection';
 import FAQSection from '@/components/FAQ/FAQSection';
 import PremiumProjectCTASection from '@/components/Common/PremiumProjectCTASection';
 import FoundationToCelebrationSection from '@/components/Common/FoundationToCelebrationSection';
@@ -50,8 +51,11 @@ export default function ConstructionServicesPage() {
       {/* ── Our Construction Process Section (Auto-Running UI Replica) ── */}
       <ConstructionProcessSection />
 
-      {/* ── Built For Different Requirements & More Than Construction (Reference UI Replica) ── */}
-      <DifferentRequirementsSection />
+      {/* ── Built For Different Requirements (White) ── */}
+      <BuiltForRequirementsSection />
+
+      {/* ── More Than Construction (Grey) ── */}
+      <MoreThanConstructionSection />
 
       {/* ── Exact Existing FAQ Section (As-is, Light Theme) ── */}
       <FAQSection
@@ -61,6 +65,14 @@ export default function ConstructionServicesPage() {
 
       {/* ── Planning a Premium Construction Project? (CTA, Grey) ── */}
       <PremiumProjectCTASection
+        title="Planning a Premium Construction Project?"
+        description="Bring your vision, land, or project requirement. Our team can help you plan the next step."
+        stats={[
+          { value: '₹1 Cr+', label: 'Projects' },
+          { value: '500+', label: 'Projects' },
+          { value: '50+ Years', label: 'of Industry Experience' },
+        ]}
+        ctaText="Discuss Your Project"
         onCtaClick={() => setIsApplyModalOpen(true)}
       />
 

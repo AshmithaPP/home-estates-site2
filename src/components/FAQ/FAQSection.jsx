@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, X } from 'lucide-react';
 import Button from '../UI/Button';
 
-const faqItems = [
+export const faqItems = [
   {
     id: '1',
     question: 'What makes Ajay Homes one of the fastest growing builders in Chennai?',
@@ -120,7 +120,7 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply, items = faqItems }) =
 
               <div className="pt-2">
                 <Button
-                  onClick={onOpenTourModal}
+                  onClick={onOpenApply || onOpenTourModal}
                   size="md"
                   className="w-full justify-center"
                 >
@@ -148,7 +148,7 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply, items = faqItems }) =
                       ? 'shadow-lg'
                       : 'border-black/5 shadow-sm hover:shadow-md hover:border-black/10'
                   }`}
-                  style={isOpen ? { borderColor: 'var(--primary)', boxShadow: '0 10px 25px -5px rgba(255, 140, 0, 0.08)' } : {}}
+                  style={isOpen ? { borderColor: 'var(--primary)', boxShadow: '0 10px 25px -5px color-mix(in srgb, var(--primary) 15%, transparent)' } : {}}
                 >
                   <button
                     onClick={() => toggleAccordion(item.id)}
@@ -158,7 +158,6 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply, items = faqItems }) =
                       className={`text-sm sm:text-base font-bold transition-colors duration-300 leading-snug ${
                         isOpen ? 'text-[#1a1a1a]' : 'text-[#2a2a2a]'
                       }`}
-                      style={!isOpen ? { ':hover': { color: 'var(--primary)' } } : {}}
                     >
                       {item.question}
                     </span>

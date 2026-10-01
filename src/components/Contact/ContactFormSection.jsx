@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Send, CheckCircle2, Mail, Phone, MapPin } from 'lucide-react';
+import { ChevronDown, Send, CheckCircle2, MapPin } from 'lucide-react';
 import Button from '../UI/Button';
 
 export const ContactFormSection = () => {
@@ -26,13 +26,6 @@ export const ContactFormSection = () => {
     'Selling Property',
   ];
 
-  const contactDetails = [
-    { label: 'LOCATION', value: 'Ajay Homes, Chennai, Tamil Nadu' },
-    { label: 'PHONE', value: '+91 98400 12345', href: 'tel:+919840012345' },
-    { label: 'EMAIL', value: 'contact@ajayhomes.com', href: 'mailto:contact@ajayhomes.com' },
-    { label: 'WORKING HOURS', value: 'Monday – Saturday: 9:30 AM – 6:30 PM' },
-  ];
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
@@ -41,53 +34,168 @@ export const ContactFormSection = () => {
   return (
     <section
       id="contact-form"
-      className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-10 bg-[#1e1e1e] text-[#f0ede8] border-b border-white/5"
-      style={{ fontFamily: 'var(--font-family-base)' }}
+      className="relative py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      style={{
+        backgroundColor: 'var(--grey-deepest)',
+        color: 'var(--text-primary)',
+        fontFamily: 'var(--font-family-base)',
+      }}
     >
-      {/* Subtle ambient lighting glow */}
-      <div 
-        className="absolute top-1/3 -left-32 w-80 h-80 rounded-full blur-[120px] pointer-events-none opacity-10"
-        style={{ background: 'var(--primary)' }}
+      {/* ── Soft Ambient Glows for Depth ── */}
+      <div
+        className="absolute top-1/4 -left-32 w-96 h-96 rounded-full blur-[140px] pointer-events-none"
+        style={{
+          backgroundColor: 'var(--primary)',
+          opacity: 0.08,
+        }}
       />
-      <div 
-        className="absolute bottom-1/4 -right-32 w-80 h-80 rounded-full blur-[120px] pointer-events-none opacity-10"
-        style={{ background: 'var(--primary)' }}
+      <div
+        className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full blur-[140px] pointer-events-none"
+        style={{
+          backgroundColor: 'var(--primary)',
+          opacity: 0.08,
+        }}
       />
 
-      <div className="relative z-10 max-w-[1380px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-start">
-          
-          {/* ── LEFT COLUMN: Requirement Form ───────────────────────────── */}
-          <div className="lg:col-span-7">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-6 sm:mb-8"
+      <div className="relative z-10 max-w-[1360px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-7 items-stretch">
+
+          {/* ══════════════════════════════════════════════════════════════════
+              CARD 1 (LEFT): Visit Us with Image (5 Cols)
+             ══════════════════════════════════════════════════════════════════ */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 relative min-h-[420px] sm:min-h-[460px] rounded-2xl border border-white/10 shadow-2xl overflow-hidden group"
+          >
+            {/* Full-bleed photo */}
+            <img
+              src="/assets/img/img-001.jpeg"
+              alt="Visit Us — Ajay Homes Office"
+              className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              loading="lazy"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: 'linear-gradient(to top, color-mix(in srgb, var(--grey-deepest) 85%, transparent) 0%, transparent 55%)' }}
+            />
+
+            {/* Small overlay card with the visit details */}
+            <div
+              className="absolute left-3 right-3 bottom-3 sm:left-4 sm:right-auto sm:bottom-4 sm:w-[300px] rounded-xl border border-white/10 p-4 sm:p-5 backdrop-blur-md shadow-xl"
+              style={{ backgroundColor: 'color-mix(in srgb, var(--grey-deepest) 82%, transparent)' }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-white tracking-tight leading-tight text-left">
+              <h3 className="text-lg sm:text-xl font-extrabold tracking-tight leading-tight" style={{ color: 'var(--text-primary)' }}>
+                Visit Us
+              </h3>
+
+              <div className="mt-2">
+                <div className="text-sm font-bold" style={{ color: 'var(--primary)' }}>
+                  Ajay Homes
+                </div>
+                <div className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                  Chennai, Tamil Nadu
+                </div>
+              </div>
+
+              <div className="mt-3 pt-3 border-t border-white/10 space-y-1 text-xs" style={{ color: 'var(--text-muted)' }}>
+                <div>
+                  <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Phone: </span>
+                  <a href="tel:+919840012345" className="font-medium transition-colors hover:text-[var(--primary)]" style={{ color: 'var(--text-primary)' }}>
+                    +91 98400 12345
+                  </a>
+                </div>
+                <div>
+                  <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Email: </span>
+                  <a href="mailto:contact@ajayhomes.com" className="font-medium transition-colors hover:text-[var(--primary)]" style={{ color: 'var(--text-primary)' }}>
+                    contact@ajayhomes.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <Button
+                  href="https://maps.google.com/?q=Ajay+Homes+Chennai+Tamil+Nadu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="primary"
+                  size="sm"
+                  icon={MapPin}
+                  showIcon={true}
+                >
+                  Get Directions
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ══════════════════════════════════════════════════════════════════
+              CARD 2 (RIGHT): Interactive Requirement Enquiry Form (7 Cols)
+             ══════════════════════════════════════════════════════════════════ */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 relative rounded-2xl p-4 sm:p-5 lg:p-6 border border-white/10 shadow-2xl backdrop-blur-xl flex flex-col justify-between overflow-hidden"
+            style={{
+              background: 'linear-gradient(145deg, rgba(36, 36, 36, 0.88) 0%, rgba(24, 24, 24, 0.96) 100%)',
+              boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.08)',
+            }}
+          >
+            {/* Form Card Header */}
+            <div className="mb-3.5 sm:mb-4 text-left">
+              <div className="flex items-center gap-2 mb-1">
+                <span
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: 'var(--primary)' }}
+                />
+                <span
+                  className="text-[11px] font-bold uppercase tracking-wider"
+                  style={{ color: 'var(--primary)' }}
+                >
+                  Online Enquiry
+                </span>
+              </div>
+
+              <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-tight">
                 Tell Us About Your Requirement
               </h2>
-            </motion.div>
+
+              <p className="mt-1 text-xs text-neutral-300 font-light leading-relaxed">
+                Provide your project details and our team will get in touch with you shortly.
+              </p>
+            </div>
 
             {submitted ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="glass-card p-8 sm:p-10 rounded-2xl border border-white/10 text-center space-y-4 shadow-2xl bg-white/5"
+                className="my-auto py-8 px-5 rounded-xl border border-white/10 text-center space-y-3 bg-white/[0.03]"
               >
-                <div className="w-14 h-14 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] mx-auto flex items-center justify-center shadow-[0_0_24px_rgba(255,140,0,0.4)]">
-                  <CheckCircle2 className="w-8 h-8" />
+                <div
+                  className="w-12 h-12 rounded-full mx-auto flex items-center justify-center border"
+                  style={{
+                    backgroundColor: 'color-mix(in srgb, var(--primary) 15%, transparent)',
+                    borderColor: 'color-mix(in srgb, var(--primary) 30%, transparent)',
+                    color: 'var(--primary)',
+                  }}
+                >
+                  <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white">Enquiry Submitted!</h3>
-                <p className="text-xs sm:text-sm text-[#f0ede8]/80 leading-relaxed max-w-md mx-auto">
-                  Thank you, <span className="text-[var(--primary)] font-semibold">{formData.name}</span>. Our Chennai advisory team has received your requirement and will get in touch with you shortly at <span className="text-white font-semibold">{formData.phone}</span>.
+                <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                  Enquiry Submitted!
+                </h3>
+                <p className="text-xs text-neutral-300 leading-relaxed max-w-md mx-auto">
+                  Thank you, <span className="font-semibold text-white">{formData.name}</span>. Our Chennai advisory team has received your requirement and will contact you shortly at <span className="font-semibold" style={{ color: 'var(--primary)' }}>{formData.phone}</span>.
                 </p>
                 <div className="pt-2">
                   <Button
                     variant="primary"
-                    size="md"
+                    size="sm"
                     onClick={() => {
                       setSubmitted(false);
                       setFormData({
@@ -105,20 +213,12 @@ export const ContactFormSection = () => {
                 </div>
               </motion.div>
             ) : (
-              <motion.form
-                onSubmit={handleSubmit}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.05 }}
-                className="space-y-6 sm:space-y-7"
-              >
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-3.5">
+
                 {/* Row 1: Name & Phone Number */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-7">
-                  
-                  {/* Name */}
-                  <div className="relative group">
-                    <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-1.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="text-left">
+                    <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
                       Name *
                     </label>
                     <input
@@ -127,13 +227,12 @@ export const ContactFormSection = () => {
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-transparent border-b border-white/20 pb-2 text-sm sm:text-base text-white placeholder-white/40 focus:outline-none focus:border-[var(--primary)] focus:shadow-[0_1px_0_0_var(--primary)] transition-all duration-300"
+                      className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-white placeholder-white/35 focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
                     />
                   </div>
 
-                  {/* Phone Number */}
-                  <div className="relative group">
-                    <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-1.5">
+                  <div className="text-left">
+                    <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
                       Phone Number *
                     </label>
                     <input
@@ -142,18 +241,15 @@ export const ContactFormSection = () => {
                       placeholder="Your Contact Number"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-transparent border-b border-white/20 pb-2 text-sm sm:text-base text-white placeholder-white/40 focus:outline-none focus:border-[var(--primary)] focus:shadow-[0_1px_0_0_var(--primary)] transition-all duration-300"
+                      className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-white placeholder-white/35 focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
                     />
                   </div>
-
                 </div>
 
                 {/* Row 2: Email Address & Project Location */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-7">
-                  
-                  {/* Email Address */}
-                  <div className="relative group">
-                    <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-1.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="text-left">
+                    <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
                       Email Address *
                     </label>
                     <input
@@ -162,29 +258,27 @@ export const ContactFormSection = () => {
                       placeholder="Your Email Address"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-transparent border-b border-white/20 pb-2 text-sm sm:text-base text-white placeholder-white/40 focus:outline-none focus:border-[var(--primary)] focus:shadow-[0_1px_0_0_var(--primary)] transition-all duration-300"
+                      className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-white placeholder-white/35 focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
                     />
                   </div>
 
-                  {/* Project / Property Location */}
-                  <div className="relative group">
-                    <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-1.5">
+                  <div className="text-left">
+                    <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
                       Project / Property Location
                     </label>
                     <input
                       type="text"
-                      placeholder="Where is your project or property located?"
+                      placeholder="Where is your project located?"
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      className="w-full bg-transparent border-b border-white/20 pb-2 text-sm sm:text-base text-white placeholder-white/40 focus:outline-none focus:border-[var(--primary)] focus:shadow-[0_1px_0_0_var(--primary)] transition-all duration-300"
+                      className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-white placeholder-white/35 focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
                     />
                   </div>
-
                 </div>
 
                 {/* Row 3: I’m Interested In */}
-                <div className="relative group">
-                  <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-1.5">
+                <div className="text-left">
+                  <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
                     I’m Interested In *
                   </label>
                   <div className="relative">
@@ -192,24 +286,24 @@ export const ContactFormSection = () => {
                       required
                       value={formData.interestedIn}
                       onChange={(e) => setFormData({ ...formData, interestedIn: e.target.value })}
-                      className="w-full bg-transparent border-b border-white/20 pb-2 pr-8 text-sm sm:text-base text-white focus:outline-none focus:border-[var(--primary)] focus:shadow-[0_1px_0_0_var(--primary)] transition-all duration-300 cursor-pointer appearance-none"
+                      className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 pr-9 text-xs sm:text-sm text-white focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200 cursor-pointer appearance-none"
                     >
                       <option value="" disabled className="bg-[#242424] text-white/50">
                         Select a service...
                       </option>
                       {servicesOptions.map((opt) => (
-                        <option key={opt} value={opt} className="bg-[#242424] text-white py-2">
+                        <option key={opt} value={opt} className="bg-[#242424] text-white py-1.5">
                           {opt}
                         </option>
                       ))}
                     </select>
-                    <ChevronDown className="w-4 h-4 text-white/60 absolute right-0 bottom-3 pointer-events-none group-focus-within:text-[var(--primary)] transition-colors" />
+                    <ChevronDown className="w-4 h-4 text-white/60 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
                 </div>
 
                 {/* Row 4: Tell Us More */}
-                <div className="relative group">
-                  <label className="block text-xs sm:text-sm font-semibold text-white/90 mb-1.5">
+                <div className="text-left">
+                  <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
                     Tell Us More
                   </label>
                   <textarea
@@ -217,119 +311,30 @@ export const ContactFormSection = () => {
                     placeholder="Briefly describe your requirement."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-transparent border-b border-white/20 pb-2 text-sm sm:text-base text-white placeholder-white/40 focus:outline-none focus:border-[var(--primary)] focus:shadow-[0_1px_0_0_var(--primary)] transition-all duration-300 resize-none"
+                    className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-white placeholder-white/35 focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200 resize-none"
                   />
                 </div>
 
                 {/* Row 5: Action Row */}
-                <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="pt-1 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <Button
                     type="submit"
                     variant="primary"
-                    size="md"
+                    size="sm"
                     icon={Send}
                     showIcon={true}
-                    className="w-full sm:w-auto uppercase tracking-wider font-bold shadow-md hover:shadow-[0_0_18px_rgba(255,140,0,0.35)]"
+                    className="w-full sm:w-auto uppercase tracking-wider font-bold py-2.5 px-6 text-xs"
                   >
                     Submit Enquiry
                   </Button>
 
-                  <span className="text-xs text-white/50 text-left sm:text-right">
+                  <span className="text-[11px] text-neutral-400 text-left sm:text-right font-light">
                     Your information is 100% confidential. No spam guaranteed.
                   </span>
                 </div>
 
-              </motion.form>
+              </form>
             )}
-          </div>
-
-          {/* ── RIGHT COLUMN: Contact Details (Image 2 Exact Replica) ───── */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-5 pt-4 lg:pt-0 lg:pl-6 xl:pl-8 flex flex-col justify-between"
-          >
-            <div className="space-y-6">
-              
-              {/* 1. EMAIL ROW (Exact Replica Top Block) */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[var(--primary)] shrink-0 bg-white/5 shadow-sm">
-                  <Mail className="w-4 h-4 stroke-[1.8]" />
-                </div>
-                <div>
-                  <span className="block text-[11px] font-bold uppercase tracking-wider text-[#a0a0a0] mb-0.5">
-                    EMAIL
-                  </span>
-                  <a
-                    href="mailto:contact@ajayhomes.com"
-                    className="text-sm sm:text-base font-bold text-white hover:text-[var(--primary)] transition-colors"
-                  >
-                    contact@ajayhomes.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Divider Line */}
-              <div className="border-t border-white/10" />
-
-              {/* 2. PHONE & OFFICE DETAILS BLOCK (Exact Replica Bottom Block) */}
-              <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[var(--primary)] shrink-0 bg-white/5 shadow-sm">
-                    <Phone className="w-4 h-4 stroke-[1.8]" />
-                  </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#a0a0a0]">
-                    PHONE &amp; OFFICE DETAILS
-                  </span>
-                </div>
-
-                {/* Details List with Subtle Horizontal Lines */}
-                <div className="divide-y divide-white/10 border-y border-white/10">
-                  {contactDetails.map((item) => (
-                    <div
-                      key={item.label}
-                      className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 text-xs sm:text-[13px] font-medium"
-                    >
-                      <span className="text-[#a0a0a0] font-bold uppercase tracking-wider text-[10.5px] sm:text-[11px]">
-                        {item.label}
-                      </span>
-
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          className="font-bold text-white hover:text-[var(--primary)] transition-colors sm:text-right"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <span className="font-bold text-white sm:text-right">
-                          {item.value}
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* 3. GET DIRECTIONS BUTTON */}
-              <div className="pt-2">
-                <Button
-                  href="https://maps.google.com/?q=Ajay+Homes+Chennai+Tamil+Nadu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="primary"
-                  size="md"
-                  icon={MapPin}
-                  showIcon={true}
-                  className="w-full sm:w-auto uppercase tracking-wider font-bold shadow-md hover:shadow-[0_0_18px_rgba(255,140,0,0.35)]"
-                >
-                  Get Directions
-                </Button>
-              </div>
-
-            </div>
           </motion.div>
 
         </div>

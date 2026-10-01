@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
         {children}
         {/* Site-wide footer */}
         <Footer />
-        {/* Free consultation popup: opens once the visitor scrolls to the footer */}
+        {/* Free consultation popup: opens 30 seconds after the page loads */}
         <ConsultationPopup />
         {/* Floating chat widget (site-wide) */}
         <FloatingChat />

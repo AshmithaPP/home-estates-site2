@@ -103,91 +103,77 @@ export const WhyStartSection = () => {
   ];
 
   return (
-    <section 
+    <section
       id="why-start"
-      className="relative w-full bg-white text-[#1f2937] overflow-hidden py-8 sm:py-10 lg:py-12"
-      style={{ fontFamily: 'Montserrat, sans-serif' }}
+      className="relative w-full bg-white overflow-hidden py-12 sm:py-14 lg:py-16"
+      style={{ fontFamily: 'var(--font-family-base)' }}
     >
-      <div className="max-w-[1300px] mx-auto px-6 sm:px-10 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
-          {/* ── LEFT: Title & Promises List (5 cols) ─────────────────── */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-5 space-y-5 sm:space-y-6"
-          >
-            {/* Main Section Heading */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#1f2937] tracking-tight leading-snug text-left">
-              Why Start With Ajay Homes?
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* ── Title card: heading inside a dark grey banner, villa illustration on the right ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+          className="section-grey relative rounded-2xl sm:rounded-3xl overflow-hidden px-6 py-7 sm:px-10 sm:py-9 lg:px-12 lg:py-10"
+        >
+          {/* Soft brand glow */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-72 w-72 rounded-full blur-[90px] opacity-30"
+            style={{ background: 'var(--primary)' }}
+          />
+
+          <div className="relative z-10 max-w-[560px]">
+            <h2
+              className="text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight leading-tight"
+              style={{ color: 'var(--text-primary)' }}
+            >
+              Why Start With <span style={{ color: 'var(--primary)' }}>Ajay Homes?</span>
             </h2>
+          </div>
 
-            {/* List with Standalone Outline Icons */}
-            <div className="space-y-4 sm:space-y-5 pt-0.5">
-              {promises.map((item) => {
-                const IconComp = item.icon;
+          {/* Isometric villa (hidden on small phones to keep the card short) */}
+          <img
+            src="/images/why-start-isometric.png"
+            alt="Ajay Homes Luxury Residential Villa"
+            className="hidden sm:block absolute right-4 lg:right-10 top-1/2 -translate-y-1/2 w-[150px] lg:w-[185px] h-auto object-contain drop-shadow-[0_12px_30px_rgba(0,0,0,0.35)] pointer-events-none select-none"
+          />
+        </motion.div>
 
-                return (
-                  <div
-                    key={item.title}
-                    className="flex items-start gap-3.5 sm:gap-4 group"
-                  >
-                    {/* Standalone Line Icon */}
-                    <div className="pt-0.5 text-[#374151] group-hover:text-[#ff8c00] transition-colors shrink-0">
-                      <IconComp className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.5]" />
-                    </div>
-
-                    {/* Text Details */}
-                    <div className="space-y-0.5">
-                      <div className="flex items-baseline gap-2 flex-wrap">
-                        <span className="text-sm sm:text-base font-bold text-[#111827]">
-                          {item.title}
-                        </span>
-                        <span className="text-xs sm:text-sm font-semibold text-[#4b5563]">
-                          — {item.subtitle}
-                        </span>
-                      </div>
-                      
-                      <p className="text-xs sm:text-[12.5px] text-[#666666] font-normal leading-relaxed max-w-md">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </motion.div>
-
-          {/* ── RIGHT: Home Related Isometric Villa ───────────────────── */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-7 relative flex items-center justify-center lg:justify-end"
-          >
-            {/* Organic Fluid Curved Shape in Brand Warm Amber Glow */}
-            <div 
-              className="absolute -inset-6 sm:-inset-8 pointer-events-none"
-              style={{
-                background: 'radial-gradient(ellipse at 50% 50%, rgba(255, 140, 0, 0.10) 0%, rgba(255, 171, 64, 0.04) 55%, transparent 75%)',
-                borderRadius: '58% 42% 65% 35% / 45% 55% 45% 55%',
-                transform: 'scale(1.15)',
-              }}
-            />
-
-            {/* 3D Isometric Home Illustration */}
-            <div className="relative z-10 w-full flex items-center justify-center lg:justify-end">
-              <img
-                src="/images/why-start-isometric.png"
-                alt="Ajay Homes Luxury Residential Villa"
-                className="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[480px] h-auto object-contain drop-shadow-[0_15px_35px_rgba(255,140,0,0.12)] transform hover:scale-[1.02] transition-transform duration-500"
-              />
-            </div>
-          </motion.div>
-
+        {/* ── Points: 4 across on desktop, 2 on tablet, 1 on phones ── */}
+        <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-7">
+          {promises.map((item, index) => {
+            const IconComp = item.icon;
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
+                className="group lg:pl-5 lg:border-l first:lg:pl-0 first:lg:border-l-0"
+                style={{ borderColor: 'color-mix(in srgb, var(--grey-surface) 20%, transparent)' }}
+              >
+                <div className="flex items-center gap-2.5">
+                  <IconComp
+                    className="w-5 h-5 shrink-0 transition-colors"
+                    style={{ color: 'var(--primary)' }}
+                  />
+                  <span className="text-base sm:text-lg font-bold" style={{ color: 'var(--grey-deepest)' }}>
+                    {item.title}
+                  </span>
+                </div>
+                <p className="mt-1 text-xs sm:text-[13px] font-semibold" style={{ color: 'var(--grey-base)' }}>
+                  {item.subtitle}
+                </p>
+                <p className="mt-2 text-xs sm:text-[13px] leading-relaxed" style={{ color: 'var(--grey-surface)' }}>
+                  {item.desc}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

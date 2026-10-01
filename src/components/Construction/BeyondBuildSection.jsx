@@ -49,12 +49,6 @@ export const BeyondBuildSection = ({ onOpenApply }) => {
               Beyond the Build
             </h2>
 
-            {/* 2. Red / Primary Accent Indicator Bar (Exact Replica of Reference UI) */}
-            <div 
-              className="w-10 sm:w-12 h-1 rounded-full my-3 sm:my-4"
-              style={{ backgroundColor: 'var(--primary)' }}
-            />
-
             {/* 3. Narrative Copy Paragraphs (Exact content requested by user) */}
             <div className="space-y-3.5 text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed">
               <p>

@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDownRight, Menu, X, ChevronDown } from 'lucide-react';
+import { ArrowDownRight, Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
+import Button from '@/components/UI/Button';
 
 export const Header = ({ onOpenTour, onOpenApply }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,17 +14,75 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
   // Exact Services requested
   const services = [
     { label: 'Construction', href: '/services/construction' },
-    { label: 'Layout promote', href: '/#services-layout' },
-    { label: 'Project management', href: '/#services-project-management' },
+    { label: 'Layout promoter', href: '/services/layout-promote' },
+    { label: 'Project management', href: '/services/project-management' },
     { label: 'Property developer', href: '/#services-property-developer' },
     { label: 'Interior designing', href: '/#services-interior' },
     { label: 'Real estate selling and buy', href: '/#services-real-estate' },
   ];
 
+  // Opens the site-wide free consultation popup (components/Home/ConsultationPopup)
+  const openConsultation = () => {
+    setIsMenuOpen(false);
+    window.dispatchEvent(new Event('open-consultation'));
+  };
+
+  // Running top bar journey (Bhoomi Pooja to House Warming)
+  const journeySteps = [
+    'Bhoomi Pooja',
+    'Approvals',
+    'Foundation',
+    'Structure',
+    'Brickwork & Plastering',
+    'Interiors & Finishing',
+    'Griha Pravesam · House Warming',
+  ];
+
   return (
     <>
-      <header className="absolute top-4 sm:top-6 left-0 right-0 z-40 px-3 sm:px-12 py-0 transition-all duration-300">
-        <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-2 relative">
+      <header className="absolute top-0 left-0 right-0 z-40 py-0 transition-all duration-300">
+        {/* Running top bar: Bhoomi Pooja to House Warming journey */}
+        <div
+          className="relative h-8 sm:h-9 overflow-hidden border-b"
+          style={{ backgroundColor: 'var(--grey-deepest)', borderColor: 'color-mix(in srgb, var(--primary) 30%, transparent)' }}
+          aria-label="From Bhoomi Pooja to House Warming"
+        >
+          <div className="topbar-marquee flex h-full w-max items-center">
+            {[0, 1].map((copy) => (
+              <div key={copy} className="flex shrink-0 items-center" aria-hidden={copy === 1}>
+                {[0, 1].map((rep) => (
+                  <div
+                    key={rep}
+                    className="flex shrink-0 items-center gap-4 sm:gap-5 pr-14 text-[11px] sm:text-xs 2xl:text-[13px] font-medium tracking-wide whitespace-nowrap antialiased"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    <span className="font-bold uppercase tracking-wider" style={{ color: 'var(--primary)' }}>
+                      From Bhoomi Pooja to House Warming
+                    </span>
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: 'var(--primary)' }} />
+                    {journeySteps.map((step, i) => (
+                      <span key={step} className="flex items-center gap-4 sm:gap-5">
+                        <span
+                          className={i === journeySteps.length - 1 ? 'font-bold' : ''}
+                          style={{ color: i === journeySteps.length - 1 ? 'var(--primary)' : 'var(--text-primary)' }}
+                        >
+                          {step}
+                        </span>
+                        {i < journeySteps.length - 1 && (
+                          <ChevronRight className="h-3.5 w-3.5" style={{ color: 'var(--text-muted)' }} />
+                        )}
+                      </span>
+                    ))}
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: 'var(--primary)' }} />
+                    <span className="font-bold" style={{ color: 'var(--text-primary)' }}>One team, one promise</span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-2 relative px-3 sm:px-12 mt-3 sm:mt-4">
 
           {/* Logo on Left */}
           <Link
@@ -137,13 +196,33 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
             </Link>
           </motion.nav>
 
-          {/* Right Controls (Mobile Menu Toggle) */}
+          {/* Right Controls (Consultation CTA + Mobile Menu Toggle) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-1.5 sm:gap-3 shrink-0"
           >
+            {/* Get Free Consultation (reusable Button): sized per breakpoint so it never overlaps the centred nav */}
+            <span className="md:hidden">
+              <Button onClick={openConsultation} variant="primary" size="responsive">
+                Free Consultation
+              </Button>
+            </span>
+            <span className="hidden md:block lg:hidden" title="Get Free Consultation">
+              <Button onClick={openConsultation} variant="primary" size="sm" aria-label="Get Free Consultation" />
+            </span>
+            <span className="hidden lg:block xl:hidden">
+              <Button onClick={openConsultation} variant="primary" size="sm">
+                Free Consultation
+              </Button>
+            </span>
+            <span className="hidden xl:block mr-4">
+              <Button onClick={openConsultation} variant="primary" size="md">
+                Get Free Consultation
+              </Button>
+            </span>
+
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

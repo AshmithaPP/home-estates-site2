@@ -4,13 +4,13 @@ import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import { X, CheckCircle2, ShieldCheck, Clock, BadgeIndianRupee } from "lucide-react";
 
-// The popup opens once the visitor has scrolled the whole page, hero to footer
-const TRIGGER_SELECTOR = "footer";
+// The popup opens automatically this long after the page loads
+const AUTO_OPEN_DELAY_MS = 30000;
 
 const propertyTypes = ["Independent Villa", "Apartment", "Commercial", "Interiors Only"];
 const services = [
   "Construction",
-  "Layout Promote",
+  "Layout Promoter",
   "Project Management",
   "Property Developer",
   "Interior Designing",
@@ -39,22 +39,10 @@ export default function ConsultationPopup() {
 
   const close = useCallback(() => setIsOpen(false), []);
 
-  // Open on every visit (every page load, all devices) once the visitor scrolls down to the footer
+  // Open automatically 30 seconds after the page loads (every page load, all devices)
   useEffect(() => {
-    const check = () => {
-      const footer = document.querySelector(TRIGGER_SELECTOR);
-      const footerTop = footer ? footer.getBoundingClientRect().top : Infinity;
-      const nearPageEnd =
-        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 150;
-      // footer is well into view, or the visitor hit the very bottom of the page
-      if (footerTop < window.innerHeight * 0.7 || nearPageEnd) {
-        setIsOpen(true);
-        window.removeEventListener("scroll", check);
-      }
-    };
-
-    window.addEventListener("scroll", check, { passive: true });
-    return () => window.removeEventListener("scroll", check);
+    const timer = setTimeout(() => setIsOpen(true), AUTO_OPEN_DELAY_MS);
+    return () => clearTimeout(timer);
   }, []);
 
   // Let other sections open the popup (e.g. "Get a Free Quote" buttons)

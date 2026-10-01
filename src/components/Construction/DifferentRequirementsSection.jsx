@@ -69,11 +69,7 @@ export const DifferentRequirementsSection = ({
             {title}
           </h2>
 
-          {/* Primary Accent Underline */}
-          <div 
-            className="w-12 h-1 rounded-full mx-auto mt-2.5 mb-2.5"
-            style={{ backgroundColor: 'var(--primary)' }}
-          />
+          {/* Primary Accent Underline removed */}
 
           {subtitle && (
             <p className="text-xs sm:text-sm text-slate-500 font-normal leading-relaxed text-center whitespace-nowrap overflow-hidden text-ellipsis">

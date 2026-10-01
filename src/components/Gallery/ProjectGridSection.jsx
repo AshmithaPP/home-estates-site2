@@ -112,10 +112,10 @@ export const ProjectGridSection = ({
                   </p>
                 </div>
 
-                {/* 3. Divider Line & 3-Column Specs Table */}
+                {/* 3. Divider Line & 2-Column Specs Table */}
                 <div className="mt-auto">
                   <div className="border-t border-black/10 pt-3 pb-3.5">
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-2 gap-2">
                       
                       {/* Column 1: Scope */}
                       <div className="pr-1">
@@ -131,22 +131,12 @@ export const ProjectGridSection = ({
                       </div>
 
                       {/* Column 2: BHK */}
-                      <div className="px-1 border-x border-black/10">
+                      <div className="pl-3 border-l border-black/10">
                         <span className="text-[10px] sm:text-[10.5px] font-medium text-[#6b7280] uppercase tracking-wider block">
                           BHK
                         </span>
                         <span className="text-[11.5px] sm:text-xs font-semibold text-[#111827] block mt-0.5 truncate">
                           {project.bhk}
-                        </span>
-                      </div>
-
-                      {/* Column 3: Pricing */}
-                      <div className="pl-1">
-                        <span className="text-[10px] sm:text-[10.5px] font-medium text-[#6b7280] uppercase tracking-wider block">
-                          Pricing
-                        </span>
-                        <span className="text-[11.5px] sm:text-xs font-bold text-[#e67e00] block mt-0.5 truncate">
-                          {project.pricing}
                         </span>
                       </div>
 

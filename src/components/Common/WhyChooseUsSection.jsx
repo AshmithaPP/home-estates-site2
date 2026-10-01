@@ -96,7 +96,7 @@ export const WhyChooseUsSection = ({
             style={{ color: 'var(--grey-deep)' }}
           />
           <h2
-            className="text-[22px] sm:text-[28px] lg:text-[32px] font-medium tracking-tight leading-tight pb-0.5"
+            className="text-[22px] sm:text-[28px] lg:text-[32px] font-bold tracking-tight leading-tight pb-0.5"
             style={{ color: 'var(--primary)' }}
           >
             {title}

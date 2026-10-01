@@ -24,7 +24,7 @@ export default function ContactPage() {
       {/* ── Contact Hero Section ─────────────────────────────────── */}
       <ContactHero />
 
-      {/* ── 2nd Section: Form on Left & Contact Details on Right ─── */}
+      {/* ── 2nd Section: Visit Us on Left & Requirement Form on Right ─── */}
       <ContactFormSection />
 
       {/* ── 3rd Section: Why Start With Ajay Homes? ──────────────── */}

@@ -145,7 +145,7 @@ export default function UnsurpassedLegacy() {
           {/* Heading: Black text with Orange Accent */}
           <h2 className="mt-3 text-2xl sm:text-3xl lg:text-[34px] 2xl:text-[38px] font-bold tracking-tight text-slate-900 font-sans leading-tight">
             A Legacy Built Over{" "}
-            <span className="gradient-text-orange font-extrabold">50+ Years</span>
+            <span className="gradient-text-orange font-extrabold">60+ Years</span>
           </h2>
 
           {/* Big Display Year with Smooth Transition */}

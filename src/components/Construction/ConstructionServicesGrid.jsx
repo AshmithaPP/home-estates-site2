@@ -81,18 +81,12 @@ export const ConstructionServicesGrid = () => {
             className="lg:col-span-3 text-left"
           >
             {/* Title styled cleanly flush to left */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-3 sm:mb-4">
               Our Construction <br className="hidden sm:inline" />
               <span className="text-white block mt-1">
                 Services
               </span>
             </h2>
-
-            {/* Red / Primary Accent Line directly beneath heading */}
-            <div 
-              className="w-12 h-1 rounded-full mt-3 sm:mt-4 mb-4 sm:mb-6"
-              style={{ backgroundColor: 'var(--primary)' }}
-            />
 
             <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-sm">
               Comprehensive turnkey capabilities backed by five decades of master craftsmanship, empirical quality audits, and landmark residential excellence.
@@ -127,11 +121,7 @@ export const ConstructionServicesGrid = () => {
 
                     {/* Service Title */}
                     <h3 
-                      className={`text-base sm:text-[17px] font-bold tracking-tight leading-snug transition-colors ${
-                        item.id === 'residential' 
-                          ? 'text-[var(--primary)]' 
-                          : 'text-white group-hover:text-[var(--primary)]'
-                      }`}
+                      className="text-base sm:text-[17px] font-bold tracking-tight leading-snug transition-colors text-white group-hover:text-[var(--primary)]"
                     >
                       {item.title}
                     </h3>

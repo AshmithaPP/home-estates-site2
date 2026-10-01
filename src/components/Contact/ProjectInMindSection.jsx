@@ -73,39 +73,7 @@ export const ProjectInMindSection = ({ onOpenTourModal, onOpenApply }) => {
           Call us anytime between 9:30am – 6:30pm (Mon – Sat)
         </motion.p>
 
-        {/* ── Card (Exact Reference Card with Dotted Divider) ───────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full max-w-sm bg-white rounded-xl border border-gray-200/90 shadow-[0_6px_25px_rgba(0,0,0,0.04)] mt-4 sm:mt-5 overflow-hidden text-left"
-        >
-          {/* Email Row */}
-          <a
-            href="mailto:contact@ajayhomes.com"
-            className="flex items-center justify-between px-4 py-3 sm:px-5 sm:py-3.5 hover:bg-[#fffbf5] transition-colors group"
-          >
-            <span className="text-xs sm:text-[13px] font-semibold text-[#1f2937] group-hover:text-[#ff8c00] transition-colors">
-              contact@ajayhomes.com
-            </span>
-            <Mail className="w-4 h-4 text-[#ff8c00] shrink-0" />
-          </a>
-
-          {/* Dotted Divider Line (Exact Reference) */}
-          <div className="border-t border-dashed border-gray-200" />
-
-          {/* Phone Row */}
-          <a
-            href="tel:+919840012345"
-            className="flex items-center justify-between px-4 py-3 sm:px-5 sm:py-3.5 hover:bg-[#fffbf5] transition-colors group"
-          >
-            <span className="text-xs sm:text-[13px] font-semibold text-[#1f2937] group-hover:text-[#ff8c00] transition-colors">
-              +91 98400 12345
-            </span>
-            <Phone className="w-4 h-4 text-[#ff8c00] shrink-0" />
-          </a>
-        </motion.div>
+       
 
         {/* ── Action Button: [ Talk to Ajay Homes ] ─────────────────── */}
         <motion.div

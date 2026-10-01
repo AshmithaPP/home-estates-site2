@@ -76,7 +76,7 @@ export const GetDesignModal = ({ project, isOpen, onClose }) => {
                     {project.title}
                   </p>
                   <p className="text-xs text-[var(--text-muted)] mt-0.5">
-                    {project.community} &bull; <span className="text-[var(--primary)] font-semibold">{project.pricing}</span>
+                    {project.community}
                   </p>
                   <span className="text-[11px] text-white/70 block truncate">
                     Scope: {project.scope}

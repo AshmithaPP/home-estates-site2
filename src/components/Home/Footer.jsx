@@ -94,7 +94,7 @@ export default function Footer() {
   // 2. All company services
   const servicesLinks = [
     { label: "Construction", href: "/services/construction" },
-    { label: "Layout promote", href: "/#services-layout" },
+    { label: "Layout promoter", href: "/#services-layout" },
     { label: "Project management", href: "/#services-project-management" },
     { label: "Property developer", href: "/#services-property-developer" },
     { label: "Interior designing", href: "/#services-interior" },
