@@ -125,7 +125,14 @@ export const FoundationToCelebrationSection = ({
   };
 
   const beltItems = Array.from({ length: copies * n }, (_, i) => i % n);
-  const maxBoxH = Math.max(...BOX_HEIGHTS) * scale;
+  // Tallest house (body + roof) so the track and scanner fit it
+  const maxBoxH = Math.max(
+    ...BOX_HEIGHTS.map((bh) => {
+      const h = bh * scale;
+      const w = Math.round((58 + bh * 0.55) * scale);
+      return h + Math.round(w * 0.42);
+    })
+  );
   const active = stages[activeIndex];
 
   return (
@@ -196,35 +203,54 @@ export const FoundationToCelebrationSection = ({
                 const boxW = Math.round((58 + (h / scale) * 0.55) * scale);
                 return (
                   <div key={i} className="flex shrink-0 items-end justify-center" style={{ width: itemWidth }}>
-                    <div className="relative" style={{ width: boxW, height: h }}>
-                      {/* Lid */}
+                    {/* House: gabled roof over a body with door, window and stage icon */}
+                    <div className="relative flex flex-col items-center" style={{ width: boxW + 12 }}>
+                      {/* Chimney */}
                       <div
-                        className="absolute -top-3 -left-1 -right-1 h-3 rounded-[3px]"
+                        className="absolute rounded-t-[2px]"
                         style={{
-                          background:
-                            'linear-gradient(90deg, color-mix(in srgb, var(--primary) 34%, white) 0 78%, color-mix(in srgb, var(--primary) 46%, white) 78% 100%)',
+                          width: Math.round(boxW * 0.12),
+                          height: Math.round(boxW * 0.32),
+                          right: Math.round(boxW * 0.2),
+                          top: Math.round(boxW * 0.06),
+                          backgroundColor: 'color-mix(in srgb, var(--primary) 50%, white)',
                         }}
                       />
-                      {/* Body with shaded side */}
+                      {/* Roof */}
                       <div
-                        className="absolute inset-0 rounded-b-[3px] flex flex-col items-center justify-center gap-1 pr-[18%]"
+                        className="relative w-full"
                         style={{
+                          height: Math.round(boxW * 0.42),
+                          clipPath: 'polygon(50% 0, 100% 100%, 0 100%)',
                           background:
-                            'linear-gradient(90deg, color-mix(in srgb, var(--primary) 24%, white) 0 78%, color-mix(in srgb, var(--primary) 36%, white) 78% 100%)',
+                            'linear-gradient(90deg, color-mix(in srgb, var(--primary) 62%, white) 0 50%, color-mix(in srgb, var(--primary) 78%, white) 50% 100%)',
+                        }}
+                      />
+                      {/* Body */}
+                      <div
+                        className="relative flex flex-col items-center justify-start pt-[14%]"
+                        style={{
+                          width: boxW,
+                          height: h,
+                          background:
+                            'linear-gradient(90deg, color-mix(in srgb, var(--primary) 22%, white) 0 78%, color-mix(in srgb, var(--primary) 34%, white) 78% 100%)',
                         }}
                       >
                         {Icon && (
                           <Icon
-                            style={{ width: 20 * scale + 6, height: 20 * scale + 6, color: 'var(--primary-dark)' }}
-                            strokeWidth={1.8}
+                            style={{ width: 18 * scale + 6, height: 18 * scale + 6, color: 'var(--primary-dark)' }}
+                            strokeWidth={1.9}
                           />
                         )}
-                        <span
-                          className="text-[9px] sm:text-[10px] font-bold tracking-widest"
-                          style={{ color: 'var(--primary-dark)' }}
-                        >
-                          {String(stageIdx + 1).padStart(2, '0')}
-                        </span>
+                        {/* Door */}
+                        <div
+                          className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-t-[3px]"
+                          style={{
+                            width: Math.round(boxW * 0.26),
+                            height: Math.round(Math.min(h * 0.42, boxW * 0.42)),
+                            backgroundColor: 'color-mix(in srgb, var(--primary) 70%, white)',
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
