@@ -12,7 +12,7 @@ import BuiltAroundPrioritiesSection from '@/components/ProjectManagement/BuiltAr
 import VisionDetailsBannerSection from '@/components/ProjectManagement/VisionDetailsBannerSection';
 import FAQSection from '@/components/FAQ/FAQSection';
 import PremiumProjectCTASection from '@/components/Common/PremiumProjectCTASection';
-import FoundationToCelebrationSection from '@/components/Common/FoundationToCelebrationSection';
+import JourneyMarqueeSection from '@/components/Common/JourneyMarqueeSection';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
 
@@ -159,7 +159,7 @@ export default function ProjectManagementPage() {
       />
 
       {/* ── 10. From Bhoomi Pooja to House Warming (Reusable Belt) ──── */}
-      <FoundationToCelebrationSection
+      <JourneyMarqueeSection
         id="pm-bhoomi-pooja"
         title="From Bhoomi Pooja to House Warming"
         lead="A project involves countless details. We stay involved throughout the journey—from the first Bhoomi Pooja to the final House Warming."

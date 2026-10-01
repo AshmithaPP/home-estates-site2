@@ -514,3 +514,12 @@
   color: var(--text-primary);
 }
 
+/* ---------- Journey marquee (large running title) ---------- */
+.journey-marquee {
+  animation: topbarMarquee 40s linear infinite;
+  will-change: transform;
+}
+.journey-marquee:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .journey-marquee { animation: none; }
+}
