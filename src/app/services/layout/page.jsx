@@ -1,1 +1,1 @@
-export { default } from '../layout-promote/page';
+export { default } from '../layout-promoters/page';

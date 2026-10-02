@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowDownRight, Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
@@ -14,12 +14,30 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
   // Exact Services requested
   const services = [
     { label: 'Construction', href: '/services/construction' },
-    { label: 'Layout promoters', href: '/services/layout-promote' },
+    { label: 'Layout promoters', href: '/services/layout-promoters' },
     { label: 'Project management', href: '/services/project-management' },
     { label: 'Property developer', href: '/services/property-developer' },
     { label: 'Interior designing', href: '/services/interior-design' },
     { label: 'Real estate selling and buy', href: '/services/real-estate' },
   ];
+
+  // Small close delay so the pointer can travel from the button into the mega menu
+  const closeTimerRef = useRef(null);
+  const openServices = () => {
+    clearTimeout(closeTimerRef.current);
+    setIsServicesOpen(true);
+  };
+  const closeServicesSoon = () => {
+    clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => setIsServicesOpen(false), 160);
+  };
+  useEffect(() => () => clearTimeout(closeTimerRef.current), []);
+  useEffect(() => {
+    if (!isServicesOpen) return;
+    const onKey = (e) => e.key === 'Escape' && setIsServicesOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [isServicesOpen]);
 
   // Opens the site-wide free consultation popup (components/Home/ConsultationPopup)
   const openConsultation = () => {
@@ -125,17 +143,18 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
               About
             </Link>
 
-            {/* 3. Services with Dropdown */}
+            {/* 3. Services with Mega Menu */}
             <div
-              className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+              onMouseEnter={openServices}
+              onMouseLeave={closeServicesSoon}
             >
               <button
                 type="button"
                 suppressHydrationWarning
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold flex items-center gap-1 transition-all cursor-pointer ${
+                aria-expanded={isServicesOpen}
+                aria-haspopup="true"
+                className={`relative px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold flex items-center gap-1 transition-all cursor-pointer ${
                   isServicesOpen
                     ? 'text-[var(--primary)] bg-[var(--primary)]/10'
                     : 'text-[var(--text-primary)]/80 hover:text-[var(--primary)] hover:bg-[var(--primary)]/10'
@@ -147,27 +166,55 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                     isServicesOpen ? 'rotate-180 text-[var(--primary)]' : 'text-[var(--text-primary)]/60'
                   }`}
                 />
+                {/* Pointer that joins the button to the panel's orange top bar */}
+                {isServicesOpen && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+20px)] w-0 h-0 border-x-[6px] border-x-transparent border-b-[6px] z-[51]"
+                    style={{ borderBottomColor: 'var(--primary)' }}
+                  />
+                )}
               </button>
 
               <AnimatePresence>
                 {isServicesOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-[#080a0c]/95 backdrop-blur-md py-2 px-1.5 rounded-2xl border border-[var(--primary)]/30 shadow-2xl z-50"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.18, ease: 'easeOut' }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-[20px] w-[min(520px,94vw)] z-50"
                   >
-                    {services.map((item) => (
+                    <div
+                      className="overflow-hidden rounded-b-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.7)] border-t-[3px]"
+                      style={{ backgroundColor: 'var(--grey-deepest)', borderTopColor: 'var(--primary)' }}
+                    >
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-3 px-5 py-4">
+                        {services.map((item) => (
+                          <Link
+                            key={item.label}
+                            href={item.href}
+                            onClick={() => setIsServicesOpen(false)}
+                            className="group block pl-3 py-0.5 border-l transition-colors"
+                            style={{ borderColor: 'color-mix(in srgb, var(--text-primary) 22%, transparent)' }}
+                          >
+                            <span className="flex items-center gap-1 text-[11.5px] font-bold uppercase tracking-wide text-[var(--text-primary)]/85 group-hover:text-[var(--primary)] transition-colors whitespace-nowrap">
+                              {item.label}
+                              <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0" />
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+
                       <Link
-                        key={item.label}
-                        href={item.href}
+                        href="/#services"
                         onClick={() => setIsServicesOpen(false)}
-                        className="block px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-[var(--text-primary)]/85 hover:text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-all"
+                        className="block w-full py-2 text-center text-[10.5px] font-bold uppercase tracking-[0.25em] text-[var(--text-primary)] transition-colors hover:text-black hover:bg-[var(--primary)]"
+                        style={{ backgroundColor: 'var(--grey-mid)' }}
                       >
-                        {item.label}
+                        Explore All Services
                       </Link>
-                    ))}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -255,7 +302,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: '-100%' }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--primary)]/30 text-white shadow-2xl rounded-b-2xl p-4 sm:p-6 pt-14 sm:pt-16 bg-[#1a1c22]"
+              className="fixed top-0 left-0 right-0 z-50 max-h-[100dvh] overflow-y-auto overscroll-contain border-b border-[var(--primary)]/30 text-white shadow-2xl rounded-b-2xl p-4 sm:p-6 pt-14 sm:pt-16 bg-[#1a1c22]"
               style={{ willChange: 'transform' }}
             >
               <div className="max-w-md mx-auto w-full space-y-3">
@@ -321,18 +368,30 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="px-4 pb-2.5 space-y-1 bg-black/20"
+                          className="bg-black/20 overflow-hidden"
                         >
-                          {services.map((item) => (
-                            <Link
-                              key={item.label}
-                              href={item.href}
-                              onClick={() => setIsMenuOpen(false)}
-                              className="block py-1.5 text-xs font-semibold text-white/80 hover:text-[var(--primary)] transition-colors"
-                            >
-                              - {item.label}
-                            </Link>
-                          ))}
+                          <div className="border-t-[3px] border-[var(--primary)] grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 px-4 py-3">
+                            {services.map((item) => (
+                              <Link
+                                key={item.label}
+                                href={item.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="group block pl-3 border-l border-white/20"
+                              >
+                                <span className="block text-xs font-bold uppercase tracking-wide text-white/85 group-hover:text-[var(--primary)] transition-colors">
+                                  {item.label}
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                          <Link
+                            href="/#services"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block w-full py-2.5 text-center text-[11px] font-bold uppercase tracking-[0.25em] text-white hover:text-black hover:bg-[var(--primary)] transition-colors"
+                            style={{ backgroundColor: 'var(--grey-mid)' }}
+                          >
+                            Explore All Services
+                          </Link>
                         </motion.div>
                       )}
                     </AnimatePresence>
