@@ -386,7 +386,7 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                           transition={{ duration: 0.2 }}
                           className="overflow-hidden"
                         >
-                          <div className="grid grid-cols-2 gap-2 px-2.5 pb-2.5 pt-0.5">
+                          <div className="flex flex-col gap-1.5 px-2.5 pb-2.5 pt-0.5">
                             {services.map((item) => {
                               const isCurrent = pathname === item.href;
                               return (
@@ -395,19 +395,20 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                                   href={item.href}
                                   onClick={() => setIsMenuOpen(false)}
                                   aria-current={isCurrent ? 'page' : undefined}
-                                  className={`group flex items-center rounded-lg border px-3 py-2.5 min-h-[52px] transition-colors ${
+                                  className={`group flex items-center justify-between gap-2 rounded-lg border px-3 py-2.5 transition-colors ${
                                     isCurrent
                                       ? 'border-[var(--primary)] bg-[var(--primary)]/12'
                                       : 'border-white/10 bg-black/25 active:bg-[var(--primary)]/10 hover:border-[var(--primary)]/40'
                                   }`}
                                 >
                                   <span
-                                    className={`text-[12.5px] font-semibold leading-tight capitalize ${
+                                    className={`min-w-0 truncate whitespace-nowrap text-[13px] font-semibold capitalize ${
                                       isCurrent ? 'text-[var(--primary)]' : 'text-white/90 group-hover:text-white'
                                     }`}
                                   >
                                     {item.label}
                                   </span>
+                                  <ChevronRight className="h-3.5 w-3.5 shrink-0 text-[var(--primary)]" />
                                 </Link>
                               );
                             })}
