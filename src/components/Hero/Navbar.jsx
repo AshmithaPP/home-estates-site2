@@ -11,12 +11,12 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
 
   // Exact Services requested
   const services = [
-    { label: 'Construction', href: '/#services-construction' },
-    { label: 'Layout promoters', href: '/#services-layout' },
-    { label: 'Project management', href: '/#services-project-management' },
-    { label: 'Property developer', href: '/#services-property-developer' },
-    { label: 'Interior designing', href: '/#services-interior' },
-    { label: 'Real estate selling and buy', href: '/#services-real-estate' },
+    { label: 'Construction', href: '/services/construction' },
+    { label: 'Layout promoters', href: '/services/layout-promote' },
+    { label: 'Project management', href: '/services/project-management' },
+    { label: 'Property developer', href: '/services/property-developer' },
+    { label: 'Interior designing', href: '/services/interior-design' },
+    { label: 'Real estate selling and buy', href: '/services/real-estate' },
   ];
 
   return (
@@ -60,6 +60,8 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <button
+                type="button"
+                suppressHydrationWarning
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className="flex items-center gap-1 text-xs sm:text-sm font-medium text-white/80 hover:text-[#ff8c00] transition-colors cursor-pointer"
               >
@@ -105,6 +107,8 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
           >
             {/* Schedule a Tour Button with Green/Orange Status Dot */}
             <button
+              type="button"
+              suppressHydrationWarning
               onClick={onOpenTourModal}
               className="hidden sm:flex glass-pill hover:bg-white/20 px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-white transition-all items-center gap-2 cursor-pointer shadow-md hover:scale-105 active:scale-95"
             >
@@ -123,6 +127,8 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
 
             {/* Mobile Hamburger Toggle */}
             <button
+              type="button"
+              suppressHydrationWarning
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden glass-pill-dark p-2.5 rounded-full text-white cursor-pointer"
               aria-label="Toggle Navigation"
@@ -173,6 +179,8 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
                   {/* Services Accordion on Mobile */}
                   <div className="border-b border-white/10 pb-3">
                     <button
+                      type="button"
+                      suppressHydrationWarning
                       onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                       className="w-full flex items-center justify-between hover:text-[#ff8c00] transition-colors cursor-pointer text-left"
                     >
@@ -255,12 +263,16 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
 
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <button
+                    type="button"
+                    suppressHydrationWarning
                     onClick={() => { setIsMenuOpen(false); onOpenTourModal?.(); }}
                     className="flex-1 glass-pill py-3 rounded-xl text-center font-medium text-sm hover:bg-white/20 transition-all cursor-pointer"
                   >
                     Book In-Person Tour
                   </button>
                   <button
+                    type="button"
+                    suppressHydrationWarning
                     onClick={() => { setIsMenuOpen(false); onOpenApplyModal?.(); }}
                     className="flex-1 btn-gold-gradient py-3 rounded-xl text-center font-bold text-sm cursor-pointer"
                   >

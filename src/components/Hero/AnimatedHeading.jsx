@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /**
@@ -7,6 +7,17 @@ import { motion, AnimatePresence } from 'framer-motion';
  * Motion: Horizontal slide from left + letter-split bottom-up entrance + exit fade out.
  */
 export const AnimatedHeading = ({ headingLine1, headingLine2, accentWord, slideId }) => {
+  // Per-letter blur is expensive on phones (~40 filtered layers per slide change),
+  // so it's only enabled from the sm breakpoint up.
+  const [useBlur, setUseBlur] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 640px)');
+    const update = () => setUseBlur(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
   const renderLine = (lineText) => {
     const words = lineText.split(' ');
     let globalCharIndex = 0;
@@ -31,14 +42,14 @@ export const AnimatedHeading = ({ headingLine1, headingLine2, accentWord, slideI
                         y: 30,
                         x: -12,
                         scale: 0.95,
-                        filter: 'blur(3px)',
+                        ...(useBlur && { filter: 'blur(3px)' }),
                       },
                       animate: (i) => ({
                         opacity: 1,
                         y: 0,
                         x: 0,
                         scale: 1,
-                        filter: 'blur(0px)',
+                        ...(useBlur && { filter: 'blur(0px)' }),
                         transition: {
                           duration: 0.4,
                           delay: i * 0.03, // Sequential letter delay
@@ -49,7 +60,7 @@ export const AnimatedHeading = ({ headingLine1, headingLine2, accentWord, slideI
                         opacity: 0,
                         y: -20,
                         scale: 0.9,
-                        filter: 'blur(4px)',
+                        ...(useBlur && { filter: 'blur(4px)' }),
                         transition: {
                           duration: 0.25,
                           delay: i * 0.015,
@@ -64,7 +75,6 @@ export const AnimatedHeading = ({ headingLine1, headingLine2, accentWord, slideI
                         ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#ff8c00] via-[#ffab40] to-[#ff8c00] font-bold uppercase px-0.5'
                         : 'text-white'
                       }`}
-                    style={{ willChange: 'transform, opacity, filter' }}
                   >
                     {char}
                   </motion.span>

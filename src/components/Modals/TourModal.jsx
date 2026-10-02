@@ -38,7 +38,7 @@ export const TourModal = ({ isOpen, onClose }) => {
           <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#fe9601]/20 rounded-full blur-3xl pointer-events-none" />
 
           {/* Close Button */}
-          <button
+          <button suppressHydrationWarning
             onClick={onClose}
             className="absolute top-6 right-6 p-2 rounded-full glass-pill text-white/70 hover:text-white transition-colors cursor-pointer"
           >
@@ -149,7 +149,7 @@ export const TourModal = ({ isOpen, onClose }) => {
                   </div>
                 </div>
 
-                <button
+                <button suppressHydrationWarning
                   type="submit"
                   className="w-full btn-gold-gradient py-3.5 rounded-xl text-center font-bold text-sm mt-4 shadow-lg hover:scale-101 active:scale-99 transition-all cursor-pointer"
                 >
@@ -171,7 +171,7 @@ export const TourModal = ({ isOpen, onClose }) => {
               <p className="text-sm text-white/70 max-w-md mx-auto">
                 Thank you, <span className="text-white font-semibold">{formData.name}</span>. We have scheduled your <span className="text-[#ffc973]">{formData.tourType}</span> for <span className="text-[#ffc973]">{formData.date || 'tomorrow'} at {formData.time}</span>.
               </p>
-              <button
+              <button suppressHydrationWarning
                 onClick={handleReset}
                 className="btn-gold-gradient px-8 py-3 rounded-full font-bold text-sm mt-4"
               >

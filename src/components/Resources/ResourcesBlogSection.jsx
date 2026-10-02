@@ -59,14 +59,15 @@ export const ResourcesBlogSection = () => {
             </span>
           </h2>
 
-          {/* ── Category Filter Pills (Strictly One Line — Never Wraps) ── */}
-          <div className="w-full flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 mt-5 sm:mt-6 overflow-x-auto scrollbar-none flex-nowrap py-1 px-2">
+          {/* ── Category Filter Pills (wrap on mobile/tablet, one line from md up) ── */}
+          <div className="w-full flex flex-wrap md:flex-nowrap items-center justify-center gap-1.5 sm:gap-2 mt-5 sm:mt-6 md:overflow-x-auto scrollbar-none py-1 px-1 md:px-2">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat;
               return (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
+                  suppressHydrationWarning
                   className={`px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-[12.5px] font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                     isActive
                       ? 'bg-[var(--primary)] text-black shadow-md scale-105'
@@ -86,7 +87,7 @@ export const ResourcesBlogSection = () => {
           <div className="py-16 text-center bg-slate-50 rounded-2xl border border-dashed border-slate-300">
             <BookOpen className="w-12 h-12 text-slate-400 mx-auto mb-3" />
             <p className="text-sm font-semibold text-slate-700">No articles found in this category.</p>
-            <button
+            <button suppressHydrationWarning
               onClick={() => setSelectedCategory('ALL')}
               className="mt-3 px-4 py-1.5 text-xs font-bold rounded-full bg-[var(--primary)] text-black hover:opacity-90 transition-all cursor-pointer"
             >

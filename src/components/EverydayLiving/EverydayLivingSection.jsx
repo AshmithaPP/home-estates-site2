@@ -110,7 +110,7 @@ export const EverydayLivingSection = () => {
             className="flex items-center gap-0 border-b border-black/10 pt-2"
           >
             {tabs.map((tab, i) => (
-              <button
+              <button suppressHydrationWarning
                 key={tab}
                 onClick={() => setActiveTab(i)}
                 className={`relative px-3 sm:px-4 py-2 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 cursor-pointer ${
@@ -170,7 +170,7 @@ export const EverydayLivingSection = () => {
           {/* Progress dots indicator */}
           <div className="flex items-center gap-2">
             {tabs.map((_, i) => (
-              <button
+              <button suppressHydrationWarning
                 key={i}
                 onClick={() => setActiveTab(i)}
                 className="cursor-pointer"

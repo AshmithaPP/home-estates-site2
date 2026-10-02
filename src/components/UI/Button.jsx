@@ -78,6 +78,7 @@ export const Button = ({
     <button
       type={type}
       onClick={onClick}
+      suppressHydrationWarning
       className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
       {...props}
     >

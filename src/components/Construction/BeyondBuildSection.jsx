@@ -64,7 +64,7 @@ export const BeyondBuildSection = ({ onOpenApply }) => {
 
             {/* 4. Action CTA Button (Matching dark rectangular button with arrow from reference UI) */}
             <div className="pt-2 sm:pt-4">
-              <button
+              <button suppressHydrationWarning
                 onClick={handleAction}
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-slate-950 text-white font-bold text-xs sm:text-sm hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-md group cursor-pointer"
                 style={{

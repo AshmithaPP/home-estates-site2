@@ -14,7 +14,7 @@ const services = [
   {
     id: "services-layout",
     title: "Layout Promoters",
-    image: "/assets/img/img-010.jpeg",
+    image: "/images/layout-plots-ground.jpg",
     desc: "Multi-acre plots & township development",
   },
   {
@@ -87,17 +87,17 @@ export default function EverythingOnePlace() {
           </div>
 
           {/* Content Box with 6 Services and Thin Line Dividers */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-6 sm:p-8 xl:py-12 2xl:py-14 shadow-sm relative z-0">
-            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-y-6 md:gap-y-8 xl:gap-y-0 xl:divide-x divide-white/10">
+          <div className="rounded-2xl border border-white bg-white px-3 py-5 sm:px-5 sm:py-6 xl:py-8 2xl:py-9 shadow-2xl relative z-0">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-y-6 md:gap-y-8 xl:flex xl:justify-between xl:gap-y-0 xl:divide-x divide-slate-200">
               {services.map((item, index) => (
                 <div
                   key={item.id}
                   id={item.id}
-                  className="group flex flex-col items-center text-center scroll-mt-40 px-2 sm:px-4 2xl:px-6 py-2 transition-all rounded-xl cursor-pointer"
+                  className="group flex flex-col items-center text-center scroll-mt-40 xl:flex-auto px-2 sm:px-3 2xl:px-5 py-2 transition-all rounded-xl cursor-pointer"
                 >
                   {/* Project Image Tile with Staggered Viewport Jump Animation */}
                   <div
-                    className={`relative w-20 h-20 sm:w-24 sm:h-24 2xl:w-28 2xl:h-28 rounded-2xl overflow-hidden shadow-sm border border-white/10 bg-white/5 transition-shadow group-hover:shadow-md group-hover:border-[var(--primary)]/50 ${
+                    className={`relative w-20 h-20 sm:w-24 sm:h-24 2xl:w-28 2xl:h-28 rounded-2xl overflow-hidden shadow-sm border border-slate-200 bg-slate-100 transition-shadow group-hover:shadow-md group-hover:border-[var(--primary)]/50 ${
                       isAnimated ? "animate-jump" : ""
                     }`}
                     style={{
@@ -114,10 +114,10 @@ export default function EverythingOnePlace() {
                   </div>
 
                   {/* Title & short description */}
-                  <h3 className="mt-4 text-[13px] sm:text-sm 2xl:text-base font-semibold text-white group-hover:text-[var(--primary)] transition-colors leading-snug font-sans max-w-[170px]">
+                  <h3 className="mt-4 text-[13px] sm:text-sm 2xl:text-base font-semibold text-slate-900 group-hover:text-[var(--primary-dark)] transition-colors leading-snug font-sans lg:whitespace-nowrap">
                     {item.title}
                   </h3>
-                  <p className="mt-1.5 text-[11px] sm:text-xs 2xl:text-[13px] text-white/60 leading-relaxed font-sans max-w-[190px]">
+                  <p className="mt-1.5 text-[11px] sm:text-xs 2xl:text-[13px] text-slate-500 leading-relaxed font-sans max-w-[190px]">
                     {item.desc}
                   </p>
                 </div>

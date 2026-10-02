@@ -149,6 +149,7 @@ export const WhyChooseUsSection = ({
                   >
                     <button
                       type="button"
+                      suppressHydrationWarning
                       onClick={() => toggle(index)}
                       aria-expanded={isOpen}
                       aria-controls={panelId}

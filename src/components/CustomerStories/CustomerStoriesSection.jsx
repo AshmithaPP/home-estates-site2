@@ -168,7 +168,7 @@ export const CustomerStoriesSection = () => {
             </div>
 
             {/* Orange CTA Button */}
-            <button
+            <button suppressHydrationWarning
               onClick={handleOpenAndPlay}
               className="group inline-flex items-center gap-3 bg-[#ff8c00] hover:bg-[#e67e00] text-black px-7 py-3.5 rounded-full text-xs sm:text-sm font-black tracking-widest uppercase shadow-lg hover:shadow-xl transition-all cursor-pointer"
             >
@@ -258,7 +258,7 @@ export const CustomerStoriesSection = () => {
 
                   <div className="flex items-center justify-between text-[10px] sm:text-xs text-white pt-0.5">
                     <div className="flex items-center gap-2">
-                      <button
+                      <button suppressHydrationWarning
                         onClick={togglePlayPause}
                         className="bg-[#ff8c00] py-1 px-3 rounded-lg text-black font-black flex items-center gap-1 text-[10px] shadow-md hover:scale-105 transition-all cursor-pointer"
                       >
@@ -266,7 +266,7 @@ export const CustomerStoriesSection = () => {
                         <span>{isPlaying ? 'Pause' : 'Play'}</span>
                       </button>
 
-                      <button
+                      <button suppressHydrationWarning
                         onClick={toggleMute}
                         className="p-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-white cursor-pointer"
                       >
@@ -274,7 +274,7 @@ export const CustomerStoriesSection = () => {
                       </button>
                     </div>
 
-                    <button
+                    <button suppressHydrationWarning
                       onClick={handleClosePlayer}
                       className="bg-white/20 hover:bg-white/30 px-3 py-1 rounded-lg text-[10px] text-white flex items-center gap-1 cursor-pointer transition-all"
                     >

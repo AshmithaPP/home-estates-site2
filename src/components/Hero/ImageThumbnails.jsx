@@ -16,6 +16,7 @@ export const ImageThumbnails = ({ slides, activeIndex, onSelectSlide, isPaused }
           <button
             key={slide.id}
             onClick={() => onSelectSlide(index)}
+            suppressHydrationWarning
             className={`group relative overflow-hidden rounded-xl w-16 sm:w-24 md:w-28 h-12 sm:h-16 md:h-18 transition-all duration-500 cursor-pointer text-left ${isActive
                 ? 'ring-2 ring-white ring-offset-2 ring-offset-black scale-105 shadow-[0_0_25px_rgba(254,150,1,0.45)]'
                 : 'opacity-65 hover:opacity-100 hover:scale-102 filter grayscale-[30%] hover:grayscale-0'
@@ -25,6 +26,7 @@ export const ImageThumbnails = ({ slides, activeIndex, onSelectSlide, isPaused }
             {/* Thumbnail Image */}
             <img
               src={slide.thumbnail}
+              decoding="async"
               alt={`Thumbnail ${index + 1}`}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
@@ -42,13 +44,13 @@ export const ImageThumbnails = ({ slides, activeIndex, onSelectSlide, isPaused }
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/40 overflow-hidden">
                 <motion.div
                   key={`timer-${index}-${isPaused}`}
-                  initial={{ width: '0%' }}
-                  animate={{ width: isPaused ? '0%' : '100%' }}
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: isPaused ? 0 : 1 }}
                   transition={{
                     duration: isPaused ? 0 : 2,
                     ease: 'linear',
                   }}
-                  className="h-full bg-gradient-to-r from-[#FE9601] to-[#FFC973]"
+                  className="h-full w-full origin-left bg-gradient-to-r from-[#FE9601] to-[#FFC973]"
                 />
               </div>
             )}

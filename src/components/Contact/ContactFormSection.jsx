@@ -140,10 +140,9 @@ export const ContactFormSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 relative rounded-2xl p-4 sm:p-5 lg:p-6 border border-white/10 shadow-2xl backdrop-blur-xl flex flex-col justify-between overflow-hidden"
+            className="lg:col-span-7 relative rounded-2xl p-4 sm:p-5 lg:p-6 border border-white shadow-2xl bg-white flex flex-col justify-between overflow-hidden"
             style={{
-              background: 'linear-gradient(145deg, rgba(36, 36, 36, 0.88) 0%, rgba(24, 24, 24, 0.96) 100%)',
-              boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.08)',
+              boxShadow: '0 25px 60px -15px rgba(0, 0, 0, 0.6)',
             }}
           >
             {/* Form Card Header */}
@@ -161,11 +160,11 @@ export const ContactFormSection = () => {
                 </span>
               </div>
 
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 Tell Us About Your Requirement
               </h2>
 
-              <p className="mt-1 text-xs text-neutral-300 font-light leading-relaxed">
+              <p className="mt-1 text-xs text-slate-500 leading-relaxed">
                 Provide your project details and our team will get in touch with you shortly.
               </p>
             </div>
@@ -174,7 +173,7 @@ export const ContactFormSection = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="my-auto py-8 px-5 rounded-xl border border-white/10 text-center space-y-3 bg-white/[0.03]"
+                className="my-auto py-8 px-5 rounded-xl border border-slate-200 text-center space-y-3 bg-slate-50"
               >
                 <div
                   className="w-12 h-12 rounded-full mx-auto flex items-center justify-center border"
@@ -186,11 +185,11 @@ export const ContactFormSection = () => {
                 >
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
                   Enquiry Submitted!
                 </h3>
-                <p className="text-xs text-neutral-300 leading-relaxed max-w-md mx-auto">
-                  Thank you, <span className="font-semibold text-white">{formData.name}</span>. Our Chennai advisory team has received your requirement and will contact you shortly at <span className="font-semibold" style={{ color: 'var(--primary)' }}>{formData.phone}</span>.
+                <p className="text-xs text-slate-600 leading-relaxed max-w-md mx-auto">
+                  Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Our Chennai advisory team has received your requirement and will contact you shortly at <span className="font-semibold" style={{ color: 'var(--primary)' }}>{formData.phone}</span>.
                 </p>
                 <div className="pt-2">
                   <Button
@@ -218,7 +217,7 @@ export const ContactFormSection = () => {
                 {/* Row 1: Name & Phone Number */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="text-left">
-                    <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
+                    <label className="block text-[11px] font-semibold text-slate-700 mb-1 uppercase tracking-wide">
                       Name *
                     </label>
                     <input
@@ -227,12 +226,12 @@ export const ContactFormSection = () => {
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-white placeholder-white/35 focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[var(--primary)] focus:bg-white focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
                     />
                   </div>
 
                   <div className="text-left">
-                    <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
+                    <label className="block text-[11px] font-semibold text-slate-700 mb-1 uppercase tracking-wide">
                       Phone Number *
                     </label>
                     <input
@@ -241,7 +240,7 @@ export const ContactFormSection = () => {
                       placeholder="Your Contact Number"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-white placeholder-white/35 focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[var(--primary)] focus:bg-white focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
                     />
                   </div>
                 </div>
@@ -249,7 +248,7 @@ export const ContactFormSection = () => {
                 {/* Row 2: Email Address & Project Location */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="text-left">
-                    <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
+                    <label className="block text-[11px] font-semibold text-slate-700 mb-1 uppercase tracking-wide">
                       Email Address *
                     </label>
                     <input
@@ -258,12 +257,12 @@ export const ContactFormSection = () => {
                       placeholder="Your Email Address"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-white placeholder-white/35 focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[var(--primary)] focus:bg-white focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
                     />
                   </div>
 
                   <div className="text-left">
-                    <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
+                    <label className="block text-[11px] font-semibold text-slate-700 mb-1 uppercase tracking-wide">
                       Project / Property Location
                     </label>
                     <input
@@ -271,14 +270,14 @@ export const ContactFormSection = () => {
                       placeholder="Where is your project located?"
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-white placeholder-white/35 focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[var(--primary)] focus:bg-white focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200"
                     />
                   </div>
                 </div>
 
                 {/* Row 3: I’m Interested In */}
                 <div className="text-left">
-                  <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
+                  <label className="block text-[11px] font-semibold text-slate-700 mb-1 uppercase tracking-wide">
                     I’m Interested In *
                   </label>
                   <div className="relative">
@@ -286,24 +285,24 @@ export const ContactFormSection = () => {
                       required
                       value={formData.interestedIn}
                       onChange={(e) => setFormData({ ...formData, interestedIn: e.target.value })}
-                      className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 pr-9 text-xs sm:text-sm text-white focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200 cursor-pointer appearance-none"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3.5 py-2 pr-9 text-xs sm:text-sm text-slate-900 invalid:text-slate-400 focus:outline-none focus:border-[var(--primary)] focus:bg-white focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200 cursor-pointer appearance-none"
                     >
-                      <option value="" disabled className="bg-[#242424] text-white/50">
+                      <option value="" disabled className="text-slate-400">
                         Select a service...
                       </option>
                       {servicesOptions.map((opt) => (
-                        <option key={opt} value={opt} className="bg-[#242424] text-white py-1.5">
+                        <option key={opt} value={opt} className="text-slate-900 py-1.5">
                           {opt}
                         </option>
                       ))}
                     </select>
-                    <ChevronDown className="w-4 h-4 text-white/60 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <ChevronDown className="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
                 </div>
 
                 {/* Row 4: Tell Us More */}
                 <div className="text-left">
-                  <label className="block text-[11px] font-semibold text-white/90 mb-1 uppercase tracking-wide">
+                  <label className="block text-[11px] font-semibold text-slate-700 mb-1 uppercase tracking-wide">
                     Tell Us More
                   </label>
                   <textarea
@@ -311,7 +310,7 @@ export const ContactFormSection = () => {
                     placeholder="Briefly describe your requirement."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-white placeholder-white/35 focus:outline-none focus:border-[var(--primary)] focus:bg-white/[0.07] focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200 resize-none"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[var(--primary)] focus:bg-white focus:ring-1 focus:ring-[var(--primary)] transition-all duration-200 resize-none"
                   />
                 </div>
 
@@ -328,7 +327,7 @@ export const ContactFormSection = () => {
                     Submit Enquiry
                   </Button>
 
-                  <span className="text-[11px] text-neutral-400 text-left sm:text-right font-light">
+                  <span className="text-[11px] text-slate-500 text-left sm:text-right">
                     Your information is 100% confidential. No spam guaranteed.
                   </span>
                 </div>

@@ -188,7 +188,7 @@ export const HeroSection = () => {
           {/* Left Controls: Ambiance Audio Toggle */}
           <div className="flex items-center gap-4">
             {/* Ambiance Audio Toggle */}
-            <button
+            <button suppressHydrationWarning
               onClick={() => setIsMuted(!isMuted)}
               className="glass-pill p-2.5 rounded-full text-white/80 hover:text-white transition-colors flex items-center gap-2 text-xs font-medium cursor-pointer"
             >

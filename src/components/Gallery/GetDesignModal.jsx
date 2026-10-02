@@ -42,7 +42,7 @@ export const GetDesignModal = ({ project, isOpen, onClose }) => {
           />
 
           {/* Close Button */}
-          <button
+          <button suppressHydrationWarning
             onClick={handleClose}
             aria-label="Close Modal"
             className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
@@ -153,7 +153,7 @@ export const GetDesignModal = ({ project, isOpen, onClose }) => {
                 </div>
 
                 <div className="pt-2">
-                  <button
+                  <button suppressHydrationWarning
                     type="submit"
                     className="w-full py-3.5 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-light)] text-black font-extrabold text-sm tracking-wide transition-all shadow-[0_0_24px_rgba(255,140,0,0.4)] hover:shadow-[0_0_36px_rgba(255,140,0,0.6)] cursor-pointer"
                   >
@@ -176,7 +176,7 @@ export const GetDesignModal = ({ project, isOpen, onClose }) => {
               <p className="text-sm text-[var(--text-muted)] max-w-sm mx-auto leading-relaxed">
                 Thank you, <span className="text-white font-semibold">{formData.name}</span>. Our senior architectural team will contact you at <span className="text-[var(--primary)] font-bold">{formData.phone}</span> within 24 hours.
               </p>
-              <button
+              <button suppressHydrationWarning
                 onClick={handleClose}
                 className="py-2.5 px-6 rounded-full bg-[var(--primary)] text-black font-extrabold text-xs sm:text-sm tracking-wide mt-3 cursor-pointer"
               >

@@ -170,7 +170,7 @@ export const ContactSection = () => {
         {/* Pagination Dots */}
         <div className="flex items-center justify-center gap-2.5 mt-10">
           {Array.from({ length: TOTAL_PAGES }).map((_, i) => (
-            <button
+            <button suppressHydrationWarning
               key={i}
               onClick={() => setPage(i)}
               className="cursor-pointer"

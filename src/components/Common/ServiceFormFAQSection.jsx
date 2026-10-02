@@ -94,8 +94,7 @@ export default function ServiceFormFAQSection({
                 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1a1a1a] tracking-tight leading-tight uppercase text-left"
                 style={{ fontFamily: 'var(--font-family-base)' }}
               >
-                Frequently Asked<br />
-                <span style={{ color: 'var(--primary)' }}>Questions</span>
+                Frequently Asked <span style={{ color: 'var(--primary)' }}>Questions</span>
               </h2>
             </div>
 
@@ -138,6 +137,7 @@ export default function ServiceFormFAQSection({
                   </div>
                   <button
                     type="button"
+                    suppressHydrationWarning
                     onClick={resetForm}
                     className="text-xs font-bold text-[var(--primary)] hover:underline cursor-pointer pt-1"
                   >
@@ -145,12 +145,13 @@ export default function ServiceFormFAQSection({
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-3 pt-1">
+                <form suppressHydrationWarning onSubmit={handleSubmit} className="space-y-3 pt-1">
                   {/* Name Input */}
                   <div>
                     <input
                       type="text"
                       required
+                      suppressHydrationWarning
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
                       placeholder="Your Name *"
@@ -166,6 +167,7 @@ export default function ServiceFormFAQSection({
                     <input
                       type="tel"
                       required
+                      suppressHydrationWarning
                       pattern="[0-9]{10}"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value.replace(/\D/g, '').slice(0, 10))}
@@ -177,6 +179,7 @@ export default function ServiceFormFAQSection({
                   {/* Service Requirement Dropdown */}
                   <div className="relative">
                     <select
+                      suppressHydrationWarning
                       value={formData.serviceType}
                       onChange={(e) => handleInputChange('serviceType', e.target.value)}
                       className="w-full pl-3.5 pr-8 py-2.5 rounded-xl bg-[#fafafa] border border-black/10 text-xs sm:text-sm text-[#1a1a1a] appearance-none focus:bg-white focus:outline-none focus:border-[var(--primary)] focus:ring-1 focus:ring-[var(--primary)] transition-all cursor-pointer"
@@ -194,6 +197,7 @@ export default function ServiceFormFAQSection({
                   <div>
                     <input
                       type="text"
+                      suppressHydrationWarning
                       value={formData.note}
                       onChange={(e) => handleInputChange('note', e.target.value)}
                       placeholder="Location in Chennai / Plot Size (Optional)"
@@ -250,6 +254,7 @@ export default function ServiceFormFAQSection({
                 >
                   <button
                     type="button"
+                    suppressHydrationWarning
                     onClick={() => toggleAccordion(item.id)}
                     className="w-full text-left flex items-center justify-between gap-4 cursor-pointer group select-none"
                   >

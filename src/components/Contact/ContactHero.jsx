@@ -39,12 +39,12 @@ export const ContactHero = () => {
             className="lg:col-span-7 xl:col-span-6 text-left space-y-4 sm:space-y-5"
           >
             {/* 1. Main Headline — Exact Home Page Font Size, Uppercase & Leading */}
-            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight leading-[1.12] drop-shadow-md text-left select-none">
-              <span className="block text-white">
+            <h1 className="text-[17px] min-[380px]:text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight leading-[1.12] drop-shadow-md text-left whitespace-nowrap">
+              <span className="text-white">
                 Let’s Build
-              </span>
+              </span>{' '}
               <span
-                className="block text-transparent bg-clip-text"
+                className="text-transparent bg-clip-text"
                 style={{
                   backgroundImage: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 60%, var(--text-primary) 100%)',
                 }}
@@ -54,7 +54,7 @@ export const ContactHero = () => {
             </h1>
 
             {/* 2. Subtitle / Paragraph — Exact Home Page Typography & Density */}
-            <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal max-w-xs sm:max-w-lg md:max-w-xl leading-relaxed drop-shadow select-none text-left">
+            <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal max-w-xs sm:max-w-lg md:max-w-xl leading-relaxed drop-shadow text-left">
               Whether you’re planning a new home, developing a property, managing a ₹1 Cr+ project, designing an interior, or looking to buy or sell property, our team is ready to discuss your requirements.
             </p>
 

@@ -150,7 +150,7 @@ export const FAQSection = ({ onOpenTourModal, onOpenApply, items = faqItems }) =
                   }`}
                   style={isOpen ? { borderColor: 'var(--primary)', boxShadow: '0 10px 25px -5px color-mix(in srgb, var(--primary) 15%, transparent)' } : {}}
                 >
-                  <button
+                  <button suppressHydrationWarning
                     onClick={() => toggleAccordion(item.id)}
                     className="w-full text-left flex items-center justify-between gap-4 cursor-pointer group"
                   >

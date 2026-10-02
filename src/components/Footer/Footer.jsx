@@ -64,9 +64,9 @@ const Footer = ({ onOpenTourModal, onOpenApply }) => {
               Services
             </h4>
             <ul className="space-y-2.5 text-sm text-white/75 font-medium">
-              <li><button onClick={onOpenApply} className="hover:text-[var(--primary)] transition-colors text-left cursor-pointer">Land Partnership</button></li>
-              <li><button onClick={onOpenTourModal} className="hover:text-[var(--primary)] transition-colors text-left cursor-pointer">Schedule a Tour</button></li>
-              <li><button onClick={onOpenApply} className="hover:text-[var(--primary)] transition-colors text-left cursor-pointer">Digital Application</button></li>
+              <li><button suppressHydrationWarning onClick={onOpenApply} className="hover:text-[var(--primary)] transition-colors text-left cursor-pointer">Land Partnership</button></li>
+              <li><button suppressHydrationWarning onClick={onOpenTourModal} className="hover:text-[var(--primary)] transition-colors text-left cursor-pointer">Schedule a Tour</button></li>
+              <li><button suppressHydrationWarning onClick={onOpenApply} className="hover:text-[var(--primary)] transition-colors text-left cursor-pointer">Digital Application</button></li>
               <li><a href="#" className="hover:text-[var(--primary)] transition-colors">Architectural Customization</a></li>
               <li><a href="#" className="hover:text-[var(--primary)] transition-colors">Estate Management</a></li>
             </ul>
@@ -100,7 +100,7 @@ const Footer = ({ onOpenTourModal, onOpenApply }) => {
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-[#ff8c00] transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-[#ff8c00] transition-colors">Terms of Service</a>
-            <button
+            <button suppressHydrationWarning
               onClick={scrollToTop}
               className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#ff8c00] hover:text-black text-white flex items-center justify-center transition-all cursor-pointer shadow-sm border border-white/20"
               aria-label="Scroll to top"

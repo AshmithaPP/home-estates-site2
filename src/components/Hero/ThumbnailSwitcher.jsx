@@ -13,7 +13,7 @@ export const ThumbnailSwitcher = ({ slides, currentSlide, onSelectSlide, isPause
         const isActive = currentSlide === index;
 
         return (
-          <button
+          <button suppressHydrationWarning
             key={slide.id}
             onClick={() => onSelectSlide(index)}
             className={`group relative overflow-hidden rounded-xl w-16 sm:w-24 md:w-28 h-12 sm:h-16 md:h-18 transition-all duration-500 cursor-pointer text-left ${

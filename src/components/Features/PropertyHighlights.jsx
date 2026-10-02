@@ -92,13 +92,13 @@ export const PropertyHighlights = ({ onOpenTour, onOpenApply }) => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <button
+            <button suppressHydrationWarning
               onClick={onOpenTour}
               className="glass-pill px-6 py-3.5 rounded-2xl font-semibold text-sm text-white hover:bg-white/20 transition-all text-center cursor-pointer"
             >
               Book Private Tour
             </button>
-            <button
+            <button suppressHydrationWarning
               onClick={onOpenApply}
               className="btn-gold-gradient px-8 py-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 cursor-pointer shadow-lg"
             >

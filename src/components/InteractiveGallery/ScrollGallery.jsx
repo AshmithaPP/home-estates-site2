@@ -197,14 +197,14 @@ export const ScrollGallery = () => {
             </div>
 
             {/* Left & Right Chevron Controls */}
-            <button
+            <button suppressHydrationWarning
               onClick={handlePrevMobile}
               className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 border border-white/20 text-white flex items-center justify-center backdrop-blur-md active:scale-95 transition-all z-20"
               aria-label="Previous Photo"
             >
               <ChevronLeft className="w-5 h-5 text-white" />
             </button>
-            <button
+            <button suppressHydrationWarning
               onClick={handleNextMobile}
               className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 border border-white/20 text-white flex items-center justify-center backdrop-blur-md active:scale-95 transition-all z-20"
               aria-label="Next Photo"
@@ -222,7 +222,7 @@ export const ScrollGallery = () => {
             className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none"
           >
             {galleryImages.map((img, idx) => (
-              <button
+              <button suppressHydrationWarning
                 key={img.id}
                 onClick={() => handleSelectThumbnail(idx)}
                 className={`relative shrink-0 w-16 h-12 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer ${

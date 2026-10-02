@@ -29,7 +29,7 @@ export const ApplyModal = ({ isOpen, onClose }) => {
           </div>
 
           {/* Close Button */}
-          <button
+          <button suppressHydrationWarning
             onClick={onClose}
             className="absolute top-6 right-6 p-2 rounded-full bg-black/10 hover:bg-black/20 text-[#160d02] transition-colors cursor-pointer"
           >

@@ -148,6 +148,42 @@
   will-change: transform, opacity;
 }
 
+/* ── HERO PERF HELPERS (compositor-only animations) ─────────────── */
+@keyframes hero-kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.05); }
+}
+.hero-kenburns {
+  animation: hero-kenburns 6s ease-out forwards;
+}
+
+@keyframes hero-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+.hero-bob {
+  animation: hero-bob 4s ease-in-out infinite;
+}
+
+/* Smaller backdrop blur on phones: the hero glass sits on a constantly
+   moving background, so the blur is recomputed every frame. Large radii
+   are the main cost; the panels are 70–80% opaque so this is visually identical. */
+@media (max-width: 767px) {
+  .hero-section .glass-card,
+  .hero-section .glass-pill-dark,
+  .hero-section [class*="backdrop-blur"] {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kenburns,
+  .hero-bob {
+    animation: none;
+  }
+}
+
 /* ── GLASSMORPHISM (grey-tinted) ───────────────────────────────── */
 .glass-pill {
   background: rgba(255, 255, 255, 0.08);

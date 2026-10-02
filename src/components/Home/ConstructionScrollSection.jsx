@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useCallback, useState } from "react";
-import { Phone } from "lucide-react";
 import Button from "@/components/UI/Button";
 
 const TOTAL_FRAMES = 31;
@@ -9,6 +8,16 @@ const TOTAL_FRAMES = 31;
 // The remaining 35% (over 110vh of scroll) showcases the finished luxury landmark
 // so the user can comfortably view and admire the completed home before moving to the next section.
 const BUILD_COMPLETION = 0.75;
+
+// Ajay Homes & Estates highlights shown beside the build animation
+const PROJECT_SPECS = [
+  { label: "Experience", value: "60+ years of trusted construction" },
+  { label: "Projects", value: "500+ projects across Chennai" },
+  { label: "Approvals", value: "Clear titles & CMDA approved" },
+  { label: "Handover", value: "On time, as promised" },
+];
+
+const openConsultation = () => window.dispatchEvent(new Event("open-consultation"));
 
 // 31 Progressive 3D architectural construction frames for Shastri Nagar, Adyar (img79.jpg)
 // Builds from ground excavation -> RCC frame floor-by-floor -> facade louvers & glass -> glowing landmark
@@ -213,20 +222,7 @@ export default function ConstructionScrollSection() {
         const completed = progress >= BUILD_COMPLETION;
         setIsCompleted(completed);
 
-        // 1. Section heading fade-out on scroll
-        if (textContentRef.current) {
-          const textOpacity = Math.max(0, 1 - progress / 0.16);
-          const translateY = progress * 90;
-          textContentRef.current.style.opacity = String(textOpacity);
-          textContentRef.current.style.transform = `translateY(${translateY}px)`;
-          textContentRef.current.style.pointerEvents = textOpacity < 0.05 ? "none" : "auto";
-        }
-
-        // 2. Dark gradient overlay fades out so the building is bright and vivid
-        if (gradientOverlayRef.current) {
-          const gradOpacity = Math.max(0, 1 - progress / 0.14);
-          gradientOverlayRef.current.style.opacity = String(gradOpacity);
-        }
+        // Content and overlay stay fully visible for the whole runway; only the canvas animates.
 
         // 3. Scroll prompt fade-out
         if (scrollPromptRef.current) {
@@ -278,35 +274,70 @@ export default function ConstructionScrollSection() {
           className="absolute inset-0 z-0 h-full w-full pointer-events-none"
         />
 
-        {/* Soft Initial Gradient Overlays (Fades out completely on scroll for pure, bright building view) */}
+        {/* Readability overlays (static): left-to-right on desktop, bottom-up on phones */}
         <div
           ref={gradientOverlayRef}
-          className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent transition-opacity duration-300"
+          className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-t from-black/90 via-black/55 to-black/10 md:bg-gradient-to-r md:from-black/85 md:via-black/50 md:to-black/5"
         />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-32 bg-gradient-to-b from-black/50 to-transparent" />
 
-        {/* Section heading (top-centre): fades out as the build begins */}
+        {/* Project content: always visible while the building rises behind it */}
         <div
           ref={textContentRef}
-          style={{ opacity: 1 }}
-          className="pointer-events-none absolute inset-x-0 top-0 z-10 flex justify-center px-4 pt-10 sm:pt-14 transition-transform duration-100 ease-out"
+          className="absolute inset-0 z-10 flex items-end md:items-center"
         >
-          <div className="max-w-2xl text-center">
-            <span
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/35 px-3.5 py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] backdrop-blur-md"
-              style={{ color: "var(--primary)" }}
-            >
-              <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--primary)" }} />
-              Our Build Process
-            </span>
-            <h2 className="mt-4 text-2xl sm:text-3xl lg:text-[38px] font-bold tracking-tight leading-tight drop-shadow-lg" style={{ color: "var(--text-primary)" }}>
-              Every great home begins <span style={{ color: "var(--primary)" }}>with a strong foundation.</span>
-            </h2>
-            <p className="mt-3 text-xs sm:text-sm leading-relaxed text-white/80 drop-shadow">
-              From the first pillar to the final light, see how Ajay Homes brings every detail together.
-            </p>
+          <div className="mx-auto w-full max-w-[1400px] px-4 pb-8 sm:px-8 sm:pb-12 md:pb-0 lg:px-12 xl:px-16">
+            <div className="max-w-[640px] text-left">
+              <span
+                className="inline-flex items-center rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-[0.18em]"
+                style={{ color: "var(--primary)" }}
+              >
+                Our Build Process
+              </span>
+
+              <p className="mt-3 sm:mt-4 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
+                Ajay Homes &amp; Estates · Chennai
+              </p>
+
+              <h2
+                className="mt-1.5 sm:mt-2 text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold tracking-tight leading-tight drop-shadow-lg"
+                style={{ color: "var(--text-primary)" }}
+              >
+                From Bhoomi Pooja to <span style={{ color: "var(--primary)" }}>House Warming</span>
+              </h2>
+
+              <p className="mt-3 sm:mt-4 max-w-[560px] text-[12.5px] leading-relaxed sm:text-sm md:text-[15px] text-white/75 [@media(max-height:560px)]:hidden">
+                Every great home begins with a strong foundation. From approvals and the first pillar
+                to structure, interiors and the final light, our in-house team handles every stage —
+                so your family moves in on time, without the stress.
+              </p>
+
+              {/* Spec grid */}
+              <dl className="mt-5 sm:mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10">
+                {PROJECT_SPECS.map((spec) => (
+                  <div key={spec.label} className="px-3.5 py-3 sm:px-5 sm:py-4" style={{ backgroundColor: "rgba(30,30,30,0.82)" }}>
+                    <dt className="text-[10.5px] sm:text-xs font-bold uppercase tracking-[0.12em]" style={{ color: "var(--text-primary)" }}>
+                      {spec.label}
+                    </dt>
+                    <dd className="mt-1 sm:mt-1.5 text-[11.5px] sm:text-[13px] leading-snug" style={{ color: "var(--text-muted)" }}>
+                      {spec.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+
+              {/* CTAs */}
+              <div className="mt-5 sm:mt-8 flex flex-wrap items-center gap-2.5 sm:gap-4">
+                <Button onClick={openConsultation} variant="primary" size="responsive" className="sm:px-6! sm:py-3!">
+                  Free Consultation
+                </Button>
+                <Button href="/gallery" variant="glass" size="responsive" className="sm:px-6! sm:py-3!">
+                  View All Projects
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );

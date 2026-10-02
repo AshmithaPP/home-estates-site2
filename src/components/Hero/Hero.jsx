@@ -74,7 +74,7 @@ export const Hero = () => {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      className="relative w-full h-screen flex flex-col justify-between overflow-hidden" style={{ background: 'linear-gradient(160deg, #1e1e1e 0%, #2c2c2c 40%, #383838 70%, #2a2a2a 100%)' }}
+      className="hero-section relative w-full h-screen flex flex-col justify-between overflow-hidden" style={{ background: 'linear-gradient(160deg, #1e1e1e 0%, #2c2c2c 40%, #383838 70%, #2a2a2a 100%)' }}
     >
       {/* 3D Folding Background Carousel */}
       <HeroBackground

@@ -16,9 +16,9 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
     { label: 'Construction', href: '/services/construction' },
     { label: 'Layout promoters', href: '/services/layout-promote' },
     { label: 'Project management', href: '/services/project-management' },
-    { label: 'Property developer', href: '/#services-property-developer' },
-    { label: 'Interior designing', href: '/#services-interior' },
-    { label: 'Real estate selling and buy', href: '/#services-real-estate' },
+    { label: 'Property developer', href: '/services/property-developer' },
+    { label: 'Interior designing', href: '/services/interior-design' },
+    { label: 'Real estate selling and buy', href: '/services/real-estate' },
   ];
 
   // Opens the site-wide free consultation popup (components/Home/ConsultationPopup)
@@ -132,6 +132,8 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <button
+                type="button"
+                suppressHydrationWarning
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold flex items-center gap-1 transition-all cursor-pointer ${
                   isServicesOpen
@@ -220,6 +222,8 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
 
             {/* Mobile Menu Button */}
             <button
+              type="button"
+              suppressHydrationWarning
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden glass-pill-dark p-1.5 sm:p-2 rounded-full text-white cursor-pointer"
               aria-label="Toggle Navigation"
@@ -259,6 +263,8 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                 {/* Close button row inside menu */}
                 <div className="flex items-center justify-end pb-2 border-b border-white/10">
                   <button
+                    type="button"
+                    suppressHydrationWarning
                     onClick={() => setIsMenuOpen(false)}
                     className="p-1 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
                     aria-label="Close menu"
@@ -296,6 +302,8 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                   {/* Services Accordion in Mobile Drawer */}
                   <div className="rounded-xl bg-white/5 border border-white/5 overflow-hidden">
                     <button
+                      type="button"
+                      suppressHydrationWarning
                       onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                       className="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-white hover:text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-colors cursor-pointer text-left"
                     >

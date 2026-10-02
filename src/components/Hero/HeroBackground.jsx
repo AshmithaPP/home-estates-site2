@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /**
@@ -9,13 +9,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 export const HeroBackground = ({ activeIndex, slides, direction = 1 }) => {
   const activeSlide = slides[activeIndex];
 
+  // Preload + decode every slide image up front so a slide change never
+  // stalls the transition while a full-size JPEG downloads/decodes.
+  useEffect(() => {
+    slides.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.image;
+      img.decode?.().catch(() => {});
+    });
+  }, [slides]);
+
   const foldVariants = {
     enter: (direction) => ({
       x: direction > 0 ? '100%' : '-100%',
       rotateY: direction > 0 ? 35 : -35,
       scale: 0.92,
       opacity: 0,
-      filter: 'brightness(1) contrast(1)',
       transformOrigin: direction > 0 ? 'left center' : 'right center',
     }),
     center: {
@@ -23,7 +32,6 @@ export const HeroBackground = ({ activeIndex, slides, direction = 1 }) => {
       rotateY: 0,
       scale: 1,
       opacity: 1,
-      filter: 'brightness(1.06) contrast(0.98)',
       transformOrigin: 'center center',
       transition: {
         x: { type: 'spring', stiffness: 220, damping: 26 },
@@ -37,7 +45,6 @@ export const HeroBackground = ({ activeIndex, slides, direction = 1 }) => {
       rotateY: direction > 0 ? -35 : 35,
       scale: 0.9,
       opacity: 0,
-      filter: 'brightness(0.95) blur(2px)',
       transformOrigin: direction > 0 ? 'right center' : 'left center',
       transition: {
         x: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
@@ -59,27 +66,32 @@ export const HeroBackground = ({ activeIndex, slides, direction = 1 }) => {
           animate="center"
           exit="exit"
           className="absolute inset-0 w-full h-full fold-layer shadow-2xl"
-          style={{ willChange: 'transform, opacity, filter' }}
         >
-          {/* Background Image with subtle Ken Burns zoom */}
-          <motion.img
+          {/* Background Image with subtle Ken Burns zoom (CSS keyframes run on the compositor) */}
+          <img
             src={activeSlide.image}
             alt="Hero Background"
-            initial={{ scale: 1 }}
-            animate={{ scale: 1.05 }}
-            transition={{ duration: 6, ease: 'easeOut' }}
-            className="w-full h-full object-cover object-center"
+            decoding="async"
+            fetchPriority={activeIndex === 0 ? 'high' : 'auto'}
+            className="hero-kenburns w-full h-full object-cover object-center brightness-[1.06] contrast-[0.98]"
           />
 
           {/* Light Soft Gradient Overlays for contrast while maintaining bright image feel */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent" />
-
-          {/* Soft Warm Ambient Light Accents */}
-          <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-[#FE9601]/10 rounded-full blur-[120px] pointer-events-none" />
-          <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#FFC973]/10 rounded-full blur-[120px] pointer-events-none" />
         </motion.div>
       </AnimatePresence>
+
+      {/* Soft Warm Ambient Light Accents — static radial gradients instead of
+          blur-[120px] blobs so they aren't re-rasterized on every slide frame */}
+      <div
+        className="absolute -top-[428px] -left-[428px] w-[1100px] h-[1100px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(254,150,1,0.1) 0%, rgba(254,150,1,0.09) 25%, rgba(254,150,1,0.05) 45%, rgba(254,150,1,0) 100%)' }}
+      />
+      <div
+        className="absolute -bottom-[428px] -right-[428px] w-[1100px] h-[1100px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(255,201,115,0.1) 0%, rgba(255,201,115,0.09) 25%, rgba(255,201,115,0.05) 45%, rgba(255,201,115,0) 100%)' }}
+      />
     </div>
   );
 };

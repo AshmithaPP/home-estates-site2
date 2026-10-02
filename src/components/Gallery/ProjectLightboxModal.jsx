@@ -64,7 +64,7 @@ export const ProjectLightboxModal = ({
             </span>
           </div>
 
-          <button
+          <button suppressHydrationWarning
             onClick={onClose}
             aria-label="Close Lightbox"
             className="w-10 h-10 rounded-full bg-white/10 hover:bg-[var(--primary)] hover:text-black flex items-center justify-center transition-all cursor-pointer border border-white/20"
@@ -94,14 +94,14 @@ export const ProjectLightboxModal = ({
             {/* Navigation Arrows */}
             {images.length > 1 && (
               <>
-                <button
+                <button suppressHydrationWarning
                   onClick={handlePrev}
                   aria-label="Previous Photo"
                   className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-[var(--primary)] hover:text-black text-white flex items-center justify-center transition-all cursor-pointer border border-white/15 backdrop-blur-md shadow-lg"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
-                <button
+                <button suppressHydrationWarning
                   onClick={handleNext}
                   aria-label="Next Photo"
                   className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-[var(--primary)] hover:text-black text-white flex items-center justify-center transition-all cursor-pointer border border-white/15 backdrop-blur-md shadow-lg"
@@ -128,7 +128,7 @@ export const ProjectLightboxModal = ({
             {images.length > 1 && (
               <div className="flex items-center gap-2 overflow-x-auto max-w-sm pb-1 scrollbar-none">
                 {images.map((img, idx) => (
-                  <button
+                  <button suppressHydrationWarning
                     key={idx}
                     onClick={() => setActivePhotoIndex(idx)}
                     className={`relative w-14 h-10 sm:w-16 sm:h-12 rounded-lg overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
@@ -144,7 +144,7 @@ export const ProjectLightboxModal = ({
             )}
 
             {/* Get Quote CTA */}
-            <button
+            <button suppressHydrationWarning
               onClick={() => {
                 onClose();
                 onOpenInquiry(project);

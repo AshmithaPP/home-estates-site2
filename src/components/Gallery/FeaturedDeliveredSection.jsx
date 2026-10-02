@@ -27,23 +27,8 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
 
   return (
     <section className="w-full mb-14 sm:mb-20">
-      {/* ── Featured Banner Container (Livspace Reference Replica) ──── */}
-      <div
-        className="relative rounded-3xl p-5 sm:p-6 lg:p-7 overflow-hidden shadow-2xl border transition-all duration-300"
-        style={{
-          background: 'linear-gradient(145deg, rgba(255, 140, 0, 0.12) 0%, rgba(36, 36, 36, 0.94) 50%, rgba(24, 24, 24, 0.98) 100%)',
-          borderColor: 'rgba(255, 140, 0, 0.35)',
-          boxShadow: '0 12px 40px -10px rgba(0, 0, 0, 0.7), 0 0 35px -5px rgba(255, 140, 0, 0.15)'
-        }}
-      >
-        {/* Soft Ambient Radial Behind */}
-        <div
-          className="absolute -top-24 -left-24 w-80 h-80 rounded-full blur-[100px] pointer-events-none opacity-20"
-          style={{ background: 'var(--primary)' }}
-        />
-
-        {/* ── Header Row: Icon + Title + Subtitle ──────────────────────── */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 relative z-10">
+      {/* ── Header Row: Icon + Title + Subtitle ──────────────────────── */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 relative z-10">
           <div className="flex items-start sm:items-center gap-3">
             {/* Star Icon Badge (Matching Livspace Pink/Orange 3D Star Badge) */}
             <div
@@ -67,14 +52,14 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
 
           {/* Controls: Left / Right navigation arrows */}
           <div className="hidden sm:flex items-center gap-2 self-end sm:self-center">
-            <button
+            <button suppressHydrationWarning
               onClick={handlePrev}
               aria-label="Previous Featured Projects"
               className="w-9 h-9 rounded-full bg-white/10 hover:bg-[var(--primary)] hover:text-black text-white border border-white/15 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-md"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <button
+            <button suppressHydrationWarning
               onClick={handleNext}
               aria-label="Next Featured Projects"
               className="w-9 h-9 rounded-full bg-white text-black hover:bg-[var(--primary)] hover:text-black flex items-center justify-center transition-all duration-200 cursor-pointer shadow-lg hover:scale-105"
@@ -135,7 +120,7 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
                   </div>
 
                   {/* Outlined Pill CTA Button (Livspace Exact replica) */}
-                  <button
+                  <button suppressHydrationWarning
                     onClick={() => onOpenInquiry(project)}
                     className="w-full py-2 px-4 rounded-full border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-black font-bold text-xs sm:text-[13px] text-center transition-all duration-200 cursor-pointer shadow-sm hover:shadow-[0_0_18px_rgba(255,140,0,0.35)]"
                   >
@@ -148,7 +133,7 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
 
           {/* Floating Right Arrow on Mobile / Overflow indicator */}
           <div className="sm:hidden flex items-center justify-center gap-3 mt-5">
-            <button
+            <button suppressHydrationWarning
               onClick={handlePrev}
               className="w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center border border-white/15"
             >
@@ -157,7 +142,7 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
             <span className="text-xs text-[var(--text-muted)] font-semibold">
               {currentIndex + 1} / {featuredProjects.length}
             </span>
-            <button
+            <button suppressHydrationWarning
               onClick={handleNext}
               className="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center shadow-lg"
             >
@@ -165,8 +150,6 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
             </button>
           </div>
         </div>
-
-      </div>
     </section>
   );
 };

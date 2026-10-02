@@ -114,14 +114,14 @@ export default function HowWeGotHere() {
     <section
       ref={sectionRef}
       id="legacy"
-      className={`relative w-full section-grey pt-6 pb-12 sm:pt-14 sm:pb-18 lg:py-20 2xl:py-24 overflow-hidden transition-all duration-1000 ease-out ${
+      className={`relative w-full bg-white pt-6 pb-12 sm:pt-14 sm:pb-18 lg:py-20 2xl:py-24 overflow-hidden transition-all duration-1000 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="mx-auto w-[calc(100%-1.25rem)] sm:w-[calc(100%-2.5rem)] md:w-[calc(100%-4rem)] max-w-[1640px]">
         {/* Section Heading: "How we got here?" matching reference pixel-precisely */}
         <div className="mb-4 sm:mb-6 pl-1 sm:pl-2">
-          <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-white tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-slate-900 tracking-tight font-sans">
             How we got <span className="text-[var(--primary)]">here?</span>
           </h2>
         </div>

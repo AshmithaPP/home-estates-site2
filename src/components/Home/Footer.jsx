@@ -94,11 +94,11 @@ export default function Footer() {
   // 2. All company services
   const servicesLinks = [
     { label: "Construction", href: "/services/construction" },
-    { label: "Layout promoters", href: "/#services-layout" },
-    { label: "Project management", href: "/#services-project-management" },
-    { label: "Property developer", href: "/#services-property-developer" },
-    { label: "Interior designing", href: "/#services-interior" },
-    { label: "Real estate selling and buy", href: "/#services-real-estate" },
+    { label: "Layout promoters", href: "/services/layout-promote" },
+    { label: "Project management", href: "/services/project-management" },
+    { label: "Property developer", href: "/services/property-developer" },
+    { label: "Interior designing", href: "/services/interior-design" },
+    { label: "Real estate selling and buy", href: "/services/real-estate" },
   ];
 
   // 3. Social Media links: Instagram, WhatsApp, Facebook, YouTube

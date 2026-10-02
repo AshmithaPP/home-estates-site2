@@ -19,7 +19,7 @@ function ProjectCardBody({ proj }) {
   return (
     <div className="p-4 2xl:p-5 flex flex-col flex-1">
       <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--primary-dark)]">{proj.type}</p>
-      <h4 className="mt-1 text-[13px] sm:text-sm 2xl:text-[15px] font-bold text-slate-800 leading-snug line-clamp-2 font-sans">
+      <h4 className="mt-1 text-[13px] sm:text-sm 2xl:text-[15px] font-bold text-slate-800 leading-snug line-clamp-2 min-h-[2.75em] font-sans">
         {proj.title}
       </h4>
       <p className="mt-1 flex items-center gap-1 text-xs 2xl:text-[13px] text-slate-500 font-sans">
@@ -30,6 +30,7 @@ function ProjectCardBody({ proj }) {
       <p className="mt-3 pt-3 border-t border-slate-100 text-xs 2xl:text-[13px] leading-relaxed text-slate-600 line-clamp-2 font-sans">
         {proj.description}
       </p>
+
     </div>
   );
 }
@@ -49,7 +50,7 @@ export default function RealtimeProjects() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   const carouselRef = useRef(null);
-  const [layout, setLayout] = useState({ cols: 5, colW: 300, gap: 24 });
+  const [layout, setLayout] = useState({ cols: 5, colW: 300, gap: 24, bannerPad: 28 });
 
   useEffect(() => {
     const el = carouselRef.current;
@@ -59,7 +60,10 @@ export default function RealtimeProjects() {
       const cols = getColumns(width);
       const gap = width < 640 ? 16 : 24;
       const colW = cols === 1 ? width * 0.86 : (width - gap * (cols - 1)) / cols;
-      setLayout({ cols, gap, colW });
+      // Vertical padding of the dark banner (p-5 / sm:p-7 / 2xl:p-8), used to line card heights up with it
+      const vw = window.innerWidth;
+      const bannerPad = vw >= 1536 ? 32 : vw >= 640 ? 28 : 20;
+      setLayout({ cols, gap, colW, bannerPad });
     };
     measure();
     const ro = new ResizeObserver(measure);
@@ -67,12 +71,15 @@ export default function RealtimeProjects() {
     return () => ro.disconnect();
   }, []);
 
-  const { cols, colW, gap } = layout;
+  const { cols, colW, gap, bannerPad } = layout;
   // The blue banner spans two columns on wider screens, one on phones
   const bannerSpan = cols >= 2 ? 2 : 1;
   const bannerW = bannerSpan * colW + (bannerSpan - 1) * gap;
   const isStacked = bannerSpan === 1;
   const imgH = Math.round(Math.min(colW * 0.82, 340));
+  // Standalone cards sit outside the banner padding, so their (fixed) image is taller by that padding
+  // to keep every card bottom flush with the banner while all images stay equal height.
+  const cardImgH = isStacked ? imgH : imgH + bannerPad * 2;
   const step = colW + gap;
 
   // Banner copy: inside the carousel on tablets/desktops, above it (static) on phones
@@ -838,8 +845,8 @@ export default function RealtimeProjects() {
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
-                {/* Top flush image */}
-                <div className="relative w-full shrink-0 overflow-hidden bg-slate-100" style={{ height: `${imgH}px` }}>
+                {/* Top flush image: fixed, equal height on every card */}
+                <div className="relative w-full shrink-0 overflow-hidden bg-slate-100" style={{ height: `${cardImgH}px` }}>
                   <Image
                     src={proj.image}
                     alt={proj.title}

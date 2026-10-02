@@ -34,7 +34,7 @@ export const ProjectGridSection = ({
           {categories.map((cat) => {
             const isActive = selectedCategory === cat;
             return (
-              <button
+              <button suppressHydrationWarning
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
@@ -144,7 +144,7 @@ export const ProjectGridSection = ({
                   </div>
 
                   {/* 4. Action Button: "Get This Design" */}
-                  <button
+                  <button suppressHydrationWarning
                     onClick={() => onOpenInquiry(project)}
                     className="w-full py-2.5 px-4 rounded-full border border-[var(--primary)] text-[#e67e00] hover:bg-[var(--primary)] hover:text-black font-semibold text-xs sm:text-[13px] text-center transition-all duration-200 cursor-pointer shadow-sm hover:shadow-[0_0_14px_rgba(255,140,0,0.3)]"
                   >
