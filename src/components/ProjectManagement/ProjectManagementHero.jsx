@@ -51,19 +51,6 @@ export const ProjectManagementHero = ({ onOpenApply }) => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-8 xl:col-span-7 text-left space-y-4 sm:space-y-5"
           >
-            {/* 1. Category Tag / Eyebrow Header */}
-            <div className="flex items-center gap-2">
-              <span 
-                className="w-2 h-2 rounded-full animate-pulse" 
-                style={{ backgroundColor: 'var(--primary)' }}
-              />
-              <span 
-                className="text-xs sm:text-sm font-bold uppercase tracking-wider"
-                style={{ color: 'var(--primary)' }}
-              >
-                Project Management Services in Chennai
-              </span>
-            </div>
 
             {/* 2. Main Heading — Exact Home & Services Font Size, Uppercase & Leading */}
             <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight leading-[1.12] drop-shadow-md text-left select-none">

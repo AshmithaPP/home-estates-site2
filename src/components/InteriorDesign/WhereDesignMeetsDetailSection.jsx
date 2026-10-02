@@ -33,16 +33,8 @@ export default function WhereDesignMeetsDetailSection() {
             </h2>
 
             {/* Core Philosophy Statement */}
-            <p className="text-base sm:text-lg md:text-xl font-bold text-slate-900 leading-snug">
-              A premium interior is not just about how a space looks.{' '}
-              <span 
-                className="text-transparent bg-clip-text"
-                style={{
-                  backgroundImage: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)'
-                }}
-              >
-                It is about how it feels, functions, and performs every day.
-              </span>
+            <p className="text-base sm:text-lg md:text-xl font-bold leading-snug" style={{ color: 'var(--primary)' }}>
+              A premium interior is not just about how a space looks. It is about how it feels, functions, and performs every day.
             </p>
 
             {/* Narrative text - Exact user content */}

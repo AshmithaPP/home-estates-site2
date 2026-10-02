@@ -98,8 +98,8 @@ const Footer = ({ onOpenTourModal, onOpenApply }) => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60 font-medium">
           <p>© {new Date().getFullYear()} Ajay Homes & Estates. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-[#ff8c00] transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[#ff8c00] transition-colors">Terms of Service</a>
+            <a href="/privacy-policy" className="hover:text-[#ff8c00] transition-colors">Privacy Policy</a>
+            <a href="/terms-and-conditions" className="hover:text-[#ff8c00] transition-colors">Terms &amp; Conditions</a>
             <button suppressHydrationWarning
               onClick={scrollToTop}
               className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#ff8c00] hover:text-black text-white flex items-center justify-center transition-all cursor-pointer shadow-sm border border-white/20"

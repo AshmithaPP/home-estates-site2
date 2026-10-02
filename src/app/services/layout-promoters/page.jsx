@@ -72,7 +72,6 @@ export default function LayoutPromotePage() {
       <ServiceFormFAQSection
         id="layout-faq-form"
         serviceName="Layout Promotion"
-        tagline="FAQS"
         faqs={LAYOUT_FAQ_ITEMS}
         formTitle="Book a 15 min call"
         formSubtitle="If you have land with development potential or questions about layout promotion, schedule a private consultation."

@@ -8,7 +8,7 @@ import Button from '@/components/UI/Button';
 export default function ServiceFormFAQSection({
   id = "service-form-faq",
   serviceName = "Construction",
-  tagline = "FAQs",
+
   heading = "Frequently Asked Questions",
   faqs = [],
   formTitle = "Book a 15 min call",
@@ -84,12 +84,6 @@ export default function ServiceFormFAQSection({
           >
             {/* Header Block */}
             <div className="space-y-1.5 text-left">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-extrabold uppercase tracking-widest text-[#555555]">
-                  {tagline}
-                </span>
-              </div>
-
               <h2
                 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1a1a1a] tracking-tight leading-tight uppercase text-left"
                 style={{ fontFamily: 'var(--font-family-base)' }}

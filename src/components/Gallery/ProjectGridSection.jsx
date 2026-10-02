@@ -29,8 +29,8 @@ export const ProjectGridSection = ({
           </p>
         </div>
 
-        {/* Category Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-none">
+        {/* Category Pills (wrap on mobile/tablet, one line from md up) */}
+        <div className="flex flex-wrap md:flex-nowrap items-center gap-2 md:overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat;
             return (

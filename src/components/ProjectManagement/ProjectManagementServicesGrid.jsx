@@ -94,17 +94,6 @@ export const ProjectManagementServicesGrid = () => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-3 text-left"
           >
-            <div className="flex items-center gap-2 mb-3">
-              <span 
-                className="w-2 h-2 rounded-full" 
-                style={{ backgroundColor: 'var(--primary)' }}
-              />
-              <span 
-                className="text-xs font-bold uppercase tracking-wider text-slate-400"
-              >
-                Comprehensive Capabilities
-              </span>
-            </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-3 sm:mb-4">
               Our Project <br className="hidden sm:inline" />

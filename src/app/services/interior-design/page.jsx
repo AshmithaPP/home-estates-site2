@@ -152,7 +152,6 @@ export default function InteriorDesignPage() {
       <ServiceFormFAQSection
         id="interior-faq-form"
         serviceName="Interior Designing"
-        tagline="FAQS"
         heading="Frequently Asked Questions"
         faqs={interiorDesignFaqs}
         formTitle="Book a 15 min call"

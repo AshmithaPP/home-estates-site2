@@ -164,7 +164,6 @@ export default function ProjectManagementPage() {
       <ServiceFormFAQSection
         id="pm-faq-form"
         serviceName="Project Management"
-        tagline="FAQS"
         faqs={projectManagementFaqs}
         formTitle="Book a 15 min call"
         formSubtitle="If you have questions about our ₹1 Cr+ project management, timelines, or contractor coordination, schedule a private consultation."

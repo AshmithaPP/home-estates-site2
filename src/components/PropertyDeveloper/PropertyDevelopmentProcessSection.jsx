@@ -62,17 +62,6 @@ export const PropertyDevelopmentProcessSection = ({
         
         {/* ── Section Heading ──────────── */}
         <div className="text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 mb-3">
-            <span 
-              className="w-2 h-2 rounded-full" 
-              style={{ backgroundColor: 'var(--primary)' }}
-            />
-            <span 
-              className="text-xs font-bold uppercase tracking-wider text-slate-400"
-            >
-              Structured Execution Methodology
-            </span>
-          </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
             {title}

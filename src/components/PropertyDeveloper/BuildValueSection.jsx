@@ -44,18 +44,6 @@ export const BuildValueSection = ({ onOpenApply }) => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="md:col-span-6 lg:col-span-6 text-left space-y-4 sm:space-y-5"
           >
-            {/* Category Eyebrow */}
-            <div className="flex items-center gap-2">
-              <span 
-                className="w-2 h-2 rounded-full" 
-                style={{ backgroundColor: 'var(--primary)' }}
-              />
-              <span 
-                className="text-xs font-bold uppercase tracking-wider text-slate-500"
-              >
-                Comprehensive Value Creation
-              </span>
-            </div>
 
             {/* 1. Main Heading */}
             <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-slate-950 tracking-tight leading-[1.2]">

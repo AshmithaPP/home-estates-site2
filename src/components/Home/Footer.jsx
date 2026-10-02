@@ -324,8 +324,13 @@ export default function Footer() {
           </div>
 
           {/* Bottom Copyright Bar */}
-          <div className="mt-8 md:mt-10 lg:mt-14 pt-4 sm:pt-5 border-t border-white/15 text-[11.5px] 2xl:text-[13px] text-white/75 font-sans text-center sm:text-left">
+          <div className="mt-8 md:mt-10 lg:mt-14 pt-4 sm:pt-5 border-t border-white/15 text-[11.5px] 2xl:text-[13px] text-white/75 font-sans flex flex-col sm:flex-row items-center sm:justify-between gap-2 text-center sm:text-left">
             <p>© 2026 Official Website of Ajay Homes &amp; Estates Projects Ltd. | All Rights Reserved.</p>
+            <nav aria-label="Legal" className="flex items-center gap-4">
+              <a href="/terms-and-conditions" className="hover:text-[var(--primary)] transition-colors">Terms &amp; Conditions</a>
+              <span className="text-white/30">|</span>
+              <a href="/privacy-policy" className="hover:text-[var(--primary)] transition-colors">Privacy Policy</a>
+            </nav>
           </div>
         </div>
       </footer>

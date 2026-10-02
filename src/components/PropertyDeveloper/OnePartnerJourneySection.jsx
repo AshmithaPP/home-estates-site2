@@ -37,17 +37,6 @@ export const OnePartnerJourneySection = () => {
 
         {/* ── Section Header ── */}
         <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-9">
-          <div className="inline-flex items-center gap-2 mb-3">
-            <span
-              className="w-2 h-2 rounded-full"
-              style={{ backgroundColor: 'var(--primary)' }}
-            />
-            <span
-              className="text-xs font-bold uppercase tracking-wider text-slate-500"
-            >
-              Unified Capabilities
-            </span>
-          </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight leading-tight" style={{ color: 'var(--grey-deepest)' }}>
             One Partner Across the <br className="hidden sm:inline" />

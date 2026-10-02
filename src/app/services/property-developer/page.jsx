@@ -149,7 +149,6 @@ export default function PropertyDeveloperPage() {
       <ServiceFormFAQSection
         id="property-faq-form"
         serviceName="Property Development"
-        tagline="FAQS"
         faqs={propertyDeveloperFaqs}
         formTitle="Book a 15 min call"
         formSubtitle="If you have questions about land development, joint ventures, or project feasibility, schedule a private consultation."

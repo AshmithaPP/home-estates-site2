@@ -150,7 +150,6 @@ export default function RealEstatePage() {
       <ServiceFormFAQSection
         id="real-estate-faq-form"
         serviceName="Real Estate"
-        tagline="FAQS"
         heading="Frequently Asked Questions"
         faqs={realEstateFaqs}
         formTitle="Book a 15 min call"

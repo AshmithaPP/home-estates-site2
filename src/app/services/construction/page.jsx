@@ -78,7 +78,6 @@ export default function ConstructionServicesPage() {
       <ServiceFormFAQSection
         id="construction-faq-form"
         serviceName="Construction"
-        tagline="FAQS"
         faqs={faqItems}
         formTitle="Book a 15 min call"
         formSubtitle="If you have questions about our luxury villas, CMDA approvals, or custom builds, schedule a private consultation."

@@ -2,14 +2,16 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDownRight, Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
+import { ArrowDownRight, ArrowRight, Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
 
 export const Header = ({ onOpenTour, onOpenApply }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const pathname = usePathname();
 
   // Exact Services requested
   const services = [
@@ -302,13 +304,20 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: '-100%' }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 left-0 right-0 z-50 max-h-[100dvh] overflow-y-auto overscroll-contain border-b border-[var(--primary)]/30 text-white shadow-2xl rounded-b-2xl p-4 sm:p-6 pt-14 sm:pt-16 bg-[#1a1c22]"
+              className="fixed top-0 left-0 right-0 z-50 max-h-[100dvh] overflow-y-auto overscroll-contain border-b border-[var(--primary)]/30 text-white shadow-2xl rounded-b-2xl p-4 sm:p-6 pt-5 sm:pt-6 bg-[#1a1c22]"
               style={{ willChange: 'transform' }}
             >
               <div className="max-w-md mx-auto w-full space-y-3">
 
                 {/* Close button row inside menu */}
-                <div className="flex items-center justify-end pb-2 border-b border-white/10">
+                <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                  <Link href="/" onClick={() => setIsMenuOpen(false)} className="shrink-0">
+                    <img
+                      src="/images/logo/logo-ajay-homes.png"
+                      alt="Ajay Builders & Property Developers"
+                      className="h-8 w-auto object-contain"
+                    />
+                  </Link>
                   <button
                     type="button"
                     suppressHydrationWarning
@@ -347,12 +356,19 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                   </Link>
 
                   {/* Services Accordion in Mobile Drawer */}
-                  <div className="rounded-xl bg-white/5 border border-white/5 overflow-hidden">
+                  <div
+                    className={`rounded-xl bg-white/5 border overflow-hidden transition-colors ${
+                      isMobileServicesOpen ? 'border-[var(--primary)]/40' : 'border-white/5'
+                    }`}
+                  >
                     <button
                       type="button"
                       suppressHydrationWarning
                       onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                      className="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-white hover:text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-colors cursor-pointer text-left"
+                      aria-expanded={isMobileServicesOpen}
+                      className={`w-full flex items-center justify-between px-4 py-3 text-sm font-bold hover:bg-[var(--primary)]/10 transition-colors cursor-pointer text-left ${
+                        isMobileServicesOpen ? 'text-[var(--primary)]' : 'text-white hover:text-[var(--primary)]'
+                      }`}
                     >
                       <span>Services</span>
                       <ChevronDown
@@ -368,29 +384,41 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="bg-black/20 overflow-hidden"
+                          className="overflow-hidden"
                         >
-                          <div className="border-t-[3px] border-[var(--primary)] grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 px-4 py-3">
-                            {services.map((item) => (
-                              <Link
-                                key={item.label}
-                                href={item.href}
-                                onClick={() => setIsMenuOpen(false)}
-                                className="group block pl-3 border-l border-white/20"
-                              >
-                                <span className="block text-xs font-bold uppercase tracking-wide text-white/85 group-hover:text-[var(--primary)] transition-colors">
-                                  {item.label}
-                                </span>
-                              </Link>
-                            ))}
+                          <div className="grid grid-cols-2 gap-2 px-2.5 pb-2.5 pt-0.5">
+                            {services.map((item) => {
+                              const isCurrent = pathname === item.href;
+                              return (
+                                <Link
+                                  key={item.label}
+                                  href={item.href}
+                                  onClick={() => setIsMenuOpen(false)}
+                                  aria-current={isCurrent ? 'page' : undefined}
+                                  className={`group flex items-center rounded-lg border px-3 py-2.5 min-h-[52px] transition-colors ${
+                                    isCurrent
+                                      ? 'border-[var(--primary)] bg-[var(--primary)]/12'
+                                      : 'border-white/10 bg-black/25 active:bg-[var(--primary)]/10 hover:border-[var(--primary)]/40'
+                                  }`}
+                                >
+                                  <span
+                                    className={`text-[12.5px] font-semibold leading-tight capitalize ${
+                                      isCurrent ? 'text-[var(--primary)]' : 'text-white/90 group-hover:text-white'
+                                    }`}
+                                  >
+                                    {item.label}
+                                  </span>
+                                </Link>
+                              );
+                            })}
                           </div>
                           <Link
                             href="/#services"
                             onClick={() => setIsMenuOpen(false)}
-                            className="block w-full py-2.5 text-center text-[11px] font-bold uppercase tracking-[0.25em] text-white hover:text-black hover:bg-[var(--primary)] transition-colors"
-                            style={{ backgroundColor: 'var(--grey-mid)' }}
+                            className="flex items-center justify-center gap-1.5 border-t border-white/10 py-2.5 text-xs font-bold text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-colors"
                           >
-                            Explore All Services
+                            Explore all services
+                            <ArrowRight className="h-3.5 w-3.5" />
                           </Link>
                         </motion.div>
                       )}
