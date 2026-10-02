@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Button from '@/components/UI/Button';
 
 /**
- * Have Land With Development Potential? (grey background, short)
+ * Have Land With Development Potential? (light warm-grey background, short)
  * Centred heading, copy, prompt and CTA stacked.
  * Colours / fonts come from globals.css (.section-grey, --primary, --text-*).
  */
@@ -25,14 +25,14 @@ export const LandPotentialSection = ({
   return (
     <section
       id={id}
-      className={`relative w-full section-grey overflow-hidden py-12 sm:py-14 lg:py-16 ${className}`}
-      style={{ fontFamily: 'var(--font-family-base)' }}
+      className={`relative w-full overflow-hidden py-10 sm:py-12 lg:py-14 border-y border-black/5 ${className}`}
+      style={{ fontFamily: 'var(--font-family-base)', backgroundColor: '#f3f2ef' }}
     >
       {/* Soft brand glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full blur-[110px] opacity-20"
-        style={{ background: 'var(--primary)' }}
+        className="pointer-events-none absolute -top-40 -right-40 h-[480px] w-[480px] rounded-full"
+        style={{ background: 'radial-gradient(circle, rgba(255,140,0,0.10) 0%, transparent 70%)' }}
       />
 
       <div className="relative max-w-[1240px] mx-auto px-5 sm:px-8 lg:px-10">
@@ -45,17 +45,17 @@ export const LandPotentialSection = ({
         >
           <h2
             className="text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight leading-tight lg:whitespace-nowrap"
-            style={{ color: 'var(--text-primary)' }}
+            style={{ color: 'var(--grey-deepest)' }}
           >
             Have Land With <span style={{ color: 'var(--primary)' }}>Development Potential?</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-[15px] leading-relaxed max-w-[640px] mx-auto" style={{ color: 'var(--text-muted)' }}>
+          <p className="mt-4 text-sm sm:text-[15px] leading-relaxed max-w-[640px] mx-auto text-slate-600">
             Your land could be more than an asset. With the right planning and execution, it can become a structured property development opportunity.
           </p>
-          <p className="mt-6 text-[15px] sm:text-lg font-semibold leading-snug" style={{ color: 'var(--text-primary)' }}>
+          <p className="mt-5 text-[15px] sm:text-lg font-semibold leading-snug text-slate-800">
             Let’s discuss your land and explore its potential.
           </p>
-          <div className="mt-6 flex justify-center">
+          <div className="mt-5 flex justify-center">
             <Button onClick={handleCta} variant="primary" size="responsive">
               Discuss Your Land
             </Button>

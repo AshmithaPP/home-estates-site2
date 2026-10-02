@@ -30,7 +30,7 @@ export const PropertyDevelopmentCTASection = ({
   return (
     <section
       id={id}
-      className={`relative w-full py-10 sm:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
+      className={`relative w-full py-7 sm:py-9 lg:py-10 px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
       style={{
         backgroundColor: 'var(--grey-deepest)',
         color: 'var(--text-primary)',
@@ -43,7 +43,7 @@ export const PropertyDevelopmentCTASection = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="relative rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/[0.08] overflow-hidden shadow-2xl backdrop-blur-xl flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-8"
+          className="relative rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 border border-white/[0.08] overflow-hidden shadow-2xl backdrop-blur-xl flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-8"
           style={{
             background: 'linear-gradient(135deg, rgba(38, 38, 38, 0.8) 0%, rgba(22, 22, 22, 0.95) 100%)',
             boxShadow: '0 20px 50px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.08)',

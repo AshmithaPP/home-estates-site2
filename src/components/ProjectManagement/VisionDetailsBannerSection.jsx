@@ -20,17 +20,17 @@ export const VisionDetailsBannerSection = ({ onOpenApply }) => {
   return (
     <section
       id="vision-details"
-      className="relative w-full py-16 sm:py-20 lg:py-24 overflow-hidden text-white"
+      className="relative w-full py-10 sm:py-12 lg:py-14 overflow-hidden border-y border-black/5"
       style={{
-        backgroundColor: 'var(--grey-deepest)',
+        backgroundColor: '#f3f2ef',
         fontFamily: 'var(--font-family-base)',
       }}
     >
       {/* ── Ambient Radial Amber Glow ── */}
       <div 
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[140px] opacity-15"
-        style={{ backgroundColor: 'var(--primary)' }}
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[640px] rounded-full"
+        style={{ background: 'radial-gradient(circle, rgba(255,140,0,0.10) 0%, transparent 65%)' }}
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -39,15 +39,15 @@ export const VisionDetailsBannerSection = ({ onOpenApply }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-4 sm:space-y-5"
+          className="space-y-3 sm:space-y-4"
         >
           {/* ── 1 Single One-Line Heading ── */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight leading-tight" style={{ color: 'var(--grey-deepest)' }}>
             You focus on the vision.{' '}
             <span 
               className="text-transparent bg-clip-text"
               style={{
-                backgroundImage: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%)',
+                backgroundImage: 'linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%)',
               }}
             >
               We manage the details.
@@ -55,12 +55,12 @@ export const VisionDetailsBannerSection = ({ onOpenApply }) => {
           </h2>
 
           {/* ── Concise Narrative ── */}
-          <p className="text-xs sm:text-sm md:text-base text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm md:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto">
             Our experienced engineers coordinate the people, materials, timelines, and budgets so you can build with absolute confidence.
           </p>
 
           {/* ── Action CTA Button ── */}
-          <div className="pt-2 sm:pt-3 flex justify-center">
+          <div className="pt-1 sm:pt-2 flex justify-center">
             <Button
               onClick={handleAction}
               variant="primary"
