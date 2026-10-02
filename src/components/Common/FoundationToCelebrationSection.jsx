@@ -44,12 +44,13 @@ export const FoundationToCelebrationSection = ({
   const activeRef = useRef(-1);
   const boostTimerRef = useRef(null);
 
-  const [itemWidth, setItemWidth] = useState(170);
+  const [itemWidth, setItemWidth] = useState(136);
   const [copies, setCopies] = useState(3);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const n = stages.length;
-  const scale = itemWidth < 150 ? 0.72 : 1;
+  // Compact houses: ~74% size on desktop, ~56% on phones
+  const scale = itemWidth < 120 ? 0.56 : 0.74;
 
   // Size the belt items and the number of repeated stage sets to the track width
   useEffect(() => {
@@ -57,7 +58,7 @@ export const FoundationToCelebrationSection = ({
       const track = trackRef.current;
       if (!track) return;
       const width = track.offsetWidth;
-      const w = width < 640 ? 118 : 170;
+      const w = width < 640 ? 100 : 136;
       setItemWidth(w);
       setCopies(Math.ceil(width / (n * w)) + 2);
     };
@@ -138,13 +139,13 @@ export const FoundationToCelebrationSection = ({
   return (
     <section
       id={id}
-      className={`relative w-full bg-white overflow-hidden py-14 sm:py-16 lg:py-20 ${className}`}
+      className={`relative w-full bg-white overflow-hidden py-8 sm:py-10 lg:py-12 ${className}`}
       style={{ fontFamily: 'var(--font-family-base)' }}
     >
       {/* ── Soft brand glow background ───────────────────────────────── */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[520px] w-[min(1100px,140vw)] blur-[70px] opacity-90"
+        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[420px] w-[min(1000px,140vw)] blur-[70px] opacity-90"
         style={{
           background:
             'radial-gradient(closest-side at 32% 40%, color-mix(in srgb, var(--primary) 26%, transparent), transparent), radial-gradient(closest-side at 68% 38%, color-mix(in srgb, var(--primary-light) 18%, transparent), transparent)',
@@ -159,23 +160,23 @@ export const FoundationToCelebrationSection = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 mx-auto max-w-[620px] rounded-2xl border border-black/5 bg-white/90 backdrop-blur-sm px-6 py-7 sm:px-10 sm:py-9 text-center shadow-[0_18px_50px_-20px_rgba(0,0,0,0.18)]"
+          className="relative z-10 mx-auto max-w-[520px] rounded-xl sm:rounded-2xl border border-black/5 bg-white/90 backdrop-blur-sm px-4 py-4 sm:px-6 sm:py-5 text-center shadow-[0_18px_50px_-20px_rgba(0,0,0,0.18)]"
         >
           <h2
-            className="text-[22px] sm:text-[28px] lg:text-[30px] font-semibold tracking-tight leading-[1.2]"
+            className="text-[17px] sm:text-[20px] lg:text-[22px] font-semibold tracking-tight leading-[1.2]"
             style={{ color: 'var(--grey-deepest)' }}
           >
             {title}
           </h2>
-          <p className="mt-3 text-sm sm:text-[15px] leading-relaxed" style={{ color: 'var(--grey-base)' }}>
+          <p className="mt-1.5 text-[12.5px] sm:text-[13.5px] leading-relaxed" style={{ color: 'var(--grey-base)' }}>
             {lead}
           </p>
-          <p className="mt-2 text-xs sm:text-[13px] leading-relaxed" style={{ color: 'var(--grey-surface)' }}>
+          <p className="mt-1.5 text-[11px] sm:text-xs leading-relaxed" style={{ color: 'var(--grey-surface)' }}>
             {description}
           </p>
           {tagline && (
             <p
-              className="mt-5 inline-block rounded-lg px-4 py-2.5 text-xs sm:text-sm font-semibold"
+              className="mt-3 inline-block rounded-md px-3 py-1.5 text-[11px] sm:text-xs font-semibold"
               style={{ backgroundColor: 'var(--grey-deepest)', color: 'var(--text-primary)' }}
             >
               {tagline}
@@ -184,7 +185,7 @@ export const FoundationToCelebrationSection = ({
         </motion.div>
 
         {/* ── Conveyor belt ────────────────────────────────────────────── */}
-        <div className="relative mt-10 sm:mt-12">
+        <div className="relative mt-5 sm:mt-6 max-w-[1040px] mx-auto">
           {/* Moving parcels */}
           <div
             ref={trackRef}
@@ -238,7 +239,7 @@ export const FoundationToCelebrationSection = ({
                       >
                         {Icon && (
                           <Icon
-                            style={{ width: 18 * scale + 6, height: 18 * scale + 6, color: 'var(--primary-dark)' }}
+                            style={{ width: 18 * scale + 4, height: 18 * scale + 4, color: 'var(--primary-dark)' }}
                             strokeWidth={1.9}
                           />
                         )}
@@ -277,7 +278,7 @@ export const FoundationToCelebrationSection = ({
 
           {/* Belt with rollers + centred stage label */}
           <div
-            className="relative h-14 sm:h-16 rounded-full flex items-center justify-between px-3 sm:px-4"
+            className="relative h-11 sm:h-12 rounded-full flex items-center justify-between px-2.5 sm:px-3"
             style={{ backgroundColor: 'var(--grey-base)' }}
           >
             {Array.from({ length: 10 }).map((_, i) => {
@@ -285,16 +286,16 @@ export const FoundationToCelebrationSection = ({
               return (
                 <span
                   key={i}
-                  className={`h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-white shadow-[0_2px_6px_rgba(0,0,0,0.35)] ${i >= 5 ? 'hidden md:flex' : 'flex'}`}
+                  className={`h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-white shadow-[0_2px_6px_rgba(0,0,0,0.35)] ${i >= 5 ? 'hidden md:flex' : 'flex'}`}
                   style={{ color: 'var(--grey-deepest)' }}
                 >
-                  {BeltIcon && <BeltIcon className="h-4 w-4 sm:h-[18px] sm:w-[18px]" strokeWidth={2.6} />}
+                  {BeltIcon && <BeltIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" strokeWidth={2.6} />}
                 </span>
               );
             })}
 
             <div
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-md border bg-[var(--grey-deepest)] px-3 sm:px-4 py-2 sm:py-2.5 min-w-[150px] sm:min-w-[190px] cursor-pointer"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-md border bg-[var(--grey-deepest)] px-2.5 sm:px-3 py-1.5 min-w-[124px] sm:min-w-[156px] cursor-pointer"
               style={{ borderColor: 'var(--primary)' }}
               onMouseEnter={speedUp}
               onMouseLeave={slowDown}
@@ -302,7 +303,7 @@ export const FoundationToCelebrationSection = ({
               aria-live="polite"
             >
               <span
-                className="text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.14em] whitespace-nowrap"
+                className="text-[10px] sm:text-[11.5px] font-bold uppercase tracking-[0.14em] whitespace-nowrap"
                 style={{ color: 'var(--primary)' }}
               >
                 {active?.label}

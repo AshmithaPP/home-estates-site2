@@ -31,7 +31,7 @@ export const JourneyMarqueeSection = ({
       {/* ── Running title band ───────────────────────────────────────── */}
       <div
         aria-hidden="true"
-        className="relative border-y py-2.5 sm:py-3"
+        className="relative border-y py-2 sm:py-2.5"
         style={{
           borderColor: 'color-mix(in srgb, var(--grey-surface) 18%, transparent)',
           WebkitMaskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
@@ -44,7 +44,7 @@ export const JourneyMarqueeSection = ({
               {run.map((i) => (
                 <span key={i} className="flex items-center">
                   <span
-                    className="whitespace-nowrap text-[17px] sm:text-[21px] lg:text-[26px] font-bold tracking-tight leading-none px-4 sm:px-6"
+                    className="whitespace-nowrap text-[14px] sm:text-[16px] lg:text-[19px] font-bold tracking-tight leading-none px-3.5 sm:px-5"
                     style={
                       i % 2 === 0
                         ? { color: 'var(--grey-deepest)' }
@@ -54,7 +54,7 @@ export const JourneyMarqueeSection = ({
                     {title}
                   </span>
                   <span
-                    className="h-2 w-2 sm:h-2.5 sm:w-2.5 rotate-45 shrink-0"
+                    className="h-1.5 w-1.5 sm:h-2 sm:w-2 rotate-45 shrink-0"
                     style={{ backgroundColor: 'var(--primary)' }}
                   />
                 </span>
