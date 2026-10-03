@@ -14,6 +14,16 @@ const montserrat = Montserrat({
 export const metadata = {
   title: 'Ajay Homes',
   description: "Chennai's Fastest Growing Construction Firm - Ajay Homes",
+  metadataBase: new URL('https://ajayhomes.com'),
+  openGraph: {
+    title: 'Ajay Homes',
+    description: "Chennai's Fastest Growing Construction Firm - Ajay Homes",
+    url: 'https://ajayhomes.com',
+    siteName: 'Ajay Homes',
+    images: [{ url: '/icon.png', width: 512, height: 512, alt: 'Ajay Homes' }],
+    locale: 'en_IN',
+    type: 'website',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
