@@ -15,7 +15,11 @@ export const metadata = {
   title: 'Ajay Homes',
   description: "Chennai's Fastest Growing Construction Firm - Ajay Homes",
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: '/apple-icon.png',
   },
 };
 
