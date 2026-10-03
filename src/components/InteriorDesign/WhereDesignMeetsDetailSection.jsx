@@ -3,6 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import Button from '@/components/UI/Button';
+
+// Opens the site-wide free consultation popup (ConsultationPopup listens for this event)
+const openConsultation = () => window.dispatchEvent(new Event('open-consultation'));
 
 export default function WhereDesignMeetsDetailSection() {
   return (
@@ -20,7 +25,7 @@ export default function WhereDesignMeetsDetailSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="md:col-span-6 lg:col-span-7 text-left space-y-4 sm:space-y-5"
+            className="md:col-span-6 lg:col-span-6 text-left space-y-4 sm:space-y-5"
           >
             {/* Main Heading - One line */}
             <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-slate-950 tracking-tight leading-snug">
@@ -35,9 +40,22 @@ export default function WhereDesignMeetsDetailSection() {
             {/* Narrative text - Exact user content */}
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
               Our approach considers your lifestyle, requirements, space,{' '}
-              <Link href="/gallery" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">materials, finishes</Link>, lighting, functionality, and overall design direction to create interiors that are both{' '}
-              <Link href="/gallery" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">visually refined</Link> and practical.
+              materials, finishes, lighting, functionality, and overall design direction to create interiors that are both{' '}
+              visually refined and practical.
             </p>
+
+            {/* Action CTA Button */}
+            <div className="pt-2 sm:pt-4">
+              <Button
+                onClick={openConsultation}
+                variant="primary"
+                size="md"
+                icon={ArrowRight}
+                showIcon={true}
+              >
+                Discuss Your Interior
+              </Button>
+            </div>
           </motion.div>
 
           {/* Right Column: Clean Architectural Image Matching BeyondBuildSection */}
@@ -46,12 +64,12 @@ export default function WhereDesignMeetsDetailSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="md:col-span-6 lg:col-span-5 relative mt-4 md:mt-0"
+            className="md:col-span-6 lg:col-span-6 relative mt-4 md:mt-0"
           >
             <Link
               href="/gallery"
               aria-label="View Natraj Residence and more interiors in our gallery"
-              className="block relative w-full aspect-[16/11] sm:aspect-[16/10] rounded-xl overflow-hidden shadow-2xl border border-slate-200/90 bg-slate-900 focus:outline-none"
+              className="block relative w-full aspect-[16/11] rounded-xl overflow-hidden shadow-2xl border border-slate-200/90 bg-slate-900 focus:outline-none"
             >
               <img
                 src="/images/residence-images/natraj-residence/img67.jpg"

@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   Home, 
@@ -62,7 +61,7 @@ export const ConstructionServicesGrid = () => {
   return (
     <section 
       id="construction-services"
-      className="relative w-full py-16 sm:py-20 lg:py-28 overflow-hidden text-white"
+      className="relative w-full py-12 sm:py-14 lg:py-16 overflow-hidden text-white"
       style={{ 
         backgroundColor: 'var(--grey-deepest)',
         fontFamily: 'var(--font-family-base)' 
@@ -78,7 +77,7 @@ export const ConstructionServicesGrid = () => {
       />
 
       <div className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-8 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 xl:gap-14 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 sm:gap-8 xl:gap-14 items-start xl:items-center">
           
           {/* ── Left Column: Section Title & Accent Line (Flush to Left End) ── */}
           <motion.div
@@ -86,7 +85,7 @@ export const ConstructionServicesGrid = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-3 text-left"
+            className="xl:col-span-3 text-left"
           >
             {/* Title styled cleanly flush to left */}
             <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-snug mb-3 sm:mb-4">
@@ -98,13 +97,9 @@ export const ConstructionServicesGrid = () => {
 
             <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-sm">
               Comprehensive turnkey capabilities backed by{' '}
-              <Link href="/about-us" className="text-white hover:text-[var(--primary)] underline decoration-white/30 transition-colors">
-                60+ years
-              </Link>{' '}
+              60+ years{' '}
               of master craftsmanship, empirical quality audits, and landmark residential excellence across{' '}
-              <Link href="/gallery" className="text-white hover:text-[var(--primary)] underline decoration-white/30 transition-colors">
-                500+ projects
-              </Link>.
+              500+ projects.
             </p>
           </motion.div>
 
@@ -114,7 +109,7 @@ export const ConstructionServicesGrid = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="lg:col-span-9"
+            className="xl:col-span-9"
           >
             {/* Exactly 2 lines on desktop: 3 items in Line 1, 3 items in Line 2 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 xl:gap-x-10 gap-y-8 sm:gap-y-10">
@@ -129,30 +124,29 @@ export const ConstructionServicesGrid = () => {
                     transition={{ duration: 0.45, delay: idx * 0.08 }}
                     className="flex flex-col items-start text-left space-y-3 group"
                   >
-                    <Link
-                      href={item.href}
+                    <span
                       className="block group/link focus:outline-none w-full"
                     >
                       {/* White Icon Badge Container */}
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/15 shadow-md group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all duration-300 mb-3">
-                        <IconComponent className="w-5 h-5 text-white group-hover:text-black transition-colors" />
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/15 shadow-md mb-3">
+                        <IconComponent className="w-5 h-5 text-white" />
                       </div>
 
                       {/* Service Title */}
                       <div className="flex items-center gap-1.5 mb-1.5">
                         <h3 
-                          className="text-base sm:text-[17px] font-bold tracking-tight leading-snug transition-colors text-white group-hover/link:text-[var(--primary)]"
+                          className="text-base sm:text-[17px] font-bold tracking-tight leading-snug text-white"
                         >
                           {item.title}
                         </h3>
-                        <ArrowRight className="w-3.5 h-3.5 text-slate-500 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all" />
+                        <ArrowRight className="w-3.5 h-3.5 text-slate-500 opacity-0" />
                       </div>
 
                       {/* Service Description */}
                       <p className="text-xs sm:text-[13px] text-slate-400 font-normal leading-relaxed">
                         {item.description}
                       </p>
-                    </Link>
+                    </span>
                   </motion.div>
                 );
               })}

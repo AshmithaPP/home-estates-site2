@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -14,7 +13,7 @@ export const PropertyDevelopmentCTASection = ({
   const stats = [
     { value: '60+ Years', label: 'of Industry Experience', href: '/about-us' },
     { value: '500+ Projects', label: 'Completed Portfolio', href: '/gallery' },
-    { value: '₹1 Cr+', label: 'Project Expertise', href: '/services/construction' },
+    { value: '100%', label: 'Client Satisfaction', href: '/gallery' },
   ];
 
   const handleAction = () => {
@@ -68,13 +67,9 @@ export const PropertyDevelopmentCTASection = ({
 
             <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed max-w-xl">
               Whether you own{' '}
-              <Link href="/services/layout-promoters" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                land
-              </Link>{' '}
+              land{' '}
               or are exploring a{' '}
-              <Link href="/services/real-estate" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                development investment
-              </Link>, let's discuss the possibilities.
+              development investment, let's discuss the possibilities.
             </p>
 
             {/* Stats Strip */}
@@ -83,14 +78,14 @@ export const PropertyDevelopmentCTASection = ({
                 const isLast = idx === stats.length - 1;
                 return (
                   <React.Fragment key={idx}>
-                    <Link href={item.href} className="inline-flex items-center gap-1.5 whitespace-nowrap hover:text-[var(--primary)] transition-colors group cursor-pointer">
-                      <strong className="font-bold text-white group-hover:text-[var(--primary)] tracking-wide transition-colors">
+                    <span className="inline-flex items-center gap-1.5 whitespace-nowrap transition-colors group">
+                      <strong className="font-bold text-white tracking-wide">
                         {item.value}
                       </strong>
-                      <span className="text-neutral-400 group-hover:text-neutral-200 transition-colors">
+                      <span className="text-neutral-400">
                         {item.label}
                       </span>
-                    </Link>
+                    </span>
 
                     {!isLast && (
                       <span className="text-white/20 select-none">|</span>
@@ -102,9 +97,9 @@ export const PropertyDevelopmentCTASection = ({
 
             {/* Tagline */}
             <div className="pt-2">
-              <Link href="/about-us" className="text-xs font-bold text-[var(--primary)] tracking-wide hover:underline inline-block">
+              <span className="text-xs font-bold text-[var(--primary)] tracking-wide inline-block">
                 Ajay Homes — From Vision to Completion &rarr;
-              </Link>
+              </span>
             </div>
           </div>
 

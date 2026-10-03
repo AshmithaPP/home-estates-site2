@@ -20,12 +20,13 @@ import {
   Sparkles,
   RotateCcw,
 } from "lucide-react";
+import { CONTACT } from "@/data/contactInfo";
 
 const WELCOME =
-  "Welcome to Ajay Homes & Estates. How can we help you with your dream home today?";
+  "Welcome to Ajay Homes. How can we help you with your dream home today?";
 
 const AUTO_REPLY =
-  "Thank you for contacting Ajay Homes & Estates. We have received your message and will get back to you shortly.";
+  "Thank you for contacting Ajay Homes. We have received your message and will get back to you shortly.";
 
 export const SERVICES = [
   {
@@ -70,7 +71,7 @@ const INITIAL_QUICK_ACTIONS = [
   { label: "Services", type: "services", icon: Layers, highlight: true },
   { label: "Explore Properties", href: "#services", icon: Building2 },
   { label: "View Projects", href: "#projects", icon: LayoutGrid },
-  { label: "Book a Site Visit", href: "tel:+919840012345", icon: MapPin },
+  { label: "Book a Site Visit", href: `tel:${CONTACT.mobilePhone.tel}`, icon: MapPin },
   { label: "Contact Us", href: "footer", icon: Phone, scrollTo: "footer" },
 ];
 
@@ -159,7 +160,7 @@ export default function FloatingChat() {
       {
         id: botMsgId,
         role: "brand",
-        text: `Submitted successfully! We have received your inquiry for ${service.title} and our team at Ajay Homes & Estates will get back to you shortly.`,
+        text: `Submitted successfully! We have received your inquiry for ${service.title} and our team at Ajay Homes will get back to you shortly.`,
         isConfirmation: true,
         serviceName: service.title,
       },
@@ -203,7 +204,7 @@ export default function FloatingChat() {
       {/* Panel */}
       <div
         role="dialog"
-        aria-label="Chat with Ajay Homes & Estates"
+        aria-label="Chat with Ajay Homes"
         aria-hidden={!isOpen}
         className={`chat-panel absolute bottom-[calc(100%+0.625rem)] right-0 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200/50 ${
           isOpen ? "chat-panel--open" : "chat-panel--closed"
@@ -213,7 +214,7 @@ export default function FloatingChat() {
         <div className="flex shrink-0 items-center justify-between gap-3 bg-[var(--grey-base)] border-b-2 border-[var(--primary)] px-3.5 py-3 sm:px-4">
           <div className="min-w-0">
             <p className="truncate text-[13px] font-semibold tracking-tight text-white sm:text-sm">
-              Ajay Homes &amp; Estates
+              Ajay Homes
             </p>
             <p className="text-[10px] font-medium text-white/65 sm:text-[11px]">
               We&apos;re here to assist you
@@ -287,7 +288,7 @@ export default function FloatingChat() {
                         <span>Select another service</span>
                       </button>
                       <a
-                        href="tel:+919840012345"
+                        href={`tel:${CONTACT.mobilePhone.tel}`}
                         className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 px-2.5 py-1 text-[11px] font-semibold text-white hover:bg-emerald-700 transition-colors shadow-2xs"
                       >
                         <Phone className="h-3 w-3" />
@@ -411,7 +412,7 @@ export default function FloatingChat() {
               suppressHydrationWarning
               disabled={!input.trim()}
               aria-label="Send message"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--primary)] text-black shadow-sm transition-colors hover:bg-[var(--primary-dark)] disabled:cursor-not-allowed disabled:opacity-40 sm:h-10 sm:w-10"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--primary)] text-black shadow-sm transition-colors hover:bg-[var(--primary-dark)] disabled:cursor-not-allowed sm:h-10 sm:w-10"
             >
               <Send className="h-4 w-4" strokeWidth={2.2} />
             </button>

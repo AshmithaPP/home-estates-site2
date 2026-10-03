@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { DraftingCompass, HardHat, ClipboardList, Building2, Sofa, KeyRound, ArrowRight } from 'lucide-react';
 
@@ -57,33 +56,15 @@ export const MoreThanConstructionSection = ({
             </p>
             <p className="mt-3 text-sm sm:text-[15px] leading-relaxed text-slate-600">
               With capabilities across{' '}
-              <Link href="/services/layout-promoters" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                architecture
-              </Link>
-              ,{' '}
-              <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                construction
-              </Link>
-              ,{' '}
-              <Link href="/services/project-management" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                project management
-              </Link>
-              ,{' '}
-              <Link href="/services/property-developer" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                property development
-              </Link>
-              ,{' '}
-              <Link href="/services/interior-design" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                interiors
-              </Link>
-              , and{' '}
-              <Link href="/services/real-estate" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                real estate
-              </Link>
-              ,{' '}
-              <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] transition-colors">
+              architecture,{' '}
+              construction,{' '}
+              project management,{' '}
+              property development,{' '}
+              interiors, and{' '}
+              real estate,{' '}
+              <span className="font-semibold text-slate-900 transition-colors">
                 Ajay Homes
-              </Link>{' '}
+              </span>{' '}
               can support your property journey through multiple stages.
             </p>
             <p
@@ -104,22 +85,21 @@ export const MoreThanConstructionSection = ({
           >
             {CAPABILITIES.map(({ label, icon: Icon, href }) => (
               <li key={label}>
-                <Link
-                  href={href}
-                  className="group flex flex-col items-start gap-3 p-4 sm:p-5 rounded-xl bg-white border border-slate-200 shadow-sm transition-all duration-300 hover:border-[var(--primary)]/50 hover:shadow-md h-full focus:outline-none"
+                <span
+                  className="group flex flex-col items-start gap-3 p-4 sm:p-5 rounded-xl bg-white border border-slate-200 shadow-sm transition-all duration-300 h-full focus:outline-none"
                 >
                   <span
-                    className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-[var(--primary)]/15 text-[var(--primary)] transition-colors duration-300 group-hover:bg-[var(--primary)] group-hover:text-[var(--grey-deepest)]"
+                    className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-[var(--primary)]/15 text-[var(--primary)]"
                   >
                     <Icon className="h-[18px] w-[18px] sm:h-5 sm:w-5" strokeWidth={1.9} />
                   </span>
                   <div className="flex items-center justify-between w-full">
-                    <span className="text-[13px] sm:text-sm font-semibold leading-snug text-slate-800 group-hover:text-[var(--primary-dark)] transition-colors">
+                    <span className="text-[13px] sm:text-sm font-semibold leading-snug text-slate-800">
                       {label}
                     </span>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 opacity-0" />
                   </div>
-                </Link>
+                </span>
               </li>
             ))}
           </motion.ul>

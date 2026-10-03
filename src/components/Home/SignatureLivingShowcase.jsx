@@ -69,19 +69,18 @@ const PIN_TOP = 0;
 function FeatureItem({ item, large }) {
   const IconComp = item.icon;
   return (
-    <Link
-      href={item.href || "/services/construction"}
-      className={`flex items-center group cursor-pointer ${large ? "gap-4" : "gap-3"}`}
+    <div
+      className={`flex items-center group ${large ? "gap-4" : "gap-3"}`}
     >
       <div
-        className={`flex shrink-0 items-center justify-center rounded-xl bg-[var(--primary)] border-2 border-[var(--primary)] ring-4 ring-[var(--primary)]/15 text-black shadow-md shadow-[var(--primary)]/25 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-lg group-hover:shadow-[var(--grey-base)]/35 ${large ? "h-11 w-11 2xl:h-14 2xl:w-14" : "h-11 w-11"
+        className={`flex shrink-0 items-center justify-center rounded-xl bg-[var(--primary)] border-2 border-[var(--primary)] ring-4 ring-[var(--primary)]/15 text-black shadow-md shadow-[var(--primary)]/25 ${large ? "h-11 w-11 2xl:h-14 2xl:w-14" : "h-11 w-11"
           }`}
       >
         <IconComp className={large ? "h-5 w-5 2xl:h-6 2xl:w-6" : "h-5 w-5"} />
       </div>
       <div className="min-w-0">
         <h4
-          className={`font-bold text-white leading-snug group-hover:text-[var(--primary)] transition-colors font-sans ${large ? "text-sm 2xl:text-base" : "text-[13px] sm:text-sm"
+          className={`font-bold text-white leading-snug font-sans ${large ? "text-sm 2xl:text-base" : "text-[13px] sm:text-sm"
             }`}
         >
           {item.title}
@@ -90,7 +89,7 @@ function FeatureItem({ item, large }) {
           {item.desc}
         </p>
       </div>
-    </Link>
+    </div>
   );
 }
 
@@ -248,7 +247,7 @@ export default function SignatureLivingShowcase() {
             </h2>
             {/* One line from tablets up; wraps naturally on phones */}
             <p className="mt-2.5 text-sm md:text-base 2xl:text-lg text-white/70 font-sans mx-auto md:whitespace-nowrap">
-              Explore thoughtfully planned homes and residences by Ajay Homes &amp; Estates.
+              Explore thoughtfully planned homes and residences by Ajay Homes.
             </p>
           </div>
 
@@ -325,7 +324,7 @@ export default function SignatureLivingShowcase() {
                 <div className="relative w-full overflow-hidden bg-slate-100" style={{ height: `${centerH}px` }}>
                   <Image
                     src="/assets/img/img-009.jpeg"
-                    alt="Terrace Garden Residence - Flagship Residence by Ajay Homes & Estates"
+                    alt="Terrace Garden Residence - Flagship Residence by Ajay Homes"
                     fill
                     priority
                     sizes="(max-width: 1280px) 300px, 400px"

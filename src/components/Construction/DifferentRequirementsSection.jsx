@@ -32,7 +32,7 @@ import {
 export const DifferentRequirementsSection = ({
   id = "different-requirements",
   title = "Built For Different Requirements",
-  subtitle = "Whether you are building your first home or executing a ₹1 Cr+ landmark development.",
+  subtitle = "Whether you are building your first home or executing a landmark development with 100% client satisfaction.",
   className = "",
 }) => {
   const clientPills = [
@@ -135,7 +135,7 @@ export const DifferentRequirementsSection = ({
                 }}
               >
                 <CheckCircle2 className="w-3 h-3 text-slate-950" />
-                <span>₹1 Cr+ Project Expertise</span>
+                <span>100% Client Satisfaction</span>
               </div>
             </div>
 
@@ -163,7 +163,7 @@ export const DifferentRequirementsSection = ({
 
               {/* Editorial Description */}
               <p className="text-xs text-slate-600 font-normal leading-relaxed pt-0.5">
-                Whether you are building your first home, developing a premium property, or executing a ₹1 Cr+ project, our team brings the experience and capabilities required to manage the journey.
+                Whether you are building your first home, developing a premium property, or executing a project with 100% client satisfaction, our team brings the experience and capabilities required to manage the journey.
               </p>
             </div>
           </motion.div>

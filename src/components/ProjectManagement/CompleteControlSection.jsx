@@ -54,17 +54,17 @@ export const CompleteControlSection = ({ onOpenApply }) => {
             <div className="space-y-3.5 text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed">
               <p>
                 Managing a{' '}
-                <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">construction</Link>{' '}
+                construction{' '}
                 or{' '}
-                <Link href="/services/property-developer" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">development</Link>{' '}
+                development{' '}
                 project involves hundreds of decisions.
               </p>
               <p>
                 From coordinating architects and contractors to monitoring materials, timelines,{' '}
-                <Link href="/gallery" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">quality</Link>, and site progress, every detail can affect the final outcome.
+                quality, and site progress, every detail can affect the final outcome.
               </p>
               <p>
-                <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">Ajay Homes</Link>{' '}
+                Ajay Homes{' '}
                 brings these moving parts together through a structured project management approach designed to keep your project organised, transparent, and moving forward.
               </p>
             </div>
@@ -137,7 +137,7 @@ export const CompleteControlSection = ({ onOpenApply }) => {
                       className="shrink-0 whitespace-nowrap text-[11px] sm:text-xs font-extrabold px-2.5 py-1 rounded-full text-black"
                       style={{ backgroundColor: 'var(--primary)' }}
                     >
-                      ₹1 Cr+ Tier
+                      100% Client Satisfaction
                     </span>
                   </div>
                 </div>

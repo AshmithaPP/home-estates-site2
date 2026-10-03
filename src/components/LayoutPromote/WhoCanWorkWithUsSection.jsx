@@ -93,32 +93,31 @@ export const WhoCanWorkWithUsSection = ({
             <ul className="mt-3 grid grid-cols-2 sm:grid-cols-[auto_auto_auto] border-t" style={{ borderColor: hairline }}>
               {SUITABLE_PROFILES.map(({ label, icon: Icon, href }) => (
                 <li key={label} className="border-b" style={{ borderColor: hairline }}>
-                  <Link
-                    href={href}
-                    className="group flex items-center gap-2.5 py-3.5 sm:py-4 pr-2 transition-colors duration-200 hover:text-[var(--primary)]"
+                  <span
+                    className="group flex items-center gap-2.5 py-3.5 sm:py-4 pr-2 transition-colors duration-200"
                   >
                     <Icon
-                      className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      className="h-4 w-4 shrink-0"
                       style={{ color: 'var(--primary)' }}
                       strokeWidth={2}
                     />
-                    <span className="text-[13px] sm:text-sm font-medium leading-snug sm:whitespace-nowrap group-hover:text-[var(--primary)] transition-colors" style={{ color: 'var(--grey-deep)' }}>
+                    <span className="text-[13px] sm:text-sm font-medium leading-snug sm:whitespace-nowrap" style={{ color: 'var(--grey-deep)' }}>
                       {label}
                     </span>
-                  </Link>
+                  </span>
                 </li>
               ))}
             </ul>
 
             <p className="mt-5 text-sm sm:text-[15px] leading-relaxed" style={{ color: 'var(--grey-surface)' }}>
               Whether you own a large parcel of land or are exploring a{' '}
-              <Link href="/services/property-developer" className="text-[var(--primary)] font-semibold hover:underline">
+              <span className="text-[var(--primary)] font-semibold">
                 development opportunity
-              </Link>
+              </span>
               , we can help{' '}
-              <Link href="/contact" className="text-[var(--primary)] font-semibold hover:underline">
+              <span className="text-[var(--primary)] font-semibold">
                 evaluate the next step &rarr;
-              </Link>
+              </span>
             </p>
           </motion.div>
         </div>

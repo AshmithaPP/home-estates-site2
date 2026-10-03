@@ -5,7 +5,7 @@ export const heroSlidesData = [
     headingLine1: "Building Dreams,",
     accentWord: "Quality Homes",
     headingLine2: "Crafting Quality Homes",
-    description: "Welcome to Ajay Homes & Estates — the most desired, fully developed residential flats in and around Chennai. We specialize in constructing quality buildings with customized solutions for our clients.",
+    description: "Welcome to Ajay Homes — the most desired, fully developed residential flats in and around Chennai. We specialize in constructing quality buildings with customized solutions for our clients.",
     image: "/images/residence-images/suresh-residence-view/img66.jpg",
     thumbnail: "/images/residence-images/suresh-residence-view/img66.jpg"
   },

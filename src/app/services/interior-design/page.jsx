@@ -11,6 +11,7 @@ import SpacesWeDesignSection from '@/components/InteriorDesign/SpacesWeDesignSec
 import DesignedAroundYouSection from '@/components/InteriorDesign/DesignedAroundYouSection';
 import EmptySpaceToWelcomeHomeSection from '@/components/InteriorDesign/EmptySpaceToWelcomeHomeSection';
 import TransformSpaceCTASection from '@/components/InteriorDesign/TransformSpaceCTASection';
+import ServiceGallerySection from '@/components/Common/ServiceGallerySection';
 import ServiceFormFAQSection from '@/components/Common/ServiceFormFAQSection';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
@@ -33,9 +34,9 @@ const interiorWhyChooseFeatures = [
     description: 'Experience across a wide range of property types and project requirements.',
   },
   {
-    id: 'premium',
-    title: 'Premium Project Experience',
-    description: 'Our experience includes managing high-value projects of ₹1 Cr+.',
+    id: 'satisfaction',
+    title: '100% Client Satisfaction',
+    description: 'Our experience includes delivering high-value projects with 100% client satisfaction.',
   },
   {
     id: 'quality',
@@ -148,7 +149,15 @@ export default function InteriorDesignPage() {
         onCtaClick={() => setIsApplyModalOpen(true)}
       />
 
-      {/* ── 10. LAST SECTION: One Side Form & Another Side FAQ ────── */}
+      {/* ── 10. Completed Projects Gallery Section (Redirects to /gallery) ── */}
+      <ServiceGallerySection
+        id="interior-gallery"
+        serviceKey="interior-design"
+        badge="THE AJAY MARQUEE"
+        title="Landmark Developments"
+      />
+
+      {/* ── 11. LAST SECTION: One Side Form & Another Side FAQ ────── */}
       <ServiceFormFAQSection
         id="interior-faq-form"
         serviceName="Interior Designing"

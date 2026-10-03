@@ -37,7 +37,7 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
             >
               <img
                 src="/images/logo/logo-ajay-homes.png"
-                alt="Ajay Homes & Estates Logo"
+                alt="Ajay Homes Logo"
                 className="h-8 sm:h-9 lg:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </motion.div>
@@ -244,7 +244,7 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
               <div className="glass-card p-8 rounded-3xl space-y-6 border border-white/10">
                 <div className="flex items-center gap-3 text-[#ff8c00]">
                   <Sparkles className="w-5 h-5" />
-                  <span className="text-sm font-semibold tracking-wider uppercase">Ajay Homes & Estates</span>
+                  <span className="text-sm font-semibold tracking-wider uppercase">Ajay Homes</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold uppercase">Crafting Quality Homes in Chennai</h3>
                 <p className="text-sm text-white/70 leading-relaxed">
@@ -284,7 +284,7 @@ export const Navbar = ({ onOpenTourModal, onOpenApplyModal }) => {
 
             {/* Bottom bar inside drawer */}
             <div className="max-w-6xl mx-auto w-full pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs text-white/50 gap-4">
-              <span>© 2026 Ajay Homes & Estates. All Rights Reserved.</span>
+              <span>© 2026 Ajay Homes. All Rights Reserved.</span>
               <div className="flex gap-6">
                 <Link href="#" className="hover:text-[#ff8c00] transition-colors">Privacy Policy</Link>
                 <Link href="#" className="hover:text-[#ff8c00] transition-colors">Terms of Service</Link>

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import Header from '@/components/Hero/Header';
 import ProjectManagementHero from '@/components/ProjectManagement/ProjectManagementHero';
 import CompleteControlSection from '@/components/ProjectManagement/CompleteControlSection';
@@ -13,6 +12,7 @@ import BuiltAroundPrioritiesSection from '@/components/ProjectManagement/BuiltAr
 import VisionDetailsBannerSection from '@/components/ProjectManagement/VisionDetailsBannerSection';
 import PremiumProjectCTASection from '@/components/Common/PremiumProjectCTASection';
 import JourneyMarqueeSection from '@/components/Common/JourneyMarqueeSection';
+import ServiceGallerySection from '@/components/Common/ServiceGallerySection';
 import ServiceFormFAQSection from '@/components/Common/ServiceFormFAQSection';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
@@ -30,9 +30,9 @@ const whyChooseFeatures = [
     description: 'Experience managing projects across different sizes, property types, and requirements.',
   },
   {
-    id: 'high-value',
-    title: '₹1 Cr+ Project Experience',
-    description: 'We understand the additional planning, coordination, and attention required for high-value projects.',
+    id: 'satisfaction',
+    title: '100% Client Satisfaction',
+    description: 'We ensure complete transparency, quality, and 100% client satisfaction across every project.',
   },
   {
     id: 'one-point',
@@ -65,8 +65,8 @@ const projectManagementFaqs = [
   },
   {
     id: 'faq-3',
-    question: 'Do you manage ₹1 Cr+ projects?',
-    answer: 'Yes. Ajay Homes has experience handling premium projects valued at ₹1 Cr+.',
+    question: 'How do you ensure 100% client satisfaction?',
+    answer: 'Ajay Homes provides dedicated project managers, digital milestone tracking, and strict quality audits to ensure 100% client satisfaction.',
   },
   {
     id: 'faq-4',
@@ -145,8 +145,8 @@ export default function ProjectManagementPage() {
         description="Don't manage every detail alone. Let an experienced team coordinate your project from planning to completion."
         stats={[
           { value: '60+ Years', label: 'of Industry Experience' },
-          { value: '500+', label: 'Projects' },
-          { value: '₹1 Cr+', label: 'Project Expertise' },
+          { value: '500+ Projects', label: 'Successfully Completed' },
+          { value: '100%', label: 'Client Satisfaction' },
         ]}
         ctaText="Discuss Your Project"
         onCtaClick={() => setIsApplyModalOpen(true)}
@@ -160,15 +160,23 @@ export default function ProjectManagementPage() {
         description={
           <>
             Our{' '}
-            <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">team</Link>{' '}
+            team{' '}
             coordinates the people, materials, timelines,{' '}
-            <Link href="/gallery" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">quality</Link>, and{' '}
-            <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">execution</Link>{' '}
+            quality, and{' '}
+            execution{' '}
             so you can experience the journey with greater confidence.
           </>
         }
         tagline="You envision it. We manage every detail."
         taglineHref="/contact"
+      />
+
+      {/* ── 11. Completed Projects Gallery Section (Redirects to /gallery) ── */}
+      <ServiceGallerySection
+        id="pm-gallery"
+        serviceKey="project-management"
+        badge="THE AJAY MARQUEE"
+        title="Landmark Developments"
       />
 
       {/* ── LAST SECTION: One Side Form & Another Side FAQ (Responsive) ── */}
@@ -177,9 +185,9 @@ export default function ProjectManagementPage() {
         serviceName="Project Management"
         faqs={projectManagementFaqs}
         formTitle="Book a 15 min call"
-        formSubtitle="If you have questions about our ₹1 Cr+ project management, timelines, or contractor coordination, schedule a private consultation."
+        formSubtitle="If you have questions about our project management, timelines, or contractor coordination, schedule a private consultation."
         serviceOptions={[
-          "₹1 Cr+ Luxury Villa Management",
+          "100% Client Satisfaction Villa Management",
           "Residential Building Coordination",
           "NRI Remote Project Supervision",
           "External Architect & Contractor Oversight",

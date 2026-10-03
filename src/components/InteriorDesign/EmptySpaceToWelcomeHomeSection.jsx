@@ -60,15 +60,15 @@ export default function EmptySpaceToWelcomeHomeSection() {
             <div className="space-y-3 text-slate-600 font-normal text-sm sm:text-base leading-relaxed">
               <p>
                 Our role doesn't have to end with the{' '}
-                <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">construction</Link>. We can take your space through interior design,{' '}
-                <Link href="/gallery" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">material selection</Link>, finishing, and final{' '}
-                <Link href="/services/project-management" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">execution</Link>.
+                construction. We can take your space through interior design,{' '}
+                material selection, finishing, and final{' '}
+                execution.
               </p>
               <p>
                 For residential projects, our{' '}
-                <Link href="/services/property-developer" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">complete property journey</Link>{' '}
+                complete property journey{' '}
                 can continue all the way to the moment you open the doors for your{' '}
-                <Link href="/services/construction#foundation-to-celebration" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">House Warming</Link>.
+                House Warming.
               </p>
             </div>
 

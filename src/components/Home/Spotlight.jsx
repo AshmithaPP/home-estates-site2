@@ -2,8 +2,6 @@
 
 import { useState, useMemo } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { X, MapPin } from "lucide-react";
 
 // 3 rows of the 8-column grid
 const ITEMS_PER_TAB = 24;
@@ -1275,7 +1273,6 @@ const spotlightItems = [
 
 export default function Spotlight() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [selectedItem, setSelectedItem] = useState(null);
 
   // Filter items based on active category
   const filteredItems = useMemo(() => {
@@ -1333,12 +1330,9 @@ export default function Spotlight() {
         {/* Nike-Style Pixel-Perfect 8-Column Grid with floating images and clean titles */}
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-x-4 sm:gap-x-6 lg:gap-x-6 gap-y-8 sm:gap-y-10 lg:gap-y-12">
           {filteredItems.map((item) => (
-            <button
+            <div
               key={item.id}
-              type="button"
-              suppressHydrationWarning
-              onClick={() => setSelectedItem(item)}
-              className="group flex flex-col items-center cursor-pointer select-none text-center outline-none bg-transparent border-0 p-0 w-full"
+              className="group flex flex-col items-center select-none text-center w-full"
             >
               {/* Product Silhouette Floating Frame */}
               <div className="relative h-[82px] sm:h-[96px] lg:h-[106px] w-full flex items-center justify-center">
@@ -1356,109 +1350,15 @@ export default function Spotlight() {
 
               {/* Title below image matching Nike clean typography */}
               <div className="mt-2.5 sm:mt-3 w-full">
-                <h3 className="text-[11px] sm:text-[12px] font-bold text-slate-900 group-hover:text-[var(--primary)] transition-colors leading-tight font-sans text-center">
+                <h3 className="text-[11px] sm:text-[12px] font-bold text-slate-900 leading-tight font-sans text-center">
                   {item.name}
                 </h3>
               </div>
-            </button>
+            </div>
           ))}
         </div>
       </div>
 
-      {/* Quick View Interactive Modal */}
-      {selectedItem && (
-        <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-sm animate-in fade-in duration-200"
-          onClick={() => setSelectedItem(null)}
-          role="presentation"
-        >
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="spotlight-title"
-            onClick={(e) => e.stopPropagation()}
-            className="relative flex w-full max-w-2xl flex-col md:flex-row overflow-hidden rounded-2xl bg-white shadow-2xl animate-in zoom-in-95 duration-200"
-          >
-            {/* Close Button */}
-            <button
-              type="button"
-              suppressHydrationWarning
-              onClick={() => setSelectedItem(null)}
-              aria-label="Close modal"
-              className="absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-sm transition-colors hover:bg-slate-100 hover:text-slate-950 cursor-pointer"
-            >
-              <X className="h-4 w-4" />
-            </button>
-
-            {/* Left: Project Image */}
-            <div className="relative h-56 md:h-auto md:w-[48%] bg-slate-100 shrink-0">
-              <Image
-                src={selectedItem.image}
-                alt={selectedItem.name}
-                fill
-                sizes="(max-width: 768px) 100vw, 320px"
-                className="object-cover"
-              />
-              <div className="absolute top-3 left-3">
-                <span className="rounded-full bg-slate-950/80 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
-                  {selectedItem.badge}
-                </span>
-              </div>
-            </div>
-
-            {/* Right: Project Details */}
-            <div className="flex-1 p-5 sm:p-6 flex flex-col justify-between">
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--primary)]">
-                  {selectedItem.subtext}
-                </span>
-                <h3 id="spotlight-title" className="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
-                  {selectedItem.name}
-                </h3>
-
-                <p className="mt-1 flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-                  <MapPin className="h-3.5 w-3.5 text-[var(--grey-base)]" />
-                  <span>{selectedItem.location}</span>
-                </p>
-
-                <p className="mt-3.5 text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
-                  {selectedItem.description}
-                </p>
-
-                {/* Key Specs */}
-                <div className="mt-4 grid grid-cols-2 gap-2.5 border-t border-slate-100 pt-3 text-xs">
-                  <div className="rounded-lg bg-slate-50 p-2 border border-slate-100">
-                    <span className="block text-[10px] text-slate-400 font-medium">Built-up Area</span>
-                    <span className="font-bold text-slate-800">{selectedItem.area}</span>
-                  </div>
-                  <div className="rounded-lg bg-slate-50 p-2 border border-slate-100">
-                    <span className="block text-[10px] text-slate-400 font-medium">Delivery Timeline</span>
-                    <span className="font-bold text-slate-800">{selectedItem.timeline}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="mt-6 flex flex-wrap items-center gap-2.5">
-                <Link
-                  href="/contact"
-                  onClick={() => setSelectedItem(null)}
-                  className="flex-1 rounded-xl bg-[var(--primary)] py-2.5 px-3 text-center text-xs sm:text-sm font-bold text-white shadow-md shadow-[var(--primary)]/25 transition-all hover:bg-[var(--primary-dark)] cursor-pointer"
-                >
-                  Request Quote for this Model
-                </Link>
-                <Link
-                  href="/gallery"
-                  onClick={() => setSelectedItem(null)}
-                  className="rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 cursor-pointer"
-                >
-                  View in Gallery
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronDown, Send, CheckCircle2, MapPin } from 'lucide-react';
 import Button from '../UI/Button';
+import { CONTACT } from '@/data/contactInfo';
 
 export const ContactFormSection = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -94,13 +94,10 @@ export const ContactFormSection = () => {
               </h3>
 
               <div className="mt-2">
-                <Link 
-                  href="/about-us" 
-                  className="text-sm font-bold hover:underline inline-block transition-colors" 
-                  style={{ color: 'var(--primary)' }}
-                >
+                <span className="text-sm font-bold inline-block" 
+                  style={{ color: 'var(--primary)' }}>
                   Ajay Homes
-                </Link>
+                </span>
                 <div className="text-xs" style={{ color: 'var(--text-muted)' }}>
                   Chennai, Tamil Nadu
                 </div>
@@ -109,15 +106,15 @@ export const ContactFormSection = () => {
               <div className="mt-3 pt-3 border-t border-white/10 space-y-1 text-xs" style={{ color: 'var(--text-muted)' }}>
                 <div>
                   <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Phone: </span>
-                  <a href="tel:+919840012345" className="font-medium transition-colors hover:text-[var(--primary)]" style={{ color: 'var(--text-primary)' }}>
-                    +91 98400 12345
-                  </a>
+                  <span className="font-medium" style={{ color: 'var(--text-primary)' }}>
+                    {CONTACT.mobilePhone.display}
+                  </span>
                 </div>
                 <div>
                   <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Email: </span>
-                  <a href="mailto:contact@ajayhomes.com" className="font-medium transition-colors hover:text-[var(--primary)]" style={{ color: 'var(--text-primary)' }}>
-                    contact@ajayhomes.com
-                  </a>
+                  <span className="font-medium" style={{ color: 'var(--text-primary)' }}>
+                    {CONTACT.email}
+                  </span>
                 </div>
               </div>
 
@@ -165,14 +162,9 @@ export const ContactFormSection = () => {
 
               <p className="mt-1 text-xs text-slate-500 leading-relaxed">
                 Provide your project details and our team will get in touch with you shortly. You can also explore our{' '}
-                <Link href="/services/construction" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
-                  construction services
-                </Link>{' '}
+                construction services{' '}
                 or view our{' '}
-                <Link href="/gallery" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
-                  500+ completed projects
-                </Link>
-                .
+                500+ completed projects.
               </p>
             </div>
 
@@ -350,25 +342,15 @@ export const ContactFormSection = () => {
                 <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between text-[11px] text-slate-500 gap-2">
                   <span>
                     Explore services:{' '}
-                    <Link href="/services/construction" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
-                      Construction
-                    </Link>
+                    Construction
                     {' '}•{' '}
-                    <Link href="/services/layout-promoters" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
-                      Layouts
-                    </Link>
+                    Layouts
                     {' '}•{' '}
-                    <Link href="/services/property-developer" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
-                      Development
-                    </Link>
+                    Development
                     {' '}•{' '}
-                    <Link href="/services/interior-design" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
-                      Interiors
-                    </Link>
+                    Interiors
                   </span>
-                  <Link href="/resources" className="font-semibold text-[var(--primary-dark)] hover:underline">
-                    Read Guides & Resources &rarr;
-                  </Link>
+                 
                 </div>
 
               </form>

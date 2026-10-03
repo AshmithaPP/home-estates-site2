@@ -66,35 +66,27 @@ export const BhoomiPoojaSection = () => {
             className="w-full lg:w-[48%] xl:w-[45%] space-y-5 text-left"
           >
             {/* Main Heading */}
-            <Link href="/services/construction" className="inline-block group cursor-pointer">
-              <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-[1.18] group-hover:text-white transition-colors">
-                From Bhoomi Pooja to{' '}
-                <span className="text-[#ff8c00] group-hover:underline underline-offset-4 decoration-[#ff8c00]/60 transition-all">
-                  House Warming
-                </span>
-              </h2>
-            </Link>
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-[1.18]">
+              From Bhoomi Pooja to{' '}
+              <span className="text-[#ff8c00]">
+                House Warming
+              </span>
+            </h2>
 
             {/* Narrative Subtitle */}
             <p className="text-base sm:text-lg text-[#c2beba] font-normal leading-relaxed max-w-lg">
               For{' '}
-              <Link href="/services/construction" className="text-white font-medium hover:text-[#ff8c00] transition-colors">
-                residential projects
-              </Link>
-              , we can be there through every important stage — from the first Bhoomi Pooja to the final{' '}
-              <Link href="/services/interior-design" className="text-white font-medium hover:text-[#ff8c00] transition-colors">
-                House Warming
-              </Link>
-              .
+              residential projects, we can be there through every important stage — from the first Bhoomi Pooja to the final{' '}
+              House Warming.
             </p>
 
             {/* Core Tagline */}
-            <Link href="/contact" className="pt-2 flex items-center gap-3 group cursor-pointer inline-flex">
-              <span className="w-8 h-[2.5px] bg-[#ff8c00] rounded-full inline-block shrink-0 shadow-[0_0_10px_rgba(255,140,0,0.6)] group-hover:w-12 transition-all" />
-              <p className="text-sm sm:text-base font-bold text-white tracking-wide group-hover:text-[#ff8c00] transition-colors">
-                One team. One journey. Built around you. &rarr;
+            <div className="pt-2 flex items-center gap-3">
+              <span className="w-8 h-[2.5px] bg-[#ff8c00] rounded-full inline-block shrink-0 shadow-[0_0_10px_rgba(255,140,0,0.6)]" />
+              <p className="text-sm sm:text-base font-bold text-white tracking-wide">
+                One team. One journey. Built around you.
               </p>
-            </Link>
+            </div>
           </motion.div>
 
           {/* ── Right Column: 7x4 Photo Mosaic Wall (Sharp Square Corners, Full Color) ─── */}

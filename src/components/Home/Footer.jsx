@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { CONTACT } from '@/data/contactInfo';
 
 // Social Icons SVGs
 function InstagramIcon({ className = "w-4 h-4" }) {
@@ -14,10 +15,10 @@ function InstagramIcon({ className = "w-4 h-4" }) {
   );
 }
 
-function WhatsAppIcon({ className = "w-4 h-4" }) {
+function LinkedInIcon({ className = "w-4 h-4" }) {
   return (
     <svg className={`${className} fill-current`} viewBox="0 0 24 24">
-      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.001.572 1.769.883 2.806.883 3.18 0 5.767-2.587 5.767-5.766.001-3.18-2.585-5.766-5.767-5.766zm9.969 5.766c0 5.518-4.482 10-10 10-1.748 0-3.385-.45-4.819-1.238l-4.757 1.248 1.272-4.641c-.868-1.487-1.372-3.217-1.372-5.069 0-5.518 4.482-10 10-10s10 4.482 10 10zm-5.467 3.328c-.244-.122-1.446-.713-1.67-.795-.224-.082-.387-.122-.55.122-.163.245-.631.795-.774.958-.143.163-.285.184-.53.061-.244-.122-1.031-.38-1.964-1.212-.727-.648-1.217-1.448-1.36-1.693-.143-.245-.015-.377.107-.499.11-.11.244-.286.367-.428.122-.143.163-.245.245-.408.082-.163.041-.306-.02-.428-.061-.122-.55-1.326-.754-1.815-.198-.477-.4-.412-.55-.42-.143-.008-.306-.01-.469-.01-.163 0-.428.061-.652.306-.224.245-.856.836-.856 2.039 0 1.203.876 2.365.999 2.529.122.163 1.723 2.631 4.174 3.689.583.252 1.039.403 1.394.516.586.186 1.119.16 1.541.097.471-.07 1.446-.591 1.65-1.162.204-.571.204-1.06.143-1.162-.061-.102-.224-.163-.469-.285z" />
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
     </svg>
   );
 }
@@ -105,21 +106,21 @@ export default function Footer() {
   const socialLinks = [
     {
       name: "Instagram",
-      handle: "@ajayhomesestates",
+      handle: "@ajayhomes",
       href: "https://instagram.com",
       icon: InstagramIcon,
       accent: "hover:border-[#E1306C] hover:text-[#E1306C]",
     },
     {
-      name: "WhatsApp",
-      handle: "+91 98400 12345",
-      href: "https://wa.me/919840012345",
-      icon: WhatsAppIcon,
-      accent: "hover:border-[#25D366] hover:text-[#25D366]",
+      name: "LinkedIn",
+      handle: "Ajay Homes",
+      href: "https://linkedin.com",
+      icon: LinkedInIcon,
+      accent: "hover:border-[#0A66C2] hover:text-[#0A66C2]",
     },
     {
       name: "Facebook",
-      handle: "Ajay Homes & Estates",
+      handle: "Ajay Homes",
       href: "https://facebook.com",
       icon: FacebookIcon,
       accent: "hover:border-[#1877F2] hover:text-[#1877F2]",
@@ -161,12 +162,12 @@ export default function Footer() {
             <div className="col-span-2 md:col-span-3 lg:col-span-1 max-w-sm">
               <Link
                 href="/"
-                aria-label="Ajay Homes & Estates - back to top"
+                aria-label="Ajay Homes - back to top"
                 className="mb-4 lg:mb-5 inline-flex"
               >
                 <Image
                   src="/logo/logo-ajay-homes.png"
-                  alt="Ajay Homes & Estates - Creating Quality Lifestyle Buildings"
+                  alt="Ajay Homes - Creating Quality Lifestyle Buildings"
                   width={2172}
                   height={724}
                   sizes="180px"
@@ -177,10 +178,9 @@ export default function Footer() {
               {/* Corporate Address */}
               <div className="text-xs 2xl:text-sm text-white/90 leading-relaxed font-sans lg:space-y-0.5">
                 <p className="font-bold text-white">Corporate Address:</p>
-                <p className="text-white/85 inline lg:block">Ajay Signature Towers, </p>
-                <p className="text-white/85 inline lg:block">2nd Avenue, Anna Nagar East, </p>
-                <p className="text-white/85 inline lg:block">Chennai - 600102, </p>
-                <p className="text-white/85 inline lg:block">Tamil Nadu, India </p>
+                {CONTACT.addressLines.map((line) => (
+                  <p key={line} className="text-white/85 inline lg:block">{line} </p>
+                ))}
               </div>
 
               <div className="mt-3 lg:mt-0 grid grid-cols-2 gap-x-4 lg:block">
@@ -188,10 +188,10 @@ export default function Footer() {
                 <div className="lg:mt-4 text-xs 2xl:text-sm font-sans">
                   <p className="text-white/70">For sales enquiries:</p>
                   <a
-                    href="tel:18003130080"
+                    href={`tel:${CONTACT.salesPhone.tel}`}
                     className="font-bold text-white tracking-wide hover:text-[var(--primary)] transition-colors"
                   >
-                    1800 313 0080
+                    {CONTACT.salesPhone.display}
                   </a>
                 </div>
 
@@ -199,10 +199,10 @@ export default function Footer() {
                 <div className="lg:mt-3 text-xs 2xl:text-sm font-sans">
                   <p className="text-white/70">For other enquiries:</p>
                   <a
-                    href="tel:+914426267890"
+                    href={`tel:${CONTACT.officePhone.tel}`}
                     className="font-bold text-white tracking-wide hover:text-[var(--primary)] transition-colors"
                   >
-                    +91 44 2626 7890
+                    {CONTACT.officePhone.display}
                   </a>
                 </div>
               </div>
@@ -211,10 +211,10 @@ export default function Footer() {
               <div className="mt-2 lg:mt-3 text-xs 2xl:text-sm font-sans">
                 <p className="text-white/70">Email:</p>
                 <a
-                  href="mailto:properties@ajayhomesestates.com"
+                  href={`mailto:${CONTACT.email}`}
                   className="font-bold text-white tracking-wide hover:text-[var(--primary)] transition-colors break-all"
                 >
-                  properties@ajayhomesestates.com
+                  {CONTACT.email}
                 </a>
               </div>
             </div>
@@ -270,6 +270,17 @@ export default function Footer() {
 
                   {/* Single Line of Social Icons */}
                   <div className="flex flex-row items-center gap-3 pt-1">
+                               {/* Facebook */}
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Facebook"
+                      title="Follow us on Facebook"
+                      className="group flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-[#1877F2] hover:bg-[#1877F2]/20 hover:text-[#1877F2] hover:scale-110 shadow-sm"
+                    >
+                      <FacebookIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white/90 group-hover:text-[#1877F2] transition-colors" />
+                    </a>
                     {/* Instagram */}
                     <a
                       href="https://instagram.com"
@@ -281,31 +292,7 @@ export default function Footer() {
                     >
                       <InstagramIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white/90 group-hover:text-[#E1306C] transition-colors" />
                     </a>
-
-                    {/* WhatsApp */}
-                    <a
-                      href="https://wa.me/919840012345"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="WhatsApp"
-                      title="Chat on WhatsApp"
-                      className="group flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-[#25D366] hover:bg-[#25D366]/20 hover:text-[#25D366] hover:scale-110 shadow-sm"
-                    >
-                      <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white/90 group-hover:text-[#25D366] transition-colors" />
-                    </a>
-
-                    {/* Facebook */}
-                    <a
-                      href="https://facebook.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Facebook"
-                      title="Follow us on Facebook"
-                      className="group flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-[#1877F2] hover:bg-[#1877F2]/20 hover:text-[#1877F2] hover:scale-110 shadow-sm"
-                    >
-                      <FacebookIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white/90 group-hover:text-[#1877F2] transition-colors" />
-                    </a>
-
+                    
                     {/* YouTube */}
                     <a
                       href="https://youtube.com"
@@ -317,6 +304,18 @@ export default function Footer() {
                     >
                       <YouTubeIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white/90 group-hover:text-[#FF0000] transition-colors" />
                     </a>
+
+                    {/* LinkedIn */}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="LinkedIn"
+                      title="Follow us on LinkedIn"
+                      className="group flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-[#0A66C2] hover:bg-[#0A66C2]/20 hover:text-[#0A66C2] hover:scale-110 shadow-sm"
+                    >
+                      <LinkedInIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white/90 group-hover:text-[#0A66C2] transition-colors" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -325,7 +324,7 @@ export default function Footer() {
 
           {/* Bottom Copyright Bar */}
           <div className="mt-8 md:mt-10 lg:mt-14 pt-4 sm:pt-5 border-t border-white/15 text-[11.5px] 2xl:text-[13px] text-white/75 font-sans flex flex-col sm:flex-row items-center sm:justify-between gap-2 text-center sm:text-left">
-            <p>© 2026 Official Website of Ajay Homes &amp; Estates Projects Ltd. | All Rights Reserved.</p>
+            <p>© 2026 Official Website of Ajay Homes | All Rights Reserved.</p>
             <nav aria-label="Legal" className="flex items-center gap-4">
               <Link href="/terms-and-conditions" className="hover:text-[var(--primary)] transition-colors">Terms &amp; Conditions</Link>
               <span className="text-white/30">|</span>

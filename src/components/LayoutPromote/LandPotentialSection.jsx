@@ -52,13 +52,8 @@ export const LandPotentialSection = ({
           </h2>
           <p className="mt-4 text-sm sm:text-[15px] leading-relaxed max-w-[640px] mx-auto text-slate-600">
             Your land could be more than an asset. With the right{' '}
-            <Link href="/services/project-management" className="text-slate-900 font-semibold hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-              planning and execution
-            </Link>
-            , it can become a structured{' '}
-            <Link href="/services/property-developer" className="text-slate-900 font-semibold hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-              property development
-            </Link>{' '}
+            planning and execution, it can become a structured{' '}
+            property development{' '}
             opportunity.
           </p>
           <p className="mt-5 text-[15px] sm:text-lg font-semibold leading-snug text-slate-800">

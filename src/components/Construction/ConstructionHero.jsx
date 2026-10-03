@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '../UI/Button';
@@ -85,36 +84,21 @@ export const ConstructionHero = ({ onOpenApply }) => {
             <div className="space-y-2.5 max-w-xs sm:max-w-xl md:max-w-2xl text-left select-none">
               <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal leading-relaxed drop-shadow">
                 From{' '}
-                <Link href="/gallery" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
-                  luxury residences
-                </Link>{' '}
+                luxury residences{' '}
                 to large-scale{' '}
-                <Link href="/services/property-developer" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
-                  commercial developments
-                </Link>
-                ,{' '}
-                <Link href="/about-us" className="text-white font-semibold hover:text-[var(--primary)] transition-colors">
+                commercial developments,{' '}
+                <span className="text-white font-semibold transition-colors">
                   Ajay Homes
-                </Link>{' '}
+                </span>{' '}
                 delivers premium construction with a focus on quality, precision, transparency, and timely execution.
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-white/80 font-normal leading-relaxed drop-shadow">
                 With{' '}
-                <Link href="/about-us" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
-                  60+ years
-                </Link>{' '}
+                60+ years{' '}
                 of industry experience and{' '}
-                <Link href="/gallery" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
-                  500+ completed projects
-                </Link>
-                , we manage projects valued at ₹1 Cr+, bringing{' '}
-                <Link href="/services/interior-design" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
-                  design
-                </Link>
-                , engineering, construction, and{' '}
-                <Link href="/services/project-management" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
-                  project management
-                </Link>{' '}
+                500+ completed projects, we deliver with 100% client satisfaction, bringing{' '}
+                design, engineering, construction, and{' '}
+                project management{' '}
                 together under one roof.
               </p>
             </div>

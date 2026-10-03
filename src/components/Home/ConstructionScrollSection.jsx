@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useCallback, useState } from "react";
-import Link from "next/link";
 import Button from "@/components/UI/Button";
 
 const TOTAL_FRAMES = 31;
@@ -10,7 +9,7 @@ const TOTAL_FRAMES = 31;
 // so the user can comfortably view and admire the completed home before moving to the next section.
 const BUILD_COMPLETION = 0.75;
 
-// Ajay Homes & Estates highlights shown beside the build animation
+// Ajay Homes highlights shown beside the build animation
 const PROJECT_SPECS = [
   { label: "Experience", value: "60+ years of trusted construction" },
   { label: "Projects", value: "500+ projects across Chennai" },
@@ -289,16 +288,15 @@ export default function ConstructionScrollSection() {
         >
           <div className="mx-auto w-full max-w-[1400px] px-4 pb-8 sm:px-8 sm:pb-12 md:pb-0 lg:px-12 xl:px-16">
             <div className="max-w-[640px] text-left">
-              <Link
-                href="/services/construction"
-                className="inline-flex items-center rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] hover:border-[var(--primary)] hover:bg-black/60 transition-colors"
+              <span
+                className="inline-flex items-center rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors"
                 style={{ color: "var(--primary)" }}
               >
                 Our Build Process
-              </Link>
+              </span>
 
               <p className="mt-3 sm:mt-4 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
-                Ajay Homes &amp; Estates · Chennai
+                Ajay Homes · Chennai
               </p>
 
               <h2

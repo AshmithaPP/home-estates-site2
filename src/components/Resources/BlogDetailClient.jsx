@@ -70,12 +70,9 @@ export default function BlogDetailClient({ article }) {
               Resources
             </Link>
             <span>/</span>
-            <Link 
-              href={getCategoryRoute(article.category)} 
-              className="text-[var(--primary-dark)] font-semibold hover:underline"
-            >
+            <span className="text-[var(--primary-dark)] font-semibold">
               {article.category}
-            </Link>
+            </span>
           </nav>
         </div>
       </div>
@@ -110,7 +107,7 @@ export default function BlogDetailClient({ article }) {
         </div>
 
         {/* Article Headline Title */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.18] mb-4">
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-extrabold text-slate-950 tracking-tight leading-[1.18] mb-4">
           {article.title}
         </h1>
 
@@ -131,9 +128,9 @@ export default function BlogDetailClient({ article }) {
             </Link>
             <p className="text-[11px] text-slate-500">
               Senior Master Architects & Structural Engineering Cell •{' '}
-              <Link href="/contact" className="hover:underline text-[var(--primary-dark)] font-semibold">
+              <span className="text-[var(--primary-dark)] font-semibold">
                 Chennai
-              </Link>
+              </span>
             </p>
           </div>
         </div>
@@ -184,70 +181,6 @@ export default function BlogDetailClient({ article }) {
               </p>
             </section>
           ))}
-        </div>
-
-        {/* Key Takeaways */}
-        {article.takeaways && article.takeaways.length > 0 && (
-          <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-amber-50/50 border border-amber-200/80 shadow-xs">
-            <h3 className="text-base sm:text-lg font-bold text-slate-950 mb-4 flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[var(--primary)]" />
-              Key Takeaways for Property Owners
-            </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
-              {article.takeaways.map((point, i) => (
-                <li key={i} className="flex items-start gap-2.5">
-                  <span className="font-bold text-[var(--primary-dark)] mt-0.5">•</span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Conclusion Verdict */}
-        {article.conclusion && (
-          <div className="mt-8 p-6 sm:p-7 rounded-xl bg-slate-50 border-l-4 border-[var(--primary)] text-slate-800">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Architectural Verdict</h4>
-            <p className="text-sm sm:text-base leading-relaxed font-medium text-slate-900">
-              {article.conclusion}
-            </p>
-          </div>
-        )}
-
-        {/* ── Consultation & Service Advisory Banner ──────────────────── */}
-        <div className="mt-12 sm:mt-16 p-8 sm:p-12 rounded-2xl bg-slate-900 text-white border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-          <div className="max-w-2xl text-center md:text-left">
-            <span className="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-[var(--primary)] text-black mb-3">
-              Direct Architectural Consultation
-            </span>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white mb-2">
-              Planning to build or develop your property in Chennai?
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Speak directly with our senior structural engineers and architects. Benefit from 60+ years of building mastery and 500+ completed projects across Tamil Nadu.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-            <Link
-              href="/contact"
-              className="px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold bg-[var(--primary)] text-black hover:opacity-90 transition-all shadow-md inline-flex items-center gap-2"
-            >
-              <span>Start a Conversation</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/services/construction"
-              className="px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 transition-colors"
-            >
-              <span>Construction Services</span>
-            </Link>
-            <Link
-              href="/gallery"
-              className="px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 transition-colors"
-            >
-              <span>View 500+ Projects</span>
-            </Link>
-          </div>
         </div>
 
       </article>

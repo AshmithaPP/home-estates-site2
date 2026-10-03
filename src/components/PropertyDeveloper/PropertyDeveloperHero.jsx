@@ -71,35 +71,19 @@ export const PropertyDeveloperHero = ({ onOpenApply }) => {
             {/* 3. Description Paragraphs — Exact Content requested by user */}
             <div className="space-y-2.5 max-w-xs sm:max-w-xl md:max-w-2xl text-left select-none">
               <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal leading-relaxed drop-shadow">
-                <Link href="/about-us" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  Ajay Homes
-                </Link>{' '}
+                Ajay Homes{' '}
                 helps{' '}
-                <Link href="/services/real-estate" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  landowners, investors, and property owners
-                </Link>{' '}
+                landowners, investors, and property owners{' '}
                 turn development opportunities into thoughtfully planned and{' '}
-                <Link href="/gallery" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  professionally executed properties
-                </Link>.
+                professionally executed properties.
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-white/80 font-normal leading-relaxed drop-shadow">
                 With expertise across{' '}
-                <Link href="/services/layout-promoters" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  planning
-                </Link>,{' '}
-                <Link href="/services/construction" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  construction
-                </Link>,{' '}
-                <Link href="/services/project-management" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  project management
-                </Link>,{' '}
-                <Link href="/services/interior-design" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  interiors
-                </Link>, and{' '}
-                <Link href="/services/real-estate" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  real estate
-                </Link>, we manage the key stages of property development under one roof.
+                planning,{' '}
+                construction,{' '}
+                project management,{' '}
+                interiors, and{' '}
+                real estate, we manage the key stages of property development under one roof.
               </p>
             </div>
 

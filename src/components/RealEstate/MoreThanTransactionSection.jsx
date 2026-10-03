@@ -66,19 +66,18 @@ export default function MoreThanTransactionSection() {
 
             {/* Paragraph 1 */}
             <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
-              With <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">Ajay Homes</Link>, real estate is supported by experience across the wider property ecosystem.
+              With Ajay Homes, real estate is supported by experience across the wider property ecosystem.
             </p>
 
             {/* 5 Ecosystem Badges */}
             <div className="flex flex-wrap gap-2 pt-1">
               {ecosystemPillars.map((pillar) => (
-                <Link
+                <span
                   key={pillar.label}
-                  href={pillar.href}
                   className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none"
                 >
                   {pillar.label}
-                </Link>
+                </span>
               ))}
             </div>
 
@@ -94,13 +93,13 @@ export default function MoreThanTransactionSection() {
               </p>
               <p>
                 Our relationship with clients can go beyond a property transaction. From helping you find or sell the right property to supporting its{' '}
-                <Link href="/services/property-developer" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">development</Link>,{' '}
-                <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">construction</Link>,{' '}
-                <Link href="/services/interior-design" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">interiors</Link>, and completion, Ajay Homes offers expertise across the wider property journey.
+                development,{' '}
+                construction,{' '}
+                interiors, and completion, Ajay Homes offers expertise across the wider property journey.
               </p>
               <p>
                 For home projects, that journey can continue from{' '}
-                <Link href="/services/construction#foundation-to-celebration" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">Bhoomi Pooja to House Warming</Link>.
+                Bhoomi Pooja to House Warming.
               </p>
             </div>
 

@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import Button from '@/components/UI/Button';
 
 export const BeyondBuildSection = ({ onOpenApply }) => {
   // Image requested by user: ankan-resideance-view/img50.jpg
@@ -51,42 +52,29 @@ export const BeyondBuildSection = ({ onOpenApply }) => {
               </p>
               <p>
                 At{' '}
-                <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
-                  Ajay Homes
-                </Link>
-                , we manage every stage of the construction journey—from initial{' '}
-                <Link href="/services/layout-promoters" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
-                  site preparation
-                </Link>{' '}
+                Ajay Homes, we manage every stage of the construction journey—from initial{' '}
+                site preparation{' '}
                 to structural work,{' '}
-                <Link href="/services/interior-design" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
-                  interior finishing
-                </Link>
-                , and final handover.
+                interior finishing, and final handover.
               </p>
               <p>
                 Our approach combines architectural quality, technical expertise, premium materials, and disciplined{' '}
-                <Link href="/services/project-management" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
-                  project management
-                </Link>{' '}
+                project management{' '}
                 to deliver spaces built for long-term value.
               </p>
             </div>
 
             {/* 4. Action CTA Button (Matching dark rectangular button with arrow from reference UI) */}
             <div className="pt-2 sm:pt-4">
-              <button suppressHydrationWarning
+              <Button
                 onClick={handleAction}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-slate-950 text-white font-bold text-xs sm:text-sm hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-md group cursor-pointer"
-                style={{
-                  '--btn-hover': 'var(--primary)'
-                }}
+                variant="primary"
+                size="md"
+                icon={ArrowRight}
+                showIcon={true}
               >
-                <span>Discuss Your Project</span>
-                <ArrowRight
-                  className="w-4 h-4 text-[var(--primary)] group-hover:translate-x-1 transition-transform"
-                />
-              </button>
+                Discuss Your Project
+              </Button>
             </div>
           </motion.div>
 

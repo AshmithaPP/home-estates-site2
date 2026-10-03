@@ -93,7 +93,6 @@ export const BuiltAroundPrioritiesSection = ({
                   className="group relative flex items-center gap-2.5 py-3.5 sm:py-4 pr-2 border-b"
                   style={{ borderColor: hairline }}
                 >
-                  <Link href={href} aria-label={label} className="absolute inset-0 z-10 focus:outline-none" />
                   <Icon
                     className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:scale-110"
                     style={{ color: 'var(--primary)' }}

@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -80,13 +79,13 @@ export const RealEstateHero = ({ onOpenApply }) => {
             {/* 3. Description Paragraphs — Exact Content requested by user */}
             <div className="space-y-2.5 max-w-xs sm:max-w-xl md:max-w-2xl text-left select-none">
               <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal leading-relaxed drop-shadow">
-                <Link href="/about-us" className="text-white font-semibold hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">Ajay Homes</Link> provides professional real estate support for clients looking to buy, sell, or{' '}
-                <Link href="/services/property-developer" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">invest in property</Link> in Chennai.
+                Ajay Homes provides professional real estate support for clients looking to buy, sell, or{' '}
+                invest in property in Chennai.
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-white/80 font-normal leading-relaxed drop-shadow">
                 Whether you are searching for your{' '}
-                <Link href="/gallery" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">next home</Link>, selling an existing property, exploring an investment, or{' '}
-                <Link href="#nri-services" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">managing property from overseas</Link>, our team helps you navigate the process with experience and practical market understanding.
+                next home, selling an existing property, exploring an investment, or{' '}
+                managing property from overseas, our team helps you navigate the process with experience and practical market understanding.
               </p>
             </div>
 

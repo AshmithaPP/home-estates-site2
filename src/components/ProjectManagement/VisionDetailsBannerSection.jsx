@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -58,9 +57,9 @@ export const VisionDetailsBannerSection = ({ onOpenApply }) => {
           {/* ── Concise Narrative ── */}
           <p className="text-xs sm:text-sm md:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto">
             Our{' '}
-            <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">experienced engineers</Link>{' '}
+            experienced engineers{' '}
             coordinate the people, materials, timelines, and budgets so you can{' '}
-            <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">build</Link>{' '}
+            build{' '}
             with absolute confidence.
           </p>
 

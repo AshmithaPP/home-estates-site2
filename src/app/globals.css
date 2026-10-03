@@ -261,17 +261,33 @@
 }
 
 /* ── CUSTOM SCROLLBAR ──────────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 8px;
+/* Desktop: sleek refined scrollbar */
+@media (min-width: 769px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--grey-deepest);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+    border-radius: 3px;
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: var(--grey-deepest);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--primary), var(--primary-light));
-  border-radius: 4px;
+/* Mobile: hide browser scrollbar line to keep clean viewport */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0px !important;
+    height: 0px !important;
+  }
+  html, body {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
 }
 
 /* ══════════ Home page sections (ported from ajay-homes-estates) ══════════ */

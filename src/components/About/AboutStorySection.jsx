@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Compass, CheckCircle2 } from 'lucide-react';
 
@@ -39,11 +38,11 @@ export const AboutStorySection = () => {
             transition={{ duration: 0.7 }}
             className="lg:col-span-5 relative"
           >
-            <Link href="/gallery" className="block relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group bg-[#121212] cursor-pointer">
+            <div className="block relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group bg-[#121212]">
               <img
                 src="/images/residence-images/suresh-residence-view/img17.jpg"
                 alt="Ajay Homes Landmark Contemporary Residence Project"
-                className="w-full h-[380px] sm:h-[460px] lg:h-[500px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="w-full h-[380px] sm:h-[460px] lg:h-[500px] object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
               
@@ -56,7 +55,7 @@ export const AboutStorySection = () => {
                   500+ Projects
                 </div>
               </div>
-            </Link>
+            </div>
 
             {/* Ambient Underglow */}
             <div className="absolute -inset-4 bg-[#ff8c00]/10 rounded-3xl blur-2xl -z-10" />
@@ -75,8 +74,8 @@ export const AboutStorySection = () => {
               <span className="w-1.5 h-8 sm:h-9 lg:h-10 bg-[#ff8c00] rounded-full inline-block shrink-0 shadow-[0_0_12px_rgba(255,140,0,0.5)]" />
               
               <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-tight">
-                <Link href="/services/construction" className="hover:text-[#ff8c00] transition-colors">60+ Years.</Link>{' '}
-                <Link href="/gallery" className="hover:text-[#ff8c00] transition-colors">500+ Projects.</Link>
+                60+ Years.{' '}
+                500+ Projects.
               </h2>
             </motion.div>
 
@@ -88,11 +87,9 @@ export const AboutStorySection = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="mb-6 pl-5 sm:pl-5.5"
             >
-              <Link href="/services/construction" className="inline-block group">
-                <p className="text-base sm:text-lg lg:text-xl font-bold text-[#ff8c00] tracking-wide italic group-hover:underline underline-offset-4 decoration-[#ff8c00]/60 transition-all">
-                  From Vision to Completion.
-                </p>
-              </Link>
+              <p className="text-base sm:text-lg lg:text-xl font-bold text-[#ff8c00] tracking-wide italic">
+                From Vision to Completion.
+              </p>
             </motion.div>
 
             {/* ── Narrative Content Paragraphs ────────────────────────────── */}
@@ -105,23 +102,23 @@ export const AboutStorySection = () => {
             >
               <p>
                 We work on projects ranging from premium residences to{' '}
-                <Link href="/services/property-developer" className="text-white font-bold hover:text-[#ff8c00] transition-colors underline decoration-white/30 underline-offset-2">₹1 Cr+ developments</Link>, combining thoughtful design, quality execution, and experienced management.
+                100% Client Satisfaction developments, combining thoughtful design, quality execution, and experienced management.
               </p>
 
               <p className="text-[#d1d5db]">
                 Decades of experience have shaped how we approach every project &mdash; with a focus on{' '}
-                <Link href="/services/construction" className="text-white font-semibold hover:text-[#ff8c00] transition-colors">quality</Link>,{' '}
-                <Link href="/services/project-management" className="text-white font-semibold hover:text-[#ff8c00] transition-colors">transparency</Link>,{' '}
-                <Link href="/services/property-developer" className="text-white font-semibold hover:text-[#ff8c00] transition-colors">precision</Link>, and{' '}
-                <Link href="/gallery" className="text-white font-semibold hover:text-[#ff8c00] transition-colors">lasting value</Link>.
+                quality,{' '}
+                transparency,{' '}
+                precision, and{' '}
+                lasting value.
               </p>
 
               {/* Highlight Statement */}
-              <Link href="/contact" className="block pt-3 pb-2 border-l-2 border-[#ff8c00]/60 pl-4 sm:pl-5 my-4 bg-white/[0.02] hover:bg-white/[0.05] rounded-r-xl py-3 transition-colors group cursor-pointer">
-                <p className="text-white font-medium text-base sm:text-lg leading-snug group-hover:text-white transition-colors">
+              <div className="pt-3 pb-2 border-l-2 border-[#ff8c00]/60 pl-4 sm:pl-5 my-4 bg-white/[0.02] rounded-r-xl py-3">
+                <p className="text-white font-medium text-base sm:text-lg leading-snug">
                   We believe great projects are not simply built. They are carefully planned, managed, and delivered.
                 </p>
-              </Link>
+              </div>
             </motion.div>
 
             {/* ── Key Focus Pillars ─────────────────────────────────────── */}
@@ -133,14 +130,13 @@ export const AboutStorySection = () => {
               className="mt-8 pt-6 border-t border-white/10 pl-5 sm:pl-5.5 flex flex-wrap items-center gap-2.5 sm:gap-3"
             >
               {coreValues.map((val) => (
-                <Link
+                <span
                   key={val.label}
-                  href={val.href}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm font-semibold text-[#f0ede8] hover:border-[#ff8c00]/60 hover:text-white hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm font-semibold text-[#f0ede8]"
                 >
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#ff8c00] shrink-0" />
                   <span>{val.label}</span>
-                </Link>
+                </span>
               ))}
             </motion.div>
           </div>

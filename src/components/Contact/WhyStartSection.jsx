@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export const WhyStartSection = () => {
@@ -17,9 +16,9 @@ export const WhyStartSection = () => {
       href: '/gallery',
     },
     {
-      title: '₹1 Cr+',
-      subtitle: 'Premium Project Experience',
-      href: '/services/construction',
+      title: '100%',
+      subtitle: 'Client Satisfaction',
+      href: '/gallery',
     },
     {
       title: 'End-to-End',
@@ -58,13 +57,10 @@ export const WhyStartSection = () => {
                 style={{ color: 'var(--text-primary)' }}
               >
                 Why Start With{' '}
-                <Link 
-                  href="/about-us" 
-                  className="hover:underline transition-all"
-                  style={{ color: 'var(--primary)' }}
-                >
+                <span
+                  style={{ color: 'var(--primary)' }}>
                   Ajay Homes?
-                </Link>
+                </span>
               </h2>
               {/* Key stats: 2x2 on phones to laptops, single row on wide screens */}
               <div className="mt-5 sm:mt-6 grid grid-cols-2 xl:grid-cols-4 gap-y-5 max-w-[460px] xl:max-w-none mx-auto md:mx-0">
@@ -78,23 +74,20 @@ export const WhyStartSection = () => {
                     className={`pr-2 sm:pr-3 ${index % 2 === 1 ? 'border-l pl-3 sm:pl-5' : index === 2 ? 'xl:border-l xl:pl-5' : ''}`}
                     style={{ borderColor: 'rgba(255,255,255,0.12)' }}
                   >
-                    <Link
-                      href={item.href}
-                      className="group block transition-transform hover:-translate-y-0.5 focus:outline-none"
-                    >
+                    <div>
                       <p
-                        className="text-base sm:text-lg xl:text-xl font-bold tracking-tight leading-tight group-hover:brightness-110 transition-all"
+                        className="text-base sm:text-lg xl:text-xl font-bold tracking-tight leading-tight"
                         style={{ color: 'var(--primary)' }}
                       >
                         {item.title}
                       </p>
                       <p
-                        className="mt-1 text-[10px] sm:text-[11px] font-medium leading-snug group-hover:text-white transition-colors"
+                        className="mt-1 text-[10px] sm:text-[11px] font-medium leading-snug"
                         style={{ color: 'color-mix(in srgb, var(--text-primary) 70%, transparent)' }}
                       >
                         {item.subtitle}
                       </p>
-                    </Link>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -106,7 +99,6 @@ export const WhyStartSection = () => {
                 aria-hidden="true"
                 className="absolute bottom-1 left-1/2 -translate-x-1/2 h-5 w-3/4 rounded-[100%] blur-xl bg-black/50"
               />
-              <Link href="/gallery" className="block focus:outline-none">
                 <motion.img
                   src="/images/why-start-isometric.png"
                   alt="Ajay Homes luxury residential villa"
@@ -114,9 +106,8 @@ export const WhyStartSection = () => {
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative w-[150px] sm:w-[180px] md:w-[170px] lg:w-[200px] h-auto object-contain drop-shadow-[0_18px_30px_rgba(0,0,0,0.45)] hover:scale-105 transition-transform duration-300 select-none cursor-pointer"
+                  className="relative w-[150px] sm:w-[180px] md:w-[170px] lg:w-[200px] h-auto object-contain drop-shadow-[0_18px_30px_rgba(0,0,0,0.45)] select-none"
                 />
-              </Link>
             </div>
           </div>
         </motion.div>

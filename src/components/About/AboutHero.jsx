@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Button from '../UI/Button';
 
@@ -88,56 +87,51 @@ export const AboutHero = () => {
             {/* 2. Description Paragraph — Exact Home Page Typography & Density */}
             <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal max-w-xs sm:max-w-lg md:max-w-xl leading-relaxed drop-shadow select-none text-left">
               With{' '}
-              <Link href="/services/construction" className="text-white font-semibold hover:text-[var(--primary)] transition-colors">
-                60+ years of industry experience
-              </Link>{' '}
+              60+ years of industry experience{' '}
               and{' '}
-              <Link href="/gallery" className="text-white font-semibold hover:text-[var(--primary)] transition-colors">
-                500+ projects
-              </Link>
-              , Ajay Homes brings together{' '}
-              <Link href="/services/construction" className="text-white font-medium hover:text-[var(--primary)] transition-colors">construction</Link>,{' '}
-              <Link href="/services/property-developer" className="text-white font-medium hover:text-[var(--primary)] transition-colors">property development</Link>,{' '}
-              <Link href="/services/project-management" className="text-white font-medium hover:text-[var(--primary)] transition-colors">project management</Link>,{' '}
-              <Link href="/services/interior-design" className="text-white font-medium hover:text-[var(--primary)] transition-colors">interiors</Link>, and{' '}
-              <Link href="/services/real-estate" className="text-white font-medium hover:text-[var(--primary)] transition-colors">real estate</Link> under one roof.
+              500+ projects, Ajay Homes brings together{' '}
+              construction,{' '}
+              property development,{' '}
+              project management,{' '}
+              interiors, and{' '}
+              real estate under one roof.
             </p>
 
             {/* 3. Running Scores matching Home Page: No cards, clean horizontal numbers */}
             <div className="flex flex-wrap items-center gap-6 sm:gap-10 pt-4 pb-2 border-t border-white/20 max-w-xl">
               {/* Score 1 */}
-              <Link href="/services/construction" className="group block cursor-pointer text-left">
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow group-hover:text-[var(--primary)] transition-colors">
+              <div className="text-left">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow">
                   <RunningCounter target={60} suffix="+" />
                 </span>
                 <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 group-hover:text-white font-semibold mt-0.5 transition-colors">
                   Years Experience
                 </span>
-              </Link>
+              </div>
 
               <div className="hidden sm:block w-px h-8 bg-white/20" />
 
               {/* Score 2 */}
-              <Link href="/gallery" className="group block cursor-pointer text-left">
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--primary)] tracking-tight drop-shadow group-hover:text-white transition-colors">
+              <div className="text-left">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--primary)] tracking-tight drop-shadow">
                   <RunningCounter target={500} suffix="+" />
                 </span>
                 <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 group-hover:text-white font-semibold mt-0.5 transition-colors">
                   Projects Built
                 </span>
-              </Link>
+              </div>
 
               <div className="hidden sm:block w-px h-8 bg-white/20" />
 
               {/* Score 3 */}
-              <Link href="/services/property-developer" className="group block cursor-pointer text-left">
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow group-hover:text-[var(--primary)] transition-colors">
-                  <RunningCounter target={1} prefix="₹" suffix=" Cr+" />
+              <div className="text-left">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow">
+                  <RunningCounter target={100} suffix="%" />
                 </span>
                 <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 group-hover:text-white font-semibold mt-0.5 transition-colors">
-                  Developments
+                  Client Satisfaction
                 </span>
-              </Link>
+              </div>
             </div>
 
             {/* 4. Reusable Button matching home page */}

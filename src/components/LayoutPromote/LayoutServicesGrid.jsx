@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   Compass, 
@@ -104,27 +103,26 @@ export const LayoutServicesGrid = ({
                 transition={{ duration: 0.45, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
                 className="h-full"
               >
-                <Link
-                  href={item.href}
-                  className="group relative bg-white text-slate-900 rounded-2xl p-5 sm:p-6 text-center border border-white/20 shadow-xl shadow-black/25 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-between h-full cursor-pointer"
+                <span
+                  className="group relative bg-white text-slate-900 rounded-2xl p-5 sm:p-6 text-center border border-white/20 shadow-xl shadow-black/25 transition-all duration-300 flex flex-col items-center justify-between h-full"
                 >
                   <div className="flex flex-col items-center">
                     {/* Circular Outline Icon Container (Matching Reference UI) */}
                     <div 
-                      className="w-12 h-12 rounded-full border-2 flex items-center justify-center mb-3.5 transition-all duration-300 group-hover:scale-110"
+                      className="w-12 h-12 rounded-full border-2 flex items-center justify-center mb-3.5"
                       style={{
                         borderColor: 'var(--primary)',
                         backgroundColor: 'color-mix(in srgb, var(--primary) 8%, transparent)',
                       }}
                     >
                       <Icon 
-                        className="w-5 h-5 stroke-[2] transition-transform duration-300"
+                        className="w-5 h-5 stroke-[2]"
                         style={{ color: 'var(--primary)' }}
                       />
                     </div>
 
                     {/* Service Title */}
-                    <h3 className="text-base sm:text-lg font-bold text-slate-950 tracking-tight leading-snug mb-2 group-hover:text-black transition-colors duration-200">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-950 tracking-tight leading-snug mb-2">
                       {item.title}
                     </h3>
 
@@ -134,10 +132,10 @@ export const LayoutServicesGrid = ({
                     </p>
                   </div>
 
-                  <span className="mt-3 text-xs font-semibold text-[var(--primary)] inline-flex items-center gap-1 group-hover:underline">
+                  <span className="mt-3 text-xs font-semibold text-[var(--primary)] inline-flex items-center gap-1">
                     Learn more &rarr;
                   </span>
-                </Link>
+                </span>
               </motion.div>
             );
           })}

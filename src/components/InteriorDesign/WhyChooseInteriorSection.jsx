@@ -30,9 +30,9 @@ export default function WhyChooseInteriorSection() {
     {
       id: 'premium',
       icon: Sparkles,
-      metric: '₹1 Cr+',
-      title: 'Premium Project Experience',
-      description: 'Our experience includes managing high-value projects of ₹1 Cr+.',
+      metric: '100%',
+      title: 'Client Satisfaction',
+      description: 'Our track record is built on delivering exceptional homes with 100% client satisfaction.',
     },
     {
       id: 'quality',

@@ -68,21 +68,20 @@ export default function NRIPropertyServicesSection({ onOpenApply }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {nriPoints.map((point) => (
-                  <Link
+                  <span
                     key={point.label}
-                    href={point.href}
                     className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm font-medium text-slate-800 focus:outline-none"
                   >
                     <Check className="w-4 h-4 shrink-0 text-[var(--primary)]" strokeWidth={2.5} />
                     <span>{point.label}</span>
-                  </Link>
+                  </span>
                 ))}
               </div>
             </div>
 
             <p className="text-slate-600 font-normal text-xs sm:text-sm leading-relaxed">
               Our local presence and broader{' '}
-              <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">property expertise</Link> help simplify the process.
+              property expertise help simplify the process.
             </p>
 
             <div className="pt-2">

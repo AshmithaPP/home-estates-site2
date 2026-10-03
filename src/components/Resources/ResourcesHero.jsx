@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '../UI/Button';
@@ -68,29 +67,13 @@ export const ResourcesHero = ({ onOpenTour, onOpenApply }) => {
             {/* 2. Description Paragraph — Exact Home Page Typography & Density */}
             <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal max-w-xs sm:max-w-lg md:max-w-xl leading-relaxed drop-shadow select-none text-left">
               Comprehensive{' '}
-              <Link href="/services/construction" className="text-white font-medium hover:text-[var(--primary)] transition-colors">
-                home building blueprints
-              </Link>
-              ,{' '}
-              <Link href="/services/layout-promoters" className="text-white font-medium hover:text-[var(--primary)] transition-colors">
-                CMDA / DTCP compliance checklists
-              </Link>
-              ,{' '}
-              <Link href="/services/property-developer" className="text-white font-medium hover:text-[var(--primary)] transition-colors">
-                turnkey construction benchmarks
-              </Link>
-              , and{' '}
-              <Link href="/services/interior-design" className="text-white font-medium hover:text-[var(--primary)] transition-colors">
-                interior design advisories
-              </Link>
-              &mdash;curated from{' '}
-              <Link href="/about-us" className="text-white font-semibold hover:text-[var(--primary)] transition-colors">
-                60+ years
-              </Link>{' '}
+              home building blueprints,{' '}
+              CMDA / DTCP compliance checklists,{' '}
+              turnkey construction benchmarks, and{' '}
+              interior design advisories&mdash;curated from{' '}
+              60+ years{' '}
               of landmark residential mastery across{' '}
-              <Link href="/gallery" className="text-white font-semibold hover:text-[var(--primary)] transition-colors">
-                500+ projects
-              </Link>{' '}
+              500+ projects{' '}
               in Chennai.
             </p>
 

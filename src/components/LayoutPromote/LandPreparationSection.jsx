@@ -25,8 +25,9 @@ export const LandPreparationSection = ({
   return (
     <section
       id={id}
-      className={`relative w-full py-10 sm:py-12 lg:py-14 bg-white text-slate-900 overflow-hidden ${className}`}
+      className={`relative w-full py-10 sm:py-12 lg:py-14 bg-[#f6f6f4] text-slate-900 border-t border-b border-slate-200/60 overflow-hidden ${className}`}
       style={{
+        backgroundColor: '#f6f6f4',
         fontFamily: 'var(--font-family-base)',
       }}
     >
@@ -50,41 +51,30 @@ export const LandPreparationSection = ({
             <div className="space-y-3 text-slate-600 text-xs sm:text-sm md:text-[14.5px] leading-relaxed">
               <p>
                 Our involvement goes beyond planning the layout. We coordinate the journey from{' '}
-                <Link href="/services/property-developer" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  initial land development
-                </Link>{' '}
+                initial land development{' '}
                 to a completed,{' '}
-                <Link href="/gallery" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  market-ready property
-                </Link>.
+                market-ready property.
               </p>
               <p>
                 With experienced teams handling planning, development,{' '}
-                <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  infrastructure
-                </Link>
-                , and{' '}
-                <Link href="/services/project-management" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  coordination
-                </Link>
-                , we help transform land into a valuable opportunity.
+                infrastructure, and{' '}
+                coordination, we help transform land into a valuable opportunity.
               </p>
             </div>
 
             {/* Concluding Punchline Box */}
             <div className="pt-1">
-              <Link
-                href="/contact"
-                className="group block p-3.5 sm:p-4 rounded-xl border border-slate-200/90 bg-slate-50/80 hover:bg-slate-100/90 hover:border-[var(--primary)] transition-all shadow-xs cursor-pointer"
+              <span
+                className="group block p-3.5 sm:p-4 rounded-xl border border-slate-200/90 bg-white shadow-xs"
               >
                 <p 
                   className="text-xs sm:text-sm font-bold leading-snug tracking-wide flex items-center justify-between"
                   style={{ color: 'var(--primary-dark)' }}
                 >
                   <span>From land to a development ready for its next chapter.</span>
-                  <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  <span className="group-hover:translate-x-1">&rarr;</span>
                 </p>
-              </Link>
+              </span>
             </div>
           </motion.div>
 

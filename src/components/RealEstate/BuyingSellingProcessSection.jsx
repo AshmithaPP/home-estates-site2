@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Home, Briefcase, Building2, Coffee, KeyRound } from 'lucide-react';
 
@@ -94,7 +93,6 @@ export default function BuyingSellingProcessSection() {
                 className="relative flex flex-col items-center text-center group"
               >
                 {/* Whole step links to the related page */}
-                <Link href={step.href} aria-label={step.title} className="absolute inset-0 z-10 focus:outline-none" />
 
                 {/* ── Circular Icon Node Container ── */}
                 <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-white/20 p-2 sm:p-2.5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-xl">

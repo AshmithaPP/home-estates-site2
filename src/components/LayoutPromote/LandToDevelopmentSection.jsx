@@ -3,6 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import Button from '@/components/UI/Button';
+
+// Opens the site-wide free consultation popup (ConsultationPopup listens for this event)
+const openConsultation = () => window.dispatchEvent(new Event('open-consultation'));
 
 /**
  * From Land to a Market-Ready Development Section
@@ -46,27 +51,26 @@ export const LandToDevelopmentSection = ({
               </p>
               <p>
                 With experience across{' '}
-                <Link href="/services/property-developer" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  property development
-                </Link>
-                ,{' '}
-                <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  construction
-                </Link>
-                ,{' '}
-                <Link href="/services/project-management" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  project management
-                </Link>
-                , and{' '}
-                <Link href="/services/real-estate" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  real estate
-                </Link>
-                ,{' '}
-                <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  Ajay Homes
-                </Link>{' '}
+                property development,{' '}
+                construction,{' '}
+                project management, and{' '}
+                real estate,{' '}
+                Ajay Homes{' '}
                 brings multiple capabilities together to manage the development journey.
               </p>
+            </div>
+
+            {/* Action CTA Button */}
+            <div className="pt-2 sm:pt-4">
+              <Button
+                onClick={openConsultation}
+                variant="primary"
+                size="md"
+                icon={ArrowRight}
+                showIcon={true}
+              >
+                Discuss Your Land
+              </Button>
             </div>
           </motion.div>
 

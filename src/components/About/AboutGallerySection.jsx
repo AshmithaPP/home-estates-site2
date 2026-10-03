@@ -45,30 +45,13 @@ export const AboutGallerySection = () => {
         fontFamily: 'var(--font-family-base)',
       }}
     >
-      {/* ── Soft Ambient Warmth ──────────────────────────────────────── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 -left-32 -translate-y-1/2 w-96 h-96 rounded-full blur-[140px] opacity-15"
-        style={{
-          backgroundColor: 'var(--primary)',
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 -right-32 w-96 h-96 rounded-full blur-[140px] opacity-10"
-        style={{
-          backgroundColor: 'var(--primary)',
-        }}
-      />
 
       <div className="relative z-10 max-w-[1360px] mx-auto">
         {/* ── Section Header Row: 1 Single Heading on Left, CTA Button on Right ──── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
-          <Link href="/gallery" className="group cursor-pointer">
-            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-neutral-900 tracking-tight leading-tight text-left group-hover:text-[var(--primary)] transition-colors">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-neutral-900 tracking-tight leading-tight text-left">
               Delivered Architectural Excellence
             </h2>
-          </Link>
 
           {/* Desktop Right / Mobile Aligned CTA Button */}
           <div className="shrink-0">

@@ -3,6 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import Button from '@/components/UI/Button';
+
+// Opens the site-wide free consultation popup (ConsultationPopup listens for this event)
+const openConsultation = () => window.dispatchEvent(new Event('open-consultation'));
 
 export default function RealEstateExperienceSection() {
   return (
@@ -44,11 +49,24 @@ export default function RealEstateExperienceSection() {
                 Location, property value, documentation, market demand, investment potential, negotiation, and transaction coordination all play an important role.
               </p>
               <p>
-                <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">Ajay Homes</Link> brings its experience across{' '}
-                <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">construction</Link>,{' '}
-                <Link href="/services/property-developer" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">property development</Link>,{' '}
-                <Link href="/services/project-management" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">project management</Link>, and real estate to provide a more informed approach to property transactions.
+                Ajay Homes brings its experience across{' '}
+                construction,{' '}
+                property development,{' '}
+                project management, and real estate to provide a more informed approach to property transactions.
               </p>
+            </div>
+
+            {/* Action CTA Button */}
+            <div className="pt-2 sm:pt-4">
+              <Button
+                onClick={openConsultation}
+                variant="primary"
+                size="md"
+                icon={ArrowRight}
+                showIcon={true}
+              >
+                Discuss Your Property
+              </Button>
             </div>
           </motion.div>
 

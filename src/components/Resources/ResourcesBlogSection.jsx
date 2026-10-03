@@ -22,22 +22,6 @@ export const ResourcesBlogSection = () => {
     'UNCATEGORIZED'
   ];
 
-  const getCategoryRoute = (category) => {
-    switch (category) {
-      case 'CONSTRUCTION':
-        return '/services/construction';
-      case 'APPROVALS & CMDA':
-        return '/services/layout-promoters';
-      case 'COST & PLANNING':
-        return '/services/property-developer';
-      case 'TRANSPARENCY':
-        return '/about-us';
-      case 'UNCATEGORIZED':
-      default:
-        return '/services/project-management';
-    }
-  };
-
   const filteredArticles = blogArticles.filter((article) => {
     return selectedCategory === 'ALL' || article.category === selectedCategory;
   });
@@ -69,22 +53,10 @@ export const ResourcesBlogSection = () => {
           {/* Subtitle with direct links to core service disciplines */}
           <p className="mt-3 text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Expert insights and architectural advisories covering{' '}
-            <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
-              construction
-            </Link>
-            ,{' '}
-            <Link href="/services/layout-promoters" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
-              approvals & layouts
-            </Link>
-            ,{' '}
-            <Link href="/services/property-developer" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
-              property development
-            </Link>
-            , and{' '}
-            <Link href="/services/interior-design" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
-              interior design
-            </Link>
-            .
+            construction,{' '}
+            approvals & layouts,{' '}
+            property development, and{' '}
+            interior design.
           </p>
 
           {/* ── Category Filter Pills (wrap on mobile/tablet, one line from md up) ── */}
@@ -173,27 +145,21 @@ export const ResourcesBlogSection = () => {
                     <div>
                       {/* Category Pill Tag directly beneath image linking to its service */}
                       <div className="mb-3">
-                        <Link
-                          href={getCategoryRoute(article.category)}
-                          className="inline-block px-2.5 py-0.5 rounded-sm text-[10px] sm:text-[10.5px] font-extrabold uppercase tracking-wider shadow-xs hover:opacity-85 transition-opacity"
+                        <span
+                          className="inline-block px-2.5 py-0.5 rounded-sm text-[10px] sm:text-[10.5px] font-extrabold uppercase tracking-wider shadow-xs"
                           style={{
                             backgroundColor: 'var(--primary)',
                             color: '#0a0500'
                           }}
                         >
                           {article.category}
-                        </Link>
+                        </span>
                       </div>
 
                       {/* Blog Headline Title */}
-                      <Link
-                        href={`/resources/${article.slug}`}
-                        className="block group/title focus:outline-none"
-                      >
-                        <h3 className="text-base sm:text-[17px] font-bold text-slate-950 leading-snug group-hover/title:text-[var(--primary-dark)] transition-colors line-clamp-2 mb-3">
-                          {article.title}
-                        </h3>
-                      </Link>
+                      <h3 className="text-base sm:text-[17px] font-bold text-slate-950 leading-snug line-clamp-2 mb-3">
+                        {article.title}
+                      </h3>
 
                       {/* 2-3 Line Summary Excerpt */}
                       <p className="text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed line-clamp-3 mb-5">
@@ -225,41 +191,7 @@ export const ResourcesBlogSection = () => {
           </div>
         )}
 
-        {/* ── Bottom Section Consultation CTA ──────────────────────── */}
-        <div className="mt-14 sm:mt-20 p-8 sm:p-12 rounded-2xl bg-slate-900 text-white border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="max-w-2xl text-center md:text-left">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--primary)] block mb-1">
-              Direct Architectural Advisory
-            </span>
-            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-2">
-              Have specific plot, approval, or design questions?
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Speak directly with our senior architects and structural engineers. Backed by 60+ years of building mastery and 500+ landmark projects across Chennai.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-            <Link
-              href="/contact"
-              className="px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold bg-[var(--primary)] text-black hover:opacity-90 transition-all shadow-md inline-flex items-center gap-2"
-            >
-              <span>Start a Conversation</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/services/construction"
-              className="px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 transition-colors"
-            >
-              <span>Explore Construction</span>
-            </Link>
-            <Link
-              href="/gallery"
-              className="px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 transition-colors"
-            >
-              <span>View 500+ Projects</span>
-            </Link>
-          </div>
-        </div>
+        
 
       </div>
     </section>

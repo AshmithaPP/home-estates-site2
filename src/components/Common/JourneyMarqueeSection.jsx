@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 /**
@@ -95,9 +94,9 @@ export const JourneyMarqueeSection = ({
                 style={{ color: 'var(--primary-dark)' }}
               >
                 {taglineHref ? (
-                  <Link href={taglineHref} className="hover:underline underline-offset-4 transition-colors">
+                  <span>
                     {tagline}
-                  </Link>
+                  </span>
                 ) : (
                   tagline
                 )}

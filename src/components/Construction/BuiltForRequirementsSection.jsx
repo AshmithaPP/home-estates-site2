@@ -97,37 +97,27 @@ export const BuiltForRequirementsSection = ({
                   className="border-b"
                   style={{ borderColor: hairline }}
                 >
-                  <Link
-                    href={href}
-                    className="group flex items-center gap-2.5 py-3.5 sm:py-4 pr-2 hover:opacity-80 transition-opacity"
+                  <span
+                    className="group flex items-center gap-2.5 py-3.5 sm:py-4 pr-2 transition-opacity"
                   >
                     <Icon
-                      className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      className="h-4 w-4 shrink-0"
                       style={{ color: 'var(--primary)' }}
                       strokeWidth={2}
                     />
-                    <span className="text-[13px] sm:text-sm font-medium leading-snug sm:whitespace-nowrap group-hover:text-[var(--primary-dark)] transition-colors" style={{ color: 'var(--grey-deep)' }}>
+                    <span className="text-[13px] sm:text-sm font-medium leading-snug sm:whitespace-nowrap" style={{ color: 'var(--grey-deep)' }}>
                       {label}
                     </span>
-                  </Link>
+                  </span>
                 </li>
               ))}
             </ul>
 
             <p className="mt-5 text-sm sm:text-[15px] leading-relaxed" style={{ color: 'var(--grey-surface)' }}>
               Whether you are{' '}
-              <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                building your first home
-              </Link>
-              ,{' '}
-              <Link href="/services/property-developer" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                developing a premium property
-              </Link>
-              , or executing a{' '}
-              <Link href="/services/project-management" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                ₹1 Cr+ project
-              </Link>
-              , our team brings the experience and capabilities required to manage the journey.
+              building your first home,{' '}
+              developing a premium property, or executing a{' '}
+              project with 100% client satisfaction, our team brings the experience and capabilities required to manage the journey.
             </p>
           </motion.div>
         </div>

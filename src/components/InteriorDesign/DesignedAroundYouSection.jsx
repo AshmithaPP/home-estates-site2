@@ -44,7 +44,7 @@ export default function DesignedAroundYouSection() {
               </p>
               <p className="text-sm sm:text-base text-white/70">
                 Our role is to combine your vision with practical design thinking and{' '}
-                <Link href="/services/project-management" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">experienced execution</Link>.
+                experienced execution.
               </p>
             </div>
 

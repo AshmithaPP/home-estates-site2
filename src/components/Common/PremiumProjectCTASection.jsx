@@ -1,15 +1,14 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
 
 const DEFAULT_STATS = [
   { value: '60+ Years', label: 'of Industry Experience' },
-  { value: '500+ Projects', label: 'Completed Projects' },
-  { value: '₹1 Cr+', label: 'Premium Project Experience' },
+  { value: '500+', label: 'Projects Completed' },
+  { value: '100%', label: 'Client Satisfaction' },
 ];
 
 /**
@@ -86,15 +85,14 @@ export const PremiumProjectCTASection = ({
                   if (typeof val === 'string') {
                     if (val.includes('60+')) href = '/about-us';
                     else if (val.includes('500+')) href = '/gallery';
-                    else if (val.includes('1 Cr') || val.includes('₹1')) href = '/services/construction';
+                    else if (val.includes('100%') || val.includes('Client')) href = '/gallery';
                     else if (val.includes('End-to-End')) href = '/services/project-management';
                   }
 
                   return (
                     <React.Fragment key={idx}>
-                      <Link
-                        href={href}
-                        className="inline-flex items-center gap-1.5 whitespace-nowrap hover:opacity-80 transition-opacity focus:outline-none"
+                      <span
+                        className="inline-flex items-center gap-1.5 whitespace-nowrap transition-opacity focus:outline-none"
                       >
                         <span
                           className={`font-bold tracking-tight ${statValueClassName}`}
@@ -102,10 +100,10 @@ export const PremiumProjectCTASection = ({
                         >
                           {val}
                         </span>
-                        <span className="text-neutral-300 font-normal hover:text-white transition-colors">
+                        <span className="text-neutral-300 font-normal">
                           {lbl}
                         </span>
-                      </Link>
+                      </span>
                       {!isLast && (
                         <span className="text-neutral-600 hidden sm:inline select-none">
                           |

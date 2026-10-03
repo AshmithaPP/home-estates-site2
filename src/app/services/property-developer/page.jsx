@@ -11,6 +11,7 @@ import WhoWeWorkWithSection from '@/components/PropertyDeveloper/WhoWeWorkWithSe
 import OnePartnerJourneySection from '@/components/PropertyDeveloper/OnePartnerJourneySection';
 import PropertyDevelopmentCTASection from '@/components/PropertyDeveloper/PropertyDevelopmentCTASection';
 import JourneyMarqueeSection from '@/components/Common/JourneyMarqueeSection';
+import ServiceGallerySection from '@/components/Common/ServiceGallerySection';
 import ServiceFormFAQSection from '@/components/Common/ServiceFormFAQSection';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
@@ -30,10 +31,10 @@ const propertyDeveloperFeatures = [
     href: '/gallery',
   },
   {
-    id: 'high-value',
-    title: '₹1 Cr+ Project Expertise',
-    description: 'Experience managing premium and high-value property projects.',
-    href: '/services/construction',
+    id: 'satisfaction',
+    title: '100% Client Satisfaction',
+    description: 'Experience delivering premium and high-value property projects with complete satisfaction.',
+    href: '/gallery',
   },
   {
     id: 'end-to-end',
@@ -150,6 +151,14 @@ export default function PropertyDeveloperPage() {
         description="Ajay Homes can support the journey from land planning and development to construction, interiors, completion, and final handover. For residential projects, our involvement can take you all the way from Bhoomi Pooja to House Warming."
         tagline="From the first step on the land to the moment you step into your finished space."
         taglineHref="/contact"
+      />
+
+      {/* ── Featured Property Development Gallery Section (Links to Gallery) ── */}
+      <ServiceGallerySection
+        id="property-gallery"
+        serviceKey="property-developer"
+        badge="THE AJAY MARQUEE"
+        title="Landmark Developments"
       />
 
       {/* ── 10. LAST SECTION: One Side Form & Another Side FAQ ────── */}

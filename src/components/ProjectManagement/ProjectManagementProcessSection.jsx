@@ -82,7 +82,7 @@ export const ProjectManagementProcessSection = ({
         </div>
 
         {/* ── 6 Process Cards ──── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-6 gap-4 lg:gap-5">
           {steps.map((item, idx) => {
             return (
               <motion.div
@@ -133,7 +133,7 @@ export const ProjectManagementProcessSection = ({
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-[13px] text-neutral-300 font-light leading-relaxed mt-2 line-clamp-4">
+                  <p className="text-xs sm:text-[13px] text-neutral-300 font-light leading-relaxed mt-2">
                     {item.description}
                   </p>
                 </div>

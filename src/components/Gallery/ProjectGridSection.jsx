@@ -1,18 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, Filter } from 'lucide-react';
-
-const getCategoryHref = (category) => {
-  if (!category) return '/services/construction';
-  const cat = category.toLowerCase();
-  if (cat.includes('villa') || cat.includes('residence')) return '/services/construction';
-  if (cat.includes('suite') || cat.includes('living') || cat.includes('kitchen') || cat.includes('dining') || cat.includes('interior')) return '/services/interior-design';
-  if (cat.includes('apartment') || cat.includes('plot') || cat.includes('commercial')) return '/services/property-developer';
-  return '/services/construction';
-};
 
 export const ProjectGridSection = ({ 
   projects, 
@@ -36,14 +26,9 @@ export const ProjectGridSection = ({
           </h2>
           <p className="text-xs sm:text-[13px] text-[#6b7280] mt-0.5">
             Real architectural photographs from our{' '}
-            <Link href="/services/construction" className="text-[#111827] hover:text-[var(--primary)] font-semibold transition-colors">
-              landmark residences
-            </Link>{' '}
+            landmark residences{' '}
             across{' '}
-            <Link href="/contact" className="text-[#111827] hover:text-[var(--primary)] font-semibold transition-colors">
-              Chennai
-            </Link>
-            .
+            Chennai.
           </p>
         </div>
 
@@ -108,13 +93,9 @@ export const ProjectGridSection = ({
                 </div>
 
                 {/* Scope Category Badge on Top-Left */}
-                <Link
-                  href={getCategoryHref(project.category)}
-                  onClick={(e) => e.stopPropagation()}
-                  className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-black/60 hover:bg-[var(--primary)] hover:text-black backdrop-blur-md border border-white/15 text-[10.5px] font-semibold text-white/90 shadow-sm transition-all z-10 cursor-pointer"
-                >
+                <span className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10.5px] font-semibold text-white/90 shadow-sm z-10">
                   {project.category}
-                </Link>
+                </span>
               </div>
 
               {/* 2. Card Content Body (Refined Padding & Typography) */}
@@ -130,9 +111,7 @@ export const ProjectGridSection = ({
                     {project.title}
                   </h3>
                   <p className="text-[11.5px] sm:text-xs text-[#6b7280] font-medium mt-1 truncate">
-                    <Link href="/services/construction" className="hover:text-[var(--primary)] transition-colors">
-                      {project.community}
-                    </Link>
+                    {project.community}
                   </p>
                 </div>
 
@@ -146,13 +125,9 @@ export const ProjectGridSection = ({
                         <span className="text-[10px] sm:text-[10.5px] font-medium text-[#6b7280] uppercase tracking-wider block">
                           Scope
                         </span>
-                        <Link
-                          href={getCategoryHref(project.category)}
-                          className="text-[11.5px] sm:text-xs font-semibold text-[#111827] hover:text-[var(--primary)] block truncate mt-0.5 transition-colors"
-                          title={project.scope}
-                        >
+                        <span className="text-[11.5px] sm:text-xs font-semibold text-[#111827] block truncate mt-0.5" title={project.scope}>
                           {project.scope}
-                        </Link>
+                        </span>
                       </div>
 
                       {/* Column 2: BHK */}
@@ -160,12 +135,9 @@ export const ProjectGridSection = ({
                         <span className="text-[10px] sm:text-[10.5px] font-medium text-[#6b7280] uppercase tracking-wider block">
                           BHK
                         </span>
-                        <Link
-                          href="/services/construction"
-                          className="text-[11.5px] sm:text-xs font-semibold text-[#111827] hover:text-[var(--primary)] block mt-0.5 truncate transition-colors"
-                        >
+                        <span className="text-[11.5px] sm:text-xs font-semibold text-[#111827] block mt-0.5 truncate">
                           {project.bhk}
-                        </Link>
+                        </span>
                       </div>
 
                     </div>

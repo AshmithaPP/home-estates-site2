@@ -11,6 +11,7 @@ import BuiltForRequirementsSection from '@/components/Construction/BuiltForRequi
 import MoreThanConstructionSection from '@/components/Construction/MoreThanConstructionSection';
 import FoundationToCelebrationSection from '@/components/Common/FoundationToCelebrationSection';
 import PremiumProjectCTASection from '@/components/Common/PremiumProjectCTASection';
+import ServiceGallerySection from '@/components/Common/ServiceGallerySection';
 import ServiceFormFAQSection from '@/components/Common/ServiceFormFAQSection';
 import { faqItems } from '@/components/FAQ/FAQSection';
 import ApplyModal from '@/components/Modals/ApplyModal';
@@ -65,7 +66,7 @@ export default function ConstructionServicesPage() {
         stats={[
           { value: '60+ Years', label: 'of Industry Experience' },
           { value: '500+ Projects', label: 'Completed Projects' },
-          { value: '₹1 Cr+', label: 'Premium Project Experience' },
+          { value: '100%', label: 'Client Satisfaction' },
         ]}
         statValueClassName="text-sm sm:text-base lg:text-lg"
         ctaText="Discuss Your Project"
@@ -74,6 +75,14 @@ export default function ConstructionServicesPage() {
 
       {/* ── From Bhoomi Pooja to House Warming (Journey, White) ── */}
       <FoundationToCelebrationSection />
+
+      {/* ── Featured Construction Gallery Section (Links to Gallery) ── */}
+      <ServiceGallerySection
+        id="construction-gallery"
+        serviceKey="construction"
+        badge="THE AJAY MARQUEE"
+        title="Landmark Developments"
+      />
 
       {/* ── LAST SECTION: One Side Form & Another Side FAQ (Responsive) ── */}
       <ServiceFormFAQSection

@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Award, MapPin } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -82,7 +81,6 @@ export default function LookingToBuyAndSellSection({ onOpenApply }) {
               transition={{ duration: 0.4, delay: 0.08 }}
               className="relative rounded-xl py-3.5 px-4 sm:py-4 sm:px-5 border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-md text-center group hover:border-[var(--primary)]/50 transition-all duration-300"
             >
-              <Link href="/about-us" aria-label="60+ years of industry experience" className="absolute inset-0 z-10 rounded-xl focus:outline-none" />
               <div
                 className="text-xl sm:text-2xl font-bold tracking-tight mb-0.5"
                 style={{ color: 'var(--primary)' }}
@@ -102,7 +100,6 @@ export default function LookingToBuyAndSellSection({ onOpenApply }) {
               transition={{ duration: 0.4, delay: 0.14 }}
               className="relative rounded-xl py-3.5 px-4 sm:py-4 sm:px-5 border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-md text-center group hover:border-[var(--primary)]/50 transition-all duration-300"
             >
-              <Link href="/gallery" aria-label="500+ projects completed" className="absolute inset-0 z-10 rounded-xl focus:outline-none" />
               <div
                 className="text-xl sm:text-2xl font-bold tracking-tight mb-0.5"
                 style={{ color: 'var(--primary)' }}
@@ -122,7 +119,6 @@ export default function LookingToBuyAndSellSection({ onOpenApply }) {
               transition={{ duration: 0.4, delay: 0.2 }}
               className="relative rounded-xl py-3.5 px-4 sm:py-4 sm:px-5 border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-md text-center group hover:border-[var(--primary)]/50 transition-all duration-300"
             >
-              <Link href="/contact" aria-label="Chennai property expertise" className="absolute inset-0 z-10 rounded-xl focus:outline-none" />
               <div
                 className="text-xl sm:text-2xl font-bold tracking-tight mb-0.5"
                 style={{ color: 'var(--primary)' }}

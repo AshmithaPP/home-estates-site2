@@ -96,7 +96,7 @@ const Footer = ({ onOpenTourModal, onOpenApply }) => {
 
         {/* Bottom copyright & Scroll to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60 font-medium">
-          <p>© {new Date().getFullYear()} Ajay Homes & Estates. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Ajay Homes. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="/privacy-policy" className="hover:text-[#ff8c00] transition-colors">Privacy Policy</a>
             <a href="/terms-and-conditions" className="hover:text-[#ff8c00] transition-colors">Terms &amp; Conditions</a>

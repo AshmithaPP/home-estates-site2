@@ -48,30 +48,18 @@ export const BuildValueSection = ({ onOpenApply }) => {
             <div className="space-y-3.5 text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed">
               <p>
                 Property development is more than{' '}
-                <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  constructing a building
-                </Link>.
+                constructing a building.
               </p>
               <p>
                 It requires the right{' '}
-                <Link href="/services/layout-promoters" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  land strategy, planning
-                </Link>,{' '}
-                <Link href="/services/interior-design" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  design
-                </Link>,{' '}
-                <Link href="/services/project-management" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  execution
-                </Link>, market understanding, and long-term vision.
+                land strategy, planning,{' '}
+                design,{' '}
+                execution, market understanding, and long-term vision.
               </p>
               <p>
-                <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  Ajay Homes
-                </Link>{' '}
+                Ajay Homes{' '}
                 brings these capabilities together to help clients move from land and opportunity to{' '}
-                <Link href="/gallery" className="font-semibold text-slate-900 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                  completed property
-                </Link>{' '}
+                completed property{' '}
                 with a structured, end-to-end approach.
               </p>
             </div>
@@ -87,12 +75,6 @@ export const BuildValueSection = ({ onOpenApply }) => {
               >
                 Discuss Your Development
               </Button>
-              <Link
-                href="/gallery"
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-800 hover:text-[var(--primary)] transition-colors px-5 py-2.5 rounded-full border border-black/10 hover:border-black/20 bg-slate-50 shadow-xs cursor-pointer"
-              >
-                <span>Explore 500+ Projects &rarr;</span>
-              </Link>
             </div>
           </motion.div>
 

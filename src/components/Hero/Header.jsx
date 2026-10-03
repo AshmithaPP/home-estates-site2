@@ -41,6 +41,17 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
     return () => window.removeEventListener('keydown', onKey);
   }, [isServicesOpen]);
 
+  // Lock body scrolling when mobile menu is open to prevent background scroll and rightside scrollbar line
+  useEffect(() => {
+    if (isMenuOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isMenuOpen]);
+
   // Opens the site-wide free consultation popup (components/Home/ConsultationPopup)
   const openConsultation = () => {
     setIsMenuOpen(false);
@@ -304,18 +315,18 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: '-100%' }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 left-0 right-0 z-50 max-h-[100dvh] overflow-y-auto overscroll-contain border-b border-[var(--primary)]/30 text-white shadow-2xl rounded-b-2xl p-4 sm:p-6 pt-5 sm:pt-6 bg-[#1a1c22]"
+              className="fixed top-0 left-0 right-0 z-50 max-h-[88vh] overflow-y-auto overscroll-contain border-b border-[var(--primary)]/30 text-white shadow-2xl rounded-b-2xl p-3.5 sm:p-5 pt-3.5 sm:pt-4 bg-[#1a1c22] scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               style={{ willChange: 'transform' }}
             >
-              <div className="max-w-md mx-auto w-full space-y-3">
+              <div className="max-w-md mx-auto w-full space-y-2">
 
                 {/* Close button row inside menu */}
-                <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                <div className="flex items-center justify-between pb-2 border-b border-white/10">
                   <Link href="/" onClick={() => setIsMenuOpen(false)} className="shrink-0">
                     <img
                       src="/images/logo/logo-ajay-homes.png"
                       alt="Ajay Builders & Property Developers"
-                      className="h-8 w-auto object-contain"
+                      className="h-7 w-auto object-contain"
                     />
                   </Link>
                   <button
@@ -325,39 +336,39 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                     className="p-1 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
                     aria-label="Close menu"
                   >
-                    <X className="w-5 h-5 text-[var(--primary)]" />
+                    <X className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--primary)]" />
                   </button>
                 </div>
 
                 {/* Menu Items */}
-                <nav className="flex flex-col gap-1.5 pt-1">
+                <nav className="flex flex-col gap-1 pt-0.5">
                   {/* Home */}
                   <Link
                     href="/"
                     onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[var(--primary)]/10 border border-white/5 hover:border-[var(--primary)]/30 transition-all cursor-pointer group"
+                    className="flex items-center justify-between px-3.5 py-2 sm:py-2.5 rounded-lg bg-white/5 hover:bg-[var(--primary)]/10 border border-white/5 hover:border-[var(--primary)]/30 transition-all cursor-pointer group"
                   >
-                    <span className="text-sm font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+                    <span className="text-[13px] sm:text-sm font-semibold text-white group-hover:text-[var(--primary)] transition-colors">
                       Home
                     </span>
-                    <ArrowDownRight className="w-4 h-4 text-[var(--primary)] transition-all" />
+                    <ArrowDownRight className="w-3.5 h-3.5 text-[var(--primary)] transition-all" />
                   </Link>
 
                   {/* About */}
                   <Link
                     href="/about"
                     onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[var(--primary)]/10 border border-white/5 hover:border-[var(--primary)]/30 transition-all cursor-pointer group"
+                    className="flex items-center justify-between px-3.5 py-2 sm:py-2.5 rounded-lg bg-white/5 hover:bg-[var(--primary)]/10 border border-white/5 hover:border-[var(--primary)]/30 transition-all cursor-pointer group"
                   >
-                    <span className="text-sm font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+                    <span className="text-[13px] sm:text-sm font-semibold text-white group-hover:text-[var(--primary)] transition-colors">
                       About
                     </span>
-                    <ArrowDownRight className="w-4 h-4 text-[var(--primary)] transition-all" />
+                    <ArrowDownRight className="w-3.5 h-3.5 text-[var(--primary)] transition-all" />
                   </Link>
 
                   {/* Services Accordion in Mobile Drawer */}
                   <div
-                    className={`rounded-xl bg-white/5 border overflow-hidden transition-colors ${
+                    className={`rounded-lg bg-white/5 border overflow-hidden transition-colors ${
                       isMobileServicesOpen ? 'border-[var(--primary)]/40' : 'border-white/5'
                     }`}
                   >
@@ -366,13 +377,13 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                       suppressHydrationWarning
                       onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                       aria-expanded={isMobileServicesOpen}
-                      className={`w-full flex items-center justify-between px-4 py-3 text-sm font-bold hover:bg-[var(--primary)]/10 transition-colors cursor-pointer text-left ${
+                      className={`w-full flex items-center justify-between px-3.5 py-2 sm:py-2.5 text-[13px] sm:text-sm font-semibold hover:bg-[var(--primary)]/10 transition-colors cursor-pointer text-left ${
                         isMobileServicesOpen ? 'text-[var(--primary)]' : 'text-white hover:text-[var(--primary)]'
                       }`}
                     >
                       <span>Services</span>
                       <ChevronDown
-                        className={`w-4 h-4 text-[var(--primary)] transition-transform duration-200 ${
+                        className={`w-3.5 h-3.5 text-[var(--primary)] transition-transform duration-200 ${
                           isMobileServicesOpen ? 'rotate-180' : ''
                         }`}
                       />
@@ -384,9 +395,10 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="overflow-hidden"
+                          className="overflow-hidden border-t border-white/5 bg-black/25"
                         >
-                          <div className="flex flex-col gap-1.5 px-2.5 pb-2.5 pt-0.5">
+                          {/* Compact 2-Column Grid for Services on Mobile */}
+                          <div className="grid grid-cols-2 gap-1.5 p-2">
                             {services.map((item) => {
                               const isCurrent = pathname === item.href;
                               return (
@@ -395,20 +407,16 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                                   href={item.href}
                                   onClick={() => setIsMenuOpen(false)}
                                   aria-current={isCurrent ? 'page' : undefined}
-                                  className={`group flex items-center justify-between gap-2 rounded-lg border px-3 py-2.5 transition-colors ${
+                                  className={`group flex items-center justify-between gap-1.5 rounded-md border px-2.5 py-1.5 transition-colors ${
                                     isCurrent
-                                      ? 'border-[var(--primary)] bg-[var(--primary)]/12'
-                                      : 'border-white/10 bg-black/25 active:bg-[var(--primary)]/10 hover:border-[var(--primary)]/40'
+                                      ? 'border-[var(--primary)] bg-[var(--primary)]/15 text-[var(--primary)]'
+                                      : 'border-white/10 bg-white/5 text-white/90 hover:border-[var(--primary)]/40 hover:text-white'
                                   }`}
                                 >
-                                  <span
-                                    className={`min-w-0 truncate whitespace-nowrap text-[13px] font-semibold capitalize ${
-                                      isCurrent ? 'text-[var(--primary)]' : 'text-white/90 group-hover:text-white'
-                                    }`}
-                                  >
+                                  <span className="truncate text-xs font-medium capitalize">
                                     {item.label}
                                   </span>
-                                  <ChevronRight className="h-3.5 w-3.5 shrink-0 text-[var(--primary)]" />
+                                  <ChevronRight className="h-3 w-3 shrink-0 text-[var(--primary)]" />
                                 </Link>
                               );
                             })}
@@ -416,10 +424,10 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                           <Link
                             href="/#services"
                             onClick={() => setIsMenuOpen(false)}
-                            className="flex items-center justify-center gap-1.5 border-t border-white/10 py-2.5 text-xs font-bold text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-colors"
+                            className="flex items-center justify-center gap-1 border-t border-white/10 py-1.5 text-[11px] font-semibold text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-colors"
                           >
-                            Explore all services
-                            <ArrowRight className="h-3.5 w-3.5" />
+                            <span>Explore all services</span>
+                            <ArrowRight className="h-3 w-3" />
                           </Link>
                         </motion.div>
                       )}
@@ -430,49 +438,49 @@ export const Header = ({ onOpenTour, onOpenApply }) => {
                   <Link
                     href="/gallery"
                     onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[var(--primary)]/10 border border-white/5 hover:border-[var(--primary)]/30 transition-all cursor-pointer group"
+                    className="flex items-center justify-between px-3.5 py-2 sm:py-2.5 rounded-lg bg-white/5 hover:bg-[var(--primary)]/10 border border-white/5 hover:border-[var(--primary)]/30 transition-all cursor-pointer group"
                   >
-                    <span className="text-sm font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+                    <span className="text-[13px] sm:text-sm font-semibold text-white group-hover:text-[var(--primary)] transition-colors">
                       Gallery
                     </span>
-                    <ArrowDownRight className="w-4 h-4 text-[var(--primary)] transition-all" />
+                    <ArrowDownRight className="w-3.5 h-3.5 text-[var(--primary)] transition-all" />
                   </Link>
 
                   {/* Resources */}
                   <Link
                     href="/resources"
                     onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[var(--primary)]/10 border border-white/5 hover:border-[var(--primary)]/30 transition-all cursor-pointer group"
+                    className="flex items-center justify-between px-3.5 py-2 sm:py-2.5 rounded-lg bg-white/5 hover:bg-[var(--primary)]/10 border border-white/5 hover:border-[var(--primary)]/30 transition-all cursor-pointer group"
                   >
-                    <span className="text-sm font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+                    <span className="text-[13px] sm:text-sm font-semibold text-white group-hover:text-[var(--primary)] transition-colors">
                       Resources
                     </span>
-                    <ArrowDownRight className="w-4 h-4 text-[var(--primary)] transition-all" />
+                    <ArrowDownRight className="w-3.5 h-3.5 text-[var(--primary)] transition-all" />
                   </Link>
 
                   {/* Contact */}
                   <Link
                     href="/contact"
                     onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center justify-between px-4 py-3 rounded-xl bg-white/5 hover:bg-[var(--primary)]/10 border border-white/5 hover:border-[var(--primary)]/30 transition-all cursor-pointer group"
+                    className="flex items-center justify-between px-3.5 py-2 sm:py-2.5 rounded-lg bg-white/5 hover:bg-[var(--primary)]/10 border border-white/5 hover:border-[var(--primary)]/30 transition-all cursor-pointer group"
                   >
-                    <span className="text-sm font-bold text-white group-hover:text-[var(--primary)] transition-colors">
+                    <span className="text-[13px] sm:text-sm font-semibold text-white group-hover:text-[var(--primary)] transition-colors">
                       Contact
                     </span>
-                    <ArrowDownRight className="w-4 h-4 text-[var(--primary)] transition-all" />
+                    <ArrowDownRight className="w-3.5 h-3.5 text-[var(--primary)] transition-all" />
                   </Link>
                 </nav>
 
                 {/* Free Consultation Action Button inside Mobile Menu */}
-                <div className="pt-3 border-t border-white/10">
+                <div className="pt-2 border-t border-white/10">
                   <Button
                     onClick={() => {
                       setIsMenuOpen(false);
                       openConsultation();
                     }}
                     variant="primary"
-                    size="md"
-                    className="w-full justify-center shadow-lg shadow-[var(--primary)]/20"
+                    size="sm"
+                    className="w-full justify-center shadow-md shadow-[var(--primary)]/20 py-2 text-xs"
                   >
                     Free Consultation
                   </Button>

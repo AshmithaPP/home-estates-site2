@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /**
@@ -24,13 +23,12 @@ export const Eyebrow = ({ text, slideId }) => {
           transition={{ duration: 0.4, ease: 'easeOut' }}
           className="inline-flex items-center"
         >
-          <Link
-            href={getHref()}
-            className="hero-bob glass-pill-dark px-4 py-1.5 rounded-full border border-[var(--primary)]/50 shadow-md text-xs font-medium text-white/95 flex items-center hover:border-[var(--primary)] hover:bg-white/10 transition-all cursor-pointer"
+          <div
+            className="hero-bob glass-pill-dark px-4 py-1.5 rounded-full border border-[var(--primary)]/50 shadow-md text-xs font-medium text-white/95 flex items-center transition-all"
           >
             <span className="w-2 h-2 rounded-full bg-[var(--primary)] mr-2 inline-block shadow-[0_0_6px_var(--primary)]" />
             <span className="tracking-wide">({text})</span>
-          </Link>
+          </div>
         </motion.div>
       </AnimatePresence>
     </div>

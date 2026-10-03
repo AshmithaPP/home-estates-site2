@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function InteriorProcessSection() {
@@ -133,14 +132,12 @@ export default function InteriorProcessSection() {
                   style={{ color: isSelected ? 'var(--primary-dark)' : 'rgba(100,116,139,0.7)' }}
                 >
                   <span>Step 0{idx + 1}</span>
-                  <Link
-                    href={step.href}
+                  <span
                     aria-label={`${step.title} — learn more`}
-                    onClick={(e) => e.stopPropagation()}
-                    className="text-slate-400 group-hover:text-[var(--primary-dark)] transition-colors focus:outline-none"
+                    className="text-slate-400 transition-colors focus:outline-none"
                   >
                     →
-                  </Link>
+                  </span>
                 </div>
               </motion.div>
             );

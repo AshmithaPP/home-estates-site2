@@ -11,6 +11,7 @@ import WhoCanWorkWithUsSection from '@/components/LayoutPromote/WhoCanWorkWithUs
 import LandPotentialSection from '@/components/LayoutPromote/LandPotentialSection';
 import LayoutCTASection from '@/components/LayoutPromote/LayoutCTASection';
 import LandPreparationSection from '@/components/LayoutPromote/LandPreparationSection';
+import ServiceGallerySection from '@/components/Common/ServiceGallerySection';
 import ServiceFormFAQSection from '@/components/Common/ServiceFormFAQSection';
 import { LAYOUT_FAQ_ITEMS } from '@/components/LayoutPromote/LayoutFAQSection';
 import ApplyModal from '@/components/Modals/ApplyModal';
@@ -67,6 +68,14 @@ export default function LayoutPromotePage() {
 
       {/* ── From Land Preparation to Development Section (White BG) ── */}
       <LandPreparationSection />
+
+      {/* ── Featured Layout & Land Gallery Section (Links to Gallery) ── */}
+      <ServiceGallerySection
+        id="layout-gallery"
+        serviceKey="layout-promoters"
+        badge="THE AJAY MARQUEE"
+        title="Landmark Developments"
+      />
 
       {/* ── LAST SECTION: One Side Form & Another Side FAQ (Responsive) ── */}
       <ServiceFormFAQSection

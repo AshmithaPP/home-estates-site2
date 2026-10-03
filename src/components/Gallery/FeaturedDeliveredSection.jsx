@@ -1,18 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronRight, ChevronLeft, Camera } from 'lucide-react';
-
-const getCategoryHref = (category) => {
-  if (!category) return '/services/construction';
-  const cat = category.toLowerCase();
-  if (cat.includes('villa') || cat.includes('residence')) return '/services/construction';
-  if (cat.includes('suite') || cat.includes('living') || cat.includes('kitchen') || cat.includes('dining') || cat.includes('interior')) return '/services/interior-design';
-  if (cat.includes('apartment') || cat.includes('plot') || cat.includes('commercial')) return '/services/property-developer';
-  return '/services/construction';
-};
 
 export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, onOpenInquiry }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,14 +46,9 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
               </h2>
               <p className="text-xs sm:text-[13px] text-[var(--text-muted)] font-medium mt-0.5 leading-relaxed">
                 Browse our top{' '}
-                <Link href="/services/construction" className="text-[var(--text-primary)] hover:text-[var(--primary)] font-semibold transition-colors">
-                  home construction
-                </Link>{' '}
+                home construction{' '}
                 &{' '}
-                <Link href="/services/interior-design" className="text-[var(--text-primary)] hover:text-[var(--primary)] font-semibold transition-colors">
-                  luxury interior projects
-                </Link>
-                , handpicked by our experts.
+                luxury interior projects, handpicked by our experts.
               </p>
             </div>
           </div>
@@ -117,13 +102,9 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
                   </div>
 
                   {/* Top Category Tag */}
-                  <Link
-                    href={getCategoryHref(project.category)}
-                    onClick={(e) => e.stopPropagation()}
-                    className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[var(--primary)]/90 hover:bg-[var(--primary)] text-black text-[11px] font-extrabold uppercase tracking-wider shadow-md z-10 transition-colors cursor-pointer"
-                  >
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[var(--primary)]/90 text-black text-[11px] font-extrabold uppercase tracking-wider shadow-md z-10">
                     {project.category}
-                  </Link>
+                  </span>
                 </div>
 
                 {/* Card Content */}
@@ -137,9 +118,7 @@ export const FeaturedDeliveredSection = ({ featuredProjects, onSelectProject, on
                       {project.featuredTitle || project.title}
                     </h3>
                     <p className="text-[11.5px] sm:text-xs text-[var(--text-muted)] mt-1">
-                      <Link href="/services/construction" className="hover:text-[var(--primary)] transition-colors">
-                        {project.community}
-                      </Link>{' '}
+                      {project.community}{' '}
                       &bull; <span className="text-[var(--text-primary)] font-semibold">{project.bhk}</span>
                     </p>
                   </div>

@@ -139,10 +139,7 @@ export default function ServiceFormFAQSection({
                     >
                       Submit Another Request
                     </button>
-                    <Link
-                      href="/gallery"
-                      className="text-xs font-bold text-slate-800 hover:text-[var(--primary)] underline cursor-pointer"
-                    >
+                    <Link href="/gallery" className="text-xs font-bold text-[var(--grey-deepest)] hover:text-[var(--primary)] transition-colors">
                       Explore 500+ Projects &rarr;
                     </Link>
                   </div>
@@ -227,13 +224,13 @@ export default function ServiceFormFAQSection({
 
                   <p className="text-[11px] text-[#777777] text-center pt-1 border-t border-black/5">
                     Have technical questions? Browse our{' '}
-                    <Link href="/resources" className="text-[var(--primary)] font-semibold hover:underline">
+                    <span className="text-[var(--primary)] font-semibold">
                       Architectural Guides
-                    </Link>{' '}
+                    </span>{' '}
                     or view our{' '}
-                    <Link href="/gallery" className="text-[var(--primary)] font-semibold hover:underline">
+                    <span className="text-[var(--primary)] font-semibold">
                       500+ Projects
-                    </Link>.
+                    </span>.
                   </p>
                 </form>
               )}

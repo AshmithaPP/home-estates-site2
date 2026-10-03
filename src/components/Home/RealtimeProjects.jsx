@@ -90,7 +90,7 @@ export default function RealtimeProjects() {
               Our Landmark Network
             </h3>
             <p className="mt-3 text-xs sm:text-[13px] 2xl:text-[15px] text-white/90 leading-relaxed font-sans max-w-[340px]">
-              Ajay Homes &amp; Estates is South India&#39;s premier builder with 500+ architectural landmarks delivered across Chennai.
+              Ajay Homes is South India&#39;s premier builder with 500+ architectural landmarks delivered across Chennai.
             </p>
 
             {/* Rich Content & Trust Highlights filling empty space */}
@@ -751,25 +751,25 @@ export default function RealtimeProjects() {
             })}
           </div>
 
-          {/* Cyan/Teal Carousel Arrows */}
+          {/* Orange circular carousel arrows (match ServiceGallerySection) */}
           <div className="hidden sm:flex items-center gap-2.5 shrink-0 pb-1">
             <button
               type="button"
               suppressHydrationWarning
               onClick={scrollLeft}
-              className="flex items-center justify-center text-[var(--primary-dark)] hover:text-[var(--primary)] transition-colors cursor-pointer p-1.5 rounded-full hover:bg-slate-100"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[var(--primary)] flex items-center justify-center text-[var(--primary)] bg-white hover:bg-[var(--primary)] hover:text-black shadow-xs transition-all duration-200 cursor-pointer"
               aria-label="Scroll left"
             >
-              <ArrowLeft className="h-6 w-6 stroke-[2.5]" />
+              <ArrowLeft className="w-4 h-4 sm:w-4.5 sm:h-4.5" strokeWidth={2} />
             </button>
             <button
               type="button"
               suppressHydrationWarning
               onClick={scrollRight}
-              className="flex items-center justify-center text-[var(--primary-dark)] hover:text-[var(--primary)] transition-colors cursor-pointer p-1.5 rounded-full hover:bg-slate-100"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[var(--primary)] flex items-center justify-center text-[var(--primary)] bg-white hover:bg-[var(--primary)] hover:text-black shadow-xs transition-all duration-200 cursor-pointer"
               aria-label="Scroll right"
             >
-              <ArrowRight className="h-6 w-6 stroke-[2.5]" />
+              <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5" strokeWidth={2} />
             </button>
           </div>
         </div>

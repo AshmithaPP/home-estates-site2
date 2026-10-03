@@ -118,7 +118,7 @@ export default function ConsultationPopup() {
         <div className="relative h-36 shrink-0 overflow-hidden sm:h-44 md:h-auto md:w-[44%]">
           <Image
             src="/assets/img/img-001.jpeg"
-            alt="Scarlet Diamond residence by Ajay Homes & Estates"
+            alt="Scarlet Diamond residence by Ajay Homes"
             fill
             sizes="(max-width: 768px) 100vw, 380px"
             className="object-cover"
@@ -127,7 +127,7 @@ export default function ConsultationPopup() {
 
           <div className="relative flex h-full flex-col justify-between p-4 sm:p-5 md:p-6 text-white">
             <div className="inline-flex w-fit items-center rounded-lg bg-white px-2.5 py-1.5 shadow-sm">
-              <Image src="/logo/logo-ajay-homes.png" alt="Ajay Homes & Estates" width={110} height={30} className="h-6 w-auto" />
+              <Image src="/logo/logo-ajay-homes.png" alt="Ajay Homes" width={110} height={30} className="h-6 w-auto" />
             </div>
 
             <div>
@@ -286,7 +286,7 @@ export default function ConsultationPopup() {
               </button>
 
               <p className="mt-3 text-center text-[10px] leading-relaxed text-slate-500">
-                By submitting, you agree to be contacted by Ajay Homes &amp; Estates and accept our{" "}
+                By submitting, you agree to be contacted by Ajay Homes and accept our{" "}
                 <a href="#privacy" className="text-[var(--grey-base)] underline underline-offset-2">privacy policy</a> and{" "}
                 <a href="#terms" className="text-[var(--grey-base)] underline underline-offset-2">terms of use</a>.
               </p>

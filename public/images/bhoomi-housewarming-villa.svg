@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1020" role="img" aria-label="Modern Ajay Homes villa at sunrise">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="0.55" stop-color="#ffefd6"/>
+      <stop offset="1" stop-color="#ffe0b3"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="0.7" stop-color="#ffc85c"/>
+      <stop offset="1" stop-color="#ffb84a"/>
+    </radialGradient>
+    <radialGradient id="sunHalo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.55" stop-color="#ffd27a" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffd27a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff1c9"/>
+      <stop offset="0.6" stop-color="#ffd27e"/>
+      <stop offset="1" stop-color="#f7a944"/>
+    </linearGradient>
+    <linearGradient id="glowDeep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe6ae"/>
+      <stop offset="1" stop-color="#e98f2f"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fffdf9"/>
+      <stop offset="1" stop-color="#f3ebe0"/>
+    </linearGradient>
+    <linearGradient id="wallShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe5d8"/>
+      <stop offset="1" stop-color="#fbf7f1"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b9824f"/>
+      <stop offset="1" stop-color="#9a6438"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8f3f6" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#cfe3ea" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="lawn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9bc46a"/>
+      <stop offset="1" stop-color="#6f9e43"/>
+    </linearGradient>
+    <linearGradient id="path" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe6da"/>
+      <stop offset="1" stop-color="#d9cbb8"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="softSm" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="1020" fill="url(#sky)"/>
+
+  <!-- Sun with halo -->
+  <circle cx="900" cy="330" r="330" fill="url(#sunHalo)"/>
+  <circle cx="900" cy="330" r="245" fill="url(#sun)"/>
+
+  <!-- Soft clouds -->
+  <g fill="#ffffff" opacity="0.7" filter="url(#softSm)">
+    <ellipse cx="1260" cy="250" rx="150" ry="34"/>
+    <ellipse cx="1350" cy="228" rx="90" ry="30"/>
+    <ellipse cx="520" cy="300" rx="130" ry="26"/>
+    <ellipse cx="600" cy="282" rx="70" ry="22"/>
+  </g>
+
+  <!-- Birds -->
+  <g fill="none" stroke="#5b4636" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1335 120q14-14 28 0q14-16 30-4"/>
+    <path d="M1420 175q11-11 22 0q11-12 24-3"/>
+    <path d="M1270 190q9-9 18 0q9-10 20-2"/>
+  </g>
+
+  <!-- Background trees (right) -->
+  <g>
+    <rect x="1478" y="560" width="22" height="340" rx="8" fill="#6b4a32"/>
+    <circle cx="1490" cy="520" r="120" fill="#5f8f3c"/>
+    <circle cx="1410" cy="600" r="95" fill="#6fa046"/>
+    <circle cx="1560" cy="610" r="100" fill="#557f35"/>
+    <circle cx="1480" cy="430" r="80" fill="#79ab4e"/>
+    <circle cx="1440" cy="500" r="40" fill="#8fbf5d" opacity="0.8"/>
+    <circle cx="1530" cy="470" r="34" fill="#8fbf5d" opacity="0.7"/>
+  </g>
+
+  <!-- Background tree (left) -->
+  <g>
+    <rect x="392" y="600" width="20" height="300" rx="8" fill="#6b4a32"/>
+    <circle cx="400" cy="560" r="105" fill="#6fa046"/>
+    <circle cx="330" cy="640" r="85" fill="#5f8f3c"/>
+    <circle cx="470" cy="640" r="80" fill="#557f35"/>
+    <circle cx="395" cy="480" r="62" fill="#82b455"/>
+    <circle cx="360" cy="540" r="30" fill="#9ccb69" opacity="0.8"/>
+  </g>
+
+  <!-- Ground shadow under house -->
+  <ellipse cx="980" cy="915" rx="560" ry="40" fill="#7a5a3a" opacity="0.28" filter="url(#shadow)"/>
+
+  <!-- ══ HOUSE ══ -->
+
+  <!-- Ground floor block -->
+  <rect x="560" y="612" width="820" height="288" fill="url(#wall)"/>
+  <!-- Upper floor block -->
+  <rect x="760" y="384" width="580" height="216" fill="url(#wall)"/>
+
+  <!-- Upper: wood cladding right part -->
+  <rect x="1010" y="384" width="330" height="216" fill="url(#wood)"/>
+  <g stroke="#8a5830" stroke-width="3" opacity="0.6">
+    <path d="M1032 384v216M1054 384v216M1076 384v216M1098 384v216M1120 384v216M1142 384v216M1164 384v216M1186 384v216M1208 384v216M1230 384v216M1252 384v216M1274 384v216M1296 384v216M1318 384v216"/>
+  </g>
+
+  <!-- Upper: big window (left) -->
+  <rect x="790" y="414" width="196" height="172" rx="3" fill="url(#glow)"/>
+  <rect x="790" y="414" width="196" height="172" rx="3" fill="none" stroke="#3b2a20" stroke-width="7"/>
+  <path d="M888 414v172" stroke="#3b2a20" stroke-width="5"/>
+  <!-- interior hints -->
+  <g opacity="0.55">
+    <rect x="806" y="520" width="66" height="44" rx="6" fill="#c9874a"/>
+    <path d="M840 430v26" stroke="#7a4f2c" stroke-width="2"/>
+    <circle cx="840" cy="462" r="9" fill="#fff4d6"/>
+    <rect x="904" y="470" width="62" height="96" rx="4" fill="#d79b5a"/>
+  </g>
+
+  <!-- Upper: tall window in wood -->
+  <rect x="1062" y="404" width="118" height="180" rx="3" fill="url(#glowDeep)"/>
+  <rect x="1062" y="404" width="118" height="180" rx="3" fill="none" stroke="#2f2119" stroke-width="7"/>
+  <path d="M1121 404v180" stroke="#2f2119" stroke-width="5"/>
+  <!-- Upper: small window -->
+  <rect x="1224" y="428" width="90" height="96" rx="3" fill="url(#glow)"/>
+  <rect x="1224" y="428" width="90" height="96" rx="3" fill="none" stroke="#2f2119" stroke-width="6"/>
+
+  <!-- Upper roof slab -->
+  <rect x="728" y="356" width="652" height="30" rx="3" fill="#fbf8f3"/>
+  <rect x="728" y="384" width="652" height="10" fill="#3a2c22"/>
+  <!-- roof downlights -->
+  <g fill="#fff3c4">
+    <circle cx="820" cy="400" r="5"/><circle cx="960" cy="400" r="5"/><circle cx="1100" cy="400" r="5"/><circle cx="1240" cy="400" r="5"/>
+  </g>
+  <g fill="#ffd27a" opacity="0.55" filter="url(#softSm)">
+    <circle cx="820" cy="406" r="14"/><circle cx="960" cy="406" r="14"/><circle cx="1100" cy="406" r="14"/><circle cx="1240" cy="406" r="14"/>
+  </g>
+
+  <!-- Balcony slab + glass railing (front of upper floor, cantilevered left) -->
+  <rect x="680" y="596" width="360" height="22" fill="#fbf8f3"/>
+  <rect x="680" y="616" width="360" height="8" fill="#3a2c22"/>
+  <rect x="690" y="520" width="340" height="76" fill="url(#glass)"/>
+  <rect x="686" y="514" width="348" height="8" rx="3" fill="#d6d0c6"/>
+  <g stroke="#b9b1a6" stroke-width="3"><path d="M775 522v74M860 522v74M945 522v74"/></g>
+  <g stroke="#ffffff" stroke-width="3" opacity="0.7"><path d="M705 590l40-62M800 590l40-62M895 590l40-62"/></g>
+  <!-- balcony planter -->
+  <rect x="700" y="566" width="46" height="30" rx="4" fill="#4b5563"/>
+  <circle cx="712" cy="556" r="16" fill="#5f8f3c"/><circle cx="733" cy="550" r="18" fill="#79ab4e"/>
+
+  <!-- Ground floor roof slab / canopy -->
+  <rect x="520" y="602" width="900" height="26" rx="3" fill="#fbf8f3"/>
+  <rect x="520" y="626" width="900" height="10" fill="#3a2c22"/>
+  <g fill="#fff3c4"><circle cx="600" cy="644" r="5"/><circle cx="760" cy="644" r="5"/><circle cx="1020" cy="644" r="5"/><circle cx="1300" cy="644" r="5"/></g>
+  <g fill="#ffd27a" opacity="0.6" filter="url(#softSm)"><circle cx="600" cy="652" r="16"/><circle cx="760" cy="652" r="16"/><circle cx="1020" cy="652" r="16"/><circle cx="1300" cy="652" r="16"/></g>
+
+  <!-- Ground: left living room glazing -->
+  <rect x="582" y="660" width="236" height="236" fill="url(#glow)"/>
+  <g stroke="#3b2a20" stroke-width="6" fill="none">
+    <rect x="582" y="660" width="236" height="236"/>
+    <path d="M661 660v236M740 660v236M582 740h236"/>
+  </g>
+  <g opacity="0.5">
+    <rect x="600" y="820" width="140" height="44" rx="10" fill="#b8743f"/>
+    <rect x="610" y="806" width="120" height="18" rx="8" fill="#d9a066"/>
+    <path d="M700 670v40" stroke="#7a4f2c" stroke-width="2"/><circle cx="700" cy="716" r="10" fill="#fff4d6"/>
+    <rect x="760" y="760" width="40" height="104" rx="4" fill="#cf9455"/>
+  </g>
+
+  <!-- Ground: stone feature wall -->
+  <rect x="836" y="636" width="124" height="264" fill="#d8cbb9"/>
+  <g stroke="#c3b39e" stroke-width="3">
+    <path d="M836 680h124M836 724h124M836 768h124M836 812h124M836 856h124"/>
+    <path d="M876 636v44M920 680v44M870 724v44M914 768v44M880 812v44M924 856v44"/>
+  </g>
+
+  <!-- Ground: entrance door -->
+  <rect x="976" y="690" width="96" height="210" fill="url(#wood)"/>
+  <g stroke="#7d4d27" stroke-width="2.5" opacity="0.7"><path d="M992 690v210M1008 690v210M1024 690v210M1040 690v210M1056 690v210"/></g>
+  <rect x="1052" y="760" width="7" height="70" rx="3" fill="#2f2119"/>
+  <!-- door wall lights -->
+  <rect x="962" y="726" width="8" height="22" rx="3" fill="#2f2119"/><rect x="1078" y="726" width="8" height="22" rx="3" fill="#2f2119"/>
+  <g fill="#ffd27a" opacity="0.75" filter="url(#softSm)"><circle cx="966" cy="742" r="16"/><circle cx="1082" cy="742" r="16"/></g>
+
+  <!-- Ground: right wall with big window -->
+  <rect x="1090" y="636" width="290" height="264" fill="url(#wallShade)"/>
+  <rect x="1116" y="670" width="238" height="190" fill="url(#glow)"/>
+  <g stroke="#3b2a20" stroke-width="6" fill="none">
+    <rect x="1116" y="670" width="238" height="190"/>
+    <path d="M1195 670v190M1275 670v190"/>
+  </g>
+  <g opacity="0.5">
+    <path d="M1235 680v34" stroke="#7a4f2c" stroke-width="2"/><circle cx="1235" cy="720" r="10" fill="#fff4d6"/>
+    <rect x="1140" y="800" width="110" height="40" rx="8" fill="#b8743f"/>
+  </g>
+
+  <!-- Pillars -->
+  <rect x="536" y="636" width="22" height="264" fill="#fbf8f3"/>
+  <rect x="536" y="636" width="22" height="264" fill="none" stroke="#e7dccd" stroke-width="2"/>
+
+  <!-- Entrance steps -->
+  <rect x="946" y="900" width="160" height="14" fill="#efe7dc"/>
+  <rect x="932" y="914" width="188" height="14" fill="#e6dccd"/>
+  <rect x="918" y="928" width="216" height="14" fill="#dcd0be"/>
+
+  <!-- Lawn -->
+  <path d="M0 900 C300 885 600 895 900 905 S1400 895 1600 890 V1020 H0 Z" fill="url(#lawn)"/>
+  <!-- Stone path -->
+  <path d="M940 942 L1112 942 L1210 1020 L870 1020 Z" fill="url(#path)"/>
+  <g stroke="#cbbba5" stroke-width="3"><path d="M915 970h228M895 998h272"/></g>
+
+  <!-- Boundary walls + gate -->
+  <rect x="200" y="842" width="330" height="58" fill="#f6f0e7"/>
+  <rect x="200" y="836" width="330" height="10" fill="#e3d7c6"/>
+  <rect x="1400" y="842" width="200" height="58" fill="#f6f0e7"/>
+  <rect x="1400" y="836" width="200" height="10" fill="#e3d7c6"/>
+  <rect x="1420" y="790" width="150" height="110" fill="url(#wood)"/>
+  <g stroke="#7d4d27" stroke-width="3" opacity="0.7"><path d="M1440 790v110M1460 790v110M1480 790v110M1500 790v110M1520 790v110M1540 790v110"/></g>
+
+  <!-- Front shrubs -->
+  <g>
+    <circle cx="590" cy="905" r="34" fill="#5f8f3c"/><circle cx="635" cy="912" r="30" fill="#79ab4e"/><circle cx="680" cy="908" r="34" fill="#557f35"/>
+    <circle cx="730" cy="914" r="28" fill="#6fa046"/><circle cx="775" cy="908" r="32" fill="#5f8f3c"/><circle cx="820" cy="914" r="26" fill="#79ab4e"/>
+    <circle cx="1170" cy="910" r="32" fill="#5f8f3c"/><circle cx="1215" cy="914" r="28" fill="#79ab4e"/><circle cx="1260" cy="908" r="34" fill="#557f35"/>
+    <circle cx="1310" cy="914" r="30" fill="#6fa046"/><circle cx="1355" cy="908" r="32" fill="#5f8f3c"/>
+  </g>
+  <!-- Flowers -->
+  <g fill="#ff8c00">
+    <circle cx="600" cy="886" r="5"/><circle cx="650" cy="894" r="5"/><circle cx="700" cy="884" r="5"/><circle cx="752" cy="894" r="5"/><circle cx="798" cy="886" r="5"/>
+    <circle cx="1180" cy="888" r="5"/><circle cx="1232" cy="896" r="5"/><circle cx="1280" cy="886" r="5"/><circle cx="1330" cy="894" r="5"/>
+  </g>
+  <g fill="#f472b6">
+    <circle cx="622" cy="896" r="4.5"/><circle cx="676" cy="890" r="4.5"/><circle cx="728" cy="898" r="4.5"/><circle cx="780" cy="896" r="4.5"/>
+    <circle cx="1205" cy="892" r="4.5"/><circle cx="1256" cy="890" r="4.5"/><circle cx="1306" cy="898" r="4.5"/><circle cx="1352" cy="890" r="4.5"/>
+  </g>
+  <!-- Potted topiaries by the door -->
+  <rect x="900" y="878" width="34" height="30" rx="4" fill="#3f3a36"/><circle cx="917" cy="852" r="26" fill="#5f8f3c"/><circle cx="917" cy="832" r="18" fill="#79ab4e"/>
+  <rect x="1118" y="878" width="34" height="30" rx="4" fill="#3f3a36"/><circle cx="1135" cy="852" r="26" fill="#5f8f3c"/><circle cx="1135" cy="832" r="18" fill="#79ab4e"/>
+
+  <!-- Warm sunlight wash over everything -->
+  <rect width="1600" height="1020" fill="#ffb347" opacity="0.06"/>
+</svg>

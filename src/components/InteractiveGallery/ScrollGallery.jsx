@@ -127,7 +127,7 @@ export const ScrollGallery = () => {
             </span>
 
             <h2 className="text-xl sm:text-2xl font-bold text-[#f0ede8] tracking-tight leading-snug uppercase" style={{ fontFamily: 'Montserrat' }}>
-              Everything homes &amp; estates living{' '}
+              Everything Ajay Homes living{' '}
               <span className="text-[#ff8c00] block mt-1">should be</span>
             </h2>
 
@@ -267,7 +267,7 @@ export const ScrollGallery = () => {
             </span>
 
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#f0ede8] tracking-tight leading-snug uppercase">
-              Everything homes &amp; estates living{' '}
+              Everything Ajay Homes living{' '}
               <span className="text-[#ff8c00] block mt-1 sm:mt-2">
                 should be
               </span>

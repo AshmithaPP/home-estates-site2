@@ -255,38 +255,21 @@ export const BuiltForNextSection = ({ onOpenApply }) => {
         className="relative z-20 max-w-xl md:max-w-2xl lg:max-w-2xl mx-auto text-center px-5 sm:px-10 lg:px-4 space-y-3 sm:space-y-4 my-auto"
       >
         {/* Main Heading */}
-        <Link href="/contact" className="inline-block group cursor-pointer">
-          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-[#111827] tracking-tight leading-snug group-hover:text-[#ff8c00] transition-colors">
+        <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-[#111827] tracking-tight leading-snug">
             Built for{' '}
             <span className="text-[#ff8c00]">
               What&apos;s Next.
             </span>
           </h2>
-        </Link>
 
         {/* Subtitle / Paragraph */}
         <p className="text-xs sm:text-sm md:text-[15px] text-[#4b5563] font-normal leading-relaxed max-w-lg mx-auto">
           Whether you are{' '}
-          <Link href="/services/construction" className="text-[#111827] font-semibold hover:text-[#ff8c00] transition-colors">
-            planning a home
-          </Link>
-          ,{' '}
-          <Link href="/services/layout-promoters" className="text-[#111827] font-semibold hover:text-[#ff8c00] transition-colors">
-            developing land
-          </Link>
-          ,{' '}
-          <Link href="/services/project-management" className="text-[#111827] font-semibold hover:text-[#ff8c00] transition-colors">
-            managing a premium project
-          </Link>
-          ,{' '}
-          <Link href="/services/interior-design" className="text-[#111827] font-semibold hover:text-[#ff8c00] transition-colors">
-            designing an interior
-          </Link>
-          , or{' '}
-          <Link href="/services/real-estate" className="text-[#111827] font-semibold hover:text-[#ff8c00] transition-colors">
-            exploring property opportunities
-          </Link>
-          , Ajay Homes brings the experience to move your vision forward.
+          planning a home,{' '}
+          developing land,{' '}
+          managing a premium project,{' '}
+          designing an interior, or{' '}
+          exploring property opportunities, Ajay Homes brings the experience to move your vision forward.
         </p>
 
         {/* Reusable Button (Compact, Refined Size) */}

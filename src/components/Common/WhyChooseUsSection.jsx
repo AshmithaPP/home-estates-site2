@@ -23,10 +23,10 @@ const DEFAULT_FEATURES = [
     href: '/gallery',
   },
   {
-    id: 'expertise',
-    title: '₹1 Cr+ Project Expertise',
-    description: 'Experienced in handling premium and high-value construction projects with detailed planning and execution.',
-    href: '/services/construction',
+    id: 'satisfaction',
+    title: '100% Client Satisfaction',
+    description: 'Dedicated to delivering premium projects with transparent execution and 100% client satisfaction.',
+    href: '/gallery',
   },
   {
     id: 'management',
@@ -71,7 +71,7 @@ export const WhyChooseUsSection = ({
   title = 'Why Choose Ajay Homes?',
   features = DEFAULT_FEATURES,
   imageSrc = '/assets/img/img-001.jpeg',
-  imageAlt = 'Contemporary villa built by Ajay Homes & Estates',
+  imageAlt = 'Contemporary villa built by Ajay Homes',
   ctaText,
   onOpenApply,
   defaultOpen = 0,
@@ -102,14 +102,14 @@ export const WhyChooseUsSection = ({
             className="w-11 h-11 sm:w-14 sm:h-14 lg:w-[72px] lg:h-[72px] shrink-0"
             style={{ color: 'var(--grey-deep)' }}
           />
-          <Link href="/about-us" className="hover:opacity-90 transition-opacity">
+          <span className="hover:opacity-90 transition-opacity">
             <h2
               className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold tracking-tight leading-snug pb-0.5"
               style={{ color: 'var(--primary)' }}
             >
               {title}
             </h2>
-          </Link>
+          </span>
         </motion.div>
 
         <div className="mt-8 sm:mt-12 lg:mt-14 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-10 xl:gap-12 items-start">
@@ -203,15 +203,7 @@ export const WhyChooseUsSection = ({
                             className="pb-4 sm:pb-5 pr-8 text-sm sm:text-[15px] leading-[1.9]"
                             style={{ color: 'var(--grey-base)' }}
                           >
-                            {item.description}{' '}
-                            {item.href && (
-                              <Link
-                                href={item.href}
-                                className="inline-flex items-center gap-1 font-semibold text-[var(--primary)] hover:underline ml-1"
-                              >
-                                <span>Learn more &rarr;</span>
-                              </Link>
-                            )}
+                            {item.description}
                           </p>
                         </motion.div>
                       )}

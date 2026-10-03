@@ -74,10 +74,10 @@ const PROJECT_TYPES = [
   },
   {
     id: 'high-value',
-    title: '₹1 Cr+ Projects',
+    title: '100% Client Satisfaction Projects',
     icon: Gem,
     image: '/images/residence-images/r3-brc-views/img4.jpg',
-    tag: 'High-Value Tier',
+    tag: '100% Satisfaction Tier',
     href: '/gallery',
   },
 ];
@@ -111,7 +111,7 @@ export const ProjectsWeManageSection = ({
         </div>
 
         {/* ── 8 Short, Premium Cards in a Compact 4-Column Grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-5">
           {PROJECT_TYPES.map((item, idx) => {
             const IconComp = item.icon;
             return (
@@ -140,12 +140,12 @@ export const ProjectsWeManageSection = ({
                 <div className="min-w-0 flex-1 text-left">
                   <div className="flex items-center gap-1.5 mb-1">
                     <IconComp className="w-3.5 h-3.5 shrink-0" style={{ color: 'var(--primary)' }} />
-                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-500 truncate">
+                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-500">
                       {item.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-sm sm:text-[15px] font-bold text-slate-900 group-hover:text-[var(--primary-dark)] transition-colors leading-snug truncate">
+                  <h3 className="text-sm sm:text-[15px] font-bold text-slate-900 group-hover:text-[var(--primary-dark)] transition-colors leading-snug">
                     {item.title}
                   </h3>
 

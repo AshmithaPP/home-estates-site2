@@ -97,19 +97,18 @@ export const WhoWeWorkWithSection = ({
             <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 border-t" style={{ borderColor: hairline }}>
               {PROFILES.map(({ label, icon: Icon, href }) => (
                 <li key={label} className="border-b" style={{ borderColor: hairline }}>
-                  <Link
-                    href={href}
+                  <span
                     className="group flex items-center gap-2.5 py-3.5 sm:py-4 pr-2 transition-colors duration-200"
                   >
                     <Icon
-                      className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      className="h-4 w-4 shrink-0"
                       style={{ color: 'var(--primary)' }}
                       strokeWidth={2}
                     />
-                    <span className="text-[13px] sm:text-sm font-semibold leading-snug group-hover:text-[var(--primary)] transition-colors" style={{ color: 'var(--grey-deep)' }}>
+                    <span className="text-[13px] sm:text-sm font-semibold leading-snug" style={{ color: 'var(--grey-deep)' }}>
                       {label}
                     </span>
-                  </Link>
+                  </span>
                 </li>
               ))}
             </ul>

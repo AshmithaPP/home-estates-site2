@@ -9,7 +9,7 @@ const FindYourPlaceSection = ({ onOpenTourModal }) => {
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <img
           src="/images/residence-images/suresh-residence-view/img24.jpg"
-          alt="Ajay Homes & Estates Luxury Interior"
+          alt="Ajay Homes Luxury Interior"
           className="w-full h-full object-cover object-center"
         />
       </div>

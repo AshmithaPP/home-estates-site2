@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 export const OnePartnerSection = () => {
   const stages = [
@@ -125,7 +124,7 @@ export const OnePartnerSection = () => {
     {
       id: 'property-development',
       title: 'Property Development',
-      subtitle: 'Joint Ventures & Estates',
+      subtitle: 'Joint Ventures & Properties',
       href: '/services/property-developer',
       illustration: (
         <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -246,14 +245,12 @@ export const OnePartnerSection = () => {
           className="max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2"
         >
           {/* Main Heading */}
-          <Link href="/services/construction" className="inline-block group cursor-pointer">
-            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-[#1f2937] tracking-tight leading-tight group-hover:text-[#ff8c00] transition-colors">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-[#1f2937] tracking-tight leading-tight">
               One Partner.{' '}
               <span className="text-[#ff8c00]">
                 Every Stage.
               </span>
             </h2>
-          </Link>
 
           {/* Subtitle phrase */}
           <p className="text-xs sm:text-sm md:text-[14px] text-[#4b5563] font-normal leading-relaxed">
@@ -272,25 +269,24 @@ export const OnePartnerSection = () => {
               transition={{ duration: 0.35, delay: index * 0.04 }}
               className="w-full flex justify-center"
             >
-              <Link
-                href={stage.href}
-                className="group relative w-full max-w-[155px] sm:max-w-[160px] aspect-square flex flex-col items-center justify-center p-2.5 sm:p-3 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_20px_rgba(255,140,0,0.12)] hover:border-[#ff8c00]/40 hover:-translate-y-1 transition-all duration-300 text-center"
+              <div
+                className="group relative w-full max-w-[155px] sm:max-w-[160px] aspect-square flex flex-col items-center justify-center p-2.5 sm:p-3 bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.04)] text-center"
               >
                 {/* Compact illustration container */}
-                <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center shrink-0 mb-1.5 sm:mb-2 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center shrink-0 mb-1.5 sm:mb-2">
                   {stage.illustration}
                 </div>
 
                 {/* Card Title & Subtitle */}
                 <div className="space-y-0.5 w-full px-1">
-                  <h3 className="text-[11.5px] sm:text-xs md:text-[13px] font-bold text-[#111827] group-hover:text-[#ff8c00] transition-colors tracking-tight leading-snug min-h-[28px] sm:min-h-[32px] flex items-center justify-center">
+                  <h3 className="text-[11.5px] sm:text-xs md:text-[13px] font-bold text-[#111827] tracking-tight leading-snug min-h-[28px] sm:min-h-[32px] flex items-center justify-center">
                     {stage.title}
                   </h3>
                   <p className="text-[9.5px] sm:text-[10px] md:text-[10.5px] text-[#6b7280] font-normal leading-tight line-clamp-1">
                     {stage.subtitle}
                   </p>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>

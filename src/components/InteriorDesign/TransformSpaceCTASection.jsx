@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -63,9 +62,9 @@ export default function TransformSpaceCTASection({ onCtaClick }) {
 
           {/* Metrics Line with exact pipe dividers from user prompt */}
           <div className="text-xs sm:text-sm text-white/70 font-medium py-1">
-            <Link href="/about-us" className="hover:text-white transition-colors">60+ Years of Industry Experience</Link> |{' '}
-            <Link href="/gallery" className="hover:text-white transition-colors">500+ Projects</Link> |{' '}
-            <Link href="/services/construction" className="hover:text-white transition-colors">Premium Project Expertise</Link>
+            <span className="hover:text-white transition-colors">60+ Years of Industry Experience</span> |{' '}
+            <span className="hover:text-white transition-colors">500+ Projects</span> |{' '}
+            <span className="hover:text-white transition-colors">Premium Project Expertise</span>
           </div>
 
           {/* Action Button */}
@@ -83,9 +82,9 @@ export default function TransformSpaceCTASection({ onCtaClick }) {
 
           {/* Brand Sign-off */}
           <div className="pt-6 border-t border-white/10 max-w-xs mx-auto">
-            <Link href="/about-us" className="block text-sm font-bold uppercase tracking-widest text-white hover:text-[var(--primary)] transition-colors">
+            <span className="block text-sm font-bold uppercase tracking-widest text-white transition-colors">
               Ajay Homes
-            </Link>
+            </span>
             <div
               className="text-xs uppercase tracking-wider font-medium mt-0.5"
               style={{ color: 'var(--primary)' }}

@@ -1,7 +1,8 @@
 import LegalPage from '@/components/Legal/LegalPage';
+import { CONTACT, CONTACT_ADDRESS_ONE_LINE } from '@/data/contactInfo';
 
 export const metadata = {
-  title: 'Privacy Policy | Ajay Homes & Estates',
+  title: 'Privacy Policy | Ajay Homes',
   description: 'How Ajay Homes collects, uses, and protects the personal information you share through our website.',
 };
 
@@ -108,11 +109,11 @@ const SECTIONS = [
       {
         type: 'contact',
         name: 'Ajay Homes',
-        address: 'Ajay Signature Towers, 2nd Avenue, Anna Nagar East, Chennai - 600102, Tamil Nadu, India',
-        email: 'properties@ajayhomesestates.com',
+        address: CONTACT_ADDRESS_ONE_LINE,
+        email: CONTACT.email,
         phones: [
-          { label: '1800 313 0080', href: 'tel:18003130080' },
-          { label: '+91 44 2626 7890', href: 'tel:+914426267890' },
+          { label: CONTACT.salesPhone.display, href: `tel:${CONTACT.salesPhone.tel}` },
+          { label: CONTACT.officePhone.display, href: `tel:${CONTACT.officePhone.tel}` },
         ],
       },
     ],

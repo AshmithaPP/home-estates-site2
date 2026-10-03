@@ -10,6 +10,7 @@ import LookingToBuyAndSellSection from '@/components/RealEstate/LookingToBuyAndS
 import NRIPropertyServicesSection from '@/components/RealEstate/NRIPropertyServicesSection';
 import BuyingSellingProcessSection from '@/components/RealEstate/BuyingSellingProcessSection';
 import MoreThanTransactionSection from '@/components/RealEstate/MoreThanTransactionSection';
+import ServiceGallerySection from '@/components/Common/ServiceGallerySection';
 import ServiceFormFAQSection from '@/components/Common/ServiceFormFAQSection';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
@@ -145,6 +146,14 @@ export default function RealEstatePage() {
 
       {/* ── 8. More Than a Real Estate Transaction (White BG) ─────────── */}
       <MoreThanTransactionSection />
+
+      {/* ── 9. Completed Projects Gallery Section (Redirects to /gallery) ── */}
+      <ServiceGallerySection
+        id="real-estate-gallery"
+        serviceKey="real-estate"
+        badge="THE AJAY MARQUEE"
+        title="Landmark Developments"
+      />
 
       {/* ── 10. LAST SECTION: One Side Form & Another Side FAQ (Light Grey #f8f8f6) ── */}
       <ServiceFormFAQSection

@@ -38,26 +38,26 @@ export const FoundationToCelebrationSection = ({
   return (
     <section
       id={id}
-      className={`relative w-full overflow-hidden lg:min-h-[400px] 2xl:min-h-[440px] ${className}`}
+      className={`relative w-full overflow-hidden bg-white lg:min-h-[400px] 2xl:min-h-[440px] ${className}`}
       style={{
         fontFamily: 'var(--font-family-base)',
-        background: 'color-mix(in srgb, var(--primary-light) 7%, white)',
+        backgroundColor: '#ffffff',
       }}
     >
-      {/* Distant hills along the bottom */}
+      {/* Distant subtle dunes along the bottom */}
       <svg
         aria-hidden="true"
         viewBox="0 0 1440 160"
         preserveAspectRatio="none"
-        className="pointer-events-none absolute bottom-0 left-0 w-full lg:w-[65%] h-20 sm:h-24 lg:h-28"
+        className="pointer-events-none absolute bottom-0 left-0 w-full lg:w-[65%] h-20 sm:h-24 lg:h-28 opacity-40"
       >
         <path
           d="M0 110 C 160 60, 320 70, 470 95 S 760 140, 900 105 S 1180 60, 1440 90 L1440 160 L0 160 Z"
-          fill="color-mix(in srgb, var(--primary-light) 12%, white)"
+          fill="#f4f4f0"
         />
         <path
           d="M0 135 C 200 105, 380 112, 560 128 S 900 150, 1100 130 S 1320 115, 1440 125 L1440 160 L0 160 Z"
-          fill="color-mix(in srgb, var(--primary-light) 17%, white)"
+          fill="#ebebea"
         />
       </svg>
 
@@ -131,28 +131,21 @@ export const FoundationToCelebrationSection = ({
               style={{ color: 'var(--grey-surface)' }}
             >
               From{' '}
-              <Link href="/services/layout-promoters" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                site preparation
-              </Link>{' '}
+              site preparation{' '}
               and{' '}
-              <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                construction
-              </Link>{' '}
+              construction{' '}
               to{' '}
-              <Link href="/services/interior-design" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline transition-colors">
-                finishing
-              </Link>{' '}
+              finishing{' '}
               and handover,{' '}
-              <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] transition-colors">
+              <span className="font-semibold text-slate-900 transition-colors">
                 Ajay Homes
-              </Link>{' '}
+              </span>{' '}
               manages every stage with care, coordination, and attention to detail.
             </p>
 
             {tagline && (
-              <Link
-                href="/contact"
-                className="mt-6 sm:mt-7 inline-flex max-w-full items-center gap-2.5 sm:gap-3.5 rounded-full py-2 pl-4 pr-2 sm:pl-6 hover:scale-105 transition-transform duration-300 group cursor-pointer focus:outline-none"
+              <span
+                className="mt-6 sm:mt-7 inline-flex max-w-full items-center gap-2.5 sm:gap-3.5 rounded-full py-2 pl-4 pr-2 sm:pl-6 transition-transform duration-300 group focus:outline-none"
                 style={{
                   backgroundColor: 'var(--grey-deepest)',
                   border: '1.5px solid color-mix(in srgb, var(--primary) 55%, transparent)',
@@ -168,12 +161,12 @@ export const FoundationToCelebrationSection = ({
                   {tagline}
                 </span>
                 <span
-                  className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full group-hover:translate-x-0.5 transition-transform"
+                  className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full"
                   style={{ backgroundColor: 'var(--primary)' }}
                 >
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" style={{ color: 'var(--grey-deepest)' }} />
                 </span>
-              </Link>
+              </span>
             )}
           </motion.div>
         </div>

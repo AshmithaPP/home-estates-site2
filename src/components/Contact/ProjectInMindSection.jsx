@@ -1,10 +1,10 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Phone, ArrowUpRight, Headphones } from 'lucide-react';
 import Button from '../UI/Button';
+import { CONTACT } from '@/data/contactInfo';
 
 export const ProjectInMindSection = ({ onOpenTourModal, onOpenApply }) => {
   const scrollToForm = () => {
@@ -59,34 +59,14 @@ export const ProjectInMindSection = ({ onOpenTourModal, onOpenApply }) => {
               className="mt-1.5 text-xs sm:text-sm font-semibold text-white/85"
             >
               Let's turn your idea into a clear next step. Explore our{' '}
-              <Link href="/services/construction" className="text-white hover:text-[var(--primary)] underline decoration-white/40 underline-offset-2 transition-colors">
-                construction
-              </Link>
-              ,{' '}
-              <Link href="/services/property-developer" className="text-white hover:text-[var(--primary)] underline decoration-white/40 underline-offset-2 transition-colors">
-                development
-              </Link>
-              , or{' '}
-              <Link href="/services/interior-design" className="text-white hover:text-[var(--primary)] underline decoration-white/40 underline-offset-2 transition-colors">
-                interior design
-              </Link>{' '}
+              construction,{' '}
+              development, or{' '}
+              interior design{' '}
               expertise.
             </motion.p>
 
             {/* Timing Note */}
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.15 }}
-              className="mt-0.5 text-[11px] sm:text-xs text-[var(--text-muted)] font-normal"
-            >
-              Call us anytime at{' '}
-              <a href="tel:+919840012345" className="text-white hover:text-[var(--primary)] font-medium underline decoration-white/40 underline-offset-2 transition-colors">
-                +91 98400 12345
-              </a>{' '}
-              between 9:30am – 6:30pm (Mon – Sat)
-            </motion.p>
+           
           </div>
         </div>
 

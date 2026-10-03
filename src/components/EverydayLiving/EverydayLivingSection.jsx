@@ -25,7 +25,7 @@ Over six decades, we have built thriving communities in Velachery, OMR, Porur, T
   },
   HERITAGE: {
     dropLetter: 'T',
-    body: `60+ years of trust. Over a thousand families. 500+ completed projects. The heritage of Ajay Homes & Estates is written in brick and stone across Chennai's most prime locations.
+    body: `60+ years of trust. Over a thousand families. 500+ completed projects. The heritage of Ajay Homes is written in brick and stone across Chennai's most prime locations.
 
 Our heritage is not just age — it is a living legacy of quality, relationships, and the dream of home made real.`,
   },
@@ -71,7 +71,7 @@ export const EverydayLivingSection = () => {
             <span
               className="inline-block px-4 py-1.5 rounded-full border border-black/15 bg-white text-[10px] font-extrabold tracking-[0.25em] uppercase text-black/70 shadow-xs"
             >
-              Ajay Homes &amp; Estates
+              Ajay Homes
             </span>
           </motion.div>
 
@@ -228,7 +228,7 @@ export const EverydayLivingSection = () => {
           >
             <img
               src="/images/residence-images/ankan-resideance-view/img13.jpg"
-              alt="Ajay Homes & Estates Architecture Team"
+              alt="Ajay Homes Architecture Team"
               className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700"
             />
             {/* Soft gradient overlay */}

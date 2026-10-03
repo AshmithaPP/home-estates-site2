@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   Compass, 
@@ -114,13 +113,9 @@ export const PropertyDeveloperServicesGrid = () => {
 
             <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-sm">
               From{' '}
-              <Link href="/services/layout-promoters" className="text-slate-300 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                land strategy
-              </Link>{' '}
+              land strategy{' '}
               to finished,{' '}
-              <Link href="/gallery" className="text-slate-300 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
-                market-ready architecture
-              </Link>, we manage every phase of development under one unified framework.
+              market-ready architecture, we manage every phase of development under one unified framework.
             </p>
           </motion.div>
 
@@ -144,19 +139,18 @@ export const PropertyDeveloperServicesGrid = () => {
                     transition={{ duration: 0.45, delay: idx * 0.05 }}
                     className="h-full"
                   >
-                    <Link
-                      href={item.href}
-                      className="flex flex-col items-start justify-between text-left p-5 sm:p-6 rounded-2xl border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.05] hover:border-[var(--primary)]/50 transition-all duration-300 group shadow-lg cursor-pointer h-full"
+                    <span
+                      className="flex flex-col items-start justify-between text-left p-5 sm:p-6 rounded-2xl border border-white/[0.08] bg-white/[0.02] transition-all duration-300 group shadow-lg h-full"
                     >
                       <div>
                         {/* Icon Container */}
-                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/15 shadow-md group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all duration-300 mb-4">
-                          <IconComponent className="w-5 h-5 text-white group-hover:text-black transition-colors" />
+                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/15 shadow-md mb-4">
+                          <IconComponent className="w-5 h-5 text-white" />
                         </div>
 
                         {/* Service Title */}
                         <h3 
-                          className="text-base sm:text-[17px] font-bold tracking-tight leading-snug transition-colors text-white group-hover:text-[var(--primary)] mb-2"
+                          className="text-base sm:text-[17px] font-bold tracking-tight leading-snug text-white mb-2"
                         >
                           {item.title}
                         </h3>
@@ -167,10 +161,10 @@ export const PropertyDeveloperServicesGrid = () => {
                         </p>
                       </div>
 
-                      <span className="mt-3 text-xs font-semibold text-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="mt-3 text-xs font-semibold text-[var(--primary)] opacity-0 transition-opacity">
                         Learn more &rarr;
                       </span>
-                    </Link>
+                    </span>
                   </motion.div>
                 );
               })}

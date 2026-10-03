@@ -12,8 +12,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: 'Ajay Homes & Estates',
-  description: "Chennai's Fastest Growing Construction Firm - Ajay Homes & Estates",
+  title: 'Ajay Homes',
+  description: "Chennai's Fastest Growing Construction Firm - Ajay Homes",
   icons: {
     icon: '/favicon.svg',
   },

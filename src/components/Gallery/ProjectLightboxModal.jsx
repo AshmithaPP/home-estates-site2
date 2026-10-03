@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Camera, Sparkles, MapPin } from 'lucide-react';
 
@@ -60,9 +59,9 @@ export const ProjectLightboxModal = ({
               <Camera className="w-3.5 h-3.5 text-[var(--primary)]" />
               <span>{activePhotoIndex + 1} of {images.length} Photos</span>
             </div>
-            <Link href="/contact" className="hidden sm:inline-block text-xs text-white/60 hover:text-[var(--primary)] transition-colors">
+            <span className="hidden sm:inline-block text-xs text-white/60">
               {project.community}
-            </Link>
+            </span>
           </div>
 
           <button suppressHydrationWarning
@@ -121,13 +120,9 @@ export const ProjectLightboxModal = ({
               </h3>
               <p className="text-xs text-white/70 mt-0.5 flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-[var(--primary)]" />
-                <Link href="/services/construction" className="hover:text-[var(--primary)] transition-colors">
-                  {project.community}
-                </Link>{' '}
+                {project.community}{' '}
                 &bull;{' '}
-                <Link href="/services/construction" className="hover:text-[var(--primary)] transition-colors">
-                  {project.bhk}
-                </Link>
+                {project.bhk}
               </p>
             </div>
 
