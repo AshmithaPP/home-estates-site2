@@ -1,16 +1,17 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Clock, ShieldCheck, DollarSign, Palette, Users, Layers } from 'lucide-react';
 
 const PRIORITIES_LIST = [
-  { label: 'Timeline', icon: Clock },
-  { label: 'Quality', icon: ShieldCheck },
-  { label: 'Budget Control', icon: DollarSign },
-  { label: 'Design Execution', icon: Palette },
-  { label: 'One Experienced Team', icon: Users },
-  { label: 'Managing Complexity', icon: Layers },
+  { label: 'Timeline', href: '#project-management-process', icon: Clock },
+  { label: 'Quality', href: '/gallery', icon: ShieldCheck },
+  { label: 'Budget Control', href: '/contact', icon: DollarSign },
+  { label: 'Design Execution', href: '/services/interior-design', icon: Palette },
+  { label: 'One Experienced Team', href: '/about-us', icon: Users },
+  { label: 'Managing Complexity', href: '/services/construction', icon: Layers },
 ];
 
 export const BuiltAroundPrioritiesSection = ({
@@ -43,17 +44,19 @@ export const BuiltAroundPrioritiesSection = ({
               className="absolute -left-3 -bottom-3 sm:-left-4 sm:-bottom-4 w-2/5 h-2/3 rounded-2xl"
               style={{ backgroundColor: 'var(--primary)' }}
             />
-            <div 
-              className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-xl" 
+            <Link
+              href="/gallery"
+              aria-label="View our projects in the gallery"
+              className="block relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-xl focus:outline-none"
               style={{ backgroundColor: 'var(--grey-mid)' }}
             >
-              <img 
-                src={imageSrc} 
-                alt={imageAlt} 
-                className="w-full h-full object-cover" 
-                loading="lazy" 
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                className="w-full h-full object-cover"
+                loading="lazy"
               />
-            </div>
+            </Link>
           </motion.div>
 
           {/* ── Right Content ─────────────────────────────────────────── */}
@@ -65,7 +68,7 @@ export const BuiltAroundPrioritiesSection = ({
           >
             {/* 1. Main Heading */}
             <h2
-              className="text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight leading-tight"
+              className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold tracking-tight leading-snug"
               style={{ color: 'var(--grey-deepest)' }}
             >
               Built Around <span style={{ color: 'var(--primary)' }}>Your Priorities</span>
@@ -80,23 +83,24 @@ export const BuiltAroundPrioritiesSection = ({
             </p>
 
             {/* 3. Hairline Grid of Priorities (No cards) */}
-            <ul 
-              className="mt-3 grid grid-cols-2 sm:grid-cols-[auto_auto_auto] border-t" 
+            <ul
+              className="mt-3 grid grid-cols-2 sm:grid-cols-[auto_auto_auto] border-t"
               style={{ borderColor: hairline }}
             >
-              {PRIORITIES_LIST.map(({ label, icon: Icon }) => (
+              {PRIORITIES_LIST.map(({ label, href, icon: Icon }) => (
                 <li
                   key={label}
-                  className="group flex items-center gap-2.5 py-3.5 sm:py-4 pr-2 border-b"
+                  className="group relative flex items-center gap-2.5 py-3.5 sm:py-4 pr-2 border-b"
                   style={{ borderColor: hairline }}
                 >
+                  <Link href={href} aria-label={label} className="absolute inset-0 z-10 focus:outline-none" />
                   <Icon
                     className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:scale-110"
                     style={{ color: 'var(--primary)' }}
                     strokeWidth={2}
                   />
-                  <span 
-                    className="text-[13px] sm:text-sm font-medium leading-snug sm:whitespace-nowrap" 
+                  <span
+                    className="text-[13px] sm:text-sm font-medium leading-snug sm:whitespace-nowrap"
                     style={{ color: 'var(--grey-deep)' }}
                   >
                     {label}
@@ -106,8 +110,8 @@ export const BuiltAroundPrioritiesSection = ({
             </ul>
 
             {/* 4. Closing Narrative Copy */}
-            <p 
-              className="mt-5 text-sm sm:text-[15px] leading-relaxed" 
+            <p
+              className="mt-5 text-sm sm:text-[15px] leading-relaxed"
               style={{ color: 'var(--grey-surface)' }}
             >
               Our role is to understand those priorities and coordinate the project accordingly.

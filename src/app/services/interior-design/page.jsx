@@ -24,7 +24,7 @@ const interiorWhyChooseFeatures = [
   },
   {
     id: 'experience',
-    title: '50+ Years of Industry Experience',
+    title: '60+ Years of Industry Experience',
     description: 'Decades of experience across construction, property development, interiors, and real estate.',
   },
   {

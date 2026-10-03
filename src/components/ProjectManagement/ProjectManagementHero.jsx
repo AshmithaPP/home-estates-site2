@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '../UI/Button';
@@ -73,7 +74,10 @@ export const ProjectManagementHero = ({ onOpenApply }) => {
                 A premium project needs more than good design and construction. It needs planning, coordination, supervision, and control at every stage.
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-white/80 font-normal leading-relaxed drop-shadow">
-                Ajay Homes provides end-to-end project management for residential, commercial, and high-value developments, helping clients manage people, materials, budgets, timelines, and execution through one experienced team.
+                <Link href="/about-us" className="text-white font-semibold hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">Ajay Homes</Link> provides end-to-end project management for{' '}
+                <Link href="/services/construction" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">residential</Link>,{' '}
+                <Link href="/services/property-developer" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">commercial</Link>, and{' '}
+                <Link href="/gallery" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">high-value developments</Link>, helping clients manage people, materials, budgets, timelines, and execution through one experienced team.
               </p>
             </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -21,7 +22,7 @@ export default function InteriorDesignHero({ onOpenApply }) {
   };
 
   return (
-    <section 
+    <section
       id="interior-hero"
       className="relative w-full h-[100dvh] min-h-[540px] sm:min-h-[620px] lg:min-h-[700px] flex items-center overflow-hidden"
       style={{ fontFamily: 'var(--font-family-base)' }}
@@ -41,10 +42,10 @@ export default function InteriorDesignHero({ onOpenApply }) {
 
       {/* ── Main Hero Layout Container — Flush Left End matching Home Page ── */}
       <div className="relative z-10 max-w-[1800px] mx-auto w-full px-4 sm:px-8 md:px-12 pt-20 sm:pt-24 md:pt-28 pb-8 flex-1 flex flex-col justify-center">
-        
+
         {/* Left End Content Grid matching other pages */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-center my-auto">
-          
+
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -53,11 +54,11 @@ export default function InteriorDesignHero({ onOpenApply }) {
           >
             {/* 1. Category Tag / Eyebrow Header */}
             <div className="flex items-center gap-2">
-              <span 
-                className="w-2 h-2 rounded-full animate-pulse" 
+              <span
+                className="w-2 h-2 rounded-full animate-pulse"
                 style={{ backgroundColor: 'var(--primary)' }}
               />
-              <span 
+              <span
                 className="text-xs sm:text-sm font-bold uppercase tracking-wider"
                 style={{ color: 'var(--primary)' }}
               >
@@ -70,7 +71,7 @@ export default function InteriorDesignHero({ onOpenApply }) {
               <span className="block text-white">
                 Spaces Designed
               </span>
-              <span 
+              <span
                 className="block text-transparent bg-clip-text"
                 style={{
                   backgroundImage: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 60%, var(--text-primary) 100%)',
@@ -83,10 +84,13 @@ export default function InteriorDesignHero({ onOpenApply }) {
             {/* 3. Description Paragraphs — Exact Content requested by user */}
             <div className="space-y-2.5 max-w-xs sm:max-w-xl md:max-w-2xl text-left select-none">
               <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal leading-relaxed drop-shadow">
-                At Ajay Homes, we create interiors that bring together design, functionality, material quality, and refined execution.
+                At <Link href="/about-us" className="text-white font-semibold hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">Ajay Homes</Link>, we create interiors that bring together design, functionality,{' '}
+                <Link href="/gallery" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">material quality</Link>, and refined execution.
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-white/80 font-normal leading-relaxed drop-shadow">
-                From luxury homes and villas to commercial spaces, we manage interior projects from concept and space planning to materials, finishes, execution, and final handover.
+                From <Link href="/gallery" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">luxury homes and villas</Link> to{' '}
+                <Link href="/services/property-developer" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">commercial spaces</Link>, we manage interior projects from concept and space planning to materials, finishes,{' '}
+                <Link href="/services/project-management" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">execution</Link>, and final handover.
               </p>
             </div>
 

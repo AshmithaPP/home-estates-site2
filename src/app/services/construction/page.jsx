@@ -63,10 +63,11 @@ export default function ConstructionServicesPage() {
         title="Planning a Premium Construction Project?"
         description="Bring your vision, land, or project requirement. Our team can help you plan the next step."
         stats={[
-          { value: '₹1 Cr+', label: 'Projects' },
-          { value: '500+', label: 'Projects' },
           { value: '60+ Years', label: 'of Industry Experience' },
+          { value: '500+ Projects', label: 'Completed Projects' },
+          { value: '₹1 Cr+', label: 'Premium Project Experience' },
         ]}
+        statValueClassName="text-sm sm:text-base lg:text-lg"
         ctaText="Discuss Your Project"
         onCtaClick={() => setIsApplyModalOpen(true)}
       />

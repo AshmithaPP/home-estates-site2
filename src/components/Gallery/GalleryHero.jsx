@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import Button from '../UI/Button';
@@ -92,41 +93,57 @@ export const GalleryHero = ({ onOpenTour, onOpenApply }) => {
 
             {/* 2. Subtitle Paragraph — Exact Home Page Typography & Density */}
             <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal max-w-xs sm:max-w-lg md:max-w-xl leading-relaxed drop-shadow select-none text-left">
-              Explore authentic photographs of our completed luxury residences, modular kitchens, structural elevations, and turnkey developments built across Chennai with 50+ years of trusted excellence.
+              Explore authentic photographs of our{' '}
+              <Link href="/services/construction" className="text-white font-medium hover:text-[var(--primary)] transition-colors">
+                completed luxury residences
+              </Link>
+              ,{' '}
+              <Link href="/services/interior-design" className="text-white font-medium hover:text-[var(--primary)] transition-colors">
+                modular kitchens
+              </Link>
+              , structural elevations, and{' '}
+              <Link href="/services/property-developer" className="text-white font-medium hover:text-[var(--primary)] transition-colors">
+                turnkey developments
+              </Link>{' '}
+              built across Chennai with{' '}
+              <Link href="/about-us" className="text-white font-semibold hover:text-[var(--primary)] transition-colors">
+                60+ years
+              </Link>{' '}
+              of trusted excellence.
             </p>
 
             {/* 3. Running Scores / Metrics Row matching Home and About heroes */}
             <div className="flex flex-wrap items-center gap-6 sm:gap-10 pt-4 pb-2 border-t border-white/20 max-w-xl">
-              <div>
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow">
+              <Link href="/services/construction" className="group block cursor-pointer text-left">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow group-hover:text-[var(--primary)] transition-colors">
                   <RunningCounter target={500} suffix="+" />
                 </span>
-                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 font-semibold mt-0.5">
+                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 group-hover:text-white font-semibold mt-0.5 transition-colors">
                   Projects Delivered
                 </span>
-              </div>
+              </Link>
 
               <div className="hidden sm:block w-px h-8 bg-white/20" />
 
-              <div>
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--primary)] tracking-tight drop-shadow">
-                  <RunningCounter target={50} suffix="+" />
+              <Link href="/about-us" className="group block cursor-pointer text-left">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--primary)] tracking-tight drop-shadow group-hover:text-white transition-colors">
+                  <RunningCounter target={60} suffix="+" />
                 </span>
-                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 font-semibold mt-0.5">
+                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 group-hover:text-white font-semibold mt-0.5 transition-colors">
                   Years of Trust
                 </span>
-              </div>
+              </Link>
 
               <div className="hidden sm:block w-px h-8 bg-white/20" />
 
-              <div>
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow">
-                  <RunningCounter target={100} suffix="%" />
+              <Link href="/services/property-developer" className="group block cursor-pointer text-left">
+                <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow group-hover:text-[var(--primary)] transition-colors">
+                  <RunningCounter target={1} prefix="₹" suffix=" Cr+" />
                 </span>
-                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 font-semibold mt-0.5">
-                  Quality Execution
+                <span className="block text-[11px] sm:text-xs uppercase tracking-wider text-white/80 group-hover:text-white font-semibold mt-0.5 transition-colors">
+                  Premium Experience
                 </span>
-              </div>
+              </Link>
             </div>
 
             {/* 4. Action Buttons */}
@@ -142,7 +159,7 @@ export const GalleryHero = ({ onOpenTour, onOpenApply }) => {
               </Button>
 
               <Button
-                onClick={onOpenTour}
+                href="/contact"
                 variant="glass"
                 size="md"
               >

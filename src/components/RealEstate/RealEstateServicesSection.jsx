@@ -1,46 +1,55 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const realEstateServices = [
   {
     title: 'Property Buying',
+    href: '/contact',
     description: 'We help buyers identify properties based on their location, budget, requirements, and investment objectives.',
     image: '/images/residence-images/besantnagar-residence-view/img103.jpg',
   },
   {
     title: 'Property Selling',
+    href: '/contact',
     description: 'We assist property owners in positioning and marketing their properties to reach relevant prospective buyers.',
     image: '/images/residence-images/besantnagar-residence-view/img145.jpg',
   },
   {
     title: 'Residential Properties',
+    href: '/gallery',
     description: 'Support for buyers and sellers across homes, apartments, villas, plots, and other residential properties.',
     image: '/images/residence-images/suresh-residence-view/img33.jpg',
   },
   {
     title: 'Commercial Properties',
+    href: '/services/property-developer',
     description: 'Property solutions for businesses, investors, and owners looking to buy or sell commercial spaces.',
     image: '/images/residence-images/natraj-residence/img67.jpg',
   },
   {
     title: 'Investment Properties',
+    href: '/services/property-developer',
     description: 'We help investors evaluate property opportunities based on location, property type, market considerations, and investment objectives.',
     image: '/images/residence-images/besantnagar-residence-view/img89.jpg',
   },
   {
     title: 'Property Evaluation',
+    href: '/contact',
     description: 'We help clients understand key property considerations before making a buying or selling decision.',
     image: '/images/residence-images/besantnagar-residence-view/img131.jpg',
   },
   {
     title: 'Buyer & Seller Coordination',
+    href: '/services/project-management',
     description: 'From initial discussions to negotiations and transaction coordination, we help keep the process organised.',
     image: '/images/residence-images/besantnagar-residence-view/img181.jpg',
   },
   {
     title: 'NRI Property Services',
+    href: '#nri-services',
     description: 'Support for NRI clients looking to buy, sell, develop, or manage property in Chennai.',
     image: '/images/residence-images/besantnagar-residence-view/img117.jpg',
   },
@@ -58,7 +67,7 @@ export default function RealEstateServicesSection() {
       }}
     >
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <motion.h2
@@ -81,8 +90,11 @@ export default function RealEstateServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: idx * 0.05 }}
-              className="bg-white text-slate-900 rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col group"
+              className="relative bg-white text-slate-900 rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col group"
             >
+              {/* Whole card links to the related page */}
+              <Link href={service.href} aria-label={service.title} className="absolute inset-0 z-10 rounded-2xl focus:outline-none" />
+
               {/* Photo Frame */}
               <div className="relative h-36 sm:h-38 w-full overflow-hidden bg-slate-100">
                 <img

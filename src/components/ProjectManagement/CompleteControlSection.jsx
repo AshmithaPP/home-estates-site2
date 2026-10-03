@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -27,21 +28,15 @@ export const CompleteControlSection = ({ onOpenApply }) => {
   ];
 
   return (
-    <section 
+    <section
       id="complete-control"
       className="relative w-full bg-white text-slate-900 py-16 sm:py-20 lg:py-28 overflow-hidden"
       style={{ fontFamily: 'var(--font-family-base)' }}
     >
-      {/* ── Right-Side Dark Accent Band (Architectural Split Accent) ── */}
-      <div 
-        className="hidden md:block absolute right-0 top-0 bottom-0 w-[30%] lg:w-[35%] xl:w-[38%] pointer-events-none"
-        style={{ backgroundColor: 'var(--grey-deepest)' }}
-      />
-
       {/* ── Main Layout Container ── */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
-          
+
           {/* ── Left Column: Editorial Content ── */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -50,23 +45,27 @@ export const CompleteControlSection = ({ onOpenApply }) => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="md:col-span-6 lg:col-span-6 text-left space-y-4 sm:space-y-5"
           >
-
             {/* 1. Main Heading */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-slate-950 tracking-tight leading-[1.2]">
-              Complete Control <br className="hidden sm:inline" />
-              From Start to Finish
+            <h2 className="text-2xl sm:text-3xl lg:text-[28px] 2xl:text-[31px] font-bold text-slate-950 tracking-tight leading-snug xl:whitespace-nowrap">
+              Complete Control From Start to Finish
             </h2>
 
             {/* 2. Narrative Copy Paragraphs — Exact Content Requested */}
             <div className="space-y-3.5 text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed">
               <p>
-                Managing a construction or development project involves hundreds of decisions.
+                Managing a{' '}
+                <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">construction</Link>{' '}
+                or{' '}
+                <Link href="/services/property-developer" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">development</Link>{' '}
+                project involves hundreds of decisions.
               </p>
               <p>
-                From coordinating architects and contractors to monitoring materials, timelines, quality, and site progress, every detail can affect the final outcome.
+                From coordinating architects and contractors to monitoring materials, timelines,{' '}
+                <Link href="/gallery" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">quality</Link>, and site progress, every detail can affect the final outcome.
               </p>
               <p>
-                Ajay Homes brings these moving parts together through a structured project management approach designed to keep your project organised, transparent, and moving forward.
+                <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">Ajay Homes</Link>{' '}
+                brings these moving parts together through a structured project management approach designed to keep your project organised, transparent, and moving forward.
               </p>
             </div>
 
@@ -74,8 +73,8 @@ export const CompleteControlSection = ({ onOpenApply }) => {
             <div className="pt-2 space-y-2.5">
               {keyHighlights.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle2 
-                    className="w-5 h-5 shrink-0 mt-0.5" 
+                  <CheckCircle2
+                    className="w-5 h-5 shrink-0 mt-0.5"
                     style={{ color: 'var(--primary)' }}
                   />
                   <div>
@@ -110,8 +109,10 @@ export const CompleteControlSection = ({ onOpenApply }) => {
           >
             <div className="relative mx-auto max-w-lg md:max-w-none">
               {/* Photo Card with Shadow and Border */}
-              <div 
-                className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl border-4 border-white aspect-[4/3] sm:aspect-[16/11]"
+              <Link
+                href="/gallery"
+                aria-label="View Besant Nagar residence and more projects in our gallery"
+                className="block relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl border-4 border-white aspect-[4/3] sm:aspect-[16/11] focus:outline-none"
                 style={{ backgroundColor: 'var(--grey-base)' }}
               >
                 <img
@@ -120,7 +121,7 @@ export const CompleteControlSection = ({ onOpenApply }) => {
                   className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                
+
                 {/* Floating Badge */}
                 <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-xl p-3 shadow-lg border border-white/50 text-left">
                   <div className="flex items-center justify-between gap-2">
@@ -132,7 +133,7 @@ export const CompleteControlSection = ({ onOpenApply }) => {
                         100% Quality & Schedule Adherence
                       </p>
                     </div>
-                    <span 
+                    <span
                       className="shrink-0 whitespace-nowrap text-[11px] sm:text-xs font-extrabold px-2.5 py-1 rounded-full text-black"
                       style={{ backgroundColor: 'var(--primary)' }}
                     >
@@ -140,7 +141,7 @@ export const CompleteControlSection = ({ onOpenApply }) => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </motion.div>
 

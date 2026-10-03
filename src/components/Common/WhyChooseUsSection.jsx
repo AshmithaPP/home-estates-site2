@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -11,33 +12,39 @@ import Button from '@/components/UI/Button';
 const DEFAULT_FEATURES = [
   {
     id: 'experience',
-    title: '50+ Years of Industry Experience',
+    title: '60+ Years of Industry Experience',
     description: 'Decades of experience across construction, property development, interiors, and real estate.',
+    href: '/about-us',
   },
   {
     id: 'projects',
     title: '500+ Projects Completed',
     description: 'Experience across diverse residential, commercial, and development projects.',
+    href: '/gallery',
   },
   {
     id: 'expertise',
     title: '₹1 Cr+ Project Expertise',
     description: 'Experienced in handling premium and high-value construction projects with detailed planning and execution.',
+    href: '/services/construction',
   },
   {
     id: 'management',
     title: 'End-to-End Management',
     description: 'From the first discussion to project handover, we coordinate the complete construction process.',
+    href: '/services/project-management',
   },
   {
     id: 'quality',
     title: 'Quality-Focused Execution',
     description: 'We focus on material quality, workmanship, site supervision, and attention to detail at every stage.',
+    href: '/gallery',
   },
   {
     id: 'transparent',
     title: 'Transparent Approach',
     description: 'Clear communication, coordinated execution, and better visibility throughout the project.',
+    href: '/about-us',
   },
 ];
 
@@ -95,17 +102,19 @@ export const WhyChooseUsSection = ({
             className="w-11 h-11 sm:w-14 sm:h-14 lg:w-[72px] lg:h-[72px] shrink-0"
             style={{ color: 'var(--grey-deep)' }}
           />
-          <h2
-            className="text-[22px] sm:text-[28px] lg:text-[32px] font-bold tracking-tight leading-tight pb-0.5"
-            style={{ color: 'var(--primary)' }}
-          >
-            {title}
-          </h2>
+          <Link href="/about-us" className="hover:opacity-90 transition-opacity">
+            <h2
+              className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold tracking-tight leading-snug pb-0.5"
+              style={{ color: 'var(--primary)' }}
+            >
+              {title}
+            </h2>
+          </Link>
         </motion.div>
 
         <div className="mt-8 sm:mt-12 lg:mt-14 grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-10 xl:gap-12 items-start">
 
-          {/* ── Left: Photo with offset accent block ───────────────────── */}
+          {/* ── Left: Photo with offset accent block (links to Gallery) ── */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -119,14 +128,24 @@ export const WhyChooseUsSection = ({
               className="absolute left-0 top-0 bottom-0 w-[36%]"
               style={{ backgroundColor: 'var(--primary)' }}
             />
-            <div className="relative aspect-[550/400] w-full overflow-hidden" style={{ backgroundColor: 'var(--grey-mid)' }}>
+            <Link
+              href="/gallery"
+              className="block relative aspect-[550/400] w-full overflow-hidden group cursor-pointer"
+              style={{ backgroundColor: 'var(--grey-mid)' }}
+              aria-label="Explore our project gallery"
+            >
               <img
                 src={imageSrc}
                 alt={imageAlt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 loading="lazy"
               />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <span className="text-xs font-bold text-white uppercase tracking-wider bg-black/60 px-3 py-1 rounded backdrop-blur-xs">
+                  View 500+ Projects &rarr;
+                </span>
+              </div>
+            </Link>
           </motion.div>
 
           {/* ── Right: Accordion ───────────────────────────────────────── */}
@@ -184,7 +203,15 @@ export const WhyChooseUsSection = ({
                             className="pb-4 sm:pb-5 pr-8 text-sm sm:text-[15px] leading-[1.9]"
                             style={{ color: 'var(--grey-base)' }}
                           >
-                            {item.description}
+                            {item.description}{' '}
+                            {item.href && (
+                              <Link
+                                href={item.href}
+                                className="inline-flex items-center gap-1 font-semibold text-[var(--primary)] hover:underline ml-1"
+                              >
+                                <span>Learn more &rarr;</span>
+                              </Link>
+                            )}
                           </p>
                         </motion.div>
                       )}

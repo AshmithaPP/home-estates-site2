@@ -1,8 +1,18 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Camera, Filter } from 'lucide-react';
+
+const getCategoryHref = (category) => {
+  if (!category) return '/services/construction';
+  const cat = category.toLowerCase();
+  if (cat.includes('villa') || cat.includes('residence')) return '/services/construction';
+  if (cat.includes('suite') || cat.includes('living') || cat.includes('kitchen') || cat.includes('dining') || cat.includes('interior')) return '/services/interior-design';
+  if (cat.includes('apartment') || cat.includes('plot') || cat.includes('commercial')) return '/services/property-developer';
+  return '/services/construction';
+};
 
 export const ProjectGridSection = ({ 
   projects, 
@@ -19,18 +29,26 @@ export const ProjectGridSection = ({
   return (
     <section className="w-full">
       {/* ── Category Filters Navigation Bar ─────────────────────────── */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 mb-6 border-b border-black/10">
+      <div className="flex flex-col gap-4 sm:gap-5 pb-5 mb-6 border-b border-black/10">
         <div>
-          <h2 className="text-lg sm:text-xl font-extrabold text-[#111827] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-[#111827] tracking-tight leading-snug sm:whitespace-nowrap">
             Explore All Completed Projects
           </h2>
           <p className="text-xs sm:text-[13px] text-[#6b7280] mt-0.5">
-            Real architectural photographs from our landmark residences across Chennai.
+            Real architectural photographs from our{' '}
+            <Link href="/services/construction" className="text-[#111827] hover:text-[var(--primary)] font-semibold transition-colors">
+              landmark residences
+            </Link>{' '}
+            across{' '}
+            <Link href="/contact" className="text-[#111827] hover:text-[var(--primary)] font-semibold transition-colors">
+              Chennai
+            </Link>
+            .
           </p>
         </div>
 
-        {/* Category Pills (wrap on mobile/tablet, one line from md up) */}
-        <div className="flex flex-wrap md:flex-nowrap items-center gap-2 md:overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+        {/* Category Pills (below the heading, wrapping so every pill stays visible) */}
+        <div className="flex flex-wrap items-center gap-2">
           {categories.map((cat) => {
             const isActive = selectedCategory === cat;
             return (
@@ -90,9 +108,13 @@ export const ProjectGridSection = ({
                 </div>
 
                 {/* Scope Category Badge on Top-Left */}
-                <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10.5px] font-semibold text-white/90 shadow-sm">
+                <Link
+                  href={getCategoryHref(project.category)}
+                  onClick={(e) => e.stopPropagation()}
+                  className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-black/60 hover:bg-[var(--primary)] hover:text-black backdrop-blur-md border border-white/15 text-[10.5px] font-semibold text-white/90 shadow-sm transition-all z-10 cursor-pointer"
+                >
                   {project.category}
-                </div>
+                </Link>
               </div>
 
               {/* 2. Card Content Body (Refined Padding & Typography) */}
@@ -108,7 +130,9 @@ export const ProjectGridSection = ({
                     {project.title}
                   </h3>
                   <p className="text-[11.5px] sm:text-xs text-[#6b7280] font-medium mt-1 truncate">
-                    {project.community}
+                    <Link href="/services/construction" className="hover:text-[var(--primary)] transition-colors">
+                      {project.community}
+                    </Link>
                   </p>
                 </div>
 
@@ -122,12 +146,13 @@ export const ProjectGridSection = ({
                         <span className="text-[10px] sm:text-[10.5px] font-medium text-[#6b7280] uppercase tracking-wider block">
                           Scope
                         </span>
-                        <span 
-                          className="text-[11.5px] sm:text-xs font-semibold text-[#111827] block truncate mt-0.5"
+                        <Link
+                          href={getCategoryHref(project.category)}
+                          className="text-[11.5px] sm:text-xs font-semibold text-[#111827] hover:text-[var(--primary)] block truncate mt-0.5 transition-colors"
                           title={project.scope}
                         >
                           {project.scope}
-                        </span>
+                        </Link>
                       </div>
 
                       {/* Column 2: BHK */}
@@ -135,9 +160,12 @@ export const ProjectGridSection = ({
                         <span className="text-[10px] sm:text-[10.5px] font-medium text-[#6b7280] uppercase tracking-wider block">
                           BHK
                         </span>
-                        <span className="text-[11.5px] sm:text-xs font-semibold text-[#111827] block mt-0.5 truncate">
+                        <Link
+                          href="/services/construction"
+                          className="text-[11.5px] sm:text-xs font-semibold text-[#111827] hover:text-[var(--primary)] block mt-0.5 truncate transition-colors"
+                        >
                           {project.bhk}
-                        </span>
+                        </Link>
                       </div>
 
                     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   Home, 
@@ -8,7 +9,8 @@ import {
   Sparkles, 
   KeyRound, 
   RefreshCw, 
-  Network 
+  Network,
+  ArrowRight
 } from 'lucide-react';
 
 export const ConstructionServicesGrid = () => {
@@ -17,37 +19,43 @@ export const ConstructionServicesGrid = () => {
       id: 'residential',
       title: 'Residential Construction',
       description: 'From independent homes and luxury villas to large residential developments, we build spaces around your requirements, lifestyle, and vision.',
-      icon: Home
+      icon: Home,
+      href: '/gallery'
     },
     {
       id: 'commercial',
       title: 'Commercial Construction',
       description: 'We undertake commercial projects with a focus on functionality, durability, design, and efficient execution.',
-      icon: Building2
+      icon: Building2,
+      href: '/services/property-developer'
     },
     {
       id: 'luxury-premium',
       title: 'Luxury & Premium Projects',
       description: 'For high-value projects, every detail matters. We focus on refined finishes, quality materials, precise execution, and consistent site supervision.',
-      icon: Sparkles
+      icon: Sparkles,
+      href: '/gallery'
     },
     {
       id: 'turnkey',
       title: 'Turnkey Construction',
       description: 'One team managing the complete project—from planning and coordination to construction and handover.',
-      icon: KeyRound
+      icon: KeyRound,
+      href: '/services/project-management'
     },
     {
       id: 'renovation',
       title: 'Renovation & Redevelopment',
       description: 'Transform existing properties through thoughtful planning, structural improvements, modern design, and quality execution.',
-      icon: RefreshCw
+      icon: RefreshCw,
+      href: '/services/interior-design'
     },
     {
       id: 'large-scale',
       title: 'Large-Scale Projects',
       description: 'Our experience allows us to manage complex projects involving multiple teams, vendors, materials, and execution stages.',
-      icon: Network
+      icon: Network,
+      href: '/services/property-developer'
     }
   ];
 
@@ -81,7 +89,7 @@ export const ConstructionServicesGrid = () => {
             className="lg:col-span-3 text-left"
           >
             {/* Title styled cleanly flush to left */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-3 sm:mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-snug mb-3 sm:mb-4">
               Our Construction <br className="hidden sm:inline" />
               <span className="text-white block mt-1">
                 Services
@@ -89,7 +97,14 @@ export const ConstructionServicesGrid = () => {
             </h2>
 
             <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-sm">
-              Comprehensive turnkey capabilities backed by five decades of master craftsmanship, empirical quality audits, and landmark residential excellence.
+              Comprehensive turnkey capabilities backed by{' '}
+              <Link href="/about-us" className="text-white hover:text-[var(--primary)] underline decoration-white/30 transition-colors">
+                60+ years
+              </Link>{' '}
+              of master craftsmanship, empirical quality audits, and landmark residential excellence across{' '}
+              <Link href="/gallery" className="text-white hover:text-[var(--primary)] underline decoration-white/30 transition-colors">
+                500+ projects
+              </Link>.
             </p>
           </motion.div>
 
@@ -114,22 +129,30 @@ export const ConstructionServicesGrid = () => {
                     transition={{ duration: 0.45, delay: idx * 0.08 }}
                     className="flex flex-col items-start text-left space-y-3 group"
                   >
-                    {/* White Icon Badge Container */}
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/15 shadow-md group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all duration-300">
-                      <IconComponent className="w-5 h-5 text-white group-hover:text-black transition-colors" />
-                    </div>
-
-                    {/* Service Title */}
-                    <h3 
-                      className="text-base sm:text-[17px] font-bold tracking-tight leading-snug transition-colors text-white group-hover:text-[var(--primary)]"
+                    <Link
+                      href={item.href}
+                      className="block group/link focus:outline-none w-full"
                     >
-                      {item.title}
-                    </h3>
+                      {/* White Icon Badge Container */}
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/15 shadow-md group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all duration-300 mb-3">
+                        <IconComponent className="w-5 h-5 text-white group-hover:text-black transition-colors" />
+                      </div>
 
-                    {/* Service Description */}
-                    <p className="text-xs sm:text-[13px] text-slate-400 font-normal leading-relaxed">
-                      {item.description}
-                    </p>
+                      {/* Service Title */}
+                      <div className="flex items-center gap-1.5 mb-1.5">
+                        <h3 
+                          className="text-base sm:text-[17px] font-bold tracking-tight leading-snug transition-colors text-white group-hover/link:text-[var(--primary)]"
+                        >
+                          {item.title}
+                        </h3>
+                        <ArrowRight className="w-3.5 h-3.5 text-slate-500 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all" />
+                      </div>
+
+                      {/* Service Description */}
+                      <p className="text-xs sm:text-[13px] text-slate-400 font-normal leading-relaxed">
+                        {item.description}
+                      </p>
+                    </Link>
                   </motion.div>
                 );
               })}

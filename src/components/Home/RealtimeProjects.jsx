@@ -86,18 +86,18 @@ export default function RealtimeProjects() {
   const bannerIntro = (
         <div className="flex-1 text-left flex flex-col justify-between py-1">
           <div>
-            <h3 className="text-2xl sm:text-3xl 2xl:text-[34px] font-bold tracking-tight text-white font-sans leading-tight">
+            <h3 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold tracking-tight text-white font-sans leading-tight">
               Our Landmark Network
             </h3>
             <p className="mt-3 text-xs sm:text-[13px] 2xl:text-[15px] text-white/90 leading-relaxed font-sans max-w-[340px]">
-              Ajay Homes &amp; Estates is South India&#39;s premier builder with 150+ architectural landmarks delivered across Chennai.
+              Ajay Homes &amp; Estates is South India&#39;s premier builder with 500+ architectural landmarks delivered across Chennai.
             </p>
 
             {/* Rich Content & Trust Highlights filling empty space */}
             <div className="mt-5 pt-5 border-t border-white/15 space-y-3">
               <div className="flex items-center gap-2 text-xs sm:text-[12.5px] 2xl:text-sm text-white/90 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-[var(--primary)] shrink-0" />
-                <span>150+ Luxury Residences &amp; Enclaves</span>
+                <span>500+ Luxury Residences &amp; Enclaves</span>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-[12.5px] 2xl:text-sm text-white/90 font-medium">
                 <ShieldCheck className="w-4 h-4 text-[var(--primary)] shrink-0" />
@@ -112,7 +112,7 @@ export default function RealtimeProjects() {
 
           <div className="mt-6 pt-2">
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-between rounded-xl bg-[var(--primary)] hover:bg-[var(--primary-dark)] pl-4 sm:pl-5 pr-3 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-black transition-all shadow-md group hover:scale-[1.02]"
             >
               <span>Find Landmark Near You</span>
@@ -808,9 +808,10 @@ export default function RealtimeProjects() {
 
               {/* Card 1 embedded inside the blue banner */}
               {filteredProjects[0] && (
-                <div
+                <Link
+                  href="/gallery"
                   style={{ width: isStacked ? "100%" : `${colW - 28}px` }}
-                  className="shrink-0 rounded-2xl bg-white shadow-xl border border-slate-100 text-slate-900 flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                  className="shrink-0 rounded-2xl bg-white shadow-xl border border-slate-100 text-slate-900 flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 block cursor-pointer group/card">
                   {/* Top flush image */}
                   <div
                     className="relative w-full shrink-0 overflow-hidden bg-slate-100"
@@ -821,27 +822,28 @@ export default function RealtimeProjects() {
                       alt={filteredProjects[0].title}
                       fill
                       sizes="(max-width: 640px) 100vw, 400px"
-                      className="object-cover object-top transition-transform duration-500 hover:scale-105"
+                      className="object-cover object-top transition-transform duration-500 group-hover/card:scale-105"
                     />
                     <StatusChip proj={filteredProjects[0]} />
                   </div>
 
                   {/* Card Content: title, location, specs, description, rating */}
                   <ProjectCardBody proj={filteredProjects[0]} />
-                </div>
+                </Link>
               )}
             </div>
             )}
 
             {/* Remaining Cards Row (Card 2, 3, 4, 5, 6...) sized to fit cleanly without cut-off */}
             {filteredProjects.slice(isStacked ? 0 : 1).map((proj, idx) => (
-              <div
+              <Link
                 key={proj.id}
+                href="/gallery"
                 style={{
                   width: `${colW}px`,
                   transitionDelay: `${(idx + 1) * 80}ms`,
                 }}
-                className={`snap-start shrink-0 rounded-2xl bg-white shadow-md border border-slate-200/90 text-slate-900 flex flex-col overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 ${
+                className={`snap-start shrink-0 rounded-2xl bg-white shadow-md border border-slate-200/90 text-slate-900 flex flex-col overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 block cursor-pointer group/card ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
@@ -852,14 +854,14 @@ export default function RealtimeProjects() {
                     alt={proj.title}
                     fill
                     sizes="(max-width: 640px) 100vw, 400px"
-                    className="object-cover object-top transition-transform duration-500 hover:scale-105"
+                    className="object-cover object-top transition-transform duration-500 group-hover/card:scale-105"
                   />
                   <StatusChip proj={proj} />
                 </div>
 
                 {/* Card Content: title, location, specs, description, rating */}
                 <ProjectCardBody proj={proj} />
-              </div>
+              </Link>
             ))}
           </div>
 

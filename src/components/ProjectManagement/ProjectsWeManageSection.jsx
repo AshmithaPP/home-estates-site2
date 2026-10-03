@@ -1,15 +1,16 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { 
-  Sparkles, 
-  Home, 
-  Building2, 
-  Landmark, 
-  MapPin, 
-  RefreshCw, 
-  Network, 
+import {
+  Sparkles,
+  Home,
+  Building2,
+  Landmark,
+  MapPin,
+  RefreshCw,
+  Network,
   Gem,
   CheckCircle2
 } from 'lucide-react';
@@ -21,6 +22,7 @@ const PROJECT_TYPES = [
     icon: Sparkles,
     image: '/assets/img/img-001.jpeg',
     tag: 'Bespoke Residences',
+    href: '/gallery',
   },
   {
     id: 'villas',
@@ -28,6 +30,7 @@ const PROJECT_TYPES = [
     icon: Home,
     image: '/assets/img/img-004.jpeg',
     tag: 'Independent Villas',
+    href: '/gallery',
   },
   {
     id: 'residential-dev',
@@ -35,6 +38,7 @@ const PROJECT_TYPES = [
     icon: Building2,
     image: '/assets/img/img-009.jpeg',
     tag: 'Luxury Enclaves',
+    href: '/services/property-developer',
   },
   {
     id: 'commercial',
@@ -42,6 +46,7 @@ const PROJECT_TYPES = [
     icon: Landmark,
     image: '/assets/img/img-016.jpeg',
     tag: 'Corporate & Retail',
+    href: '/services/property-developer',
   },
   {
     id: 'property-dev',
@@ -49,6 +54,7 @@ const PROJECT_TYPES = [
     icon: MapPin,
     image: '/assets/img/img-020.jpeg',
     tag: 'Plotted Layouts',
+    href: '/services/layout-promoters',
   },
   {
     id: 'renovations',
@@ -56,6 +62,7 @@ const PROJECT_TYPES = [
     icon: RefreshCw,
     image: '/assets/img/img-028.jpeg',
     tag: 'Structural Upgrades',
+    href: '/services/construction',
   },
   {
     id: 'large-scale',
@@ -63,6 +70,7 @@ const PROJECT_TYPES = [
     icon: Network,
     image: '/assets/img/img-035.jpeg',
     tag: 'Multi-Team Sites',
+    href: '/services/construction',
   },
   {
     id: 'high-value',
@@ -70,6 +78,7 @@ const PROJECT_TYPES = [
     icon: Gem,
     image: '/images/residence-images/r3-brc-views/img4.jpg',
     tag: 'High-Value Tier',
+    href: '/gallery',
   },
 ];
 
@@ -87,16 +96,16 @@ export const ProjectsWeManageSection = ({
       }}
     >
       {/* ── Background Soft Glow (Matching FAQ Section) ── */}
-      <div 
+      <div
         aria-hidden="true"
         className="pointer-events-none absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 rounded-full blur-[140px]"
         style={{ backgroundColor: 'var(--primary)', opacity: 0.08 }}
       />
       <div className="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-8 md:px-12">
-        
+
         {/* ── 1 Single One-Line Heading (No eyebrow, no subtitle) ── */}
         <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-[#1a1a1a] tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-[#1a1a1a] tracking-tight leading-snug">
             Projects We Manage
           </h2>
         </div>
@@ -114,6 +123,9 @@ export const ProjectsWeManageSection = ({
                 transition={{ duration: 0.35, delay: idx * 0.04 }}
                 className="group relative rounded-xl sm:rounded-2xl p-3 sm:p-3.5 border border-black/5 bg-white hover:border-[var(--primary)] shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-3.5 cursor-pointer"
               >
+                {/* Whole card links to the related page */}
+                <Link href={item.href} aria-label={item.title} className="absolute inset-0 z-10 rounded-xl sm:rounded-2xl focus:outline-none" />
+
                 {/* Compact Photo Thumbnail */}
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 bg-slate-100 shadow-xs border border-slate-100">
                   <img

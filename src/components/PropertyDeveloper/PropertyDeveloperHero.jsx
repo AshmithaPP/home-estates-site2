@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -70,15 +71,40 @@ export const PropertyDeveloperHero = ({ onOpenApply }) => {
             {/* 3. Description Paragraphs — Exact Content requested by user */}
             <div className="space-y-2.5 max-w-xs sm:max-w-xl md:max-w-2xl text-left select-none">
               <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal leading-relaxed drop-shadow">
-                Ajay Homes helps landowners, investors, and property owners turn development opportunities into thoughtfully planned and professionally executed properties.
+                <Link href="/about-us" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  Ajay Homes
+                </Link>{' '}
+                helps{' '}
+                <Link href="/services/real-estate" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  landowners, investors, and property owners
+                </Link>{' '}
+                turn development opportunities into thoughtfully planned and{' '}
+                <Link href="/gallery" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  professionally executed properties
+                </Link>.
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-white/80 font-normal leading-relaxed drop-shadow">
-                With expertise across planning, construction, project management, interiors, and real estate, we manage the key stages of property development under one roof.
+                With expertise across{' '}
+                <Link href="/services/layout-promoters" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  planning
+                </Link>,{' '}
+                <Link href="/services/construction" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  construction
+                </Link>,{' '}
+                <Link href="/services/project-management" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  project management
+                </Link>,{' '}
+                <Link href="/services/interior-design" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  interiors
+                </Link>, and{' '}
+                <Link href="/services/real-estate" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  real estate
+                </Link>, we manage the key stages of property development under one roof.
               </p>
             </div>
 
-            {/* 4. Action Button (Pill Button using dynamic theme variables) */}
-            <div className="pt-2 sm:pt-3 flex items-center justify-start">
+            {/* 4. Action Buttons */}
+            <div className="pt-2 sm:pt-3 flex flex-wrap items-center justify-start gap-4">
               <Button
                 onClick={handleDiscuss}
                 variant="primary"
@@ -88,6 +114,12 @@ export const PropertyDeveloperHero = ({ onOpenApply }) => {
               >
                 Discuss Your Development
               </Button>
+              <Link
+                href="/gallery"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm transition-all cursor-pointer"
+              >
+                View 500+ Projects &rarr;
+              </Link>
             </div>
           </motion.div>
 

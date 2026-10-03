@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const PROCESS_STEPS = [
@@ -8,6 +9,7 @@ const PROCESS_STEPS = [
     stepNumber: "01",
     title: "01 — Understand",
     name: "Understand",
+    href: "/contact",
     description: "We understand your project scope, objectives, budget, timeline, and expectations.",
     image: "/assets/img/img-001.jpeg",
   },
@@ -15,6 +17,7 @@ const PROCESS_STEPS = [
     stepNumber: "02",
     title: "02 — Plan",
     name: "Plan",
+    href: "/services/property-developer",
     description: "We establish the project roadmap, execution requirements, responsibilities, and timelines.",
     image: "/assets/img/raman-residence-view/img39.jpg",
   },
@@ -22,6 +25,7 @@ const PROCESS_STEPS = [
     stepNumber: "03",
     title: "03 — Coordinate",
     name: "Coordinate",
+    href: "/services/construction",
     description: "Our team coordinates architects, consultants, contractors, vendors, and other stakeholders.",
     image: "/assets/img/img-004.jpeg",
   },
@@ -29,6 +33,7 @@ const PROCESS_STEPS = [
     stepNumber: "04",
     title: "04 — Monitor",
     name: "Monitor",
+    href: "/gallery",
     description: "We track site progress, quality, materials, costs, and timelines throughout execution.",
     image: "/assets/img/shasthri-nagar-adyar/img64.jpg",
   },
@@ -36,6 +41,7 @@ const PROCESS_STEPS = [
     stepNumber: "05",
     title: "05 — Resolve",
     name: "Resolve",
+    href: "/contact",
     description: "Issues and coordination challenges are identified early and addressed with the relevant teams.",
     image: "/assets/img/img-008.jpeg",
   },
@@ -43,6 +49,7 @@ const PROCESS_STEPS = [
     stepNumber: "06",
     title: "06 — Deliver",
     name: "Deliver",
+    href: "/gallery",
     description: "We coordinate the final stages through completion and handover.",
     image: "/assets/img/img-009.jpeg",
   },
@@ -65,11 +72,11 @@ export const ProjectManagementProcessSection = ({
       }}
     >
       <div className="max-w-[1800px] mx-auto">
-        
+
         {/* ── Section Heading ──────────── */}
         <div className="text-center mb-10 sm:mb-14">
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-snug">
             {title}
           </h2>
         </div>
@@ -89,6 +96,9 @@ export const ProjectManagementProcessSection = ({
                   boxShadow: '0 8px 24px -6px rgba(0, 0, 0, 0.6)',
                 }}
               >
+                {/* Whole card links to the related page */}
+                <Link href={item.href || '/contact'} aria-label={item.name} className="absolute inset-0 z-20 rounded-2xl focus:outline-none" />
+
                 {/* Background Image with Smooth Zoom on Hover */}
                 <img
                   src={item.image}
@@ -97,7 +107,7 @@ export const ProjectManagementProcessSection = ({
                 />
 
                 {/* Dark Gradient Overlay for text contrast */}
-                <div 
+                <div
                   className="absolute inset-0 transition-opacity duration-300"
                   style={{
                     background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.2) 75%, transparent 100%)',
@@ -106,7 +116,7 @@ export const ProjectManagementProcessSection = ({
 
                 {/* Top Step Number Badge */}
                 <div className="absolute top-3.5 left-3.5 z-10">
-                  <span 
+                  <span
                     className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase backdrop-blur-md border border-white/15"
                     style={{
                       backgroundColor: 'rgba(0, 0, 0, 0.6)',
@@ -129,7 +139,7 @@ export const ProjectManagementProcessSection = ({
                 </div>
 
                 {/* Bottom Primary Accent Hairline on Hover */}
-                <div 
+                <div
                   className="absolute bottom-0 left-0 right-0 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ backgroundColor: 'var(--primary)' }}
                 />

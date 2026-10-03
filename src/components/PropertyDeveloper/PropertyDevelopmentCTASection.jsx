@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -11,9 +12,9 @@ export const PropertyDevelopmentCTASection = ({
   className = '',
 }) => {
   const stats = [
-    { value: '50+ Years', label: 'of Industry Experience' },
-    { value: '500+', label: 'Projects' },
-    { value: '₹1 Cr+', label: 'Project Expertise' },
+    { value: '60+ Years', label: 'of Industry Experience', href: '/about-us' },
+    { value: '500+ Projects', label: 'Completed Portfolio', href: '/gallery' },
+    { value: '₹1 Cr+', label: 'Project Expertise', href: '/services/construction' },
   ];
 
   const handleAction = () => {
@@ -61,12 +62,19 @@ export const PropertyDevelopmentCTASection = ({
 
           {/* Left Column */}
           <div className="relative z-10 flex-1 space-y-2 text-left">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-snug">
               Have a Property Development Opportunity?
             </h2>
 
             <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed max-w-xl">
-              Whether you own land or are exploring a development investment, let's discuss the possibilities.
+              Whether you own{' '}
+              <Link href="/services/layout-promoters" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                land
+              </Link>{' '}
+              or are exploring a{' '}
+              <Link href="/services/real-estate" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                development investment
+              </Link>, let's discuss the possibilities.
             </p>
 
             {/* Stats Strip */}
@@ -75,14 +83,14 @@ export const PropertyDevelopmentCTASection = ({
                 const isLast = idx === stats.length - 1;
                 return (
                   <React.Fragment key={idx}>
-                    <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
-                      <strong className="font-bold text-white tracking-wide">
+                    <Link href={item.href} className="inline-flex items-center gap-1.5 whitespace-nowrap hover:text-[var(--primary)] transition-colors group cursor-pointer">
+                      <strong className="font-bold text-white group-hover:text-[var(--primary)] tracking-wide transition-colors">
                         {item.value}
                       </strong>
-                      <span className="text-neutral-400">
+                      <span className="text-neutral-400 group-hover:text-neutral-200 transition-colors">
                         {item.label}
                       </span>
-                    </span>
+                    </Link>
 
                     {!isLast && (
                       <span className="text-white/20 select-none">|</span>
@@ -94,9 +102,9 @@ export const PropertyDevelopmentCTASection = ({
 
             {/* Tagline */}
             <div className="pt-2">
-              <span className="text-xs font-bold text-[var(--primary)] tracking-wide">
-                Ajay Homes — From Vision to Completion.
-              </span>
+              <Link href="/about-us" className="text-xs font-bold text-[var(--primary)] tracking-wide hover:underline inline-block">
+                Ajay Homes — From Vision to Completion &rarr;
+              </Link>
             </div>
           </div>
 

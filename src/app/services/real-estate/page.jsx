@@ -18,7 +18,7 @@ import TourModal from '@/components/Modals/TourModal';
 const realEstateWhyChooseFeatures = [
   {
     id: 'experience',
-    title: '50+ Years of Industry Experience',
+    title: '60+ Years of Industry Experience',
     description: 'Our experience across construction, development, interiors, project management, and real estate gives us a broader understanding of property.',
   },
   {

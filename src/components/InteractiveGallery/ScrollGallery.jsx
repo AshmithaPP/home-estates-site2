@@ -141,7 +141,7 @@ export const ScrollGallery = () => {
             <div className="p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <div className="flex items-center gap-2 text-[#ff8c00] font-black text-lg">
                 <Award className="w-4 h-4 text-[#ff8c00]" />
-                <span>120+</span>
+                <span>500+</span>
               </div>
               <p className="text-[11px] text-[#f0ede8]/70 mt-0.5 font-medium">Completed Projects</p>
             </div>
@@ -149,7 +149,7 @@ export const ScrollGallery = () => {
             <div className="p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <div className="flex items-center gap-2 text-[var(--primary)] font-black text-lg">
                 <ShieldCheck className="w-4 h-4 text-[var(--primary)]" />
-                <span>20+ Yrs</span>
+                <span>60+ Yrs</span>
               </div>
               <p className="text-[11px] text-[#f0ede8]/70 mt-0.5 font-medium">Trusted Legacy</p>
             </div>
@@ -282,7 +282,7 @@ export const ScrollGallery = () => {
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
                 <div className="flex items-center gap-2 text-[#ff8c00] font-black text-lg sm:text-xl">
                   <Award className="w-4 h-4 text-[#ff8c00]" />
-                  <span>120+</span>
+                  <span>500+</span>
                 </div>
                 <p className="text-[11px] sm:text-xs text-[#f0ede8]/70 mt-0.5 font-medium">Completed Projects</p>
               </div>
@@ -290,7 +290,7 @@ export const ScrollGallery = () => {
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
                 <div className="flex items-center gap-2 text-[var(--primary)] font-black text-lg sm:text-xl">
                   <ShieldCheck className="w-4 h-4 text-[var(--primary)]" />
-                  <span>20+ Yrs</span>
+                  <span>60+ Yrs</span>
                 </div>
                 <p className="text-[11px] sm:text-xs text-[#f0ede8]/70 mt-0.5 font-medium">Trusted Legacy</p>
               </div>

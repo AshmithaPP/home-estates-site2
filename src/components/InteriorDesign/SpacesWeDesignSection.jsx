@@ -1,40 +1,49 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function SpacesWeDesignSection() {
   const spaces = [
     {
       title: 'Independent Homes',
+      href: '/services/construction',
       image: '/images/residence-images/suresh-residence-view/img20.jpg',
     },
     {
       title: 'Luxury Villas',
+      href: '/gallery',
       image: '/images/residence-images/natraj-residence/img74.jpg',
     },
     {
       title: 'Apartments',
+      href: '/services/real-estate',
       image: '/images/residence-images/besantnagar-residence-view/img181.jpg',
     },
     {
       title: 'Premium Residences',
+      href: '/gallery',
       image: '/images/residence-images/raman-residence/img113.jpg',
     },
     {
       title: 'Offices',
+      href: '/services/property-developer',
       image: '/images/residence-images/besantnagar-residence-view/img117.jpg',
     },
     {
       title: 'Commercial Spaces',
+      href: '/services/property-developer',
       image: '/images/residence-images/besantnagar-residence-view/img124.jpg',
     },
     {
       title: 'Retail Spaces',
+      href: '/services/property-developer',
       image: '/images/residence-images/ankan-resideance-view/img26.jpg',
     },
     {
       title: 'Renovation Projects',
+      href: '/services/construction',
       image: '/images/residence-images/raman-residence/img92.jpg',
     },
   ];
@@ -46,7 +55,7 @@ export default function SpacesWeDesignSection() {
       style={{ fontFamily: 'var(--font-family-base)' }}
     >
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-block px-3.5 py-1 rounded-full border border-slate-200 bg-slate-50 mb-3">
@@ -55,9 +64,9 @@ export default function SpacesWeDesignSection() {
             </span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-slate-950 tracking-tight leading-[1.2]">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-slate-950 tracking-tight leading-snug">
             Interiors For Every{' '}
-            <span 
+            <span
               className="text-transparent bg-clip-text"
               style={{
                 backgroundImage: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)'
@@ -97,8 +106,11 @@ export default function SpacesWeDesignSection() {
                 </h3>
               </div>
 
+              {/* Whole card links to the related page */}
+              <Link href={space.href} aria-label={space.title} className="absolute inset-0 z-20 rounded-xl focus:outline-none" />
+
               {/* Subtle hover highlight border */}
-              <div 
+              <div
                 className="absolute inset-0 border-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                 style={{ borderColor: 'var(--primary)' }}
               />

@@ -64,9 +64,11 @@ export const AboutGallerySection = () => {
       <div className="relative z-10 max-w-[1360px] mx-auto">
         {/* ── Section Header Row: 1 Single Heading on Left, CTA Button on Right ──── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold text-neutral-900 tracking-tight leading-tight text-left">
-            Delivered Architectural Excellence
-          </h2>
+          <Link href="/gallery" className="group cursor-pointer">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-neutral-900 tracking-tight leading-tight text-left group-hover:text-[var(--primary)] transition-colors">
+              Delivered Architectural Excellence
+            </h2>
+          </Link>
 
           {/* Desktop Right / Mobile Aligned CTA Button */}
           <div className="shrink-0">

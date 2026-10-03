@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 /**
@@ -15,6 +16,7 @@ export const JourneyMarqueeSection = ({
   lead = 'A project involves countless details. We stay involved throughout the journey—from the first Bhoomi Pooja to the final House Warming.',
   description = 'Our team coordinates the people, materials, timelines, quality, and execution so you can experience the journey with greater confidence.',
   tagline = 'You envision it. We manage every detail.',
+  taglineHref,
   className = '',
 }) => {
   // One run = title repeated (dark, orange); two identical runs make the loop seamless
@@ -92,7 +94,13 @@ export const JourneyMarqueeSection = ({
                 className="mt-5 text-[15px] sm:text-base font-semibold"
                 style={{ color: 'var(--primary-dark)' }}
               >
-                {tagline}
+                {taglineHref ? (
+                  <Link href={taglineHref} className="hover:underline underline-offset-4 transition-colors">
+                    {tagline}
+                  </Link>
+                ) : (
+                  tagline
+                )}
               </p>
             )}
           </motion.div>

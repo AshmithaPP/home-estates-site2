@@ -16,14 +16,14 @@ export default function WhyChooseInteriorSection() {
     {
       id: 'experience',
       icon: Award,
-      metric: '50+ Years',
-      title: '50+ Years of Industry Experience',
+      metric: '60+ Years',
+      title: '60+ Years of Industry Experience',
       description: 'Decades of experience across construction, property development, interiors, and real estate.',
     },
     {
       id: 'projects',
       icon: Layers,
-      metric: '500+ Built',
+      metric: '500+ Projects',
       title: '500+ Projects',
       description: 'Experience across a wide range of property types and project requirements.',
     },

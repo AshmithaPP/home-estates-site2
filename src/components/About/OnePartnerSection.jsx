@@ -10,7 +10,7 @@ export const OnePartnerSection = () => {
       id: 'construction',
       title: 'Construction',
       subtitle: 'Residential & Commercial',
-      href: '/#services-construction',
+      href: '/services/construction',
       illustration: (
         <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Ambient background glow circle */}
@@ -50,7 +50,7 @@ export const OnePartnerSection = () => {
       id: 'layout-promotion',
       title: 'Layout Promotion',
       subtitle: 'CMDA & DTCP Plots',
-      href: '/#services-layout',
+      href: '/services/layout-promoters',
       illustration: (
         <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Ambient background glow circle */}
@@ -88,7 +88,7 @@ export const OnePartnerSection = () => {
       id: 'project-management',
       title: 'Project Management',
       subtitle: 'Planning & Governance',
-      href: '/#services-project-management',
+      href: '/services/project-management',
       illustration: (
         <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Ambient background glow circle */}
@@ -126,7 +126,7 @@ export const OnePartnerSection = () => {
       id: 'property-development',
       title: 'Property Development',
       subtitle: 'Joint Ventures & Estates',
-      href: '/#services-property-developer',
+      href: '/services/property-developer',
       illustration: (
         <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Ambient background glow circle */}
@@ -163,7 +163,7 @@ export const OnePartnerSection = () => {
       id: 'interior-designing',
       title: 'Interior Designing',
       subtitle: 'Luxury Living Spaces',
-      href: '/#services-interior',
+      href: '/services/interior-design',
       illustration: (
         <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Ambient background glow circle */}
@@ -196,7 +196,7 @@ export const OnePartnerSection = () => {
       id: 'real-estate',
       title: 'Real Estate',
       subtitle: 'Strategic Buying & Sales',
-      href: '/#services-real-estate',
+      href: '/services/real-estate',
       illustration: (
         <svg viewBox="0 0 120 120" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Ambient background glow circle */}
@@ -246,12 +246,14 @@ export const OnePartnerSection = () => {
           className="max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2"
         >
           {/* Main Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-[34px] font-bold text-[#1f2937] tracking-tight leading-tight">
-            One Partner.{' '}
-            <span className="text-[#ff8c00]">
-              Every Stage.
-            </span>
-          </h2>
+          <Link href="/services/construction" className="inline-block group cursor-pointer">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-[#1f2937] tracking-tight leading-tight group-hover:text-[#ff8c00] transition-colors">
+              One Partner.{' '}
+              <span className="text-[#ff8c00]">
+                Every Stage.
+              </span>
+            </h2>
+          </Link>
 
           {/* Subtitle phrase */}
           <p className="text-xs sm:text-sm md:text-[14px] text-[#4b5563] font-normal leading-relaxed">

@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   Compass, 
@@ -20,49 +21,57 @@ export const PropertyDeveloperServicesGrid = () => {
       id: 'land-development',
       title: 'Land Development',
       description: 'We help property owners evaluate development opportunities and plan the right approach for their land.',
-      icon: Compass
+      icon: Compass,
+      href: '/services/layout-promoters',
     },
     {
       id: 'residential-development',
       title: 'Residential Development',
       description: 'From independent developments to premium residential projects, we coordinate planning, construction, and delivery.',
-      icon: Home
+      icon: Home,
+      href: '/gallery',
     },
     {
       id: 'commercial-development',
       title: 'Commercial Development',
       description: 'We support commercial property development with a focus on functionality, design, execution, and market requirements.',
-      icon: Building2
+      icon: Building2,
+      href: '/gallery',
     },
     {
       id: 'joint-development',
       title: 'Joint Development',
       description: 'We work with property owners exploring development partnerships and opportunities to unlock the potential of their land.',
-      icon: Handshake
+      icon: Handshake,
+      href: '/contact',
     },
     {
       id: 'project-planning',
       title: 'Project Planning',
       description: "We coordinate the planning and execution strategy based on the property's location, potential, project objectives, and target market.",
-      icon: Map
+      icon: Map,
+      href: '/services/layout-promoters',
     },
     {
       id: 'construction-execution',
       title: 'Construction & Execution',
       description: 'Our construction expertise allows us to manage the physical development of the property with attention to quality, timelines, and execution.',
-      icon: Hammer
+      icon: Hammer,
+      href: '/services/construction',
     },
     {
       id: 'interior-finishing',
       title: 'Interior & Finishing',
       description: 'Where required, our interior design capabilities can take the project from structural completion to a finished, market-ready property.',
-      icon: Paintbrush
+      icon: Paintbrush,
+      href: '/services/interior-design',
     },
     {
       id: 'sales-market-support',
       title: 'Sales & Market Support',
       description: 'Our real estate capabilities can support property positioning, buyer engagement, and sales for suitable developments.',
-      icon: TrendingUp
+      icon: TrendingUp,
+      href: '/services/real-estate',
     }
   ];
 
@@ -96,7 +105,7 @@ export const PropertyDeveloperServicesGrid = () => {
             className="lg:col-span-3 text-left"
           >
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-3 sm:mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight mb-3 sm:mb-4 leading-snug">
               Our Property <br className="hidden sm:inline" />
               <span className="text-white block mt-1">
                 Development Services
@@ -104,7 +113,14 @@ export const PropertyDeveloperServicesGrid = () => {
             </h2>
 
             <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-sm">
-              From land strategy to finished, market-ready architecture, we manage every phase of development under one unified framework.
+              From{' '}
+              <Link href="/services/layout-promoters" className="text-slate-300 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                land strategy
+              </Link>{' '}
+              to finished,{' '}
+              <Link href="/gallery" className="text-slate-300 hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                market-ready architecture
+              </Link>, we manage every phase of development under one unified framework.
             </p>
           </motion.div>
 
@@ -126,24 +142,35 @@ export const PropertyDeveloperServicesGrid = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.45, delay: idx * 0.05 }}
-                    className="flex flex-col items-start text-left p-5 sm:p-6 rounded-2xl border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.05] hover:border-[var(--primary)]/50 transition-all duration-300 group shadow-lg"
+                    className="h-full"
                   >
-                    {/* Icon Container */}
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/15 shadow-md group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all duration-300 mb-4">
-                      <IconComponent className="w-5 h-5 text-white group-hover:text-black transition-colors" />
-                    </div>
-
-                    {/* Service Title */}
-                    <h3 
-                      className="text-base sm:text-[17px] font-bold tracking-tight leading-snug transition-colors text-white group-hover:text-[var(--primary)] mb-2"
+                    <Link
+                      href={item.href}
+                      className="flex flex-col items-start justify-between text-left p-5 sm:p-6 rounded-2xl border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.05] hover:border-[var(--primary)]/50 transition-all duration-300 group shadow-lg cursor-pointer h-full"
                     >
-                      {item.title}
-                    </h3>
+                      <div>
+                        {/* Icon Container */}
+                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-white/10 border border-white/15 shadow-md group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all duration-300 mb-4">
+                          <IconComponent className="w-5 h-5 text-white group-hover:text-black transition-colors" />
+                        </div>
 
-                    {/* Service Description */}
-                    <p className="text-xs sm:text-[13px] text-slate-400 font-normal leading-relaxed">
-                      {item.description}
-                    </p>
+                        {/* Service Title */}
+                        <h3 
+                          className="text-base sm:text-[17px] font-bold tracking-tight leading-snug transition-colors text-white group-hover:text-[var(--primary)] mb-2"
+                        >
+                          {item.title}
+                        </h3>
+
+                        {/* Service Description */}
+                        <p className="text-xs sm:text-[13px] text-slate-400 font-normal leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+
+                      <span className="mt-3 text-xs font-semibold text-[var(--primary)] opacity-0 group-hover:opacity-100 transition-opacity">
+                        Learn more &rarr;
+                      </span>
+                    </Link>
                   </motion.div>
                 );
               })}

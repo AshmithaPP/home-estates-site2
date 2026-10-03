@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Header from '@/components/Hero/Header';
 import ProjectManagementHero from '@/components/ProjectManagement/ProjectManagementHero';
 import CompleteControlSection from '@/components/ProjectManagement/CompleteControlSection';
@@ -20,7 +21,7 @@ import TourModal from '@/components/Modals/TourModal';
 const whyChooseFeatures = [
   {
     id: 'exp',
-    title: '50+ Years of Industry Experience',
+    title: '60+ Years of Industry Experience',
     description: 'Decades of experience across construction, property development, interiors, and real estate.',
   },
   {
@@ -65,7 +66,7 @@ const projectManagementFaqs = [
   {
     id: 'faq-3',
     question: 'Do you manage ₹1 Cr+ projects?',
-    answer: 'Yes. Ajay Homes has experience handling premium projects valued at ₹1 crore and above.',
+    answer: 'Yes. Ajay Homes has experience handling premium projects valued at ₹1 Cr+.',
   },
   {
     id: 'faq-4',
@@ -156,8 +157,18 @@ export default function ProjectManagementPage() {
         id="pm-bhoomi-pooja"
         title="From Bhoomi Pooja to House Warming"
         lead="A project involves countless details. We stay involved throughout the journey—from the first Bhoomi Pooja to the final House Warming."
-        description="Our team coordinates the people, materials, timelines, quality, and execution so you can experience the journey with greater confidence."
+        description={
+          <>
+            Our{' '}
+            <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">team</Link>{' '}
+            coordinates the people, materials, timelines,{' '}
+            <Link href="/gallery" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">quality</Link>, and{' '}
+            <Link href="/services/construction" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">execution</Link>{' '}
+            so you can experience the journey with greater confidence.
+          </>
+        }
         tagline="You envision it. We manage every detail."
+        taglineHref="/contact"
       />
 
       {/* ── LAST SECTION: One Side Form & Another Side FAQ (Responsive) ── */}

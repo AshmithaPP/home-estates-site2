@@ -18,14 +18,17 @@ const leftFeatures = [
   {
     icon: Compass,
     title: "Bespoke architectural planning",
+    href: "/services/construction",
   },
   {
     icon: Building2,
     title: "Turnkey residential engineering",
+    href: "/services/construction",
   },
   {
     icon: CheckCircle2,
     title: "100% IS-Code certified materials",
+    href: "/services/construction",
   },
 ];
 
@@ -34,14 +37,17 @@ const rightFeatures = [
   {
     icon: ShieldCheck,
     title: "Transparent milestone governance",
+    href: "/services/project-management",
   },
   {
     icon: Palette,
     title: "Custom luxury interior tailoring",
+    href: "/services/interior-design",
   },
   {
     icon: Landmark,
     title: "Prime Chennai real estate assets",
+    href: "/services/real-estate",
   },
 ];
 
@@ -63,7 +69,10 @@ const PIN_TOP = 0;
 function FeatureItem({ item, large }) {
   const IconComp = item.icon;
   return (
-    <div className={`flex items-center group ${large ? "gap-4" : "gap-3"}`}>
+    <Link
+      href={item.href || "/services/construction"}
+      className={`flex items-center group cursor-pointer ${large ? "gap-4" : "gap-3"}`}
+    >
       <div
         className={`flex shrink-0 items-center justify-center rounded-xl bg-[var(--primary)] border-2 border-[var(--primary)] ring-4 ring-[var(--primary)]/15 text-black shadow-md shadow-[var(--primary)]/25 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-lg group-hover:shadow-[var(--grey-base)]/35 ${large ? "h-11 w-11 2xl:h-14 2xl:w-14" : "h-11 w-11"
           }`}
@@ -81,7 +90,7 @@ function FeatureItem({ item, large }) {
           {item.desc}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -274,8 +283,9 @@ export default function SignatureLivingShowcase() {
                       className="absolute transition-transform duration-75 ease-out will-change-transform pointer-events-auto"
                       style={calcCardTransform(i, targetX, targetY, rotate)}
                     >
-                      <div
-                        className={`group relative overflow-hidden border-white ring-1 ring-slate-200/90 shadow-xl shadow-slate-900/10 bg-slate-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:ring-[var(--primary)] cursor-pointer ${compact ? "rounded-lg border" : "rounded-xl border-2"
+                      <Link
+                        href="/gallery"
+                        className={`group relative overflow-hidden border-white ring-1 ring-slate-200/90 shadow-xl shadow-slate-900/10 bg-slate-100 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:ring-[var(--primary)] block cursor-pointer ${compact ? "rounded-lg border" : "rounded-xl border-2"
                           }`}
                         style={{ width: `${sideW}px`, height: `${sideH}px` }}
                       >
@@ -299,15 +309,16 @@ export default function SignatureLivingShowcase() {
                             {card.title}
                           </p>
                         </div>
-                      </div>
+                      </Link>
                     </div>
                   );
                 })}
               </div>
 
               {/* Central Real Project Card */}
-              <div
-                className={`relative z-20 overflow-hidden bg-white shadow-xl shadow-slate-900/10 border-white ring-1 ring-slate-200/80 transition-transform duration-300 hover:scale-[1.01] ${compact ? "rounded-xl border" : "rounded-2xl border-2"
+              <Link
+                href="/gallery"
+                className={`relative z-20 overflow-hidden bg-white shadow-xl shadow-slate-900/10 border-white ring-1 ring-slate-200/80 transition-transform duration-300 hover:scale-[1.01] block cursor-pointer group/center ${compact ? "rounded-xl border" : "rounded-2xl border-2"
                   }`}
                 style={{ width: `${centerW}px` }}
               >
@@ -318,7 +329,7 @@ export default function SignatureLivingShowcase() {
                     fill
                     priority
                     sizes="(max-width: 1280px) 300px, 400px"
-                    className="object-cover object-center"
+                    className="object-cover object-center transition-transform duration-500 group-hover/center:scale-105"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent pointer-events-none" />
@@ -353,7 +364,7 @@ export default function SignatureLivingShowcase() {
                     )}
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             {/* Desktop Right 3 Features */}

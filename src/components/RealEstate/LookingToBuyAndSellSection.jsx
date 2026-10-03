@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Award, MapPin } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -28,13 +29,13 @@ export default function LookingToBuyAndSellSection({ onOpenApply }) {
       }}
     >
       {/* Background ambient lighting */}
-      <div 
+      <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[280px] rounded-full blur-[140px] pointer-events-none opacity-15"
         style={{ background: 'var(--primary)' }}
       />
 
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +45,7 @@ export default function LookingToBuyAndSellSection({ onOpenApply }) {
         >
           {/* 1. Brand Eyebrow */}
           <div>
-            <span 
+            <span
               className="text-[11px] sm:text-xs font-bold uppercase tracking-widest inline-block"
               style={{ color: 'var(--primary)' }}
             >
@@ -53,9 +54,9 @@ export default function LookingToBuyAndSellSection({ onOpenApply }) {
           </div>
 
           {/* 2. Main Heading (Single line on desktop) */}
-          <h2 className="text-xl sm:text-2xl lg:text-[28px] xl:text-[32px] font-bold text-white tracking-tight whitespace-normal md:whitespace-nowrap leading-[1.2]">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight whitespace-normal md:whitespace-nowrap leading-snug">
             Looking to Buy or Sell{' '}
-            <span 
+            <span
               className="text-transparent bg-clip-text"
               style={{
                 backgroundImage: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 60%, var(--text-primary) 100%)',
@@ -72,20 +73,21 @@ export default function LookingToBuyAndSellSection({ onOpenApply }) {
 
           {/* 4. 3 Compact Credential Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-2">
-            
-            {/* Card 1: 50+ Years */}
+
+            {/* Card 1: 60+ Years */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.08 }}
-              className="rounded-xl py-3.5 px-4 sm:py-4 sm:px-5 border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-md text-center group hover:border-[var(--primary)]/50 transition-all duration-300"
+              className="relative rounded-xl py-3.5 px-4 sm:py-4 sm:px-5 border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-md text-center group hover:border-[var(--primary)]/50 transition-all duration-300"
             >
-              <div 
+              <Link href="/about-us" aria-label="60+ years of industry experience" className="absolute inset-0 z-10 rounded-xl focus:outline-none" />
+              <div
                 className="text-xl sm:text-2xl font-bold tracking-tight mb-0.5"
                 style={{ color: 'var(--primary)' }}
               >
-                50+ Years
+                60+ Years
               </div>
               <div className="text-[10.5px] sm:text-[11px] font-semibold text-white/75 tracking-wider uppercase">
                 Industry Experience
@@ -98,9 +100,10 @@ export default function LookingToBuyAndSellSection({ onOpenApply }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.14 }}
-              className="rounded-xl py-3.5 px-4 sm:py-4 sm:px-5 border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-md text-center group hover:border-[var(--primary)]/50 transition-all duration-300"
+              className="relative rounded-xl py-3.5 px-4 sm:py-4 sm:px-5 border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-md text-center group hover:border-[var(--primary)]/50 transition-all duration-300"
             >
-              <div 
+              <Link href="/gallery" aria-label="500+ projects completed" className="absolute inset-0 z-10 rounded-xl focus:outline-none" />
+              <div
                 className="text-xl sm:text-2xl font-bold tracking-tight mb-0.5"
                 style={{ color: 'var(--primary)' }}
               >
@@ -117,9 +120,10 @@ export default function LookingToBuyAndSellSection({ onOpenApply }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="rounded-xl py-3.5 px-4 sm:py-4 sm:px-5 border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-md text-center group hover:border-[var(--primary)]/50 transition-all duration-300"
+              className="relative rounded-xl py-3.5 px-4 sm:py-4 sm:px-5 border border-white/10 bg-white/[0.04] backdrop-blur-md shadow-md text-center group hover:border-[var(--primary)]/50 transition-all duration-300"
             >
-              <div 
+              <Link href="/contact" aria-label="Chennai property expertise" className="absolute inset-0 z-10 rounded-xl focus:outline-none" />
+              <div
                 className="text-xl sm:text-2xl font-bold tracking-tight mb-0.5"
                 style={{ color: 'var(--primary)' }}
               >

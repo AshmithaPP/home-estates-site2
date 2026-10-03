@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Home, Briefcase, Building2, Coffee, KeyRound } from 'lucide-react';
 
@@ -8,30 +9,35 @@ const processSteps = [
   {
     stepNumber: '1',
     title: 'Understand',
+    href: '/contact',
     description: 'We understand your property requirement, objectives, budget, location, and timeline.',
     icon: Home,
   },
   {
     stepNumber: '2',
     title: 'Evaluate',
+    href: '/contact',
     description: 'We assess the relevant property details and requirements.',
     icon: Briefcase,
   },
   {
     stepNumber: '3',
     title: 'Shortlist',
+    href: '/gallery',
     description: 'Suitable property opportunities or prospective buyers are identified based on the requirement.',
     icon: Building2,
   },
   {
     stepNumber: '4',
     title: 'Coordinate',
+    href: '/services/project-management',
     description: 'Property visits, discussions, negotiations, and relevant coordination are managed.',
     icon: Coffee,
   },
   {
     stepNumber: '5',
     title: 'Complete',
+    href: '/contact',
     description: 'We support the transaction process through the required stages toward completion.',
     icon: KeyRound,
   },
@@ -49,13 +55,13 @@ export default function BuyingSellingProcessSection() {
       }}
     >
       {/* Background ambient lighting */}
-      <div 
+      <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] rounded-full blur-[160px] pointer-events-none opacity-10"
         style={{ background: 'var(--primary)' }}
       />
 
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header matching Reference UI: Bold Title with Italic Subtitle */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <motion.div
@@ -65,7 +71,7 @@ export default function BuyingSellingProcessSection() {
             transition={{ duration: 0.5 }}
             className="space-y-1"
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-white tracking-tight leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-snug">
               Our Buying & Selling Process
             </h2>
             <p className="text-sm sm:text-base text-white/70 font-normal tracking-wide">
@@ -85,18 +91,21 @@ export default function BuyingSellingProcessSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className="flex flex-col items-center text-center group"
+                className="relative flex flex-col items-center text-center group"
               >
+                {/* Whole step links to the related page */}
+                <Link href={step.href} aria-label={step.title} className="absolute inset-0 z-10 focus:outline-none" />
+
                 {/* ── Circular Icon Node Container ── */}
                 <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-white/20 p-2 sm:p-2.5 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-xl">
-                  
+
                   {/* Inner Dark Circular Disc */}
                   <div className="w-full h-full rounded-full bg-white/[0.08] backdrop-blur-sm flex items-center justify-center border border-white/10 shadow-inner">
                     <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white transition-transform duration-300 group-hover:scale-110" />
                   </div>
 
                   {/* Number Badge at 4 o'clock position (matching reference green circular badge with our theme) */}
-                  <div 
+                  <div
                     className="absolute -bottom-1 -right-1 sm:bottom-0 sm:right-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center font-extrabold text-xs sm:text-sm shadow-md border-2"
                     style={{
                       backgroundColor: 'var(--primary)',

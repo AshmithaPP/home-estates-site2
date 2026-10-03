@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Phone, Mail, ArrowRight } from 'lucide-react';
 import Button from '../UI/Button';
@@ -53,9 +54,29 @@ export const ContactHero = () => {
               </span>
             </h1>
 
-            {/* 2. Subtitle / Paragraph — Exact Home Page Typography & Density */}
+            {/* 2. Subtitle / Paragraph with Redirection to Respective Service Pages */}
             <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal max-w-xs sm:max-w-lg md:max-w-xl leading-relaxed drop-shadow text-left">
-              Whether you’re planning a new home, developing a property, managing a ₹1 Cr+ project, designing an interior, or looking to buy or sell property, our team is ready to discuss your requirements.
+              Whether you’re{' '}
+              <Link href="/services/construction" className="text-white font-medium hover:text-[var(--primary)] transition-colors underline decoration-white/40 underline-offset-2">
+                planning a new home
+              </Link>
+              ,{' '}
+              <Link href="/services/property-developer" className="text-white font-medium hover:text-[var(--primary)] transition-colors underline decoration-white/40 underline-offset-2">
+                developing a property
+              </Link>
+              ,{' '}
+              <Link href="/services/project-management" className="text-white font-medium hover:text-[var(--primary)] transition-colors underline decoration-white/40 underline-offset-2">
+                managing a ₹1 Cr+ project
+              </Link>
+              ,{' '}
+              <Link href="/services/interior-design" className="text-white font-medium hover:text-[var(--primary)] transition-colors underline decoration-white/40 underline-offset-2">
+                designing an interior
+              </Link>
+              , or looking to{' '}
+              <Link href="/services/real-estate" className="text-white font-medium hover:text-[var(--primary)] transition-colors underline decoration-white/40 underline-offset-2">
+                buy or sell property
+              </Link>
+              , our team is ready to discuss your requirements.
             </p>
 
             {/* 3. Action Statement with Arrow Icon */}
@@ -84,6 +105,14 @@ export const ContactHero = () => {
                 showIcon={true}
               >
                 contact@ajayhomes.com
+              </Button>
+
+              <Button
+                href="/gallery"
+                variant="glass"
+                size="md"
+              >
+                View 500+ Projects
               </Button>
             </div>
           </motion.div>

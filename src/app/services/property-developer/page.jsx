@@ -19,33 +19,39 @@ import TourModal from '@/components/Modals/TourModal';
 const propertyDeveloperFeatures = [
   {
     id: 'exp',
-    title: '50+ Years of Industry Experience',
+    title: '60+ Years of Industry Experience',
     description: 'Decades of experience across construction, property, interiors, project management, and real estate.',
+    href: '/about-us',
   },
   {
     id: 'projects',
     title: '500+ Projects',
     description: 'A broad project portfolio across different property types and development requirements.',
+    href: '/gallery',
   },
   {
     id: 'high-value',
     title: '₹1 Cr+ Project Expertise',
     description: 'Experience managing premium and high-value property projects.',
+    href: '/services/construction',
   },
   {
     id: 'end-to-end',
     title: 'End-to-End Capabilities',
     description: 'Planning, construction, project management, interiors, and real estate support through one experienced team.',
+    href: '/services/project-management',
   },
   {
     id: 'dev-approach',
     title: 'Development-Focused Approach',
     description: "We consider both the property's development potential and its intended market when planning the project.",
+    href: '/services/layout-promoters',
   },
   {
     id: 'transparent',
     title: 'Transparent Execution',
     description: 'Clear communication and structured coordination throughout the development journey.',
+    href: '/contact',
   },
 ];
 
@@ -143,6 +149,7 @@ export default function PropertyDeveloperPage() {
         lead="Property development is a journey that begins with an idea and ends with something built to last."
         description="Ajay Homes can support the journey from land planning and development to construction, interiors, completion, and final handover. For residential projects, our involvement can take you all the way from Bhoomi Pooja to House Warming."
         tagline="From the first step on the land to the moment you step into your finished space."
+        taglineHref="/contact"
       />
 
       {/* ── 10. LAST SECTION: One Side Form & Another Side FAQ ────── */}

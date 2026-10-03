@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, X, CheckCircle2, ChevronDown } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -85,7 +86,7 @@ export default function ServiceFormFAQSection({
             {/* Header Block */}
             <div className="space-y-1.5 text-left">
               <h2
-                className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#1a1a1a] tracking-tight leading-tight uppercase text-left"
+                className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-[#1a1a1a] tracking-tight leading-snug text-left"
                 style={{ fontFamily: 'var(--font-family-base)' }}
               >
                 Frequently Asked <span style={{ color: 'var(--primary)' }}>Questions</span>
@@ -102,7 +103,7 @@ export default function ServiceFormFAQSection({
                     style={{ backgroundColor: 'var(--primary)', opacity: 0.2 }}
                   />
                   <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80"
+                    src="https://images.unsplash.com/photo-1629425733761-caae3b5f2e50?auto=format&fit=crop&crop=focalpoint&fp-x=0.45&fp-y=0.32&fp-z=2.2&w=300&h=300&q=80"
                     alt="Property Advisor"
                     className="relative w-12 h-12 rounded-full object-cover border-2 shadow-sm"
                     style={{ borderColor: 'var(--primary)' }}
@@ -129,14 +130,22 @@ export default function ServiceFormFAQSection({
                       Thank you, <span className="font-semibold text-black">{formData.name}</span>. Our technical advisor will call you within 24 hours.
                     </p>
                   </div>
-                  <button
-                    type="button"
-                    suppressHydrationWarning
-                    onClick={resetForm}
-                    className="text-xs font-bold text-[var(--primary)] hover:underline cursor-pointer pt-1"
-                  >
-                    Submit Another Request
-                  </button>
+                  <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+                    <button
+                      type="button"
+                      suppressHydrationWarning
+                      onClick={resetForm}
+                      className="text-xs font-bold text-[var(--primary)] hover:underline cursor-pointer"
+                    >
+                      Submit Another Request
+                    </button>
+                    <Link
+                      href="/gallery"
+                      className="text-xs font-bold text-slate-800 hover:text-[var(--primary)] underline cursor-pointer"
+                    >
+                      Explore 500+ Projects &rarr;
+                    </Link>
+                  </div>
                 </div>
               ) : (
                 <form suppressHydrationWarning onSubmit={handleSubmit} className="space-y-3 pt-1">
@@ -214,6 +223,17 @@ export default function ServiceFormFAQSection({
 
                   <p className="text-[10.5px] text-[#777777] text-center pt-0.5">
                     100% Confidential • Fast 24h Response • Zero Obligation
+                  </p>
+
+                  <p className="text-[11px] text-[#777777] text-center pt-1 border-t border-black/5">
+                    Have technical questions? Browse our{' '}
+                    <Link href="/resources" className="text-[var(--primary)] font-semibold hover:underline">
+                      Architectural Guides
+                    </Link>{' '}
+                    or view our{' '}
+                    <Link href="/gallery" className="text-[var(--primary)] font-semibold hover:underline">
+                      500+ Projects
+                    </Link>.
                   </p>
                 </form>
               )}

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 // Core services — ids match the anchors used by the navbar Services dropdown
 const services = [
@@ -10,36 +11,42 @@ const services = [
     title: "Construction",
     image: "/assets/img/img-011.jpeg",
     desc: "Residential & commercial structural engineering",
+    href: "/services/construction",
   },
   {
     id: "services-layout",
     title: "Layout Promoters",
     image: "/images/layout-plots-ground.jpg",
     desc: "Multi-acre plots & township development",
+    href: "/services/layout-promoters",
   },
   {
     id: "services-pm",
     title: "Project Management",
     image: "/assets/img/img-047.jpeg",
     desc: "End-to-end site oversight & quality audit",
+    href: "/services/project-management",
   },
   {
     id: "services-developer",
     title: "Property Developer",
     image: "/assets/img/img-002.jpeg",
     desc: "Turnkey luxury residential developments",
+    href: "/services/property-developer",
   },
   {
     id: "services-interior",
     title: "Interior Designing",
     image: "/assets/img/besantnagar-residence-view/img82.jpg",
     desc: "Custom architectural interior aesthetics",
+    href: "/services/interior-design",
   },
   {
     id: "services-realestate",
     title: "Real Estate Selling & Buying",
     image: "/assets/img/img-014.jpeg",
     desc: "Prime land & property trading solutions",
+    href: "/services/real-estate",
   },
 ];
 
@@ -90,10 +97,11 @@ export default function EverythingOnePlace() {
           <div className="rounded-2xl border border-white bg-white px-3 py-5 sm:px-5 sm:py-6 xl:py-8 2xl:py-9 shadow-2xl relative z-0">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-y-6 md:gap-y-8 xl:flex xl:justify-between xl:gap-y-0 xl:divide-x divide-slate-200">
               {services.map((item, index) => (
-                <div
+                <Link
                   key={item.id}
                   id={item.id}
-                  className="group flex flex-col items-center text-center scroll-mt-40 xl:flex-auto px-2 sm:px-3 2xl:px-5 py-2 transition-all rounded-xl cursor-pointer"
+                  href={item.href}
+                  className="group flex flex-col items-center text-center scroll-mt-40 xl:flex-auto px-2 sm:px-3 2xl:px-5 py-2 transition-all rounded-xl cursor-pointer hover:bg-slate-50/80"
                 >
                   {/* Project Image Tile with Staggered Viewport Jump Animation */}
                   <div
@@ -120,7 +128,7 @@ export default function EverythingOnePlace() {
                   <p className="mt-1.5 text-[11px] sm:text-xs 2xl:text-[13px] text-slate-500 leading-relaxed font-sans max-w-[190px]">
                     {item.desc}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

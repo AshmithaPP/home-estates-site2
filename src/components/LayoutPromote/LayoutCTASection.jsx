@@ -5,8 +5,8 @@ import PremiumProjectCTASection from '@/components/Common/PremiumProjectCTASecti
 
 export const LAYOUT_CTA_STATS = [
   { value: '60+ Years', label: 'of Industry Experience' },
-  { value: '500+', label: 'Projects' },
-  { value: 'End-to-End', label: 'Property Expertise' },
+  { value: '500+ Projects', label: 'Completed Portfolio' },
+  { value: '₹1 Cr+', label: 'Premium Project Experience' },
 ];
 
 export const LayoutCTASection = ({

@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '../UI/Button';
@@ -83,15 +84,31 @@ export const LayoutPromoteHero = ({ onOpenApply }) => {
             {/* 3. Description Paragraphs — Exact Content requested by user */}
             <div className="space-y-2.5 max-w-xs sm:max-w-xl md:max-w-2xl text-left select-none">
               <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal leading-relaxed drop-shadow">
-                Ajay Homes helps landowners and investors transform land into professionally planned and market-ready layouts.
+                <Link href="/about-us" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  Ajay Homes
+                </Link>{' '}
+                helps{' '}
+                <Link href="/services/real-estate" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  landowners and investors
+                </Link>{' '}
+                transform land into professionally planned and{' '}
+                <Link href="/gallery" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  market-ready layouts
+                </Link>.
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-white/80 font-normal leading-relaxed drop-shadow">
-                From land assessment and planning to development, infrastructure coordination, and sales support, we manage the process with a focus on quality, compliance, usability, and long-term property value.
+                From land assessment and planning to{' '}
+                <Link href="/services/property-developer" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  development
+                </Link>,{' '}
+                <Link href="/services/construction" className="text-white hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+                  infrastructure coordination
+                </Link>, and sales support, we manage the process with a focus on quality, compliance, usability, and long-term property value.
               </p>
             </div>
 
-            {/* 4. Action Button (Pill Button using dynamic theme variables) */}
-            <div className="pt-2 sm:pt-3 flex items-center justify-start">
+            {/* 4. Action Buttons */}
+            <div className="pt-2 sm:pt-3 flex flex-wrap items-center justify-start gap-4">
               <Button
                 onClick={handleDiscussLand}
                 variant="primary"
@@ -101,6 +118,12 @@ export const LayoutPromoteHero = ({ onOpenApply }) => {
               >
                 Discuss Your Land
               </Button>
+              <Link
+                href="/gallery"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm transition-all cursor-pointer"
+              >
+                View 500+ Projects &rarr;
+              </Link>
             </div>
           </motion.div>
 

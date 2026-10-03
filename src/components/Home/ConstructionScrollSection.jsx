@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback, useState } from "react";
+import Link from "next/link";
 import Button from "@/components/UI/Button";
 
 const TOTAL_FRAMES = 31;
@@ -288,12 +289,13 @@ export default function ConstructionScrollSection() {
         >
           <div className="mx-auto w-full max-w-[1400px] px-4 pb-8 sm:px-8 sm:pb-12 md:pb-0 lg:px-12 xl:px-16">
             <div className="max-w-[640px] text-left">
-              <span
-                className="inline-flex items-center rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-[0.18em]"
+              <Link
+                href="/services/construction"
+                className="inline-flex items-center rounded-full border border-white/15 bg-black/40 px-3 py-1 text-[9.5px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] hover:border-[var(--primary)] hover:bg-black/60 transition-colors"
                 style={{ color: "var(--primary)" }}
               >
                 Our Build Process
-              </span>
+              </Link>
 
               <p className="mt-3 sm:mt-4 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
                 Ajay Homes &amp; Estates · Chennai
@@ -328,7 +330,7 @@ export default function ConstructionScrollSection() {
 
               {/* CTAs */}
               <div className="mt-5 sm:mt-8 flex flex-wrap items-center gap-2.5 sm:gap-4">
-                <Button onClick={openConsultation} variant="primary" size="responsive" className="sm:px-6! sm:py-3!">
+                <Button href="/contact" variant="primary" size="responsive" className="sm:px-6! sm:py-3!">
                   Free Consultation
                 </Button>
                 <Button href="/gallery" variant="glass" size="responsive" className="sm:px-6! sm:py-3!">

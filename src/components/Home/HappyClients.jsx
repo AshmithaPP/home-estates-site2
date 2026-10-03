@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 
 /**
@@ -240,14 +241,14 @@ export default function HappyClients() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-white tracking-tight font-sans leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight font-sans leading-tight">
             Real journeys. Real people.
             <br />
             <span className="text-white">Real </span>
             <span className="text-[var(--primary)]">success.</span>
           </h2>
           <p className="mt-2.5 text-xs sm:text-sm text-white/70 font-sans max-w-xl mx-auto leading-relaxed">
-            Over 150+ Chennai families have trusted us with their forever homes.
+            Over 500+ Chennai families have trusted us with their forever homes.
             <br className="hidden sm:inline" />{" "}
             Watch these short stories to hear how we turned their dream residences into reality.
           </p>
@@ -351,12 +352,15 @@ export default function HappyClients() {
 
               {/* Top Controls: 'Play Video' Pill Button */}
               <div className="absolute top-3.5 sm:top-5 left-3.5 sm:left-5 z-20 pointer-events-auto">
-                <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
+                >
                   <span className="flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-white/25 transition-colors">
                     <Play className="h-2 w-2 sm:h-2.5 sm:w-2.5 fill-white text-white translate-x-0.5" />
                   </span>
                   <span>Play Video</span>
-                </div>
+                </Link>
               </div>
 
               {/* Bottom Scrim & Narrative Story Overlay with smooth fade/slide */}
@@ -369,9 +373,12 @@ export default function HappyClients() {
                   <p className="text-[11.5px] sm:text-[13.5px] lg:text-[14.5px] leading-relaxed text-white/95 font-sans font-normal line-clamp-3 sm:line-clamp-4">
                     {displayCenterReel.text}
                   </p>
-                  <p className="mt-2 text-[10px] sm:text-xs font-semibold text-[var(--primary)] uppercase tracking-wider font-sans">
+                  <Link
+                    href="/gallery"
+                    className="mt-2 text-[10px] sm:text-xs font-semibold text-[var(--primary)] hover:text-white uppercase tracking-wider font-sans pointer-events-auto inline-block transition-colors"
+                  >
                     — {displayCenterReel.name} · {displayCenterReel.project}
-                  </p>
+                  </Link>
                 </div>
               </div>
             </div>

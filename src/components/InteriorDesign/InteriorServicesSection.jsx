@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -11,48 +12,56 @@ export default function InteriorServicesSection() {
   const services = [
     {
       num: '01',
+      href: '/gallery',
       title: 'Residential Interiors',
       description: 'Thoughtfully designed interiors for apartments, independent homes, villas, and premium residences.',
       image: '/images/residence-images/raman-residence/img139.jpg',
     },
     {
       num: '02',
+      href: '/gallery',
       title: 'Luxury Interiors',
       description: 'Refined spaces with carefully selected materials, finishes, furniture, lighting, and detailing.',
       image: '/images/residence-images/natraj-residence/img81.jpg',
     },
     {
       num: '03',
+      href: '/services/property-developer',
       title: 'Commercial Interiors',
       description: 'Functional and professional interiors designed around business requirements, customer experience, and efficient space utilisation.',
       image: '/images/residence-images/besantnagar-residence-view/img103.jpg',
     },
     {
       num: '04',
+      href: '/contact',
       title: 'Space Planning',
       description: 'We plan layouts around movement, functionality, furniture placement, storage, lighting, and everyday use.',
       image: '/images/residence-images/besantnagar-residence-view/img152.jpg',
     },
     {
       num: '05',
+      href: '/gallery',
       title: 'Material & Finish Selection',
       description: 'We help select materials, colours, textures, surfaces, fixtures, and finishes that complement the design direction.',
       image: '/images/residence-images/natraj-residence/img55.jpg',
     },
     {
       num: '06',
+      href: '/contact',
       title: 'Custom Design',
       description: 'Every project has different requirements. We develop design solutions based on the space, lifestyle, and client expectations.',
       image: '/images/residence-images/suresh-residence-view/img45.jpg',
     },
     {
       num: '07',
+      href: '/services/construction',
       title: 'Turnkey Interior Execution',
       description: 'From design to execution, we coordinate the complete interior journey through one team.',
       image: '/images/residence-images/raman-residence/img160.jpg',
     },
     {
       num: '08',
+      href: '/services/construction',
       title: 'Renovation & Transformation',
       description: 'We transform existing spaces through improved layouts, finishes, functionality, and contemporary design.',
       image: '/images/residence-images/besantnagar-residence-view/img216.jpg',
@@ -70,12 +79,12 @@ export default function InteriorServicesSection() {
       }}
     >
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header - Only exact user heading, no extra tags or dots */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-white tracking-tight leading-[1.2]">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-snug">
             Our Interior Design{' '}
-            <span 
+            <span
               className="text-transparent bg-clip-text"
               style={{
                 backgroundImage: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%)'
@@ -99,6 +108,9 @@ export default function InteriorServicesSection() {
               onMouseLeave={() => setHoveredIdx(null)}
               className="group relative rounded-xl overflow-hidden flex flex-col justify-between bg-white text-slate-900 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[var(--primary)] transition-all duration-300"
             >
+              {/* Whole card links to the related page */}
+              <Link href={item.href} aria-label={item.title} className="absolute inset-0 z-20 rounded-xl focus:outline-none" />
+
               {/* Compact Image Container */}
               <div className="relative h-36 sm:h-38 w-full overflow-hidden bg-slate-100">
                 <img
@@ -107,9 +119,9 @@ export default function InteriorServicesSection() {
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                
+
                 {/* Arrow Icon */}
-                <div 
+                <div
                   className="absolute top-2.5 right-2.5 w-6 h-6 rounded-full flex items-center justify-center backdrop-blur-xs transition-all duration-300"
                   style={{
                     backgroundColor: hoveredIdx === idx ? 'var(--primary)' : 'rgba(0,0,0,0.6)',

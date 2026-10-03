@@ -9,7 +9,6 @@ import {
   ArrowRight
 } from 'lucide-react';
 import Header from '@/components/Hero/Header';
-import Footer from '@/components/Footer/Footer';
 import ApplyModal from '@/components/Modals/ApplyModal';
 import TourModal from '@/components/Modals/TourModal';
 import { blogArticles } from '@/data/blogData';
@@ -17,6 +16,22 @@ import { blogArticles } from '@/data/blogData';
 export default function BlogDetailClient({ article }) {
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
   const [isTourModalOpen, setIsTourModalOpen] = useState(false);
+
+  const getCategoryRoute = (category) => {
+    switch (category) {
+      case 'CONSTRUCTION':
+        return '/services/construction';
+      case 'APPROVALS & CMDA':
+        return '/services/layout-promoters';
+      case 'COST & PLANNING':
+        return '/services/property-developer';
+      case 'TRANSPARENCY':
+        return '/about-us';
+      case 'UNCATEGORIZED':
+      default:
+        return '/services/project-management';
+    }
+  };
 
   // Related articles (exclude current)
   const relatedArticles = blogArticles
@@ -36,13 +51,33 @@ export default function BlogDetailClient({ article }) {
 
       {/* ── Top Spacing & Breadcrumb Navigation (Wide Container) ──── */}
       <div className="pt-24 sm:pt-32 pb-4 sm:pb-6 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <Link
-          href="/resources"
-          className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-500 hover:text-[var(--primary-dark)] transition-colors group"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span>Back to All Resources & Guides</span>
-        </Link>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <Link
+            href="/resources"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-500 hover:text-[var(--primary-dark)] transition-colors group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span>Back to All Resources & Guides</span>
+          </Link>
+
+          {/* Breadcrumbs */}
+          <nav className="flex items-center gap-2 text-xs font-medium text-slate-400">
+            <Link href="/" className="hover:text-slate-700 transition-colors">
+              Home
+            </Link>
+            <span>/</span>
+            <Link href="/resources" className="hover:text-slate-700 transition-colors">
+              Resources
+            </Link>
+            <span>/</span>
+            <Link 
+              href={getCategoryRoute(article.category)} 
+              className="text-[var(--primary-dark)] font-semibold hover:underline"
+            >
+              {article.category}
+            </Link>
+          </nav>
+        </div>
       </div>
 
       {/* ── Article Header (Increased Width) ──────────────────────── */}
@@ -50,15 +85,16 @@ export default function BlogDetailClient({ article }) {
         
         {/* Category & Metadata Row */}
         <div className="flex flex-wrap items-center gap-3 mb-4">
-          <span 
-            className="px-3 py-1 rounded-sm text-[10.5px] sm:text-[11px] font-extrabold uppercase tracking-wider shadow-xs"
+          <Link
+            href={getCategoryRoute(article.category)}
+            className="px-3 py-1 rounded-sm text-[10.5px] sm:text-[11px] font-extrabold uppercase tracking-wider shadow-xs hover:opacity-85 transition-opacity"
             style={{
               backgroundColor: 'var(--primary)',
               color: '#0a0500'
             }}
           >
             {article.category}
-          </span>
+          </Link>
 
           <div className="flex items-center gap-2.5 sm:gap-3 text-xs sm:text-sm text-slate-500 font-medium">
             <span className="flex items-center gap-1.5">
@@ -80,12 +116,25 @@ export default function BlogDetailClient({ article }) {
 
         {/* Editorial byline */}
         <div className="flex items-center gap-3 pt-4 border-t border-slate-200 text-xs sm:text-sm text-slate-600">
-          <div className="w-9 h-9 rounded-full bg-[var(--primary)]/15 border border-[var(--primary)]/40 flex items-center justify-center text-[var(--primary-dark)] font-black text-sm shrink-0">
+          <Link 
+            href="/about-us" 
+            className="w-9 h-9 rounded-full bg-[var(--primary)]/15 border border-[var(--primary)]/40 flex items-center justify-center text-[var(--primary-dark)] font-black text-sm shrink-0 hover:bg-[var(--primary)]/25 transition-colors"
+          >
             AH
-          </div>
+          </Link>
           <div>
-            <p className="font-bold text-slate-950">Ajay Homes Editorial Desk</p>
-            <p className="text-[11px] text-slate-500">Senior Master Architects & Structural Engineering Cell • Chennai</p>
+            <Link 
+              href="/about-us" 
+              className="font-bold text-slate-950 hover:text-[var(--primary-dark)] transition-colors"
+            >
+              Ajay Homes Editorial Desk
+            </Link>
+            <p className="text-[11px] text-slate-500">
+              Senior Master Architects & Structural Engineering Cell •{' '}
+              <Link href="/contact" className="hover:underline text-[var(--primary-dark)] font-semibold">
+                Chennai
+              </Link>
+            </p>
           </div>
         </div>
 
@@ -137,6 +186,70 @@ export default function BlogDetailClient({ article }) {
           ))}
         </div>
 
+        {/* Key Takeaways */}
+        {article.takeaways && article.takeaways.length > 0 && (
+          <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-amber-50/50 border border-amber-200/80 shadow-xs">
+            <h3 className="text-base sm:text-lg font-bold text-slate-950 mb-4 flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[var(--primary)]" />
+              Key Takeaways for Property Owners
+            </h3>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
+              {article.takeaways.map((point, i) => (
+                <li key={i} className="flex items-start gap-2.5">
+                  <span className="font-bold text-[var(--primary-dark)] mt-0.5">•</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Conclusion Verdict */}
+        {article.conclusion && (
+          <div className="mt-8 p-6 sm:p-7 rounded-xl bg-slate-50 border-l-4 border-[var(--primary)] text-slate-800">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Architectural Verdict</h4>
+            <p className="text-sm sm:text-base leading-relaxed font-medium text-slate-900">
+              {article.conclusion}
+            </p>
+          </div>
+        )}
+
+        {/* ── Consultation & Service Advisory Banner ──────────────────── */}
+        <div className="mt-12 sm:mt-16 p-8 sm:p-12 rounded-2xl bg-slate-900 text-white border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="max-w-2xl text-center md:text-left">
+            <span className="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-[var(--primary)] text-black mb-3">
+              Direct Architectural Consultation
+            </span>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white mb-2">
+              Planning to build or develop your property in Chennai?
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Speak directly with our senior structural engineers and architects. Benefit from 60+ years of building mastery and 500+ completed projects across Tamil Nadu.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+            <Link
+              href="/contact"
+              className="px-5 py-2.5 rounded-lg text-xs sm:text-sm font-bold bg-[var(--primary)] text-black hover:opacity-90 transition-all shadow-md inline-flex items-center gap-2"
+            >
+              <span>Start a Conversation</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/services/construction"
+              className="px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 transition-colors"
+            >
+              <span>Construction Services</span>
+            </Link>
+            <Link
+              href="/gallery"
+              className="px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold text-white/90 hover:text-white border border-white/20 hover:border-white/40 transition-colors"
+            >
+              <span>View 500+ Projects</span>
+            </Link>
+          </div>
+        </div>
+
       </article>
 
       {/* ── Related Articles Section (Pure White Background matching the Page) ── */}
@@ -167,12 +280,14 @@ export default function BlogDetailClient({ article }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {relatedArticles.map((rel) => (
-              <Link
+              <article
                 key={rel.slug}
-                href={`/resources/${rel.slug}`}
-                className="bg-white rounded-xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[var(--primary)]/60 transition-all duration-300 flex flex-col group cursor-pointer"
+                className="bg-white rounded-xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[var(--primary)]/60 transition-all duration-300 flex flex-col group"
               >
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-900">
+                <Link
+                  href={`/resources/${rel.slug}`}
+                  className="relative w-full aspect-[16/10] overflow-hidden bg-slate-900 block focus:outline-none"
+                >
                   <img
                     src={rel.image}
                     alt={rel.title}
@@ -185,22 +300,32 @@ export default function BlogDetailClient({ article }) {
                       {rel.imageOverlayTitle}
                     </p>
                   </div>
-                </div>
+                </Link>
 
                 <div className="p-5 flex flex-col flex-1 justify-between bg-white">
                   <div>
-                    <span 
-                      className="inline-block px-2.5 py-0.5 rounded-sm text-[10px] font-extrabold uppercase tracking-wider mb-2.5"
-                      style={{
-                        backgroundColor: 'var(--primary)',
-                        color: '#0a0500'
-                      }}
+                    <div className="mb-2.5">
+                      <Link
+                        href={getCategoryRoute(rel.category)}
+                        className="inline-block px-2.5 py-0.5 rounded-sm text-[10px] font-extrabold uppercase tracking-wider hover:opacity-85 transition-opacity"
+                        style={{
+                          backgroundColor: 'var(--primary)',
+                          color: '#0a0500'
+                        }}
+                      >
+                        {rel.category}
+                      </Link>
+                    </div>
+
+                    <Link
+                      href={`/resources/${rel.slug}`}
+                      className="block group/title focus:outline-none"
                     >
-                      {rel.category}
-                    </span>
-                    <h3 className="text-base font-bold text-slate-950 leading-snug group-hover:text-[var(--primary-dark)] transition-colors line-clamp-2 mb-2">
-                      {rel.title}
-                    </h3>
+                      <h3 className="text-base font-bold text-slate-950 leading-snug group-hover/title:text-[var(--primary-dark)] transition-colors line-clamp-2 mb-2">
+                        {rel.title}
+                      </h3>
+                    </Link>
+
                     <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-4">
                       {rel.excerpt}
                     </p>
@@ -208,23 +333,21 @@ export default function BlogDetailClient({ article }) {
 
                   <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
                     <span>{rel.date}</span>
-                    <span className="font-bold text-[var(--primary-dark)] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                      Read Guide <ArrowRight className="w-3 h-3" />
-                    </span>
+                    <Link
+                      href={`/resources/${rel.slug}`}
+                      className="font-bold text-[var(--primary-dark)] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 hover:text-black"
+                    >
+                      <span>Read Guide</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </Link>
                   </div>
                 </div>
-              </Link>
+              </article>
             ))}
           </div>
 
         </div>
       </section>
-
-      {/* ── Footer ────────────────────────────────────────────────── */}
-      <Footer
-        onOpenApply={() => setIsApplyModalOpen(true)}
-        onOpenTourModal={() => setIsTourModalOpen(true)}
-      />
 
       {/* ── Modals ────────────────────────────────────────────────── */}
       <TourModal

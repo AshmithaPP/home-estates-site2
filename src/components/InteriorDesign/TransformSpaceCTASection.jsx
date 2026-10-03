@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -28,7 +29,7 @@ export default function TransformSpaceCTASection({ onCtaClick }) {
       }}
     >
       {/* Background glow and subtle borders */}
-      <div 
+      <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] rounded-full blur-[170px] pointer-events-none opacity-20"
         style={{ background: 'var(--primary)' }}
       />
@@ -43,9 +44,9 @@ export default function TransformSpaceCTASection({ onCtaClick }) {
           className="space-y-5 sm:space-y-6 max-w-2xl mx-auto"
         >
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-white tracking-tight leading-[1.2]">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-snug">
             Ready to Transform{' '}
-            <span 
+            <span
               className="text-transparent bg-clip-text"
               style={{
                 backgroundImage: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%)'
@@ -62,7 +63,9 @@ export default function TransformSpaceCTASection({ onCtaClick }) {
 
           {/* Metrics Line with exact pipe dividers from user prompt */}
           <div className="text-xs sm:text-sm text-white/70 font-medium py-1">
-            50+ Years of Industry Experience | 500+ Projects | Premium Project Expertise
+            <Link href="/about-us" className="hover:text-white transition-colors">60+ Years of Industry Experience</Link> |{' '}
+            <Link href="/gallery" className="hover:text-white transition-colors">500+ Projects</Link> |{' '}
+            <Link href="/services/construction" className="hover:text-white transition-colors">Premium Project Expertise</Link>
           </div>
 
           {/* Action Button */}
@@ -80,10 +83,10 @@ export default function TransformSpaceCTASection({ onCtaClick }) {
 
           {/* Brand Sign-off */}
           <div className="pt-6 border-t border-white/10 max-w-xs mx-auto">
-            <div className="text-sm font-bold uppercase tracking-widest text-white">
+            <Link href="/about-us" className="block text-sm font-bold uppercase tracking-widest text-white hover:text-[var(--primary)] transition-colors">
               Ajay Homes
-            </div>
-            <div 
+            </Link>
+            <div
               className="text-xs uppercase tracking-wider font-medium mt-0.5"
               style={{ color: 'var(--primary)' }}
             >

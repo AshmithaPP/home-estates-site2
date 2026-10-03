@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
@@ -21,7 +22,7 @@ export const RealEstateHero = ({ onOpenApply }) => {
   };
 
   return (
-    <section 
+    <section
       id="real-estate-hero"
       className="relative w-full h-[100dvh] min-h-[540px] sm:min-h-[620px] lg:min-h-[700px] flex items-center overflow-hidden"
       style={{ fontFamily: 'var(--font-family-base)' }}
@@ -41,10 +42,10 @@ export const RealEstateHero = ({ onOpenApply }) => {
 
       {/* ── Main Hero Layout Container ── */}
       <div className="relative z-10 max-w-[1800px] mx-auto w-full px-4 sm:px-8 md:px-12 pt-20 sm:pt-24 md:pt-28 pb-8 flex-1 flex flex-col justify-center">
-        
+
         {/* Left End Content Grid matching other service pages */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-center my-auto">
-          
+
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -53,7 +54,7 @@ export const RealEstateHero = ({ onOpenApply }) => {
           >
             {/* 1. Category Tag / Eyebrow Header (No decorative dots as requested) */}
             <div>
-              <span 
+              <span
                 className="text-xs sm:text-sm font-bold uppercase tracking-wider"
                 style={{ color: 'var(--primary)' }}
               >
@@ -66,7 +67,7 @@ export const RealEstateHero = ({ onOpenApply }) => {
               <span className="block text-white">
                 Buy With Clarity.
               </span>
-              <span 
+              <span
                 className="block text-transparent bg-clip-text"
                 style={{
                   backgroundImage: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 60%, var(--text-primary) 100%)',
@@ -79,10 +80,13 @@ export const RealEstateHero = ({ onOpenApply }) => {
             {/* 3. Description Paragraphs — Exact Content requested by user */}
             <div className="space-y-2.5 max-w-xs sm:max-w-xl md:max-w-2xl text-left select-none">
               <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal leading-relaxed drop-shadow">
-                Ajay Homes provides professional real estate support for clients looking to buy, sell, or invest in property in Chennai.
+                <Link href="/about-us" className="text-white font-semibold hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">Ajay Homes</Link> provides professional real estate support for clients looking to buy, sell, or{' '}
+                <Link href="/services/property-developer" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">invest in property</Link> in Chennai.
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-white/80 font-normal leading-relaxed drop-shadow">
-                Whether you are searching for your next home, selling an existing property, exploring an investment, or managing property from overseas, our team helps you navigate the process with experience and practical market understanding.
+                Whether you are searching for your{' '}
+                <Link href="/gallery" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">next home</Link>, selling an existing property, exploring an investment, or{' '}
+                <Link href="#nri-services" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">managing property from overseas</Link>, our team helps you navigate the process with experience and practical market understanding.
               </p>
             </div>
 

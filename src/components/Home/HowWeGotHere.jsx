@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export default function HowWeGotHere() {
   const [activeYear, setActiveYear] = useState("2026");
@@ -120,10 +122,17 @@ export default function HowWeGotHere() {
     >
       <div className="mx-auto w-[calc(100%-1.25rem)] sm:w-[calc(100%-2.5rem)] md:w-[calc(100%-4rem)] max-w-[1640px]">
         {/* Section Heading: "How we got here?" matching reference pixel-precisely */}
-        <div className="mb-4 sm:mb-6 pl-1 sm:pl-2">
-          <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-slate-900 tracking-tight font-sans">
+        <div className="mb-4 sm:mb-6 pl-1 sm:pl-2 flex items-center justify-between">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-slate-900 tracking-tight font-sans">
             How we got <span className="text-[var(--primary)]">here?</span>
           </h2>
+          <Link
+            href="/about-us"
+            className="text-xs sm:text-sm font-semibold text-slate-600 hover:text-[var(--primary)] transition-colors inline-flex items-center gap-1 group pr-2"
+          >
+            <span>Our Full Story</span>
+            <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </div>
 
         {/* Main Full-Viewport Showcase Card with Small Left/Right Margin */}
@@ -162,10 +171,13 @@ export default function HowWeGotHere() {
 
           {/* Top Pill / Badge inside the card */}
           <div className="absolute top-5 left-5 sm:top-7 sm:left-8 md:left-10 lg:left-12 z-20 max-w-[calc(100%-6rem)] sm:max-w-[calc(100%-10rem)]">
-            <span className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md px-3.5 py-1 text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-white/85 font-semibold font-sans border border-white/10 shadow-sm">
+            <Link
+              href="/about-us"
+              className="inline-flex items-center gap-2 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md px-3.5 py-1 text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-white/85 hover:text-white font-semibold font-sans border border-white/10 hover:border-white/25 shadow-sm transition-all cursor-pointer"
+            >
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
               Ajay Homes &amp; Estates • Architectural Journey
-            </span>
+            </Link>
           </div>
 
           {/* Bottom-Left Milestone Content matching reference */}

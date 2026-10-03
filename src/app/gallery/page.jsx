@@ -8,7 +8,6 @@ import GalleryHero from '@/components/Gallery/GalleryHero';
 import FeaturedDeliveredSection from '@/components/Gallery/FeaturedDeliveredSection';
 import ProjectGridSection from '@/components/Gallery/ProjectGridSection';
 import ProjectLightboxModal from '@/components/Gallery/ProjectLightboxModal';
-import GetDesignModal from '@/components/Gallery/GetDesignModal';
 import { galleryProjects, galleryCategories } from '@/data/galleryProjects';
 
 export default function GalleryPage() {
@@ -18,8 +17,10 @@ export default function GalleryPage() {
   // Lightbox Modal state
   const [activeLightboxProject, setActiveLightboxProject] = useState(null);
 
-  // "Get This Design" Consultation Modal state
-  const [activeInquiryProject, setActiveInquiryProject] = useState(null);
+  // Opens the site-wide 30-second consultation popup
+  const handleOpenConsultation = () => {
+    window.dispatchEvent(new Event('open-consultation'));
+  };
 
   const featuredProjects = galleryProjects.filter(p => p.isFeatured);
 
@@ -52,7 +53,7 @@ export default function GalleryPage() {
         <FeaturedDeliveredSection
           featuredProjects={featuredProjects}
           onSelectProject={(project) => setActiveLightboxProject(project)}
-          onOpenInquiry={(project) => setActiveInquiryProject(project)}
+          onOpenInquiry={handleOpenConsultation}
         />
       </div>
 
@@ -63,7 +64,7 @@ export default function GalleryPage() {
             projects={galleryProjects}
             categories={galleryCategories}
             onSelectProject={(project) => setActiveLightboxProject(project)}
-            onOpenInquiry={(project) => setActiveInquiryProject(project)}
+            onOpenInquiry={handleOpenConsultation}
           />
         </div>
       </div>
@@ -76,17 +77,10 @@ export default function GalleryPage() {
         project={activeLightboxProject}
         isOpen={Boolean(activeLightboxProject)}
         onClose={() => setActiveLightboxProject(null)}
-        onOpenInquiry={(project) => setActiveInquiryProject(project)}
+        onOpenInquiry={handleOpenConsultation}
       />
 
-      {/* 2. "Get This Design" Design Inquiry Modal */}
-      <GetDesignModal
-        project={activeInquiryProject}
-        isOpen={Boolean(activeInquiryProject)}
-        onClose={() => setActiveInquiryProject(null)}
-      />
-
-      {/* 3. Global Tour & Apply Modals */}
+      {/* 2. Global Tour & Apply Modals */}
       <TourModal
         isOpen={isTourModalOpen}
         onClose={() => setIsTourModalOpen(false)}

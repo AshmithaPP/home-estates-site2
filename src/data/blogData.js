@@ -22,7 +22,7 @@ export const blogArticles = [
         body: 'Material market price volatility often creates bitter disputes between builders and families. When you sign a turnkey agreement with Ajay Homes, your milestone payment schedule and per-square-foot cost remain 100% fixed. Any price increases in Tata Tiscon TMT steel or 53-grade OPC cement are absorbed by us, protecting your family budget.'
       },
       {
-        heading: '3. 450+ German-Standard Multi-Stage Quality Audits',
+        heading: '3. 500+ German-Standard Multi-Stage Quality Audits',
         body: 'Every structural milestone undergoes rigorous empirical testing before work progresses. We conduct soil bearing capacity (SBC) analysis, ultrasonic rebound hammer concrete testing, slump tests for every RMC batch, and continuous 21-day curing logs with calibrated water chemistry.'
       },
       {
@@ -36,7 +36,7 @@ export const blogArticles = [
       'Empirical multi-stage lab tests verify structural safety against coastal Chennai humidity and seismic loads.',
       'Real-time digital milestone tracking keeps you in total control without daily site visits.'
     ],
-    conclusion: 'Building your dream residence should be a proud life milestone, not a stressful management ordeal. With over five decades of landmark residential construction across Chennai, Ajay Homes delivers generational quality with complete peace of mind.'
+    conclusion: 'Building your dream residence should be a proud life milestone, not a stressful management ordeal. With over 60+ years of landmark residential construction across Chennai, Ajay Homes delivers generational quality with complete peace of mind.'
   },
   {
     id: 'best-house-construction-company-chennai',
@@ -49,11 +49,11 @@ export const blogArticles = [
     imageOverlayTitle: 'Best House Construction Company in Chennai',
     imageBadge: 'Top Ranked 2026',
     excerpt: 'When people search for best house construction company in Chennai or top turnkey luxury builders, one hallmark name that consistently comes up first is Ajay Homes. [...]',
-    intro: 'Selecting the ideal builder for your independent luxury villa or ancestral property redevelopment requires balancing three decisive factors: structural longevity, municipal regulatory mastery, and personalized architectural design. Here is why discerning Chennai families have trusted Ajay Homes for over half a century.',
+    intro: 'Selecting the ideal builder for your independent luxury villa or ancestral property redevelopment requires balancing three decisive factors: structural longevity, municipal regulatory mastery, and personalized architectural design. Here is why discerning Chennai families have trusted Ajay Homes for over 60+ years.',
     sections: [
       {
-        heading: '1. Over 50 Years of Landmark Residential Architecture',
-        body: 'From heritage estates in Boat Club and Poes Garden to modern contemporary villas across Besant Nagar, Anna Nagar, and ECR, Ajay Homes has designed and constructed over 500 bespoke residences. Our projects stand the test of time, weathering Chennai’s coastal marine climate with zero structural degradation.'
+        heading: '1. 60+ Years of Landmark Residential Architecture',
+        body: 'From heritage estates in Boat Club and Poes Garden to modern contemporary villas across Besant Nagar, Anna Nagar, and ECR, Ajay Homes has designed and constructed 500+ bespoke residences. Our projects stand the test of time, weathering Chennai’s coastal marine climate with zero structural degradation.'
       },
       {
         heading: '2. Grade-A Certified Construction Materials Exclusively',
@@ -69,7 +69,7 @@ export const blogArticles = [
       }
     ],
     takeaways: [
-      'Proven half-century track record of delivering luxury residences in premier Chennai neighborhoods.',
+      'Proven 60+ years track record of delivering luxury residences in premier Chennai neighborhoods.',
       'Exclusive usage of mill-certified Fe550D primary steel and 53-grade OPC cement.',
       'Dedicated statutory cell securing fast-track CMDA and GCC building permits.',
       'Long-term structural warranty backed by scheduled post-handover inspections.'

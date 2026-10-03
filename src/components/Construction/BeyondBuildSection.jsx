@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -20,21 +21,15 @@ export const BeyondBuildSection = ({ onOpenApply }) => {
   };
 
   return (
-    <section 
+    <section
       id="beyond-the-build"
       className="relative w-full bg-white text-slate-900 py-16 sm:py-20 lg:py-28 overflow-hidden"
       style={{ fontFamily: 'var(--font-family-base)' }}
     >
-      {/* ── Right-Side Dark Accent Band (Replicating Reference UI Split Background) ── */}
-      <div 
-        className="hidden md:block absolute right-0 top-0 bottom-0 w-[30%] lg:w-[35%] xl:w-[38%] pointer-events-none"
-        style={{ backgroundColor: 'var(--grey-deepest)' }}
-      />
-
       {/* ── Main Layout Container ── */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
-          
+
           {/* ── Left Column: Editorial Content (Exact match to reference UI) ── */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -44,21 +39,37 @@ export const BeyondBuildSection = ({ onOpenApply }) => {
             className="md:col-span-6 lg:col-span-6 text-left space-y-4 sm:space-y-5"
           >
             {/* 1. Main Heading */}
-            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-slate-950 tracking-tight leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-slate-950 tracking-tight leading-snug">
               Construction That Goes <br className="hidden sm:inline" />
               Beyond the Build
             </h2>
 
-            {/* 3. Narrative Copy Paragraphs (Exact content requested by user) */}
+            {/* 3. Narrative Copy Paragraphs with Contextual Redirections */}
             <div className="space-y-3.5 text-xs sm:text-sm md:text-[14.5px] text-slate-600 font-normal leading-relaxed">
               <p>
                 A premium project requires more than construction. It requires the right planning, materials, people, supervision, and execution.
               </p>
               <p>
-                At Ajay Homes, we manage every stage of the construction journey—from initial planning and site preparation to structural work, finishing, and final handover.
+                At{' '}
+                <Link href="/about-us" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
+                  Ajay Homes
+                </Link>
+                , we manage every stage of the construction journey—from initial{' '}
+                <Link href="/services/layout-promoters" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
+                  site preparation
+                </Link>{' '}
+                to structural work,{' '}
+                <Link href="/services/interior-design" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
+                  interior finishing
+                </Link>
+                , and final handover.
               </p>
               <p>
-                Our approach combines architectural quality, technical expertise, premium materials, and disciplined project management to deliver spaces built for long-term value.
+                Our approach combines architectural quality, technical expertise, premium materials, and disciplined{' '}
+                <Link href="/services/project-management" className="font-semibold text-slate-900 hover:text-[var(--primary-dark)] underline decoration-slate-300 underline-offset-2 transition-colors">
+                  project management
+                </Link>{' '}
+                to deliver spaces built for long-term value.
               </p>
             </div>
 
@@ -72,8 +83,8 @@ export const BeyondBuildSection = ({ onOpenApply }) => {
                 }}
               >
                 <span>Discuss Your Project</span>
-                <ArrowRight 
-                  className="w-4 h-4 text-[var(--primary)] group-hover:translate-x-1 transition-transform" 
+                <ArrowRight
+                  className="w-4 h-4 text-[var(--primary)] group-hover:translate-x-1 transition-transform"
                 />
               </button>
             </div>
@@ -87,18 +98,29 @@ export const BeyondBuildSection = ({ onOpenApply }) => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="md:col-span-6 lg:col-span-6 relative mt-4 md:mt-0"
           >
-            {/* The Image Card overlapping both white and dark canvases */}
-            <div className="relative w-full aspect-[16/11] sm:aspect-[16/10] rounded-lg sm:rounded-xl overflow-hidden shadow-2xl border border-slate-200/90 bg-slate-900">
+            {/* The Image Card overlapping both white and dark canvases, linking to Gallery */}
+            <Link
+              href="/gallery"
+              className="block relative w-full aspect-[16/11] sm:aspect-[16/10] rounded-lg sm:rounded-xl overflow-hidden shadow-2xl border border-slate-200/90 bg-slate-900 group cursor-pointer focus:outline-none"
+              aria-label="View Ankan Residence and 500+ projects in our gallery"
+            >
               <img
                 src={imageSrc}
                 alt="Ankan Residence Construction Quality — Ajay Homes"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />
 
               {/* Gentle ambient vignette for premium depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-black/75 text-white/90 backdrop-blur-md border border-white/20 group-hover:bg-[var(--primary)] group-hover:text-black transition-colors">
+                  <span>Explore 500+ Completed Projects</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </div>
+            </Link>
           </motion.div>
 
         </div>

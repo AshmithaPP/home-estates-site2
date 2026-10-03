@@ -1,15 +1,16 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 /**
- * 5 Construction Process Steps requested by user:
- * 01 — Understand
- * 02 — Plan
- * 03 — Execute
- * 04 — Monitor
- * 05 — Complete
+ * 5 Construction Process Steps:
+ * 01 — Understand -> /contact
+ * 02 — Plan -> /services/layout-promoters
+ * 03 — Execute -> /services/construction
+ * 04 — Monitor -> /services/project-management
+ * 05 — Complete -> /gallery
  */
 const PROCESS_STEPS = [
   {
@@ -18,6 +19,7 @@ const PROCESS_STEPS = [
     name: "Understand",
     description: "We begin by understanding your requirements, site, budget, timeline, and project goals.",
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
+    href: "/contact"
   },
   {
     stepNumber: "02",
@@ -25,6 +27,7 @@ const PROCESS_STEPS = [
     name: "Plan",
     description: "Our team develops the project approach, coordinates design requirements, and establishes the execution plan.",
     image: "/assets/img/raman-residence-view/img39.jpg",
+    href: "/services/layout-promoters"
   },
   {
     stepNumber: "03",
@@ -32,6 +35,7 @@ const PROCESS_STEPS = [
     name: "Execute",
     description: "Construction is carried out with experienced teams, quality materials, and continuous site coordination.",
     image: "/construction-frames/build_frame_05.jpg",
+    href: "/services/construction"
   },
   {
     stepNumber: "04",
@@ -39,6 +43,7 @@ const PROCESS_STEPS = [
     name: "Monitor",
     description: "Progress, quality, materials, timelines, and coordination are monitored throughout the project.",
     image: "/assets/img/shasthri-nagar-adyar/img64.jpg",
+    href: "/services/project-management"
   },
   {
     stepNumber: "05",
@@ -46,6 +51,7 @@ const PROCESS_STEPS = [
     name: "Complete",
     description: "We bring every stage together to deliver the completed project with attention to the final details.",
     image: "/assets/img/suresh-residence-view/img17.jpg",
+    href: "/gallery"
   },
 ];
 
@@ -69,12 +75,12 @@ export const ConstructionProcessSection = ({
         
         {/* ── Section Heading (Matching Reference UI Style) ──────────── */}
         <div className="text-center mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-snug">
             {title}
           </h2>
         </div>
 
-        {/* ── 5 Process Cards in Row (Exact Layout of Reference UI) ──── */}
+        {/* ── 5 Process Cards in Row linking to their specialized stages ──── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-4.5">
           {steps.map((item, idx) => {
             return (
@@ -84,57 +90,63 @@ export const ConstructionProcessSection = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative h-[320px] sm:h-[350px] lg:h-[380px] rounded-2xl overflow-hidden cursor-pointer border border-white/10 transition-all duration-300 hover:border-[var(--primary)] hover:shadow-xl hover:-translate-y-1"
-                style={{
-                  boxShadow: '0 8px 24px -6px rgba(0, 0, 0, 0.6)',
-                }}
+                className="h-[320px] sm:h-[350px] lg:h-[380px]"
               >
-                {/* Background Image with Smooth Zoom on Hover */}
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
-
-                {/* Dark Gradient Overlay for text contrast (From transparent top to deep dark bottom) */}
-                <div 
-                  className="absolute inset-0 transition-opacity duration-300"
+                <Link
+                  href={item.href}
+                  className="group relative block w-full h-full rounded-2xl overflow-hidden cursor-pointer border border-white/10 transition-all duration-300 hover:border-[var(--primary)] hover:shadow-xl hover:-translate-y-1 focus:outline-none"
                   style={{
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.15) 75%, transparent 100%)',
+                    boxShadow: '0 8px 24px -6px rgba(0, 0, 0, 0.6)',
                   }}
-                />
+                  aria-label={`${item.title}: ${item.description}`}
+                >
+                  {/* Background Image with Smooth Zoom on Hover */}
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  />
 
-                {/* Top Step Number Badge */}
-                <div className="absolute top-3.5 left-3.5 z-10">
-                  <span 
-                    className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase backdrop-blur-md border border-white/15"
+                  {/* Dark Gradient Overlay for text contrast */}
+                  <div 
+                    className="absolute inset-0 transition-opacity duration-300"
                     style={{
-                      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                      color: 'var(--primary)',
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.65) 45%, rgba(0,0,0,0.15) 75%, transparent 100%)',
                     }}
-                  >
-                    Step {item.stepNumber}
-                  </span>
-                </div>
+                  />
 
-                {/* Bottom Content Area */}
-                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 z-10 flex flex-col justify-end text-left">
-                  {/* Step Title (e.g., 01 — Understand) */}
-                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug group-hover:text-[var(--primary)] transition-colors duration-300">
-                    {item.title}
-                  </h3>
+                  {/* Top Step Number Badge */}
+                  <div className="absolute top-3.5 left-3.5 z-10">
+                    <span 
+                      className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase backdrop-blur-md border border-white/15"
+                      style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        color: 'var(--primary)',
+                      }}
+                    >
+                      Step {item.stepNumber}
+                    </span>
+                  </div>
 
-                  {/* Step Description */}
-                  <p className="text-xs sm:text-[13px] text-neutral-300 font-light leading-relaxed mt-2 line-clamp-3 sm:line-clamp-4">
-                    {item.description}
-                  </p>
-                </div>
+                  {/* Bottom Content Area */}
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5 z-10 flex flex-col justify-end text-left">
+                    {/* Step Title (e.g., 01 — Understand) */}
+                    <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug group-hover:text-[var(--primary)] transition-colors duration-300">
+                      {item.title}
+                    </h3>
 
-                {/* Bottom Primary Accent Hairline on Hover */}
-                <div 
-                  className="absolute bottom-0 left-0 right-0 h-[2.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ backgroundColor: 'var(--primary)' }}
-                />
+                    {/* Step Description */}
+                    <p className="text-xs sm:text-[13px] text-neutral-300 font-light leading-relaxed mt-2 line-clamp-3 sm:line-clamp-4">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Bottom Primary Accent Hairline on Hover */}
+                  <div 
+                    className="absolute bottom-0 left-0 right-0 h-[2.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ backgroundColor: 'var(--primary)' }}
+                  />
+                </Link>
               </motion.div>
             );
           })}

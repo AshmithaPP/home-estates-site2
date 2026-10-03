@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   Compass, 
@@ -17,36 +18,42 @@ const SERVICES = [
     title: 'Land Assessment',
     description: "We evaluate the property's location, potential, requirements, and development possibilities before moving forward.",
     icon: Compass,
+    href: '/contact',
   },
   {
     id: 'layout-planning',
     title: 'Layout Planning',
     description: 'We develop practical layout concepts focused on accessibility, usability, infrastructure, and market requirements.',
     icon: Layers,
+    href: '/services/property-developer',
   },
   {
     id: 'development-coordination',
     title: 'Development Coordination',
     description: 'From site preparation to infrastructure development, we coordinate the various stages required to move the project forward.',
     icon: Network,
+    href: '/services/project-management',
   },
   {
     id: 'infrastructure-development',
     title: 'Infrastructure Development',
     description: 'We coordinate essential infrastructure requirements such as roads, drainage, utilities, and other development elements based on the project scope.',
     icon: HardHat,
+    href: '/services/construction',
   },
   {
     id: 'approvals-coordination',
     title: 'Approvals & Coordination',
     description: 'We assist with the necessary planning and coordination involved in taking a layout from concept toward development.',
     icon: ShieldCheck,
+    href: '/about-us',
   },
   {
     id: 'sales-marketing',
     title: 'Sales & Marketing Support',
     description: 'Our real estate capabilities allow us to support the process of positioning and marketing developed properties to potential buyers.',
     icon: TrendingUp,
+    href: '/services/real-estate',
   },
 ];
 
@@ -78,7 +85,7 @@ export const LayoutServicesGrid = ({
         
         {/* ── Section Header (Compact, Centered) ────────────── */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-snug">
             {title}
           </h2>
         </div>
@@ -95,31 +102,42 @@ export const LayoutServicesGrid = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-20px' }}
                 transition={{ duration: 0.45, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative bg-white text-slate-900 rounded-2xl p-5 sm:p-6 text-center border border-white/20 shadow-xl shadow-black/25 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-start cursor-default"
+                className="h-full"
               >
-                {/* Circular Outline Icon Container (Matching Reference UI) */}
-                <div 
-                  className="w-12 h-12 rounded-full border-2 flex items-center justify-center mb-3.5 transition-all duration-300 group-hover:scale-110"
-                  style={{
-                    borderColor: 'var(--primary)',
-                    backgroundColor: 'color-mix(in srgb, var(--primary) 8%, transparent)',
-                  }}
+                <Link
+                  href={item.href}
+                  className="group relative bg-white text-slate-900 rounded-2xl p-5 sm:p-6 text-center border border-white/20 shadow-xl shadow-black/25 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-between h-full cursor-pointer"
                 >
-                  <Icon 
-                    className="w-5 h-5 stroke-[2] transition-transform duration-300"
-                    style={{ color: 'var(--primary)' }}
-                  />
-                </div>
+                  <div className="flex flex-col items-center">
+                    {/* Circular Outline Icon Container (Matching Reference UI) */}
+                    <div 
+                      className="w-12 h-12 rounded-full border-2 flex items-center justify-center mb-3.5 transition-all duration-300 group-hover:scale-110"
+                      style={{
+                        borderColor: 'var(--primary)',
+                        backgroundColor: 'color-mix(in srgb, var(--primary) 8%, transparent)',
+                      }}
+                    >
+                      <Icon 
+                        className="w-5 h-5 stroke-[2] transition-transform duration-300"
+                        style={{ color: 'var(--primary)' }}
+                      />
+                    </div>
 
-                {/* Service Title */}
-                <h3 className="text-base sm:text-lg font-bold text-slate-950 tracking-tight leading-snug mb-2 group-hover:text-black transition-colors duration-200">
-                  {item.title}
-                </h3>
+                    {/* Service Title */}
+                    <h3 className="text-base sm:text-lg font-bold text-slate-950 tracking-tight leading-snug mb-2 group-hover:text-black transition-colors duration-200">
+                      {item.title}
+                    </h3>
 
-                {/* Service Description (Exact user content) */}
-                <p className="text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed">
-                  {item.description}
-                </p>
+                    {/* Service Description (Exact user content) */}
+                    <p className="text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  <span className="mt-3 text-xs font-semibold text-[var(--primary)] inline-flex items-center gap-1 group-hover:underline">
+                    Learn more &rarr;
+                  </span>
+                </Link>
               </motion.div>
             );
           })}

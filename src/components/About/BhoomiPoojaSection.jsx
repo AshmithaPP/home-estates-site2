@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export const BhoomiPoojaSection = () => {
@@ -65,25 +66,35 @@ export const BhoomiPoojaSection = () => {
             className="w-full lg:w-[48%] xl:w-[45%] space-y-5 text-left"
           >
             {/* Main Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-[40px] lg:text-[44px] font-extrabold text-white tracking-tight leading-[1.18]">
-              From Bhoomi Pooja to{' '}
-              <span className="text-[#ff8c00]">
-                House Warming
-              </span>
-            </h2>
+            <Link href="/services/construction" className="inline-block group cursor-pointer">
+              <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-[1.18] group-hover:text-white transition-colors">
+                From Bhoomi Pooja to{' '}
+                <span className="text-[#ff8c00] group-hover:underline underline-offset-4 decoration-[#ff8c00]/60 transition-all">
+                  House Warming
+                </span>
+              </h2>
+            </Link>
 
             {/* Narrative Subtitle */}
             <p className="text-base sm:text-lg text-[#c2beba] font-normal leading-relaxed max-w-lg">
-              For residential projects, we can be there through every important stage — from the first Bhoomi Pooja to the final House Warming.
+              For{' '}
+              <Link href="/services/construction" className="text-white font-medium hover:text-[#ff8c00] transition-colors">
+                residential projects
+              </Link>
+              , we can be there through every important stage — from the first Bhoomi Pooja to the final{' '}
+              <Link href="/services/interior-design" className="text-white font-medium hover:text-[#ff8c00] transition-colors">
+                House Warming
+              </Link>
+              .
             </p>
 
             {/* Core Tagline */}
-            <div className="pt-2 flex items-center gap-3">
-              <span className="w-8 h-[2.5px] bg-[#ff8c00] rounded-full inline-block shrink-0 shadow-[0_0_10px_rgba(255,140,0,0.6)]" />
-              <p className="text-sm sm:text-base font-bold text-white tracking-wide">
-                One team. One journey. Built around you.
+            <Link href="/contact" className="pt-2 flex items-center gap-3 group cursor-pointer inline-flex">
+              <span className="w-8 h-[2.5px] bg-[#ff8c00] rounded-full inline-block shrink-0 shadow-[0_0_10px_rgba(255,140,0,0.6)] group-hover:w-12 transition-all" />
+              <p className="text-sm sm:text-base font-bold text-white tracking-wide group-hover:text-[#ff8c00] transition-colors">
+                One team. One journey. Built around you. &rarr;
               </p>
-            </div>
+            </Link>
           </motion.div>
 
           {/* ── Right Column: 7x4 Photo Mosaic Wall (Sharp Square Corners, Full Color) ─── */}
@@ -97,9 +108,10 @@ export const BhoomiPoojaSection = () => {
             <div className="w-full max-w-[580px] lg:max-w-[620px] rounded-none overflow-hidden shadow-[0_16px_45px_rgba(0,0,0,0.6)] border border-white/10 bg-[#242424] p-[2px] sm:p-[2.5px]">
               <div className="grid grid-cols-7 gap-[2px] sm:gap-[2.5px] bg-[#1a1a1a] rounded-none">
                 {residenceImages.map((src, index) => (
-                  <div
+                  <Link
                     key={`${src}-${index}`}
-                    className="relative aspect-square overflow-hidden bg-[#2a2a2a] rounded-none group cursor-pointer"
+                    href="/gallery"
+                    className="relative aspect-square overflow-hidden bg-[#2a2a2a] rounded-none group cursor-pointer block"
                   >
                     <Image
                       src={src}
@@ -110,7 +122,7 @@ export const BhoomiPoojaSection = () => {
                     />
                     {/* Subtle warm hover border indicator */}
                     <div className="absolute inset-0 border border-transparent group-hover:border-[#ff8c00] transition-colors duration-200 pointer-events-none z-10" />
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

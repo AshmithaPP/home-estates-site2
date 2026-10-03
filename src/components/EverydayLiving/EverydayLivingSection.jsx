@@ -21,11 +21,11 @@ We do not cut corners. From foundation to finish, every material is inspected an
     dropLetter: 'O',
     body: `Our core values drive every decision — customer first, community always. We design homes that bring families together, neighbourhoods that foster connection, and estates that serve generations.
 
-Over two decades, we have built thriving communities in Velachery, OMR, Porur, Tambaram, and Anna Nagar.`,
+Over six decades, we have built thriving communities in Velachery, OMR, Porur, Tambaram, and Anna Nagar.`,
   },
   HERITAGE: {
     dropLetter: 'T',
-    body: `Two decades of trust. Over a thousand families. 120+ completed projects. The heritage of Ajay Homes & Estates is written in brick and stone across Chennai's most prime locations.
+    body: `60+ years of trust. Over a thousand families. 500+ completed projects. The heritage of Ajay Homes & Estates is written in brick and stone across Chennai's most prime locations.
 
 Our heritage is not just age — it is a living legacy of quality, relationships, and the dream of home made real.`,
   },
@@ -244,7 +244,7 @@ export const EverydayLivingSection = () => {
             >
               <div className="flex items-center gap-4">
                 <div className="text-center">
-                  <span className="block text-lg font-black text-[#ff8c00]">20+</span>
+                  <span className="block text-lg font-black text-[#ff8c00]">60+</span>
                   <span className="block text-[8px] font-bold uppercase tracking-wider text-[#555555]">Years</span>
                 </div>
                 <div className="w-px h-6 bg-black/10" />
@@ -254,7 +254,7 @@ export const EverydayLivingSection = () => {
                 </div>
                 <div className="w-px h-6 bg-black/10" />
                 <div className="text-center">
-                  <span className="block text-lg font-black text-[#ff8c00]">120+</span>
+                  <span className="block text-lg font-black text-[#ff8c00]">500+</span>
                   <span className="block text-[8px] font-bold uppercase tracking-wider text-[#555555]">Projects</span>
                 </div>
               </div>

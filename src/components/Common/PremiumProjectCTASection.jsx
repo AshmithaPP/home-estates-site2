@@ -1,19 +1,20 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/UI/Button';
 
 const DEFAULT_STATS = [
-  { value: '50+ Years', label: 'of Industry Experience' },
-  { value: '500+', label: 'Projects' },
-  { value: 'End-to-End', label: 'Property Expertise' },
+  { value: '60+ Years', label: 'of Industry Experience' },
+  { value: '500+ Projects', label: 'Completed Projects' },
+  { value: '₹1 Cr+', label: 'Premium Project Experience' },
 ];
 
 /**
  * Reusable PremiumProjectCTASection (Compact, Ultra-Modern & Sleek UI)
- * - Single-line stats strip: "50+ Years of Industry Experience | 500+ Projects | End-to-End Property Expertise"
+ * - Single-line stats strip: "60+ Years of Industry Experience | 500+ Projects | End-to-End Property Expertise"
  * - Short height horizontal layout
  * - Left: Headline, description, and one-line stats
  * - Right: Action CTA button
@@ -28,6 +29,7 @@ export const PremiumProjectCTASection = ({
   ctaText = 'Talk to Ajay Homes',
   onCtaClick,
   className = '',
+  statValueClassName = '',
 }) => {
   return (
     <section
@@ -64,7 +66,7 @@ export const PremiumProjectCTASection = ({
 
           {/* ── Left Column: Headline, Description & One-Line Stats Strip ── */}
           <div className="relative z-10 flex-1 space-y-2 text-left">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold text-white tracking-tight leading-snug">
               {title}
             </h2>
 
@@ -72,7 +74,7 @@ export const PremiumProjectCTASection = ({
               {description}
             </p>
 
-            {/* ── Stats Strip in ONE LINE ── */}
+            {/* ── Stats Strip in ONE LINE with Contextual Redirections ── */}
             {stats && stats.length > 0 && (
               <div className="pt-2 flex flex-wrap items-center gap-x-2.5 sm:gap-x-3.5 gap-y-1 text-xs sm:text-[13px] text-neutral-300">
                 {stats.map((item, idx) => {
@@ -80,19 +82,30 @@ export const PremiumProjectCTASection = ({
                   const lbl = item.label || item.text;
                   const isLast = idx === stats.length - 1;
 
+                  let href = '/contact';
+                  if (typeof val === 'string') {
+                    if (val.includes('60+')) href = '/about-us';
+                    else if (val.includes('500+')) href = '/gallery';
+                    else if (val.includes('1 Cr') || val.includes('₹1')) href = '/services/construction';
+                    else if (val.includes('End-to-End')) href = '/services/project-management';
+                  }
+
                   return (
                     <React.Fragment key={idx}>
-                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+                      <Link
+                        href={href}
+                        className="inline-flex items-center gap-1.5 whitespace-nowrap hover:opacity-80 transition-opacity focus:outline-none"
+                      >
                         <span
-                          className="font-bold tracking-tight"
+                          className={`font-bold tracking-tight ${statValueClassName}`}
                           style={{ color: 'var(--primary)' }}
                         >
                           {val}
                         </span>
-                        <span className="text-neutral-300 font-normal">
+                        <span className="text-neutral-300 font-normal hover:text-white transition-colors">
                           {lbl}
                         </span>
-                      </span>
+                      </Link>
                       {!isLast && (
                         <span className="text-neutral-600 hidden sm:inline select-none">
                           |

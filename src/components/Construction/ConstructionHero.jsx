@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '../UI/Button';
@@ -80,18 +81,46 @@ export const ConstructionHero = ({ onOpenApply }) => {
               </span>
             </h1>
 
-            {/* 3. Description Paragraphs — Exact Content requested by user */}
+            {/* 3. Description Paragraphs with Redirections to Services, About & Gallery */}
             <div className="space-y-2.5 max-w-xs sm:max-w-xl md:max-w-2xl text-left select-none">
               <p className="text-[11px] sm:text-sm md:text-[15px] text-white/90 font-normal leading-relaxed drop-shadow">
-                From luxury residences to large-scale commercial developments, Ajay Homes delivers premium construction with a focus on quality, precision, transparency, and timely execution.
+                From{' '}
+                <Link href="/gallery" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
+                  luxury residences
+                </Link>{' '}
+                to large-scale{' '}
+                <Link href="/services/property-developer" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
+                  commercial developments
+                </Link>
+                ,{' '}
+                <Link href="/about-us" className="text-white font-semibold hover:text-[var(--primary)] transition-colors">
+                  Ajay Homes
+                </Link>{' '}
+                delivers premium construction with a focus on quality, precision, transparency, and timely execution.
               </p>
               <p className="text-[11px] sm:text-xs md:text-sm text-white/80 font-normal leading-relaxed drop-shadow">
-                With 60+ years of industry experience and 500+ completed projects, we manage projects valued at ₹1 Cr+, bringing design, engineering, construction, and project management together under one roof.
+                With{' '}
+                <Link href="/about-us" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
+                  60+ years
+                </Link>{' '}
+                of industry experience and{' '}
+                <Link href="/gallery" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
+                  500+ completed projects
+                </Link>
+                , we manage projects valued at ₹1 Cr+, bringing{' '}
+                <Link href="/services/interior-design" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
+                  design
+                </Link>
+                , engineering, construction, and{' '}
+                <Link href="/services/project-management" className="text-white font-medium hover:text-[var(--primary)] underline decoration-white/30 underline-offset-2 transition-colors">
+                  project management
+                </Link>{' '}
+                together under one roof.
               </p>
             </div>
 
-            {/* 4. Action Button (Pill Button using dynamic theme variables) */}
-            <div className="pt-2 sm:pt-3 flex items-center justify-start">
+            {/* 4. Action Buttons */}
+            <div className="pt-2 sm:pt-3 flex flex-wrap items-center justify-start gap-3 sm:gap-4">
               <Button
                 onClick={handleDiscussProject}
                 variant="primary"
@@ -100,6 +129,14 @@ export const ConstructionHero = ({ onOpenApply }) => {
                 showIcon={true}
               >
                 Discuss Your Project
+              </Button>
+
+              <Button
+                href="/gallery"
+                variant="glass"
+                size="md"
+              >
+                View 500+ Projects
               </Button>
             </div>
           </motion.div>

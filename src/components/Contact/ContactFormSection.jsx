@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronDown, Send, CheckCircle2, MapPin } from 'lucide-react';
 import Button from '../UI/Button';
@@ -85,17 +86,21 @@ export const ContactFormSection = () => {
 
             {/* Small overlay card with the visit details */}
             <div
-              className="absolute left-3 right-3 bottom-3 sm:left-4 sm:right-auto sm:bottom-4 sm:w-[300px] rounded-xl border border-white/10 p-4 sm:p-5 backdrop-blur-md shadow-xl"
+              className="absolute left-3 right-3 bottom-3 sm:left-4 sm:right-auto sm:bottom-4 sm:w-[320px] rounded-xl border border-white/10 p-4 sm:p-5 backdrop-blur-md shadow-xl"
               style={{ backgroundColor: 'color-mix(in srgb, var(--grey-deepest) 82%, transparent)' }}
             >
-              <h3 className="text-lg sm:text-xl font-extrabold tracking-tight leading-tight" style={{ color: 'var(--text-primary)' }}>
+              <h3 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold tracking-tight leading-snug" style={{ color: 'var(--text-primary)' }}>
                 Visit Us
               </h3>
 
               <div className="mt-2">
-                <div className="text-sm font-bold" style={{ color: 'var(--primary)' }}>
+                <Link 
+                  href="/about-us" 
+                  className="text-sm font-bold hover:underline inline-block transition-colors" 
+                  style={{ color: 'var(--primary)' }}
+                >
                   Ajay Homes
-                </div>
+                </Link>
                 <div className="text-xs" style={{ color: 'var(--text-muted)' }}>
                   Chennai, Tamil Nadu
                 </div>
@@ -116,7 +121,7 @@ export const ContactFormSection = () => {
                 </div>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 flex flex-wrap items-center gap-2">
                 <Button
                   href="https://maps.google.com/?q=Ajay+Homes+Chennai+Tamil+Nadu"
                   target="_blank"
@@ -127,6 +132,13 @@ export const ContactFormSection = () => {
                   showIcon={true}
                 >
                   Get Directions
+                </Button>
+                <Button
+                  href="/about-us"
+                  variant="glass"
+                  size="sm"
+                >
+                  About Us
                 </Button>
               </div>
             </div>
@@ -147,25 +159,20 @@ export const ContactFormSection = () => {
           >
             {/* Form Card Header */}
             <div className="mb-3.5 sm:mb-4 text-left">
-              <div className="flex items-center gap-2 mb-1">
-                <span
-                  className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: 'var(--primary)' }}
-                />
-                <span
-                  className="text-[11px] font-bold uppercase tracking-wider"
-                  style={{ color: 'var(--primary)' }}
-                >
-                  Online Enquiry
-                </span>
-              </div>
-
-              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-xl sm:text-2xl lg:text-[26px] 2xl:text-[30px] font-bold text-slate-900 tracking-tight leading-snug">
                 Tell Us About Your Requirement
               </h2>
 
               <p className="mt-1 text-xs text-slate-500 leading-relaxed">
-                Provide your project details and our team will get in touch with you shortly.
+                Provide your project details and our team will get in touch with you shortly. You can also explore our{' '}
+                <Link href="/services/construction" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
+                  construction services
+                </Link>{' '}
+                or view our{' '}
+                <Link href="/gallery" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
+                  500+ completed projects
+                </Link>
+                .
               </p>
             </div>
 
@@ -191,7 +198,7 @@ export const ContactFormSection = () => {
                 <p className="text-xs text-slate-600 leading-relaxed max-w-md mx-auto">
                   Thank you, <span className="font-semibold text-slate-900">{formData.name}</span>. Our Chennai advisory team has received your requirement and will contact you shortly at <span className="font-semibold" style={{ color: 'var(--primary)' }}>{formData.phone}</span>.
                 </p>
-                <div className="pt-2">
+                <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
                   <Button
                     variant="primary"
                     size="sm"
@@ -208,6 +215,13 @@ export const ContactFormSection = () => {
                     }}
                   >
                     Submit Another Enquiry
+                  </Button>
+                  <Button
+                    href="/gallery"
+                    variant="secondary"
+                    size="sm"
+                  >
+                    View 500+ Projects
                   </Button>
                 </div>
               </motion.div>
@@ -330,6 +344,31 @@ export const ContactFormSection = () => {
                   <span className="text-[11px] text-slate-500 text-left sm:text-right">
                     Your information is 100% confidential. No spam guaranteed.
                   </span>
+                </div>
+
+                {/* Service Quick Navigation */}
+                <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between text-[11px] text-slate-500 gap-2">
+                  <span>
+                    Explore services:{' '}
+                    <Link href="/services/construction" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
+                      Construction
+                    </Link>
+                    {' '}•{' '}
+                    <Link href="/services/layout-promoters" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
+                      Layouts
+                    </Link>
+                    {' '}•{' '}
+                    <Link href="/services/property-developer" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
+                      Development
+                    </Link>
+                    {' '}•{' '}
+                    <Link href="/services/interior-design" className="font-semibold text-slate-800 hover:text-[var(--primary-dark)] underline transition-colors">
+                      Interiors
+                    </Link>
+                  </span>
+                  <Link href="/resources" className="font-semibold text-[var(--primary-dark)] hover:underline">
+                    Read Guides & Resources &rarr;
+                  </Link>
                 </div>
 
               </form>

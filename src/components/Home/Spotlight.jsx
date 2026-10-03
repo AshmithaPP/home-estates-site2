@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { X, MapPin } from "lucide-react";
 
 // 3 rows of the 8-column grid
@@ -1298,7 +1299,7 @@ export default function Spotlight() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Clean Heading matching section design */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-[34px] 2xl:text-[38px] font-bold uppercase tracking-tight text-slate-900 font-sans leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold tracking-tight text-slate-900 font-sans leading-tight">
             Architectural Styles
           </h2>
           {/* One-Line Subtitle */}
@@ -1438,26 +1439,21 @@ export default function Spotlight() {
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-6 flex items-center gap-2.5">
-                <button
-                  type="button"
-                  suppressHydrationWarning
-                  onClick={() => {
-                    setSelectedItem(null);
-                    openConsultation();
-                  }}
-                  className="flex-1 rounded-xl bg-[var(--primary)] py-2.5 text-center text-xs sm:text-sm font-bold text-white shadow-md shadow-[var(--primary)]/25 transition-all hover:bg-[var(--primary-dark)] cursor-pointer"
+              <div className="mt-6 flex flex-wrap items-center gap-2.5">
+                <Link
+                  href="/contact"
+                  onClick={() => setSelectedItem(null)}
+                  className="flex-1 rounded-xl bg-[var(--primary)] py-2.5 px-3 text-center text-xs sm:text-sm font-bold text-white shadow-md shadow-[var(--primary)]/25 transition-all hover:bg-[var(--primary-dark)] cursor-pointer"
                 >
                   Request Quote for this Model
-                </button>
-                <button
-                  type="button"
-                  suppressHydrationWarning
+                </Link>
+                <Link
+                  href="/gallery"
                   onClick={() => setSelectedItem(null)}
                   className="rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 cursor-pointer"
                 >
-                  Close
-                </button>
+                  View in Gallery
+                </Link>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { House, Handshake, DraftingCompass, Sprout, Building2, MapPin } from "lucide-react";
 
 // Ajay Homes & Estates milestones with authentic landmark project photography
@@ -143,10 +144,12 @@ export default function UnsurpassedLegacy() {
           <span className="mx-auto block h-1 w-12 rounded-full bg-[var(--primary)]" aria-hidden />
 
           {/* Heading: Black text with Orange Accent */}
-          <h2 className="mt-3 text-2xl sm:text-3xl lg:text-[34px] 2xl:text-[38px] font-bold tracking-tight text-slate-900 font-sans leading-tight">
-            A Legacy Built Over{" "}
-            <span className="gradient-text-orange font-extrabold">60+ Years</span>
-          </h2>
+          <Link href="/about-us" className="inline-block group cursor-pointer">
+            <h2 className="mt-3 text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold tracking-tight text-slate-900 font-sans leading-tight group-hover:text-[var(--primary)] transition-colors">
+              A Legacy Built Over{" "}
+              <span className="gradient-text-orange">60+ Years</span>
+            </h2>
+          </Link>
 
           {/* Big Display Year with Smooth Transition */}
           <div className="relative my-2 sm:my-3 min-h-[64px] sm:min-h-[76px] lg:min-h-[86px] flex flex-col items-center justify-center">
@@ -174,13 +177,14 @@ export default function UnsurpassedLegacy() {
 
           {/* Active Project Reference Tag Pill */}
           <div className="mt-3 flex justify-center">
-            <span
+            <Link
+              href="/gallery"
               key={`project-${activeMilestone.year}`}
-              className="inline-flex items-center gap-1.5 rounded-full bg-slate-100/90 border border-slate-200 px-3 py-1 text-[11px] sm:text-xs font-medium text-slate-700 shadow-2xs animate-in fade-in duration-300 font-sans"
+              className="inline-flex items-center gap-1.5 rounded-full bg-slate-100/90 hover:bg-slate-200/90 border border-slate-200 px-3.5 py-1 text-[11px] sm:text-xs font-medium text-slate-700 shadow-2xs animate-in fade-in duration-300 font-sans cursor-pointer transition-colors group"
             >
               <MapPin className="h-3.5 w-3.5 text-[var(--primary)]" />
-              <span className="font-semibold text-[var(--grey-base)]">{activeMilestone.projectName}</span>
-            </span>
+              <span className="font-semibold text-[var(--grey-base)] group-hover:text-[var(--primary)] transition-colors">{activeMilestone.projectName}</span>
+            </Link>
           </div>
         </div>
 

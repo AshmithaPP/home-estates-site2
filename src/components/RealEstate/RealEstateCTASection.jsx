@@ -53,7 +53,7 @@ export default function RealEstateCTASection({ onCtaClick }) {
 
           {/* Metrics with Pipe Dividers (No dots as requested) */}
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-semibold text-white/90">
-            <span>50+ Years of Industry Experience</span>
+            <span>60+ Years of Industry Experience</span>
             <span className="text-white/30 hidden sm:inline">|</span>
             <span>500+ Projects</span>
             <span className="text-white/30 hidden sm:inline">|</span>

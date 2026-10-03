@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Button from '@/components/UI/Button';
 
@@ -44,21 +45,35 @@ export const LandPotentialSection = ({
           className="max-w-[860px] mx-auto text-center"
         >
           <h2
-            className="text-2xl sm:text-3xl lg:text-[34px] font-bold tracking-tight leading-tight lg:whitespace-nowrap"
+            className="text-2xl sm:text-3xl lg:text-[32px] 2xl:text-[38px] font-bold tracking-tight lg:whitespace-nowrap leading-snug"
             style={{ color: 'var(--grey-deepest)' }}
           >
             Have Land With <span style={{ color: 'var(--primary)' }}>Development Potential?</span>
           </h2>
           <p className="mt-4 text-sm sm:text-[15px] leading-relaxed max-w-[640px] mx-auto text-slate-600">
-            Your land could be more than an asset. With the right planning and execution, it can become a structured property development opportunity.
+            Your land could be more than an asset. With the right{' '}
+            <Link href="/services/project-management" className="text-slate-900 font-semibold hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+              planning and execution
+            </Link>
+            , it can become a structured{' '}
+            <Link href="/services/property-developer" className="text-slate-900 font-semibold hover:text-[var(--primary)] underline underline-offset-2 transition-colors">
+              property development
+            </Link>{' '}
+            opportunity.
           </p>
           <p className="mt-5 text-[15px] sm:text-lg font-semibold leading-snug text-slate-800">
             Let’s discuss your land and explore its potential.
           </p>
-          <div className="mt-5 flex justify-center">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
             <Button onClick={handleCta} variant="primary" size="responsive">
               Discuss Your Land
             </Button>
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-800 hover:text-[var(--primary)] transition-colors px-5 py-2.5 rounded-full border border-black/10 hover:border-black/20 bg-white/70 shadow-xs cursor-pointer"
+            >
+              <span>Explore 500+ Projects &rarr;</span>
+            </Link>
           </div>
         </motion.div>
       </div>
