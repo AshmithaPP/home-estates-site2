@@ -169,6 +169,7 @@ export default function HappyClients() {
           {/* Floating Left Arrow Navigation Button */}
           {canScrollLeft && (
             <button
+              suppressHydrationWarning
               type="button"
               onClick={() => handleScroll("left")}
               aria-label="Previous story"
@@ -181,6 +182,7 @@ export default function HappyClients() {
           {/* Floating Right Arrow Navigation Button */}
           {canScrollRight && (
             <button
+              suppressHydrationWarning
               type="button"
               onClick={() => handleScroll("right")}
               aria-label="Next story"
@@ -241,6 +243,7 @@ export default function HappyClients() {
                     {/* Top-Right Audio Mute / Unmute Button */}
                     {isPlaying && (
                       <button
+                        suppressHydrationWarning
                         type="button"
                         onClick={toggleMute}
                         aria-label={isMuted ? "Unmute audio" : "Mute audio"}
@@ -277,6 +280,7 @@ export default function HappyClients() {
           <div className="flex sm:hidden items-center justify-center gap-1.5 mt-3">
             {REEL_STORIES.map((reel, idx) => (
               <button
+                suppressHydrationWarning
                 key={reel.id}
                 type="button"
                 onClick={() => {

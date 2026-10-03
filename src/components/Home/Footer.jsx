@@ -107,28 +107,28 @@ export default function Footer() {
     {
       name: "Instagram",
       handle: "@ajayhomes",
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/ajayhomes_adyar/",
       icon: InstagramIcon,
       accent: "hover:border-[#E1306C] hover:text-[#E1306C]",
     },
     {
       name: "LinkedIn",
       handle: "Ajay Homes",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/company/ajay-homes/",
       icon: LinkedInIcon,
       accent: "hover:border-[#0A66C2] hover:text-[#0A66C2]",
     },
     {
       name: "Facebook",
       handle: "Ajay Homes",
-      href: "https://facebook.com",
+      href: "https://www.facebook.com/ajayhomesadyar/",
       icon: FacebookIcon,
       accent: "hover:border-[#1877F2] hover:text-[#1877F2]",
     },
     {
       name: "YouTube",
       handle: "Ajay Homes Official",
-      href: "https://youtube.com",
+      href: "https://www.youtube.com/@ajayhomes",
       icon: YouTubeIcon,
       accent: "hover:border-[#FF0000] hover:text-[#FF0000]",
     },
@@ -272,7 +272,7 @@ export default function Footer() {
                   <div className="flex flex-row items-center gap-3 pt-1">
                                {/* Facebook */}
                     <a
-                      href="https://facebook.com"
+                      href="https://www.facebook.com/ajayhomesadyar/"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Facebook"
@@ -283,7 +283,7 @@ export default function Footer() {
                     </a>
                     {/* Instagram */}
                     <a
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/ajayhomes_adyar/"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Instagram"
@@ -295,7 +295,7 @@ export default function Footer() {
                     
                     {/* YouTube */}
                     <a
-                      href="https://youtube.com"
+                      href="https://www.youtube.com/@ajayhomes"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="YouTube"
@@ -307,7 +307,7 @@ export default function Footer() {
 
                     {/* LinkedIn */}
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/company/ajay-homes/"
                       target="_blank"
                       rel="noreferrer"
                       aria-label="LinkedIn"
